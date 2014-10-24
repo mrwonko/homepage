@@ -1,0 +1,134 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family:"Times New Roman",serif;
+	font-size: 12pt;
+}
+
+h2
+{
+	font-family:"Helvetica Neue",Arial,Helvetica,"Nimbus Sans L",sans-serif;
+	margin-bottom: 0.3em;
+	color:#000000;
+	font-size:21px;
+	font-weight:bold;
+	line-height:1.3em;
+	margin-bottom:0;
+}
+
+#mrw_topcontainer
+{
+	/* center it */
+	margin-left: auto;
+	margin-right: auto;
+	width: 50em;
+}
+
+#mrw_nav
+{
+	color: black;
+	text-align: left;
+	font-size: 1.5em;
+	
+	/* center it vertically */
+	height: 2em;
+	position: relative;
+	top: -0.5em;
+}
+
+#mrw_nav_current
+{
+	color: black;
+	font-weight: bold;
+}
+
+/* make the navigation links black */
+#mrw_nav a
+{
+	color: black;
+	text-decoration: underline;
+	margin: 0;
+	height: 2px;
+}
+
+#mrw_logo
+{
+	font-size: 4em;
+	font-family: Serif;
+	color: black;
+}
+
+#mrw_main
+{
+	/* center it */
+	width: 50em;
+	margin-left: auto;
+	margin-right: auto;
+	
+	min-height: 90%;
+}
+
+#mrw_title
+{
+	font-size: 4em;
+	margin-bottom: 0.2em;
+	
+	/* center it */
+	width: 100%;
+	text-align: center;
+	
+	text-decoration: underline;
+	color: black;
+}
+
+#mrw_copyright
+{
+	padding-top: 1em;
+	width: 100%;
+	text-align: center;
+}
+
+.mrw_vertical_line
+{
+	width: 50em;
+	border-color: black gray gray gray;
+	border-style: groove;
+	border-width: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.mrw_floatleft
+{
+	float: left;
+}
+
+.mrw_floatright
+{
+	float: right;
+}
+
+.mrw_boxed
+{
+	background-color: #DDDDDD;
+	border-width: 0.1em;
+	border-style: solid;
+	border-color: black;
+	padding: 0.3em;
+}
+
+.mrw_boxed_centered
+{
+	background-color: #DDDDDD;
+	border-width: 0.1em;
+	border-style: solid;
+	border-color: black;
+	padding: 0.3em;
+	
+	width: 35em;
+	margin-left: auto;
+	margin-right: auto;
+}

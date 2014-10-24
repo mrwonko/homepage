@@ -1,0 +1,23 @@
+.mrw_download_infobox
+{
+	height: 200px;
+	width: 200px;
+	float: right;
+}
+
+.mrw_download_box
+{
+	width: 35em;
+	min-height: 200px;
+}
+
+#downloadtable
+{
+	border: 0;
+	width: 100%;
+}
+
+#downloadtable_title
+{
+	font-weight: bold;
+}
