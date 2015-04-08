@@ -7,7 +7,9 @@ Snow? Already? And where is my HDD?
 :slug: snow-already-and-where-is-my-hdd
 :summary: Snow and data loss - are they connected?
 
-|image0|\ It's been snowing and freezing for some days now - I think
+|image0|
+
+It's been snowing and freezing for some days now - I think
 that's pretty early.
 
 On another note, one of my HDDs just vanished. Or at least its
@@ -26,5 +28,5 @@ So long,
 
 Willi
 
-.. |image0| image:: http://www.mrwonko.de/blog/wp-content/uploads/hd502ij-300x243.png
-   :target: http://www.mrwonko.de/blog/wp-content/uploads/hd502ij.png
+.. |image0| image:: {filename}hd502ij-300x243.png
+   :target: {filename}hd502ij.png
