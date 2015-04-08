@@ -8,8 +8,9 @@ SITEURL = 'http://mrwonko.de'
 
 PATH = 'content'
 # path to files that are not to be processed, just copied verbatim (automatically excludes articles)
-STATIC_PATHS = [ 'blog', 'downloads' ]
+STATIC_PATHS = [ 'blog' ]
 ARTICLE_PATHS = [ 'blog' ]
+PAGE_PATHS = [ 'pages' ]
 # where to put generated blog entries
 ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m-%d}-{slug}.html'
 # how to link to them (useful e.g. for omitting /index.html)
