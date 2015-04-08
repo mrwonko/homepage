@@ -7,6 +7,13 @@ SITENAME = u"mrwonko's blog"
 SITEURL = 'http://mrwonko.de'
 
 PATH = 'content'
+# path to files that are not to be processed, just copied verbatim (automatically excludes articles)
+STATIC_PATHS = [ 'blog', 'downloads' ]
+ARTICLE_PATHS = [ 'blog' ]
+# where to put generated blog entries
+ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m-%d}-{slug}.html'
+# how to link to them (useful e.g. for omitting /index.html)
+ARTICLE_URL = 'blog/{date:%Y}/{date:%m-%d}-{slug}.html'
 
 TIMEZONE = 'Europe/Paris'
 
