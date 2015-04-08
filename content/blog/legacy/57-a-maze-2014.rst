@@ -1,0 +1,154 @@
+A MAZE 2014
+###########
+:date: 2014-04-13 09:17
+:author: mrwonko
+:category: Mixed
+:tags: Job, Spirits of the Sith, Videogames, Major Bueno, Vlambeer
+:slug: a-maze-2014
+
+Hey everybody!
+
+I really want to talk about the last couple of days, but first I'll talk
+about the week before, just for the record. It began with the finals of
+the `DotaCinema <http://www.dotacinema.com/>`__ Captain's Draft
+tournament in Dota 2, where teams had to play less common heroes, which
+led to some very interesting games. I bought tickets for that so I could
+watch it in the ingame client and I'm quite happy with my purchase.
+
+Later I visited the `InnoGames <http://www.innogames.com/>`__
+headquarters again - this time to get a tour of the offices themselves.
+In general it seems like a nice place to work, with the possible
+exception of the work itself. I don't know if I want to do
+mobile/browser games... They are small though, so you experience a full
+project in less time. I'll take a look at some other studios in the
+coming weeks before I decide on where to do my internship and Bachelor
+thesis.
+
+Then I finally got around to working some more on the second uni
+assignment for the holidays where I am to create a web interface using
+the Google Web Toolkit together with another student. After a bit of
+struggle I figured out how to properly persist objects in a database and
+now it's just a matter of creating all the necessary pages.
+
+Earlier this week I finished my other uni assignment, a boardgame port
+in Delphi. Documentation took a little longer than anticipated, but
+that's the way it usually is with just about everything. I still
+finished in time. And then came Wednesday.
+
+It's that time of the year again: Time for `A
+MAZE <http://amaze-berlin.de/>`__. This year it dropped the "Indie
+Connect" from its title, but that's still what it's about; Indie
+developers meeting up and connecting. So once again I found myself on
+the 3.5h bus ride to Berlin. I did better research than last year and
+took the bus that put me within walking distance of my hostel, straight
+to the Ostbahnhof, instead of the ZOB on the other end of Berlin like
+last year.
+
+Some things have changed since last year - notably I have a Tablet and a
+Nintendo 3DS now. I bought the latter last summer to see what all the
+fuzz regarding Animal Crossing: New Leaf was all about, and shortly
+thereafter got Legend of Zelda - Ocarina of Time 3D as a birthday
+present. But I hardly played it since, only just reaching the first
+dungeon. So I used the bus ride to play some more; I got past the
+dungeon and met two faeries.
+
+But let's talk about A MAZE. I first went there last year and met many
+nice people, like Jana and Friedrich from `Rat
+King <http://ratking.de/>`__, `Sos Sosowski <http://sos.gd/>`__, `Terry
+Cavanagh <http://distractionware.com>`__ and Rami Ismail and Jan Willem
+Nijman of `Vlambeer <http://vlambeer.com>`__. It was great to see most
+of them again - Terry and Rami weren't there, but most others were. Sos
+is still as crazy as ever, I love that guy.
+
+I also met a lot new people, which is great. I got to talk to `Henry
+Smith <http://www.sleepingbeastgames.com/>`__, whose game Spaceteam won
+the A MAZE Award last year. He's been in AAA at Irrational and Bioware
+before going Indie and shared some of his experiences; He thinks working
+in the industry is a great experience, I'd just like to avoid the
+contract clause which kept him from working on private projects in his
+spare time - it's apparently pretty commonplace, but surely you can do
+some negotiating when a developer wants you to work for them.
+
+I also met Marius Winter of `Major
+Bueno <http://www.majorbueno.com/>`__, who I had wanted to talk to about
+his experience at Double Fine for a while, so that was great, too. But
+there was one utterly surprising meeting: I wear a "Hello, my name is
+Willi/mrwonko" sticker, and somebody asked me about that. The guy was
+called Robin and turned out to be a member of Killermic's startup,
+`Klonk Games <http://klonk-games.com/>`__. I know Killermic from my Jedi
+Academy modding days - we were both part of the 3D-GET modding team,
+where we worked on Spirits of the Sith for Jedi Knight: Jedi Academy.
+Robin reminded me that we really need to finish that, and I agree. It's
+about 80% done, and I can probably do 90% of the remaining 20% myself.
+
+But A MAZE is not just about meeting cool people, there are also lots of
+talks. I went to all of them, which was a great idea - sometimes you
+don't know a talk interests you until you hear it. For example I didn't
+know `Tale of Tales <http://www.tale-of-tales.com/>`__ were so
+interesting, but now I really want to look into their games. I had heard
+of them before, but never cared to investigate them. Not all talks were
+surprises - I had imagined Sos' talk to be positively insane and got
+exactly that; he talked about how A MAZE helped him find the motivation
+to finish McPixel and did it in his unique Sos way. The talks were
+filmed and should be available online soon.
+
+Part of A MAZE is also the exhibition. I saw the
+`Choosatron <http://choosatron.com>`__ which I had never heard of
+before, but using a receipt printer as a console output is ingenious,
+and I got to play a round of `Nidhogg <http://www.nidhogggame.com/>`__,
+which wasn't quite enough to learn about its nuances but sure was fun.
+And I had no idea watching somebody play `The Stanley
+Parable <http://www.stanleyparable.com/>`__ for the first time would be
+quite as awesome. (She got the confusion ending first, and then played
+it "properly.")
+
+And lastly, A MAZE fills the evenings with parties. I don't usually
+partake in that kind of activity, but since I'm around anyway A MAZE is
+the one yearly exception. 3 evenings of dancing are fairly exhausting,
+so by Friday my feet were killing me and my arms didn't like to be
+raised anymore, but
+`Kozilek <http://havingfunwithrecords.com/kozilek/>`__ still managed to
+get me to dance. I had only just learned of him through Luftrausers, but
+the music didn't quite compare - it was less chip and more bass. Well,
+the speakers probably played a big part in that - most music will sound
+more impressive with big, loud speakes.
+
+My personal highlight as far as music goes was on Thursday. Just like
+with games, it's nice to see the face(s) behind the music you hear, and
+I had no idea `Chipzel <http://chipzel.co.uk/>`__ is a gal. I didn't
+realize she actually makes her music with a Gameboy, either. And I
+certainly didn't know she's so full of energy, jumping and dancing on
+stage and loving what she does. Maybe I should go to parties and
+concerts more often, it's great to be around happy people.
+
+In general meeting people every now and then is nice. I learned about
+two other places where I could do so: There's `Game
+City <http://gamecity.org>`__ in England and `Poznań Game
+Arena <http://www.gamearena.pl/pl/>`__ including the ZTG Game Developers
+Convention in Poland, two countries I'd very much like to visit. I've
+been to England before, but that was with family and friends and I
+didn't get to experience much of the country. Maybe I should take a walk
+with Ed Key or something...
+
+On Saturday, after A MAZE was over, I met Florian Zender from
+`YAGER <http://yager.de/>`__, a AAA studio in Berlin, and had a nice
+chat with him over a coffee/hot chocolate. We talked about a great many
+things more or less related to game development and had a good time. I'm
+happy to have met him, the time I'm spending contacting people from the
+games industry is paying off.
+
+So that's been my trip to Berlin. Now I'm sitting in the bus back to
+Hamburg, writing this blog entry. Exhausted, but happy. I missed the
+first 3 days of university due to the trip, but it's been worth it.
+
+In the next two weeks I'll be fairly busy with uni work, I have three or
+four assignments now. I'm also going to continue my networking
+endeavors, I'd love to talk to somebody from `Rockfish
+Games <http://rockfishgames.wordpress.com/>`__.
+
+And I also just found out I enjoy audio books; they're somewhat more
+convenient than regular books since you can close your tired eyes while
+consuming them in bed.
+
+| So long,
+|  Willi
