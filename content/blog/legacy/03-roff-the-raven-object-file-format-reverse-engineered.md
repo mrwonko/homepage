@@ -3,7 +3,7 @@ date: 2010-07-27 19:45
 modified: 2015-04-08 15:15
 author: mrwonko
 tags: Blender, Jedi Academy, Modelling, Programming, broken link
-:category: Programming
+category: Programming
 slug: roff-the-raven-object-file-format-reverse-engineered
 summary: Today I've had a closer look at the ROFF file format used in some older Raven Software games...
 
