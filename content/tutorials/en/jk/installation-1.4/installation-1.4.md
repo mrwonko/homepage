@@ -21,118 +21,118 @@ You are strongly encouraged to use the GTK Radiant 1.6, whose installation diffe
 
 # Tutorial
 
-1.  starting installation
+## 1. starting installation
 
-    Start the installation by double-clicking on the installation file.
+Start the installation by double-clicking on the installation file.
 
-    ![Welcome screen]({filename}../../../de/jk/installation-1.4/gtk_step1.jpg)
+![Welcome screen]({filename}../../../de/jk/installation-1.4/gtk_step1.jpg)
 
-    A dialog should appear. Click "Next" to continue.
+A dialog should appear. Click "Next" to continue.
 
-2.  license agreement
+## 2. license agreement
 
-    ![License]({filename}../../../de/jk/installation-1.4/gtk_step2.jpg)
+![License]({filename}../../../de/jk/installation-1.4/gtk_step2.jpg)
 
-    To install GtkRadiant you have to accept the license agreement. You should read the agreement carefully (I don't think anyone does this). If you agree, click "Yes".
-    
-    Otherwise click "No". In that case the installation will end and you can stop this tutorial.
+To install GtkRadiant you have to accept the license agreement. You should read the agreement carefully (I don't think anyone does this). If you agree, click "Yes".
 
-3.  program information
+Otherwise click "No". In that case the installation will end and you can stop this tutorial.
 
-    ![Info]({filename}../../../de/jk/installation-1.4/gtk_step3.jpg)
+## 3. program information
 
-    Now you can see information about the version which you are installing.
-    
-    Read it and/or click on "Next".
+![Info]({filename}../../../de/jk/installation-1.4/gtk_step3.jpg)
 
-4.  the program installation path
+Now you can see information about the version which you are installing.
 
-    ![Destination]({filename}../../../de/jk/installation-1.4/gtk_step4.jpg)
+Read it and/or click on "Next".
 
-    Choose the path where you want to install the editor and its files. This path doesn't matter as long as it's NOT the folder "GameData", "GameData/base" or "GameData/Tools" of your game.
-    
-    After choosing the program installation path click "Next" to continue.
+## 4. the program installation path
 
-5.  game installation path
+![Destination]({filename}../../../de/jk/installation-1.4/gtk_step4.jpg)
 
-    Now the programme asks you where games are located. You do _not_ need to choose every path. It **is** important to choose the path of your game. 
-    
-    So click "Next" until your game appears (for example Jedi Knight II: Jedi Outcast). 
+Choose the path where you want to install the editor and its files. This path doesn't matter as long as it's NOT the folder "GameData", "GameData/base" or "GameData/Tools" of your game.
 
-    ![Game selection]({filename}../../../de/jk/installation-1.4/gtk_step7.jpg)
+After choosing the program installation path click "Next" to continue.
 
-    Click on "Browse" ...
+## 5. game installation path
 
-    ![Choosing GameData]({filename}../../../de/jk/installation-1.4/gtk_step8.jpg)
+Now the programme asks you where games are located. You do _not_ need to choose every path. It **is** important to choose the path of your game. 
 
-    ... and select the "GameData" folder of your game.
+So click "Next" until your game appears (for example Jedi Knight II: Jedi Outcast). 
 
-    Important!
-    
-    GtkRadiant only works properly if Editing-Tools I and II are already installed and you have chosen the "GameData" folder!
+![Game selection]({filename}../../../de/jk/installation-1.4/gtk_step7.jpg)
 
-    ![Result]({filename}../../../de/jk/installation-1.4/gtk_step9.jpg)
+Click on "Browse" ...
 
-    After choosing your game's path correctly click on "Next".
+![Choosing GameData]({filename}../../../de/jk/installation-1.4/gtk_step8.jpg)
 
-6.  GtkRadiant game relevant files
+... and select the "GameData" folder of your game.
 
-    ![Radiant Data Subfolder]({filename}../../../de/jk/installation-1.4/gtk_step10.jpg)
+Important!
 
-    Here you can choose the name of the folder which will be installed in your game folder. As this isn't necessary to change you can go on ("Next").
+GtkRadiant only works properly if Editing-Tools I and II are already installed and you have chosen the "GameData" folder!
 
-7.  installation extent
+![Result]({filename}../../../de/jk/installation-1.4/gtk_step9.jpg)
 
-    ![Setup Type]({filename}../../../de/jk/installation-1.4/gtk_step11.jpg)
+After choosing your game's path correctly click on "Next".
 
-    After choosing your game's path (and ignoring other game's paths) you are now given the choice between a custom and a full install. Darth-Arth recommends you to select "Full Install".
-    
-    If you don't want to install the plugins for the other games you can choose "Custom". The setup will ask you what to install (default is everything, see "Full Install"). Uncheck only games you don't have. You should install program files, your game's plugin and documents (documents aren't necessary).
+## 6. GtkRadiant game relevant files
 
-    After selecting click "Next".
+![Radiant Data Subfolder]({filename}../../../de/jk/installation-1.4/gtk_step10.jpg)
 
-8.  program group
+Here you can choose the name of the folder which will be installed in your game folder. As this isn't necessary to change you can go on ("Next").
 
-    ![Start Menu Entry]({filename}../../../de/jk/installation-1.4/gtk_step12.jpg)
+## 7. installation extent
 
-    Here you can label the start menu's folder for GtkRadiant.
+![Setup Type]({filename}../../../de/jk/installation-1.4/gtk_step11.jpg)
 
-9.  checking installation settings
+After choosing your game's path (and ignoring other game's paths) you are now given the choice between a custom and a full install. Darth-Arth recommends you to select "Full Install".
 
-    ![Summary]({filename}../../../de/jk/installation-1.4/gtk_step13.jpg)
+If you don't want to install the plugins for the other games you can choose "Custom". The setup will ask you what to install (default is everything, see "Full Install"). Uncheck only games you don't have. You should install program files, your game's plugin and documents (documents aren't necessary).
 
-    The setup lists the settings you have chosen before. Check and change (click "Back") them if necessary. If the settings are ok click "Next" to install GtkRadiant.
-    
-    Dart-Arth recommends to check the game's path again to make sure it's correct. If the path is wrong you will have to reinstall the program. And you're lazy, you don't want to repeat the installation, do you?
+After selecting click "Next".
 
+## 8. program group
 
+![Start Menu Entry]({filename}../../../de/jk/installation-1.4/gtk_step12.jpg)
+
+Here you can label the start menu's folder for GtkRadiant.
+
+## 9. checking installation settings
+
+![Summary]({filename}../../../de/jk/installation-1.4/gtk_step13.jpg)
+
+The setup lists the settings you have chosen before. Check and change (click "Back") them if necessary. If the settings are ok click "Next" to install GtkRadiant.
+
+Dart-Arth recommends to check the game's path again to make sure it's correct. If the path is wrong you will have to reinstall the program. And you're lazy, you don't want to repeat the installation, do you?
 
 
-10. end of installation
 
-    ![Setup Done]({filename}../../../de/jk/installation-1.4/gtk_step14.jpg)
 
-    If the setup succeeds click "Finish". 
+## 10. end of installation
 
-11. first start
+![Setup Done]({filename}../../../de/jk/installation-1.4/gtk_step14.jpg)
 
-    Start the GtkRadiant. A dialog will appear:
+If the setup succeeds click "Finish". 
 
-    ![Game Choice]({filename}../../../de/jk/installation-1.4/gtk_step15.jpg)
+## 11. first start
 
-    Choose your game and - if you want - check the auto load (the GtkRadiant won't ask you again. If you checked auto load and want to change game you can change it later. See below).
+Start the GtkRadiant. A dialog will appear:
 
-    ![Warning]({filename}../../../de/jk/installation-1.4/gtk_step17.jpg)
+![Game Choice]({filename}../../../de/jk/installation-1.4/gtk_step15.jpg)
 
-    If you also check logging a warning will appear. It tells you that logging can slow down the programme. Choose whether you still want to log.
+Choose your game and - if you want - check the auto load (the GtkRadiant won't ask you again. If you checked auto load and want to change game you can change it later. See below).
 
-12. checking configurations
+![Warning]({filename}../../../de/jk/installation-1.4/gtk_step17.jpg)
 
-    Okay, now you will see whether you did everything right. 
+If you also check logging a warning will appear. It tells you that logging can slow down the programme. Choose whether you still want to log.
 
-    ![GTK Radiant in Action]({filename}../../../de/jk/installation-1.4/gtk_step18.jpg)
+## 12. checking configurations
 
-    Click on "Textures" and choose "cairn". If there is no cairn or any other option (below "shaderlist.txt only") the setup failed. If there are only tiny "shader image missing" images instead of textures the setup failed. You will have to check the installation path of your game again and reinstall the programme.
+Okay, now you will see whether you did everything right. 
+
+![GTK Radiant in Action]({filename}../../../de/jk/installation-1.4/gtk_step18.jpg)
+
+Click on "Textures" and choose "cairn". If there is no cairn or any other option (below "shaderlist.txt only") the setup failed. If there are only tiny "shader image missing" images instead of textures the setup failed. You will have to check the installation path of your game again and reinstall the programme.
 
 
 
