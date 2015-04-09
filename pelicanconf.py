@@ -8,17 +8,19 @@ SITEURL = 'http://mrwonko.de'
 
 PATH = 'content'
 # path to files that are not to be processed, just copied verbatim (automatically excludes articles)
-STATIC_PATHS = [ 'blog' ]
-ARTICLE_PATHS = [ 'blog' ]
+ARTICLE_PATHS = [ 'blog', 'tutorials' ]
 PAGE_PATHS = [ 'pages' ]
+STATIC_PATHS = ARTICLE_PATHS + PAGE_PATHS
 # where to put generated blog entries
 ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m-%d}-{slug}.html'
 # how to link to them (useful e.g. for omitting /index.html)
-ARTICLE_URL = 'blog/{date:%Y}/{date:%m-%d}-{slug}.html'
+ARTICLE_URL = ARTICLE_SAVE_AS
 
 # THEME = "notmyidea"
 # THEME = "simple"
 THEME = "themes/wonky2015"
+
+PLUGIN_PATHS = [ "plugins" ]
 
 TIMEZONE = 'Europe/Paris'
 
