@@ -16,7 +16,7 @@ But maybe I'm looking at it the wrong way. In this last year I've been
 the most productive ever, I think. Before last year, I hardly got
 anything done. I did improve. I just have to continue to do so.
 
-How can I do so? I've got to get my priorities right.\ |image0|
+How can I do so? I've got to get my priorities right.
 
 -  I'll start studying in a month and that should of course be my number
    one priority.
@@ -44,5 +44,3 @@ months.
 So long,
 
 Willi
-
-.. |image0| image:: http://www.mrwonko.de/blog/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif

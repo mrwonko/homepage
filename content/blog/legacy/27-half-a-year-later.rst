@@ -29,7 +29,7 @@ Plus <https://plus.google.com/101127119059250564535/posts>`__ now.
 Next week I'll attend the Gamescom. I'll be there on Thursday and Friday
 and fellow My Little Pony fans (and everybody else) may feel free to
 meet me at 12 an 4pm between halls 6 and 7. I'll wear a `jedi robe and a
-button <http://www.mrwonko.de/images/cam/robe+mark_sm.png>`__ so I'll be
+button <{filename}robe+mark_sm.png>`__ so I'll be
 quite recognizable.
 
 Since I'd like to shoot some videos I got myself a (used) Kodak Zi8.

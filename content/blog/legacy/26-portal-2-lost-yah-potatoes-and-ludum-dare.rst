@@ -21,9 +21,7 @@ all hope is gone. I will miss you, my beloved hat. (If you happen to
 have found my hat and read this, please contact me. Ah, who am I
 kidding?)
 
-[caption id="attachment\_141" align="aligncenter" width="300"
-caption="My beloved hat and me in Amsterdam last
-fall."]\ |image0|\ [/caption]
+|image0|
 
 So I'd like to have a new hat. They're useful against the sun, rain and
 bad looks. Might just get the same model again since I liked it. It's
@@ -90,5 +88,5 @@ So long,
 
 Willi
 
-.. |image0| image:: http://www.mrwonko.de/blog/wp-content/uploads/Klassenfahrt_Amsterdam-027-300x224.jpg
-   :target: http://www.mrwonko.de/blog/wp-content/uploads/Klassenfahrt_Amsterdam-027.jpg
+.. |image0| image:: {filename}Klassenfahrt_Amsterdam-027-300x224.jpg
+   :target: {filename}Klassenfahrt_Amsterdam-027.jpg

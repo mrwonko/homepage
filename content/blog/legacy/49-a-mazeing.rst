@@ -7,8 +7,7 @@ A MAZEing!
 :slug: a-mazeing
 :summary: My experiences at A MAZE. Indie Connect in Berlin in April.
 
-[caption id="attachment\_285" align="alignleft" width="300"]\ |The venue
-where A MAZE took place| Urban Spree[/caption]
+|The venue where A MAZE took place|
 
 I went to Berlin for the first time in my life this April. The reason?
 `A MAZE. Indie Connect <http://www.amaze-indieconnect.de/>`__, a small
@@ -19,8 +18,7 @@ either. In fact it was quite worthwhile. As was the smartphone I finally
 got for the occasion, an Xperia U. Not overly powerful, but it has
 served me well so far.
 
-[caption id="attachment\_285" align="alignright" width="300"]\ |I did
-better than I do on my phone| C64nabalt[/caption]
+|I did better than I do on my phone|
 
 There were a lot of talks during the day and many games were on
 exhibition. I met `Sos <http://sos.gd/>`__ of McPixel fame, JW and Rami
@@ -52,7 +50,7 @@ done with my other current projects, of which there are many.
 
 Willi
 
-.. |The venue where A MAZE took place| image:: http://www.mrwonko.de/blog/wp-content/uploads/DSC_0004_sm-300x168.jpg
-   :target: http://www.mrwonko.de/blog/wp-content/uploads/DSC_0004_sm.jpg
-.. |I did better than I do on my phone| image:: http://www.mrwonko.de/blog/wp-content/uploads/DSC_0037_sm-300x168.jpg
-   :target: http://www.mrwonko.de/blog/wp-content/uploads/DSC_0037_sm.jpg
+.. |The venue where A MAZE took place| image:: {filename}DSC_0004_sm-300x168.jpg
+   :target: {filename}DSC_0004_sm.jpg
+.. |I did better than I do on my phone| image:: {filename}DSC_0037_sm-300x168.jpg
+   :target: {filename}DSC_0037_sm.jpg

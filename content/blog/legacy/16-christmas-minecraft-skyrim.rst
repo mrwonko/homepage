@@ -7,7 +7,9 @@ Christmas! Minecraft! Skyrim!
 :slug: christmas-minecraft-skyrim
 :summary: I'm talking about christmas, minecraft and other games.
 
-|image0|\ It's Christmas once again! Yay! More relatives are going to
+|image0|
+
+It's Christmas once again! Yay! More relatives are going to
 visit tomorrow, but here are the presents I've received so far:
 
 -  Minority Report (book)
@@ -64,5 +66,5 @@ Merry Christmas.
 
 Willi
 
-.. |image0| image:: http://www.mrwonko.de/blog/wp-content/uploads/xmas2010_01-300x161.jpg
-   :target: http://www.mrwonko.de/blog/wp-content/uploads/xmas2010_01.jpg
+.. |image0| image:: {filename}xmas2010_01-300x161.jpg
+   :target: {filename}xmas2010_01.jpg

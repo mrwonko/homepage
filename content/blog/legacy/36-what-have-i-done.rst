@@ -50,8 +50,7 @@ pacman, but I knew it'd suck, hence the name. I actually still have
 `binaries <http://www.mrwonko.de/files/Suckman.7z>`__. Hell, after some
 more digging I found out I even still have the source code!
 
-[caption id="attachment\_211" align="alignnone" width="300"
-caption="Suckman"]\ |Screenshot of my first game "Suckman"|\ [/caption]
+|Screenshot of my first game "Suckman"|
 
 I also started coding in PHP sometime back then, I can't pinpoint the
 exact time, but I have some files dating back to may 2005. I *can*
@@ -95,8 +94,7 @@ turning point was my participation in the Games Convention Casemod
 Masters at the 2007 Games Convention (the last one), after that it died
 down.
 
-[caption id="attachment\_214" align="alignnone" width="300" caption="My
-casemod "Rexed" (and me at age 16)"]\ |image3|\ [/caption]
+|image3|
 
 I can't think of any remarkable projects in the following years... I
 briefly evaluated several engines like Ogre3D, irrlicht and Newton Game
@@ -133,11 +131,9 @@ honorable mention for best use of black and white so a lot of Valve
 employees have already seen one of my works, which is probably a good
 thing.
 
-.. |Screenshot of my first game "Suckman"| image:: http://www.mrwonko.de/blog/wp-content/uploads/suckman_shot-300x234.jpg
-   :target: http://www.mrwonko.de/blog/wp-content/uploads/suckman_shot.jpg
-.. |image1| image:: http://www.mrwonko.de/blog/wp-content/uploads/mrw_playermodel_lol1-145x300.jpg
-   :target: http://www.mrwonko.de/blog/wp-content/uploads/mrw_playermodel_lol1.jpg
-.. |image2| image:: http://www.mrwonko.de/blog/wp-content/uploads/mrw_playermodel_lol2-124x300.jpg
-   :target: http://www.mrwonko.de/blog/wp-content/uploads/mrw_playermodel_lol2.jpg
-.. |image3| image:: http://www.mrwonko.de/blog/wp-content/uploads/IMG_4045-300x225.jpg
-   :target: http://www.mrwonko.de/blog/wp-content/uploads/IMG_4045.jpg
+.. |Screenshot of my first game "Suckman"| image:: {filename}suckman_shot-300x234.jpg
+   :target: {filename}suckman_shot.jpg
+.. |image1| image:: {filename}mrw_playermodel_lol1.jpg
+.. |image2| image:: {filename}mrw_playermodel_lol2.jpg
+.. |image3| image:: {filename}IMG_4045-300x225.jpg
+   :target: {filename}IMG_4045.jpg
