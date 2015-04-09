@@ -10,7 +10,7 @@ PATH = 'content'
 # path to files that are not to be processed, just copied verbatim (automatically excludes articles)
 ARTICLE_PATHS = [ 'blog', 'tutorials' ]
 PAGE_PATHS = [ 'pages' ]
-STATIC_PATHS = ARTICLE_PATHS + PAGE_PATHS
+STATIC_PATHS = ARTICLE_PATHS + [ 'static' ]
 # where to put generated blog entries
 ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m-%d}-{slug}.html'
 # how to link to them (useful e.g. for omitting /index.html)
