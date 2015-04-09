@@ -16,6 +16,10 @@ ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m-%d}-{slug}.html'
 # how to link to them (useful e.g. for omitting /index.html)
 ARTICLE_URL = 'blog/{date:%Y}/{date:%m-%d}-{slug}.html'
 
+# THEME = "notmyidea"
+# THEME = "simple"
+THEME = "themes/wonky2015"
+
 TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'
