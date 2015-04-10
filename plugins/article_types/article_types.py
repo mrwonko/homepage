@@ -8,65 +8,110 @@ I actually completely ditch the ArticleGenerator's usual variables (articles etc
 
 from pelican import signals
 from collections import defaultdict
+from itertools import groupby as uniq, ifilter, imap, chain
 from functools import partial
+from operator import attrgetter
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger( __name__ )
+
+def identity( x ):
+    """
+    A function that returns its parameter unchanged
+    """
+    return x
+
+def constant( x ):
+    """
+    Returns a function that always returns x
+    """
+    return lambda: x
+
+def fst( (x, _) ):
+    return x
+
+def snd( (_, x) ):
+    return x
+
+def group_by( keyfunc, iterable ):
+    return uniq( sorted( iterable, key = keyfunc ), keyfunc )
 
 class ArticleType:
-    def __init__( self ):
-        self.articles = []
-        # create an empty list when a non-existent category/tag is requested
-        self.articles_by_category = defaultdict( list )
-        self.articles_by_tag = defaultdict( list )
+    def __init__( self, articles, reverse_dates ):
+        self.articles = sorted( articles, key = attrgetter('date'), reverse = True )
+        
+        self.dates = sorted( articles, key = attrgetter( "date" ), reverse = reverse_dates )
+        
+        self.articles_by_category = {
+            category: list( cat_articles ) # groupby returns an iterator, turn that into a list
+            for category, cat_articles in group_by(
+                attrgetter( "category" ),
+                articles
+            )
+        }
+        self.articles_by_tag = {
+            # [ ( Tag, Article ) ] -> [ Article ]
+            tag: map( snd, tag_article_pairs )
+            # [ ( Tag, Article ) ] -> { Tag: [ ( Tag, Article ) ] }
+            for tag, tag_article_pairs in group_by(
+                fst,
+                # [ [ ( Tag, Article ) ] ] -> [ ( Tag, Article ) ]
+                # create flat list of Tag-Article-Pairs
+                chain.from_iterable(
+                    # [ Article ] -> [ [ ( Tag, Article ) ] ]
+                    imap(
+                        # Article -> [ ( Tag, Article ) ]
+                        # create a pair with the Article for each Tag
+                        lambda article: imap(
+                            lambda tag: (tag, article),
+                            article.tags
+                        ),
+                        # only use Articles with tags set
+                        ifilter(
+                            lambda article: hasattr( article, "tags" ),
+                            articles
+                        )
+                    )
+                )
+            )
+        }
 
-def article_generator_created( article_generator ):
-    print( "Article Generator created! Adjust methods here." )
-    pass
-
-def skip_original_taxonomy( article_generator ):
+def taxonomy( article_generator ):
     # called after articles have been read, before calculating tags & categories
     
     self = article_generator
     
-    # we essentially want to overwrite the normal taxonomy phase, so let's empty the used lists, saving them first
-    articles = self.articles
-    self.articles = []
+    self.types = { 
+        type: ArticleType( list( articles ), self.context[ "NEWEST_FIRST_ARCHIVES" ] )
+        for type, articles in group_by(
+            attrgetter( "type" ),
+            # only take articles that have the "type" metadata
+            ifilter(
+                lambda article: hasattr( article, "type" ),
+                self.articles
+            )
+        )
+    }
     
-    # { TypeName: ArticleType }
-    self.types = defaultdict( ArticleType )
+    # { AuthorName: { TypeName: [ Article } }
+    self.articles_by_type_by_author = defaultdict( partial( defaultdict, list ) )
     
-    for article in articles:
-        # Authors are the same across types, so we can fill this here and the original code will take care of the rest
-        for author in getattr( article, "authors", [] ):
-            self.authors[ author ].append( article )
-        
-        if not hasattr( article, "type" ):
-            logger.error( "Article {} lacks type metadata! Skipping.".format( article.source_path ) )
-            continue
-        
-        self.types[ article.type ].articles.append( article )
+    for type, info in self.types.items():
+        for article in info.articles:
+            # add to authors' (type-partitioned) article lists
+            for author in getattr( article, "authors", [] ):
+                self.articles_by_type_by_author[ author ][ type ].append( article )
     
-    def partition_by_type( articles ):
-        articles_by_type = defaultdict( list )
-        for article in articles:
-            if hasattr( article, "type" ):
-                articles_by_type[ article.type ].append( article )
-        return articles_by_type
-    self.articles_by_type_by_author = { author: partition_by_type( articles ) for ( author, articles ) in self.authors.items() }
-
-def custom_taxonomy( article_generator ):
-    # called after normal tag/category calculation is done (which mostly does nothing due to skip_original_taxonomy())
-    
-    self = article_generator
-    
-    # TODO calculate categories, tags
+    for author, types in self.articles_by_type_by_author.items():
+        for type, articles in types.items():
+            articles.sort( key = attrgetter('date'), reverse = True )
     
     self._update_context( ( "types", "articles_by_type_by_author" ) )
-    self.save_cache()
-    self.readers.save_cache()
+    
+    # we essentially want to overwrite the normal taxonomy phase, so let's empty the list used there
+    self.articles = []
 
-def articles_written( article_generator, writer ):
+def write_articles( article_generator, writer ):
     # Called after default Articles and Feeds have been written.
     
     self = article_generator
@@ -77,7 +122,5 @@ def articles_written( article_generator, writer ):
 
 # entry point: define signals to listen to
 def register():
-    signals.article_generator_init.connect( article_generator_created )
-    signals.article_generator_pretaxonomy.connect( skip_original_taxonomy )
-    signals.article_generator_finalized.connect( custom_taxonomy )
-    signals.article_writer_finalized.connect( articles_written )
+    signals.article_generator_pretaxonomy.connect( taxonomy )
+    signals.article_writer_finalized.connect( write_articles )
