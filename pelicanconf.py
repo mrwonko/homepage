@@ -11,8 +11,8 @@ PATH = 'content'
 ARTICLE_PATHS = [ 'blog', 'tutorials' ]
 PAGE_PATHS = [ 'pages' ]
 STATIC_PATHS = ARTICLE_PATHS + [ 'static' ]
-# where to put generated blog entries
-ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m-%d}-{slug}.html'
+# where to put generated articles; using the new "type" makes that metadata mandatory.
+ARTICLE_SAVE_AS = '{type}/{date:%Y}/{slug}.html'
 # how to link to them (useful e.g. for omitting /index.html)
 ARTICLE_URL = ARTICLE_SAVE_AS
 
@@ -21,6 +21,25 @@ ARTICLE_URL = ARTICLE_SAVE_AS
 THEME = "themes/wonky2015"
 
 PLUGIN_PATHS = [ "plugins" ]
+PLUGINS = [ "article_types" ]
+
+TYPES = {
+    "blog": {
+        "template": 'blog',
+        "paginate": True
+        },
+    "tutorial": {
+        "template": 'tutorials',
+        "paginate": False
+        },
+    "download": {
+        "template": "downloads",
+        "paginate": False
+        }
+    }
+
+FEED_RSS = "articles.rss"
+FEED_ATOM = "articles.atom"
 
 TIMEZONE = 'Europe/Paris'
 
