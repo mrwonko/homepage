@@ -25,15 +25,21 @@ PLUGINS = [ "article_types" ]
 
 TYPES = {
     "blog": {
-        "template": 'blog',
+        "index_save_as": "blog",
+        "index_template": "index",
+        "article_template": "article",
         "paginate": True
         },
     "tutorial": {
-        "template": 'tutorials',
+        "index_save_as": "tutorials",
+        "index_template": "tutorial_index",
+        "article_template": "tutorial",
         "paginate": False
         },
     "download": {
-        "template": "downloads",
+        "index_save_as": "downloads",
+        "index_template": "download_index",
+        "article_template": "download",
         "paginate": False
         }
     }

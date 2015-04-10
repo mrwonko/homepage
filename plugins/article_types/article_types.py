@@ -60,7 +60,7 @@ def taxonomy( article_generator ):
     
     self = article_generator
     
-    self.types = { 
+    self.types = {
         type: ArticleType( list( articles ), self.context[ "NEWEST_FIRST_ARCHIVES" ] )
         for type, articles in group_by(
             attrgetter( "type" ),
@@ -89,17 +89,37 @@ def taxonomy( article_generator ):
     
     # we essentially want to overwrite the normal taxonomy phase, so let's empty the list used there
     self.articles = []
+    # TODO: support translations
+    self.translations = []
 
-def write_articles( article_generator, writer ):
+def write_articles_and_feeds( article_generator, writer ):
     # Called after default Articles and Feeds have been written.
     
     self = article_generator
     
-    # TODO generate pages, tags, 
+    write_file = partial( writer.write_file, relative_urls = self.settings[ "RELATIVE_URLS" ] )
     
-    print( "Articles written. Write custom feeds now." )
+    def get_type_settings( type ):
+        settings = {
+            "index_save_as": type,
+            "index_template": "index",
+            "article_template": "article",
+            "paginate": True
+        }
+        if "TYPES" in self.settings and type in self.settings[ "TYPES" ]:
+            settings.update( self.settings[ "TYPES" ][ type ] )
+        return settings
+    
+    def write_articles():
+        pass
+    
+    def write_feeds():
+        pass
+    
+    write_articles()
+    write_feeds()
 
 # entry point: define signals to listen to
 def register():
     signals.article_generator_pretaxonomy.connect( taxonomy )
-    signals.article_writer_finalized.connect( write_articles )
+    signals.article_writer_finalized.connect( write_articles_and_feeds )
