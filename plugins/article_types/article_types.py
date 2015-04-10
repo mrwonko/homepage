@@ -49,32 +49,11 @@ class ArticleType:
                 articles
             )
         }
-        self.articles_by_tag = {
-            # [ ( Tag, Article ) ] -> [ Article ]
-            tag: map( snd, tag_article_pairs )
-            # [ ( Tag, Article ) ] -> { Tag: [ ( Tag, Article ) ] }
-            for tag, tag_article_pairs in group_by(
-                fst,
-                # [ [ ( Tag, Article ) ] ] -> [ ( Tag, Article ) ]
-                # create flat list of Tag-Article-Pairs
-                chain.from_iterable(
-                    # [ Article ] -> [ [ ( Tag, Article ) ] ]
-                    imap(
-                        # Article -> [ ( Tag, Article ) ]
-                        # create a pair with the Article for each Tag
-                        lambda article: imap(
-                            lambda tag: (tag, article),
-                            article.tags
-                        ),
-                        # only use Articles with tags set
-                        ifilter(
-                            lambda article: hasattr( article, "tags" ),
-                            articles
-                        )
-                    )
-                )
-            )
-        }
+        self.articles_by_tag = defaultdict( list )
+        for article in articles:
+            if hasattr( article, "tags" ):
+                for tag in article.tags:
+                    self.articles_by_tag[ tag ].append( article )
 
 def taxonomy( article_generator ):
     # called after articles have been read, before calculating tags & categories
