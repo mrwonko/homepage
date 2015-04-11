@@ -16,7 +16,7 @@ PLUGINS = [ "article_types" ]
 
 PATH = "content"
 # path to files that are not to be processed, just copied verbatim (automatically excludes articles)
-ARTICLE_PATHS = [ "blog", "tutorials" ]
+ARTICLE_PATHS = [ "blog", "tutorials", "downloads" ]
 PAGE_PATHS = [ "pages" ]
 STATIC_PATHS = ARTICLE_PATHS + [ "static" ]
 
