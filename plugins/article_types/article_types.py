@@ -155,7 +155,7 @@ def write_articles_and_feeds( article_generator, writer ):
     
     context_had_type = 'type' in self.context
     previous_context_type = None
-    if context_had_type
+    if context_had_type:
         previous_context_type = self.context[ 'type' ]
     
     for type, info in self.types.iteritems():
@@ -239,7 +239,7 @@ def write_articles_and_feeds( article_generator, writer ):
     self._update_context( [ "articles", "dates", "tags", "categories", "authors" ] )
     if context_had_type:
         self.context[ 'type' ] = previous_context_type
-    else
+    else:
         del self.context[ 'type' ]
     
     #   Authors
