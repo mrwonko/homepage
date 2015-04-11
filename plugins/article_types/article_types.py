@@ -95,7 +95,7 @@ class ArticleType:
             if hasattr( article, 'tags' ):
                 for tag in article.tags:
                     self.articles_by_tag[ tag ].append( article )
-        for tag, articles in self.articles_by_tag.iteritems():
+        for tag, articles in self.articles_by_tag.items():
             articles.sort( key = attrgetter( 'date' ), reverse = True )
 
 def taxonomy( article_generator ):
@@ -128,14 +128,14 @@ def taxonomy( article_generator ):
     # { AuthorName: { TypeName: [ Article } }
     self.articles_by_type_by_author = defaultdict( partial( defaultdict, list ) )
     
-    for type, info in self.types.iteritems():
+    for type, info in self.types.items():
         for article in info.articles:
             # add to authors' (type-partitioned) article lists
             for author in getattr( article, 'authors', [] ):
                 self.articles_by_type_by_author[ author ][ type ].append( article )
     
-    for author, types in self.articles_by_type_by_author.iteritems():
-        for type, articles in types.iteritems():
+    for author, types in self.articles_by_type_by_author.items():
+        for type, articles in types.items():
             articles.sort( key = attrgetter('date'), reverse = True )
     
     self.mrw_all_articles = self.articles
@@ -158,7 +158,7 @@ def write_articles_and_feeds( article_generator, writer ):
     if context_had_type:
         previous_context_type = self.context[ 'type' ]
     
-    for type, info in self.types.iteritems():
+    for type, info in self.types.items():
         logger.debug( "Processing {} articles".format( type ) )
         
         # adjust context for this article type
@@ -171,7 +171,7 @@ def write_articles_and_feeds( article_generator, writer ):
         context[ 'categories' ].sort( reverse = self.settings[ 'REVERSE_CATEGORY_ORDER' ] )
         context[ 'authors' ] = list( self.articles_by_type_by_author.get( type, {} ).items() )
         context[ 'authors' ].sort()
-        context[ 'tags' ] = list( info.articles_by_tag.iteritems() )
+        context[ 'tags' ] = list( info.articles_by_tag.items() )
         context[ 'type' ] = type
         
         paginated = { 'articles': info.articles, 'dates': info.dates }
@@ -213,7 +213,7 @@ def write_articles_and_feeds( article_generator, writer ):
         ]:
             template = self.get_template( info.settings[ '{}_template'.format( name ) ] )
             paginate = info.settings[ '{}_paginate'.format( name ) ]
-            for item, articles in dict.iteritems():
+            for item, articles in dict.items():
                 dates = [ article for article in info.dates if article in articles ]
                 write_file(
                     item.save_as,
@@ -244,7 +244,7 @@ def write_articles_and_feeds( article_generator, writer ):
     
     #   Authors
     author_template = self.get_template( 'author' )
-    for author, articles_by_type in self.articles_by_type_by_author.iteritems():
+    for author, articles_by_type in self.articles_by_type_by_author.items():
         articles = list( chain.from_iterable( articles_by_type.itervalues() ) )
         articles.sort( key = attrgetter( 'date' ), reverse = True )
         dates = list( articles )
@@ -261,7 +261,7 @@ def write_articles_and_feeds( article_generator, writer ):
             paginated = { 'articles': articles, 'dates': dates } if self.settings.get( 'PAGINATE_AUTHOR_PAGES', True ) else {},
             page_name = author.page_name,
             all_articles = self.mrw_all_articles,
-            articles_by_type = sorted( articles_by_type.iteritems() )
+            articles_by_type = sorted( articles_by_type.items() )
         )
 
 # entry point: define signals to listen to
