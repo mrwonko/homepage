@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Willi Schinmeyer'
+AUTHOR = u"Willi Schinmeyer"
 SITENAME = u"mrwonko's blog"
-SITEURL = 'http://mrwonko.de'
+# hack for this to work both locally and deployed
+SITEURL = "http://mrwonko.de"
 
 #   Plugins
 
@@ -13,11 +14,11 @@ PLUGINS = [ "article_types" ]
 
 #   Input Paths
 
-PATH = 'content'
+PATH = "content"
 # path to files that are not to be processed, just copied verbatim (automatically excludes articles)
-ARTICLE_PATHS = [ 'blog', 'tutorials' ]
-PAGE_PATHS = [ 'pages' ]
-STATIC_PATHS = ARTICLE_PATHS + [ 'static' ]
+ARTICLE_PATHS = [ "blog", "tutorials" ]
+PAGE_PATHS = [ "pages" ]
+STATIC_PATHS = ARTICLE_PATHS + [ "static" ]
 
 #   Templates to generate besides articles/pages/static
 
@@ -31,11 +32,17 @@ PAGINATED_DIRECT_TEMPLATES = [
 #   Output Filenames
 
 # where to put generated articles; using the new "type" makes that metadata mandatory.
-ARTICLE_SAVE_AS = '{type}/{date:%Y}/{slug}.html'
+ARTICLE_SAVE_AS = "{type}/{date:%Y}/{slug}.html"
 # how to link to them (useful e.g. for omitting /index.html)
 ARTICLE_URL = ARTICLE_SAVE_AS
 
-DRAFT_SAVE_AS = '{type}/drafts/{slug}.html'
+DRAFT_SAVE_AS = "{type}/drafts/{slug}.html"
+
+CATEGORY_SAVE_AS = "{type}/category/{slug}.html"
+CATEGORY_URL = "{type}/category/{slug}.html"
+
+TAG_SAVE_AS = "{type}/tag/{slug}.html"
+TAG_URL = "{type}/tag/{slug}.html"
 
 #   Theme
 
@@ -68,50 +75,68 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 TYPE_SETTINGS = {
     "blog": {
-        "index_save_as": "blog/index.html",
-        "index_template": "index",#"blog_index",
+        'index_title': "mrwonko's blog",
+        'index_save_as': "blog/index.html",
+        'index_template': "index",#"blog_index",
+        'index_paginate': True,
         
-        "tags_save_as": "blog/tags.html",
-        "tags_template": "tags",
+        'tags_title': "mrwonko's blog - tags",
+        'tags_save_as': "blog/tags.html",
+        'tags_template': "tags",
+        'tags_paginate': True,
         
-        "categories_save_as": "blog/categories.html",
-        "categories_template": "categories",
+        'categories_title': "mrwonko's blog - categories",
+        'categories_save_as': "blog/categories.html",
+        'categories_template': "categories",
+        'categories_paginate': True,
         
-        "article_template": "article",
+        'article_template': "article",
         
-        "feed_atom": "feeds/blog.atom",
-        "feed_rss": "feeds/blog.rss"
+        'feed_atom': "feeds/blog.atom",
+        'feed_rss': "feeds/blog.rss"
     },
-    "tutorial": {
-        "index_save_as": "tutorials/index.html",
-        "index_template": "index",#"tutorial_index",
+    "tutorials": {
+        'index_title': "mrwonko's tutorials",
+        'index_save_as': "tutorials/index.html",
+        'index_template': "index",#"tutorial_index",
+        'index_paginate': False,
         
-        "tags_save_as": "tutorials/tags.html",
-        "tags_template": "tags",
+        'tags_title': "mrwonko's tutorials - tags",
+        'tags_save_as': "tutorials/tags.html",
+        'tags_template': "tags",
+        'tags_paginate': False,
         
-        "categories_save_as": None,
+        'categories_save_as': None,
         
-        "article_template": "article",#"tutorial",
+        'article_template': "article",#"tutorial",
         
-        "feed_atom": None,
-        "feed_rss": None
+        'feed_atom': None,
+        'feed_rss': None
     },
-    "download": {
-        "index_save_as": "downloads/index.html",
-        "index_template": "index",#"download_index",
+    "downloads": {
+        'index_title': "mrwonko's downloads",
+        'index_save_as': "downloads/index.html",
+        'index_template': "index",#"download_index",
+        'index_paginate': False,
         
-        "tags_save_as": "tutorials/tags.html",
-        "tags_template": "tags",
+        'tags_title': "mrwonko's downloads - tags",
+        'tags_save_as': "downloads/tags.html",
+        'tags_template': "tags",
+        'tags_paginate': False,
         
-        "categories_save_as": "tutorials/categories.html",
-        "categories_template": "categories",
+        'categories_title': "mrwonko's downloads - categories",
+        'categories_save_as': "downloads/categories.html",
+        'categories_template': "categories",
+        'categories_paginate': False,
         
-        "article_template": "article",#"download",
+        'article_template': "article",#"download",
         
-        "feed_atom": "feeds/downloads.atom",
-        "feed_rss": "feeds/downloads.rss"
+        'feed_atom': "feeds/downloads.atom",
+        'feed_rss': "feeds/downloads.rss"
     }
 }
+
+PAGINATE_AUTHOR_PAGES = False
 
 #   Feeds
 

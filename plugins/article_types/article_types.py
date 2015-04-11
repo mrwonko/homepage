@@ -5,6 +5,8 @@ Support for different Article Types, via metadata "type": a separation a level a
 
 Adds {type} substitution to CATEGORY_URL, TAG_SAVE_AS etc.
 
+Adds PAGINATE_AUTHOR_PAGES setting to disable pagination on individual author pages
+
 I actually completely ditch the ArticleGenerator's usual variables (articles etc.) except for authors and manually do the page creation.
 
 Known issues:
@@ -16,6 +18,7 @@ from collections import defaultdict
 from itertools import groupby as uniq, ifilter, imap, chain
 from functools import partial
 from operator import attrgetter
+import os
 import logging
 
 logger = logging.getLogger( __name__ )
@@ -43,38 +46,57 @@ def group_by( keyfunc, iterable ):
 
 class ArticleType:
     def __init__( self, name, articles, settings ):
+        title = settings[ 'index_title' ] if 'index_title' in settings else name
         self.settings = {
-            "index_save_as": "index",
-            "index_template": "index",
-            "tags_save_as": "tags", # set to none to disable tags page
-            "tags_template": "tags",
-            "categories_save_as": "categories", # set to None to disable categories page
-            "categories_template": "categories",
-            "article_template": "article",
-            "feed_rss": None,
-            "feed_atom": None
+            'index_title': title,
+            'index_save_as': os.path.join( name, "index.html" ),
+            'index_template': "index",
+            'index_paginate': True,
+            
+            # list of tags
+            'tags_title': title + " - tags",
+            'tags_save_as': os.path.join( name, "tags.html" ), # set to none to disable tags page
+            'tags_template': "tags",
+            'tags_paginate': False,
+            # for individual tag pages
+            'tag_template': "category",
+            'tag_paginate': False,
+            
+            # list of categories
+            'categories_title': title + " - categories",
+            'categories_save_as': os.path.join( name, "categories.html" ), # set to None to disable categories page
+            'categories_template': "categories",
+            'categories_paginate': False,
+            # for individual category pages
+            'category_template': "category",
+            'category_paginate': False,
+            
+            'article_template': "article", # can be overwritten per-article via metadata as usual
+            'feed_rss': None,
+            'feed_atom': None,
         }
-        if "TYPES" in settings and name in settings[ "TYPES" ]:
-            self.settings.update( settings[ "TYPES" ][ name ] )
+        if 'TYPE_SETTINGS' in settings and name in settings[ 'TYPE_SETTINGS' ]:
+            self.settings.update( settings[ 'TYPE_SETTINGS' ][ name ] )
         
-        self.articles = sorted( articles, key = attrgetter('date'), reverse = True )
+        self.articles = sorted( articles, key = attrgetter( 'date' ), reverse = True )
         
-        self.dates = sorted( articles, key = attrgetter( "date" ), reverse = settings[ "NEWEST_FIRST_ARCHIVES" ] )
+        self.dates = sorted( articles, key = attrgetter( 'date' ), reverse = settings[ 'NEWEST_FIRST_ARCHIVES' ] )
         
-        self.articles_by_category = list( {
-            category: list( cat_articles ) # groupby returns an iterator, turn that into a list
+        self.articles_by_category = {
+            category: sorted( cat_articles, key = attrgetter( 'date' ), reverse = True ) # groupby returns an iterator, turn that into a list & sort
             for category, cat_articles in group_by(
                 attrgetter( "category" ),
                 articles
             )
-        }.items() )
-        self.articles_by_category.sort( reverse = settings[ "REVERSE_CATEGORY_ORDER" ] )
+        }
         
         self.articles_by_tag = defaultdict( list )
         for article in articles:
-            if hasattr( article, "tags" ):
+            if hasattr( article, 'tags' ):
                 for tag in article.tags:
                     self.articles_by_tag[ tag ].append( article )
+        for tag, articles in self.articles_by_tag.iteritems():
+            articles.sort( key = attrgetter( 'date' ), reverse = True )
 
 def taxonomy( article_generator ):
     # called after articles have been read, before calculating tags & categories
@@ -82,22 +104,22 @@ def taxonomy( article_generator ):
     self = article_generator
     
     for article in self.articles:
-        if hasattr( article, "type" ):
+        if hasattr( article, 'type' ):
             # enable usage of {type} in CATEGORY_SAVE_AS/CATEGORY_URL
             # category comparison is done by name, so categories of different types would be merged in a dictionary
             # but we separate category dictionaries by type so that's no problem
             article.category.type = article.type
-            if hasattr( article, "tags" ):
+            if hasattr( article, 'tags' ):
                 for tag in article.tags:
                     tag.type = article.type
     
     self.types = {
         type: ArticleType( type, list( articles ), self.settings )
         for type, articles in group_by(
-            attrgetter( "type" ),
-            # only take articles that have the "type" metadata
+            attrgetter( 'type' ),
+            # only take articles that have the 'type' metadata
             ifilter(
-                lambda article: hasattr( article, "type" ),
+                lambda article: hasattr( article, 'type' ),
                 self.articles
             )
         )
@@ -109,12 +131,14 @@ def taxonomy( article_generator ):
     for type, info in self.types.iteritems():
         for article in info.articles:
             # add to authors' (type-partitioned) article lists
-            for author in getattr( article, "authors", [] ):
+            for author in getattr( article, 'authors', [] ):
                 self.articles_by_type_by_author[ author ][ type ].append( article )
     
     for author, types in self.articles_by_type_by_author.iteritems():
         for type, articles in types.iteritems():
             articles.sort( key = attrgetter('date'), reverse = True )
+    
+    self.mrw_all_articles = self.articles
     
     # we overwrite the normal taxonomy phase, so we empty the list used there
     # the self.categories dict wouldn't distinguish categories of different types
@@ -127,33 +151,118 @@ def write_articles_and_feeds( article_generator, writer ):
     
     self = article_generator
     
-    write_file = partial( writer.write_file, relative_urls = self.settings[ "RELATIVE_URLS" ] )
-        
+    write_file = partial( writer.write_file, relative_urls = self.settings[ 'RELATIVE_URLS' ] )
+    
+    context_had_type = 'type' in self.context
+    previous_context_type = None
+    if context_had_type
+        previous_context_type = self.context[ 'type' ]
+    
     for type, info in self.types.iteritems():
         logger.debug( "Processing {} articles".format( type ) )
-        index_template = self.get_template( info.settings[ "index_template" ] )
-        article_template = self.get_template( info.settings[ "article_template" ] )
-        tags_template = self.get_template( info.settings[ "tags_template" ] ) if info.settings[ "tags_template" ] else None
-        categories_template = self.get_template( info.settings[ "categories_template" ] ) if info.settings[ "categories_template" ] else None
         
-        logger.debug( "* generating {} index page(s) ({})".format( type, info.settings[ "index_save_as" ] ) )
-        # TODO
+        # adjust context for this article type
+        # we mustn't make a copy because articles hold a reference to the context, where they look up "SITEURL", which is changed by write_file() when using relative paths
+        # we'll change it back after the loop
+        context = self.context
+        context[ 'articles' ] = info.articles
+        context[ 'dates' ] = info.dates
+        context[ 'categories' ] = list( info.articles_by_category.items() )
+        context[ 'categories' ].sort( reverse = self.settings[ 'REVERSE_CATEGORY_ORDER' ] )
+        context[ 'authors' ] = list( self.articles_by_type_by_author.get( type, {} ).items() )
+        context[ 'authors' ].sort()
+        context[ 'tags' ] = list( info.articles_by_tag.iteritems() )
+        context[ 'type' ] = type
         
-        logger.debug( "* generating {} article pages".format( type ) )
-        # TODO
+        paginated = { 'articles': info.articles, 'dates': info.dates }
+
+        #   Articles
+        # logger.debug( "* generating {} article pages".format( type ) )
+        article_template = self.get_template( info.settings[ 'article_template' ] )
+        for article in info.articles:
+            signals.article_generator_write_article.send( self, content = article )
+            write_file(
+                article.save_as,
+                # respect template: metadata, it overrules type.article_template
+                article.metadata[ 'template' ] if 'template' in article.metadata and article.metadata[ 'template' ] is not None else article_template,
+                context,
+                article = article,
+                category = article.category,
+                override_output = hasattr( article, 'override_save_as' ),
+                blog = True
+            )
         
-        logger.debug( "* generating {} category pages".format( type ) )
-        logger.debug( "* generating {} tag pages".format( type ) )
+        #   Article Index, Categories Index, Tags Index
+        for what in ( 'index', 'categories', 'tags' ):
+            # logger.debug( "* generating {} {} page(s)".format( type, what ) )
+            save_as = info.settings[ '{}_save_as'.format( what ) ]
+            if save_as:
+                write_file(
+                    save_as,
+                    self.get_template( info.settings[ '{}_template'.format( what ) ] ),
+                    context,
+                    blog = True,
+                    paginated = paginated if info.settings[ '{}_paginate'.format( what ) ] else {},
+                    page_name = info.settings[ '{}_title'.format( what ) ]
+                )
         
-        feed_rss = info.settings[ "feed_rss" ]
-        if feed_rss:
-            logger.debug( "* generating {} RSS feed {}".format( type, feed_rss ) )
-            # TODO
+        #   Categories, Tags
+        for name, dict in [
+            ( "category", info.articles_by_category ),
+            ( "tag", info.articles_by_tag )
+        ]:
+            template = self.get_template( info.settings[ '{}_template'.format( name ) ] )
+            paginate = info.settings[ '{}_paginate'.format( name ) ]
+            for item, articles in dict.iteritems():
+                dates = [ article for article in info.dates if article in articles ]
+                write_file(
+                    item.save_as,
+                    template,
+                    context,
+                    articles = articles,
+                    dates = dates,
+                    paginated = { 'articles': articles, 'dates': dates } if paginate else {},
+                    blog = True,
+                    page_name = item.page_name,
+                    all_articles = info.articles,
+                    **{ name : item }
+                )
         
-        feed_atom = info.settings[ "feed_atom" ]
-        if feed_atom:
-            logger.debug( "*generating {} Atom feed {}".format( type, feed_atom ) )
-            # TODO
+        #   RSS, Atom Feeds
+        for ( name, feed_type ) in ( ( 'feed_rss', 'rss' ), ( 'feed_atom', 'atom' ) ):
+            feed = info.settings[ name ]
+            if feed:
+                # logger.debug( "* generating {} {} feed {}".format( type, feed_type, feed ) )
+                writer.write_feed( info.articles, context, feed, feed_type = feed_type )
+    
+    #   Reset context (we changed these for each type)
+    self._update_context( [ "articles", "dates", "tags", "categories", "authors" ] )
+    if context_had_type:
+        self.context[ 'type' ] = previous_context_type
+    else
+        del self.context[ 'type' ]
+    
+    #   Authors
+    author_template = self.get_template( 'author' )
+    for author, articles_by_type in self.articles_by_type_by_author.iteritems():
+        articles = list( chain.from_iterable( articles_by_type.itervalues() ) )
+        articles.sort( key = attrgetter( 'date' ), reverse = True )
+        dates = list( articles )
+        if not self.settings[ 'NEWEST_FIRST_ARCHIVES' ]:
+            dates.reverse()
+        
+        write_file(
+            author.save_as,
+            author_template,
+            self.context,
+            author = author,
+            articles = articles,
+            dates = dates,
+            paginated = { 'articles': articles, 'dates': dates } if self.settings.get( 'PAGINATE_AUTHOR_PAGES', True ) else {},
+            page_name = author.page_name,
+            all_articles = self.mrw_all_articles,
+            articles_by_type = sorted( articles_by_type.iteritems() )
+        )
 
 # entry point: define signals to listen to
 def register():
