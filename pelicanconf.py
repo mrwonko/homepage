@@ -6,57 +6,52 @@ AUTHOR = u'Willi Schinmeyer'
 SITENAME = u"mrwonko's blog"
 SITEURL = 'http://mrwonko.de'
 
+#   Plugins
+
+PLUGIN_PATHS = [ "plugins" ]
+PLUGINS = [ "article_types" ]
+
+#   Input Paths
+
 PATH = 'content'
 # path to files that are not to be processed, just copied verbatim (automatically excludes articles)
 ARTICLE_PATHS = [ 'blog', 'tutorials' ]
 PAGE_PATHS = [ 'pages' ]
 STATIC_PATHS = ARTICLE_PATHS + [ 'static' ]
+
+#   Templates to generate besides articles/pages/static
+
+DIRECT_TEMPLATES = [
+    "index",
+    "authors"
+]
+PAGINATED_DIRECT_TEMPLATES = [
+]
+
+#   Output Filenames
+
 # where to put generated articles; using the new "type" makes that metadata mandatory.
 ARTICLE_SAVE_AS = '{type}/{date:%Y}/{slug}.html'
 # how to link to them (useful e.g. for omitting /index.html)
 ARTICLE_URL = ARTICLE_SAVE_AS
 
+DRAFT_SAVE_AS = '{type}/drafts/{slug}.html'
+
+#   Theme
+
 # THEME = "notmyidea"
 # THEME = "simple"
 THEME = "themes/wonky2015"
 
-PLUGIN_PATHS = [ "plugins" ]
-PLUGINS = [ "article_types" ]
+#   Menu
 
-TYPES = {
-    "blog": {
-        "index_save_as": "blog",
-        "index_template": "index",
-        "article_template": "article",
-        "paginate": True
-        },
-    "tutorial": {
-        "index_save_as": "tutorials",
-        "index_template": "tutorial_index",
-        "article_template": "tutorial",
-        "paginate": False
-        },
-    "download": {
-        "index_save_as": "downloads",
-        "index_template": "download_index",
-        "article_template": "download",
-        "paginate": False
-        }
-    }
-
-FEED_RSS = "articles.rss"
-FEED_ATOM = "articles.atom"
-
-TIMEZONE = 'Europe/Paris'
-
-DEFAULT_LANG = u'en'
-
-# Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
+MENUITEMS = [
+    ("home", "index.html"),
+    ("blog", "blog/index.html"),
+    ("downloads", "downloads/index.html"),
+    ("tutorials", "tutorials/index.html")
+]
+DISPLAY_CATEGORIES_ON_MENU = False
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/')
@@ -69,7 +64,69 @@ LINKS = (('Pelican', 'http://getpelican.com/')
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
-DEFAULT_PAGINATION = 10
+#   Article Types
 
-# Uncomment following line if you want document-relative URLs when developing
+TYPE_SETTINGS = {
+    "blog": {
+        "index_save_as": "blog/index.html",
+        "index_template": "index",#"blog_index",
+        
+        "tags_save_as": "blog/tags.html",
+        "tags_template": "tags",
+        
+        "categories_save_as": "blog/categories.html",
+        "categories_template": "categories",
+        
+        "article_template": "article",
+        
+        "feed_atom": "feeds/blog.atom",
+        "feed_rss": "feeds/blog.rss"
+    },
+    "tutorial": {
+        "index_save_as": "tutorials/index.html",
+        "index_template": "index",#"tutorial_index",
+        
+        "tags_save_as": "tutorials/tags.html",
+        "tags_template": "tags",
+        
+        "categories_save_as": None,
+        
+        "article_template": "article",#"tutorial",
+        
+        "feed_atom": None,
+        "feed_rss": None
+    },
+    "download": {
+        "index_save_as": "downloads/index.html",
+        "index_template": "index",#"download_index",
+        
+        "tags_save_as": "tutorials/tags.html",
+        "tags_template": "tags",
+        
+        "categories_save_as": "tutorials/categories.html",
+        "categories_template": "categories",
+        
+        "article_template": "article",#"download",
+        
+        "feed_atom": "feeds/downloads.atom",
+        "feed_rss": "feeds/downloads.rss"
+    }
+}
+
+#   Feeds
+
+# feeds handled per-type, so no global ones
+FEED_RSS = None
+FEED_ATOM = None
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
+#   Misc
+
+TIMEZONE = 'Europe/Paris'
+DEFAULT_LANG = u'en'
+DEFAULT_PAGINATION = 10
 RELATIVE_URLS = True
