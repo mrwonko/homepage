@@ -2,7 +2,7 @@ Free Game: Alien Swarm
 ######################
 :date: 2010-07-19 20:48
 :author: mrwonko
-:category: blog/Videogames
+:category: Videogames
 :type: blog
 :tags: Programming, Videogames, Alien Swarm, free
 :slug: free-game-alien-swarm

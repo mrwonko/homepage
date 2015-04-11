@@ -1,6 +1,6 @@
 title: Installation JK2 - GTK Radiant Map Editor
-category: tutorial/tools
-type: tutorial
+category: tools
+type: tutorials
 date: 2009-08-06
 authors: Darth Arth (Artur L.), Garen (Jan M.), mrwonko
 summary: How to install GTK Radiant 1.4

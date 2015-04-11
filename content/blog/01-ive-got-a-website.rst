@@ -3,7 +3,7 @@ I've got a website!
 :date: 2010-07-15 09:44
 :author: mrwonko
 :tags: Programming, this website, Videogames
-:category: blog/Mixed
+:category: Mixed
 :type: blog
 :slug: ive-got-a-website
 :summary: I've got a website. Yay! So who am I and what is this website all about?
