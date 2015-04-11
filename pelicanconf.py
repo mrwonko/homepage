@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u"Willi Schinmeyer"
-SITENAME = u"mrwonko's blog"
+AUTHOR = "Willi Schinmeyer"
+SITENAME = "mrwonko's blog"
 # hack for this to work both locally and deployed
 SITEURL = "http://mrwonko.de"
 
@@ -152,6 +152,6 @@ AUTHOR_FEED_RSS = None
 #   Misc
 
 TIMEZONE = 'Europe/Paris'
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'en'
 DEFAULT_PAGINATION = 10
 RELATIVE_URLS = True
