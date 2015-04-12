@@ -145,6 +145,8 @@ def taxonomy( article_generator ):
     self.articles = []
     # TODO: support translations?
     self.translations = []
+    
+    self._update_context( [ 'articles_by_type_by_author' ] )
 
 def write_articles_and_feeds( article_generator, writer ):
     # Called after default Articles and Feeds have been written.
