@@ -130,7 +130,7 @@ TYPE_SETTINGS = {
         'categories_template': "categories",
         'categories_paginate': False,
         
-        'article_template': "article",#"download",
+        'article_template': "download",
         
         'feed_atom': "feeds/downloads.atom",
         'feed_rss': "feeds/downloads.rss"
