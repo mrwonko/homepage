@@ -10,7 +10,8 @@ SITEURL = "http://mrwonko.de"
 #   Plugins
 
 PLUGIN_PATHS = [ "plugins" ]
-PLUGINS = [ "article_types" ]
+PLUGINS = [ "metadata_links", "article_types" ]
+LINK_METADATA = [ 'link', 'thumbnail' ]
 
 #   Input Paths
 
