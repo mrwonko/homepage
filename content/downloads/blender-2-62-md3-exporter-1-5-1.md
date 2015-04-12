@@ -7,4 +7,4 @@ category: Software
 thumbnail: {filename}thumbs/md3export.jpg
 
 Now part of the [Jedi Academy Suite]({filename}blendersuite.md)!
-An MD3 Exporter for Blender 2.62, originally by Xembie ([available here](http://xembie.com/2010/md3-exporter/)), with a couple of bugfixes.
+An MD3 Exporter for Blender 2.62, originally by Xembie ([available here](http://sourceforge.net/projects/md3exporter/)), with a couple of bugfixes.
