@@ -26,7 +26,6 @@ def update_content( article, content, siteurl ):
     
     stripped_content = content.strip()
     if not stripped_content.startswith( PREFIX ):
-        print( "ignoring {}".format( content ) )
         return content
     
     # remove {filename}
@@ -76,7 +75,6 @@ def fix_metadata( self ):
             # save initial value
             article._mrw_metadata_attributes[ key ] = getattr( article, key )
             # remove attribute, so class property is used for lookup
-            print( "removing {} from {}".format( key, article.source_path ) )
             delattr( article, key )
 
     #   Add Property to class
