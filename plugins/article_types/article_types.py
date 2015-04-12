@@ -234,6 +234,8 @@ def write_articles_and_feeds( article_generator, writer ):
             if feed:
                 # logger.debug( "* generating {} {} feed {}".format( type, feed_type, feed ) )
                 writer.write_feed( info.articles, context, feed, feed_type = feed_type )
+        
+        print( "Processed {} {} article(s)".format( len( info.articles ), type ) )
     
     #   Reset context (we changed these for each type)
     self._update_context( [ "articles", "dates", "tags", "categories", "authors" ] )
