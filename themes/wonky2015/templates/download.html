@@ -14,7 +14,7 @@
       {% include 'article_infos.html' %}
       <img src="{{ article.thumbnail }}" alt="thumbnail" />
       <p>
-        <a href="{{ article.link }}">Download</a>
+        <a href="{{ SITEURL }}/{{ article.link }}">Download</a>
       </p>
 
       {{ article.content }}
