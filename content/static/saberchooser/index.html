@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Mr. Wonko's Saber Skin Chooser</title>
+<style type="text/css">
+.unshinybg
+{
+	position: relative;
+	width: 500px;
+	height: 150px;
+	overflow: hidden;
+	background-image: url("screenshots/unshiny/default.jpg");
+	z-index: 1;
+}
+.shinyoverlay
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 500px;
+	height: 150px;
+	background-image: url("screenshots/shiny/default.png");
+	z-index: 2;
+}
+</style>
+
+<script type="text/javascript">
+//<!--
+var shinyImages = new Array("default", "black", "white");
+var unshinyImages = new Array("default", "white", "blue", "green", "red", "yellow", "darkred", "orange", "pink", "black");
+
+var curShiny = 0;
+var curUnshiny = 0;
+
+function updateInfo()
+{
+	var text = "Install: Place sith_saber_bonez.pk3";
+	if(curShiny > 0)
+	{
+		text = text + " & sith_saber_bonez_p1_" + shinyImages[curShiny]+".pk3";
+	}
+	if(curUnshiny > 0)
+	{
+		text = text + " & sith_saber_bonez_p2_" + unshinyImages[curUnshiny]+".pk3";
+	}
+	text = text + " in your GameData/Base folder.";
+	document.getElementById("info").firstChild.data = text;
+}
+
+function nextShiny()
+{
+  curShiny = curShiny + 1;
+  if(curShiny >= shinyImages.length)
+  {
+    curShiny = 0;
+  }
+  document.getElementById("shiny").style.backgroundImage = "url(screenshots/shiny/"+shinyImages[curShiny]+".png)";
+  updateInfo();
+}
+
+function nextUnshiny()
+{
+  curUnshiny = curUnshiny + 1;
+  if(curUnshiny >= unshinyImages.length)
+  {
+    curUnshiny = 0;
+  }
+  document.getElementById("unshiny").style.backgroundImage = "url(screenshots/unshiny/"+unshinyImages[curUnshiny]+".jpg)";
+  updateInfo();
+}
+
+function lastShiny()
+{
+  curShiny = curShiny - 1;
+  if(curShiny < 0)
+  {
+    curShiny = shinyImages.length - 1;
+  }
+  document.getElementById("shiny").style.backgroundImage = "url(screenshots/shiny/"+shinyImages[curShiny]+".png)";
+  updateInfo();
+}
+
+function lastUnshiny()
+{
+  curUnshiny = curUnshiny - 1;
+  if(curUnshiny < 0)
+  {
+    curUnshiny = unshinyImages.length - 1;
+  }
+  document.getElementById("unshiny").style.backgroundImage = "url(screenshots/unshiny/"+unshinyImages[curUnshiny]+".jpg)";
+  updateInfo();
+}
+//-->
+</script>
+
+</head>
+<body>
+  <noscript>
+  <b>Please enable Javascript!</b><br/><br/>
+  </noscript>
+  <div style="height: 150px;">
+    <div style="float: left; width: 40px;">
+      <br/><br/>
+      <a href="#" OnClick="lastShiny();"><img src="screenshots/last.gif" alt="last" style="border:0px"/></a><br/><br/>
+      <a href="#" OnClick="lastUnshiny();"><img src="screenshots/last.gif" alt="last" style="border:0px"/></a>
+    </div>
+    <div style="float : left">
+      <div id="unshiny" class="unshinybg">
+	<!--
+	<img src="screenshots/unshiny/default.jpg" width="500" height="150" alt="unshiny saber part"/>
+	-->
+	<div id="shiny" class="shinyoverlay">
+	</div>
+      </div>
+    </div>
+    <div style="float: left; position: relative; left: 8px;">
+      <br/><br/>
+      <a href="#" OnClick="nextShiny();"><img src="screenshots/next.gif" alt="next" style="border:0px;"/></a><br/><br/>
+      <a href="#" OnClick="nextUnshiny();"><img src="screenshots/next.gif" alt="next" style="border:0px"/></a>
+    </div>
+  </div>
+  <p id="info">Install: Place sith_saber_bonez.pk3 in your GameData/Base folder.</p>
+</body>
+</html>
