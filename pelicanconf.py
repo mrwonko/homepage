@@ -99,7 +99,7 @@ TYPE_SETTINGS = {
     "tutorials": {
         'index_title': "mrwonko's tutorials",
         'index_save_as': "tutorials/index.html",
-        'index_template': "index",#"tutorial_index",
+        'index_template': "tutorial_index",
         'index_paginate': False,
         
         'tags_title': "mrwonko's tutorials - tags",
