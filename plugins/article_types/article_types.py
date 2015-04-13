@@ -59,7 +59,7 @@ class ArticleType:
             'tags_template': "tags",
             'tags_paginate': False,
             # for individual tag pages
-            'tag_template': "category",
+            'tag_template': "tag",
             'tag_paginate': False,
             
             # list of categories
