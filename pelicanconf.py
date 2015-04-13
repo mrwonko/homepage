@@ -107,6 +107,8 @@ TYPE_SETTINGS = {
         'tags_template': "tags",
         'tags_paginate': False,
         
+        'tag_template': "tutorial_tag",
+        
         'categories_save_as': None,
         
         'article_template': "article",#"tutorial",
