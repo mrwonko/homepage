@@ -1,5 +1,6 @@
 title: Hard Reset No Intro Mod
 type: downloads
+author: mrwonko
 date: 2011-09-15
 link: files/hardreset_nointro.zip
 tags: Hard Reset

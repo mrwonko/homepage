@@ -1,5 +1,6 @@
 title: Year of the Rooster
 type: downloads
+author: mrwonko
 date: 2011-01-23
 link: files/YearOfTheRooster.zip
 tags: Ludum Dare, Windows

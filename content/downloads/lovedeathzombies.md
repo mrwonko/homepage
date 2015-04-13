@@ -1,5 +1,6 @@
 title: LoveDeathZombies
 type: downloads
+author: mrwonko
 date: 2011-02-14
 link: files/LoveDeathZombies.zip
 tags: Ludum Dare, Multiplayer, Windows

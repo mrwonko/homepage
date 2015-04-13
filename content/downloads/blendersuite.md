@@ -1,5 +1,6 @@
 title: Blender 2.64a Jedi Academy Suite
 type: downloads
+author: mrwonko
 date: 2012-10-28
 link: files/mrw_blender_2.64a_jediacademy_plugins.zip
 tags: Blender, exporter, importer, MD3, ASE, ROFF, GLA, GLM, cross-platform

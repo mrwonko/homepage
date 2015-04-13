@@ -1,5 +1,6 @@
 title: Blender 2.62 ROFF im-/exporter
 type: downloads
+author: mrwonko
 date: 2012-04-29
 link: files/blender_2.6_roff_addons.zip
 tags: ROFF, Blender, importer, exporter, cross-platform

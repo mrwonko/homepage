@@ -1,5 +1,6 @@
 title: Mini Blue Box Boy (LD22)
 type: downloads
+author: mrwonko
 date: 2012-12-01
 link: files/LD22mrw_0241.7z
 tags: Ludum Dare, Platformer, Windows

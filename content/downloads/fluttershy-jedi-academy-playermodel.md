@@ -1,5 +1,6 @@
 title: Fluttershy Jedi Academy playermodel
 type: downloads
+author: mrwonko
 date: 2012-03-29
 link: files/fluttershy.pk3
 tags: Jedi Academy, My Little Pony, Fluttershy, Model

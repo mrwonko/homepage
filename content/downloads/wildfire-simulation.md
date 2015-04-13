@@ -1,5 +1,6 @@
 title: Wildfire Simulation
 type: downloads
+author: mrwonko
 date: 2010-10-02
 link: files/WildFireSim.zip
 tags: Simulation, Wildfire, Windows

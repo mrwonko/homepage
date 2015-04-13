@@ -1,5 +1,6 @@
 title: Blender 2.49 ROFF im-/exporter
 type: downloads
+author: mrwonko
 date: 2010-07-27
 link: files/blender_roff_imexport.zip
 tags: ROFF, Blender, importer, exporter, cross-platform

@@ -1,5 +1,6 @@
 title: Maze Game
 type: downloads
+author: mrwonko
 date: 2011-10-30
 link: files/0hgame-maze.zip
 tags: #0hgame, Maze, Puzzle, Windows

@@ -1,5 +1,6 @@
 title: Blender 2.62 MD3 Exporter 1.5.1
 type: downloads
+author: mrwonko
 date: 2012-04-04
 link: files/blender_io_mesh_md3_151.zip
 tags: Blender, exporter, MD3, cross-platform

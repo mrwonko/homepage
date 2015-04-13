@@ -1,5 +1,6 @@
 title: PySixense 3.3
 type: downloads
+author: mrwonko
 date: 2013-03-09
 link: files/PySixense-Py33.zip
 tags: Razer Hydra, Sixense, Python, Windows

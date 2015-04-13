@@ -1,5 +1,6 @@
 title: Blender 2.49 ASE importer
 type: downloads
+author: mrwonko
 date: 2010-11-09
 link: files/blender_ase_import.zip
 tags: ASE, Blender, importer, cross-platform
