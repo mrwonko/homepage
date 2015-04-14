@@ -19,7 +19,7 @@ Jetzt bauen wir 2 `target_push`. Die geben ihrem Benutzer einen Schupps in Richt
 
 Man muss noch den speed anpassen, ich fand 50 für runter und 70 für hoch ganz in Ordnung, aber wenn euch das zu langsam/schnell ist, könnt ihr ja ein wenig rumprobieren.
 
-Dann werden die Trigger via <kbd>strg + k</kbd> (siehe z.B. [Aufzug mit Schalter Tutorial]({filename}entity-lift.md)) mit den entsprechenden `target_push`s verbunden. Den Runter-Trigger kann man ein wenig kleiner machen, sodass er weiter über dem Boden beginnt, damit man am Ende nicht in den Boden gedrückt wird sondern unbeeinflusst steht.
+Dann werden die Trigger via <kbd>Strg</kbd> + <kbd>K</kbd> (siehe z.B. [Aufzug mit Schalter Tutorial]({filename}entity-lift.md)) mit den entsprechenden `target_push`s verbunden. Den Runter-Trigger kann man ein wenig kleiner machen, sodass er weiter über dem Boden beginnt, damit man am Ende nicht in den Boden gedrückt wird sondern unbeeinflusst steht.
 
 ![image]({filename}entity-leitern-mal-anders-1.jpg)
 

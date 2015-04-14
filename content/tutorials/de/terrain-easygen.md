@@ -198,7 +198,7 @@ Jetzt ist unsere Skybox mit der richtigen Caulk-Textur belegt.
 
 So kann es aber nicht bleiben, da wir dann im Spiel hässliche Grafikfehler hätten.
 
-Markiere jetzt die inneren Seiten der Skybox-Brushes, in dem du sie mit <kbd>Strg + Alt + Shift</kbd> und der linken Maustaste anklickst.
+Markiere jetzt die inneren Seiten der Skybox-Brushes, in dem du sie mit <kbd>Strg</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> und der linken Maustaste anklickst.
 
 ![image]({filename}terrain-easygen/gtk/Image21.gif)
 

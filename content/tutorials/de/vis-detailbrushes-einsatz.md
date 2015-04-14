@@ -24,13 +24,13 @@ Das ist an sich klug, denn so bekommen zwei Räume, die eigentlich in einem Absc
 
 Wenn wir nun aber viele kleine Details haben, z.B. Gitter oder auch einfach Säulen, dann werden sehr viele kleine Bereiche erstellt. Allerdings sind diese z.T. immer sichtbar, z.B. die Löcher in einem Gitter, jedes Loch wird ein einzelner Bereich, aber von beiden Seiten aus sind alle Sichtbar. nur, wenn man in einem der Löcher wäre, könnte man die anderen nicht sehen, aber das wird wohl nicht passieren ;)
 
-Daher sagen wir dem Compiler, dass er bei der Berechnung bitte das Gitter ignorieren soll - wir machen es (z.B. durch Markieren und das Kürzel <kbd>Strg + M</kbd>) zu Detail.
+Daher sagen wir dem Compiler, dass er bei der Berechnung bitte das Gitter ignorieren soll - wir machen es (z.B. durch Markieren und das Kürzel <kbd>Strg</kbd> + <kbd>M</kbd>) zu Detail.
 
 Hier nochmal ein Beispiel:
 
 ![image]({filename}vis-detailbrushes-einsatz-1.jpg)
 
-mit ausgeblendeten Details (<kbd>Strg + D</kbd>):
+mit ausgeblendeten Details (<kbd>Strg</kbd> + <kbd>D</kbd>):
 
 ![image]({filename}vis-detailbrushes-einsatz-2.jpg)
 

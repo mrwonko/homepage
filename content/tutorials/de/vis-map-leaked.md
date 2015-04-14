@@ -22,10 +22,10 @@ Nun wirkt jeder Brush (außer Detailbrushes, Entities und Patches) auf den Block
 
 Anschließend wird berechnet, von welchem Block aus welche anderen sichtbar sind - nur diese werden dann berechnet, wenn der Spieler sich in diesem Block befindet.
 
-Um den Berechnungsaufwand gering zu halten, sollte man daher nur die nötigsten Brushes zur Berechnung mit einbeziehen, und die anderen zu Detailbrushes machen (Rechtsklick -> `make Detail` oder <kbd>Strg + M</kbd>), damit für kleine Details wie z.B. Gitter keine zig Blöcke erstellt werden.
+Um den Berechnungsaufwand gering zu halten, sollte man daher nur die nötigsten Brushes zur Berechnung mit einbeziehen, und die anderen zu Detailbrushes machen (Rechtsklick -> `make Detail` oder <kbd>Strg</kbd> + <kbd>M</kbd>), damit für kleine Details wie z.B. Gitter keine zig Blöcke erstellt werden.
 
 Die Blöcke kann man übrigens sehen, wenn man bei `-vis` mit `-saveprt` kompiliert und die entstehende `*levelname*.prt` mit dem GTK-Radiant-Plugin prtviewer lädt.
 
 Wenn wir nun Löcher in der Map haben und zum "_Beheben_" eine große Box um die Map gebaut haben, kann es sein, dass 2 Räme, die eigentlich an unterschiedlichen Enden der Map sind und sich nie sehen könnten, sich durch diese Löcher doch sehen. Schnell kann es passieren, dass stets die gesamte Map berechnet wird. Mal ganz davon abgesehen, das Spieler womöglich aus der Map hinausfallen könnten.
 
-Daher sollte man Löcher beheben, indem man sie stopft. Wenn man vom Radiant aus kompiliert, zeigt einem eine rote Linie den Weg zum Loch. Dabei sollte man via <kbd>Strg + D</kbd> Detailbrushes, via <kbd>Strg + P</kbd> Patches und via <kbd>Alt + 2</kbd> Entities ausblenden, weil diese ja für `-vis` nicht relevant sind. Hat man das Loch dann gefunden, so muss es nur noch geschlossen werden.
+Daher sollte man Löcher beheben, indem man sie stopft. Wenn man vom Radiant aus kompiliert, zeigt einem eine rote Linie den Weg zum Loch. Dabei sollte man via <kbd>Strg</kbd> + <kbd>D</kbd> Detailbrushes, via <kbd>Strg</kbd> + <kbd>P</kbd> Patches und via <kbd>Alt</kbd> + <kbd>2</kbd> Entities ausblenden, weil diese ja für `-vis` nicht relevant sind. Hat man das Loch dann gefunden, so muss es nur noch geschlossen werden.

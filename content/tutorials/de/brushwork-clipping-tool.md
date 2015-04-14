@@ -19,4 +19,4 @@ Dadurch wird eine Linie / Ebene definiert, entlang der der Brush zerschnitten wi
 
 Wenn nötig kann man die Punkte durch Drag & Drop noch verschieben. Also anklicken, gedrückt halten und schieben.
 
-Mit `Enter` kann man nun den Schnitt ausführen. Mit <kbd>Shift + Enter</kbd> kann man den Brush zerschneiden, ohne den zweiten Teil zu löschen, sodass man hinterher 2 Teile hat. Mit <kbd>Strg + Enter</kbd> kann man wechseln, welcher Teil gelöscht werden soll.
+Mit `Enter` kann man nun den Schnitt ausführen. Mit <kbd>Shift</kbd> + <kbd>Enter</kbd> kann man den Brush zerschneiden, ohne den zweiten Teil zu löschen, sodass man hinterher 2 Teile hat. Mit <kbd>Strg</kbd> + <kbd>Enter</kbd> kann man wechseln, welcher Teil gelöscht werden soll.
