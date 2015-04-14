@@ -5,6 +5,7 @@ author: mrwonko
 category: advanced
 tags: Visibility
 modified: 2015-04-12
+slug: vis-map-leaked
 
 
 *Map Leaked* - die meisten kennen diesen Fehler, denn er kann leicht auftreten: sobald irgendwo in der Map ein Loch ist, kommt er. Als Folge funktioniert das -vis Kompilieren nicht, wodurch die Performance in den Keller geht.
