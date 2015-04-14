@@ -2,14 +2,14 @@
 date: 2008-10-11
 modified: 2015-04-12
 author: kaloeffel
-tags: Aufzug, FIXME
+tags: Aufzug
 type: tutorials
 category: mapping
-slug-aufzug-ohne-lip
+slug: entity-aufzug-ohne-lip
 
 # Voraussetzungen
 
-* http://www.darth-arth.de/tutorials/lift.htm [FIXME]
+* [Aufzug mit Schalter]({filename]entity-lift.md)
 
 # Tutorial
 
