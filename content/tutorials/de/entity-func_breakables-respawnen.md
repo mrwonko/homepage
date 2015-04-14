@@ -3,8 +3,9 @@ date: 2008-11-04
 type: tutorials
 author: mrwonko
 category: mapping
-tags: func_breakable, func_usable
+tags: Entities
 modified: 2015-04-12
+slug: entity-func_breakables-respawnen
 
 Man kann zwar `func_breakable` nicht respawnen, wohl aber `func_usable`. Und zwar so:
 

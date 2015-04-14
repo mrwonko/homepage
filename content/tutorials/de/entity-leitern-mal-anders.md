@@ -3,10 +3,11 @@ date: 2008-04-06
 type: tutorials
 author: mrwonko
 category: mapping
-tags: Leiter, FIXME
+tags: Leiter, Entities
 modified: 2015-04-12
+slug: entity-leitern-mal-anders
 
-Das Problem an [der anderen Leiter]({filename}leitern.md) ist ja, dass man verdammt schnell rauf läuft, da Jedi Knight zur Geschwindigkeitskalkulation lediglich die horizontal, nicht jedoch die vertikal zurückgelegte Strecke nutzt, und man läuft ja sehr wenig vorwärts.
+Das Problem an [der anderen Leiter]({filename}brushwork-leitern.md) ist ja, dass man verdammt schnell rauf läuft, da Jedi Knight zur Geschwindigkeitskalkulation lediglich die horizontal, nicht jedoch die vertikal zurückgelegte Strecke nutzt, und man läuft ja sehr wenig vorwärts.
 
 Bei meiner Leiter klettert man nach oben, wenn man hoch guckt, und runter, wenn man runter guckt.
 
@@ -18,13 +19,13 @@ Jetzt bauen wir 2 `target_push`. Die geben ihrem Benutzer einen Schupps in Richt
 
 Man muss noch den speed anpassen, ich fand 50 für runter und 70 für hoch ganz in Ordnung, aber wenn euch das zu langsam/schnell ist, könnt ihr ja ein wenig rumprobieren.
 
-Dann werden die Trigger via <kbd>strg + k</kbd> (siehe z.B. Lift m. Button Tutorial FIXME) mit den entsprechenden `target_push`s verbunden. Den Runter-Trigger kann man ein wenig kleiner machen, sodass er weiter über dem Boden beginnt, damit man am Ende nicht in den Boden gedrückt wird sondern unbeeinflusst steht.
+Dann werden die Trigger via <kbd>strg + k</kbd> (siehe z.B. [Aufzug mit Schalter Tutorial]({filename}entity-lift.md)) mit den entsprechenden `target_push`s verbunden. Den Runter-Trigger kann man ein wenig kleiner machen, sodass er weiter über dem Boden beginnt, damit man am Ende nicht in den Boden gedrückt wird sondern unbeeinflusst steht.
 
-![image]({filename}leitern-mal-anders-1.jpg)
+![image]({filename}entity-leitern-mal-anders-1.jpg)
 
 Dann werden die beiden `trigger_multiple` vor die Leiter geschoben und fertig.
 
-![image]({filename}leitern-mal-anders-2.jpg)
+![image]({filename}entity-leitern-mal-anders-2.jpg)
 
 [Download der Beispiel Map]({filename}examples/mrw_ladder.zip)
 

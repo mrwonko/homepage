@@ -3,8 +3,9 @@ date: 2004-01-01
 type: tutorials
 author: Killermic (Michael S.)
 category: editor
-tags: FIXME
+tags: Installation
 modified: 2015-04-12
+slug: installation-1.4
 
 # Voraussetzungen
 
@@ -129,4 +130,4 @@ Wenn hier etwas nicht stimmt, solltest du noch mal das Tutorial durchgehen und �
 
 Und jetzt **VIEL** Spaß beim Mappen!
 
-Ich würde empfehlen mit den Tutorial [Mein erster Raum](www.darth-arth.de/tutorials/mapping/firstroom/firstroom.htm) FIXME anzufangen. 
+Ich würde empfehlen mit den Tutorial [Mein erster Raum]({filename}brushwork-first-room.md) anzufangen. 

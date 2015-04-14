@@ -3,12 +3,13 @@ date: 2007-12-13
 type: tutorials
 author: mrwonko
 category: advanced
-tags: Detail, FIXME
+tags: Detail, Vis, FIXME
 modified: 2015-04-12
+slug: vis-detailbrushes-funktionsweise.md
 
 # Voraussetzungen
 
-* [Mein erster Raum](www.darth-arth.de/tutorials/mapping/firstroom/firstroom.htm) FIXME
+* [Mein erster Raum]({filename}brushwork-first-room.md)
 
 # Tutorial
 

@@ -4,6 +4,8 @@ type: tutorials
 author: Darth Arth (Artur L.)
 category: editor
 modified: 2015-04-12
+tags: Installation
+slug: installation-jk2-editing-tools-2
 
 # Voraussetzungen
 

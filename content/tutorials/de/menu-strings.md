@@ -3,8 +3,9 @@ date: 2008-01-14
 type: tutorials
 author: opiwahn
 category: scripts
-tags: Menu, FIXME
+tags: Menu
 modified: 2015-04-12
+slug: menu-strings
 
 # Voraussetzungen
 
@@ -12,8 +13,8 @@ Wenn man Menus wirklich lernen möchte, sollte man sich die Tutorials von Biki a
 
 Ich werde die Befehle, die in Bikis Tutorials schon erklärt werden, hier auf jeden Fall nicht noch einmal erklären ;)! Also schauts euch an:
 
-*   [BiKis erstes Tut](www.darth-arth.de/tutorials/_neu/menucoding1/index.html) FIXME
-*   [Und BiKis zweites Tut](www.darth-arth.de/tutorials/_neu/menucoding2/index.html) FIXME
+*   [BiKis erstes Tut]({filename}menu-basics.md)
+*   [Und BiKis zweites Tut]({filename}menu-advanced.md)
 
 
 

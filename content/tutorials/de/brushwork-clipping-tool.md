@@ -2,13 +2,14 @@
 date: 2008-04-06
 modified: 2015-04-12
 author: mrwonko
-tags: Clipping
+tags: Brushwork
 type: tutorials
 category: advanced
+slug: brushwork-clipping-tool
 
 Mit dem Clipping-Tool kann man Brushes zerschneiden.
 
-![image]({filename}clipping-tool.jpg)
+![image]({filename}brushwork-clipping-tool.jpg)
 
 "1" ist der Knopf, um das Clipping Tool zu aktivieren, alternativ kann man <kbd>X</kbd> drücken.
 

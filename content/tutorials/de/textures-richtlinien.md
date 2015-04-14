@@ -5,6 +5,7 @@ author: mrwonko
 category: texturen
 tags: Textur
 modified: 2015-04-12
+slug: textures-richtlinien
 
 Da das Thema im Forum immer wieder auftaucht, hier einige Dinge, die man beim Erstellen neuer Texturen beachten sollte.
 

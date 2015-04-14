@@ -3,7 +3,7 @@ date: 2008-05-01
 type: tutorials
 author: mrwonko
 category: advanced
-tags: Visibility
+tags: Vis
 modified: 2015-04-12
 slug: vis-map-leaked
 

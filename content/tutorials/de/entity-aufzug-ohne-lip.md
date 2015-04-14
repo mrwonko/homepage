@@ -5,6 +5,7 @@ author: kaloeffel
 tags: Aufzug, FIXME
 type: tutorials
 category: mapping
+slug-aufzug-ohne-lip
 
 # Voraussetzungen
 
@@ -30,9 +31,9 @@ Die Lip 2 brauchen wir, da eine Tür immer `eigene Höhe - 2` hoch fährt. Unser
 
 In Radiant sollte es dann etwa so aussehen:
 
-![image]({filename}aufzug-ohne-lip-2d.png)
+![image]({filename}entity-aufzug-ohne-lip-2d.png)
 
-![image]({filename}aufzug-ohne-lip-3d.png)
+![image]({filename}entity-aufzug-ohne-lip-3d.png)
 
 Dazu noch ein `trigger_multiple` und schon sollte es wie ein ganz normaler Aufzug funktionieren.
 
