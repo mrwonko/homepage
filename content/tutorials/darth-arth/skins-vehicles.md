@@ -1,6 +1,6 @@
 ﻿title: Vehikel mit eigenem Skin
 date: 2008-07-01
-type: tutorials
+type: tutorials/darth-arth
 author: mrwonko
 category: models
 modified: 2015-04-12

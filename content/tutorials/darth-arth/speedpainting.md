@@ -1,6 +1,6 @@
 ﻿title: Speedpainting
 date: 2009-03-02
-type: tutorials
+type: tutorials/darth-arth
 author: Dark jedi-trainer
 category: gfx
 modified: 2015-04-12

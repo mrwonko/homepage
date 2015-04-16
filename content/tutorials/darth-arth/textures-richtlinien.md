@@ -1,6 +1,6 @@
 ﻿title: Richtlinien für Texturen
 date: 2008-01-25
-type: tutorials
+type: tutorials/darth-arth
 author: mrwonko
 category: texturen
 tags: Textur

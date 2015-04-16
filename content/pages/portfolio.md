@@ -1,6 +1,7 @@
 title: portfolio
 save_as: portfolio.html
 url: portfolio.html
+page-order: 20
 
 Here are some of the things I've made.
 

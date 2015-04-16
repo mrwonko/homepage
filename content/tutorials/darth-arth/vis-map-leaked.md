@@ -1,6 +1,6 @@
 ﻿title: Visibility / Map Leaked
 date: 2008-05-01
-type: tutorials
+type: tutorials/darth-arth
 author: mrwonko
 category: advanced
 tags: Vis

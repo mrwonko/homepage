@@ -3,7 +3,7 @@ author: Darth Norman (Norman P.)
 date: 2004-01-01
 modified: 2015-04-14
 category: editor
-type: tutorials
+type: tutorials/darth-arth
 tags: Radiant, auto-generated
 slug: radiant-preferences-hotkeys
 

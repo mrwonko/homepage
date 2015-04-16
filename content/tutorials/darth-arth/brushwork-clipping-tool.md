@@ -3,7 +3,7 @@ date: 2008-04-06
 modified: 2015-04-12
 author: mrwonko
 tags: Brushwork
-type: tutorials
+type: tutorials/darth-arth
 category: advanced
 slug: brushwork-clipping-tool
 

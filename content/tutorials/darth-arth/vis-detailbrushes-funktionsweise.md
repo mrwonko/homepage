@@ -1,6 +1,6 @@
 ﻿title: Detailbrushes - Funktionsweise
 date: 2007-12-13
-type: tutorials
+type: tutorials/darth-arth
 author: mrwonko
 category: advanced
 tags: Detail, Vis, FIXME

@@ -3,7 +3,7 @@ author: Darth Arth (Artur L.)
 date: 2003-01-01
 modified: 2015-04-14
 category: editor
-type: tutorials
+type: tutorials/darth-arth
 tags: Installation, auto-generated
 slug: installation-1.2
 

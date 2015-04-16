@@ -1,6 +1,6 @@
 ﻿title: Leitern
 date: 2003-01-01
-type: tutorials
+type: tutorials/darth-arth
 author: FallenGuard (Christophe B.)
 category: mapping
 tags: Leiter, Brushwork

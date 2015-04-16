@@ -1,6 +1,6 @@
 ﻿title: Detailbrushes - Einsatz
 date: 2008-04-05
-type: tutorials
+type: tutorials/darth-arth
 author: mrwonko
 category: advanced
 tags: Detail, Vis

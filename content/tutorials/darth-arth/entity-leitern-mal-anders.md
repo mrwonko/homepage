@@ -1,6 +1,6 @@
 ﻿title: Leitern - mal anders
 date: 2008-04-06
-type: tutorials
+type: tutorials/darth-arth
 author: mrwonko
 category: mapping
 tags: Leiter, Entities

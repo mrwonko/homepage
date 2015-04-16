@@ -1,6 +1,6 @@
 ﻿title: Shild Floor Unit nicht nur bei CTF
 date: 2008-10-17
-type: tutorials
+type: tutorials/darth-arth
 author: kaloeffel
 category: advanced
 tags: Entities, FIXME

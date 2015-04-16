@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = "Willi Schinmeyer"
-SITENAME = "mrwonko's blog"
+SITENAME = "mrwonko"
 # hack for this to work both locally and deployed
 SITEURL = "http://mrwonko.de"
 
@@ -56,10 +56,10 @@ THEME = "themes/wonky2015"
 MENUITEMS = [
     ("home", "index.html"),
     ("blog", "blog/index.html"),
-    ("downloads", "downloads/index.html"),
-    ("tutorials", "tutorials/index.html")
+    ("downloads", "downloads/index.html")
 ]
 DISPLAY_CATEGORIES_ON_MENU = False
+PAGE_ORDER_BY = 'page-order'
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/')
@@ -96,14 +96,14 @@ TYPE_SETTINGS = {
         'feed_atom': "feeds/blog.atom",
         'feed_rss': "feeds/blog.rss"
     },
-    "tutorials": {
-        'index_title': "mrwonko's tutorials",
+    "tutorials/darth-arth": {
+        'index_title': "mrwonko - Darth-Arth tutorial archive",
         'index_save_as': "tutorials/index.html",
         'index_template': "tutorial_index",
         'index_paginate': False,
         
         'tags_title': "mrwonko's tutorials - tags",
-        'tags_save_as': "tutorials/tags.html",
+        'tags_save_as': "tutorials/darth-arth/tags.html",
         'tags_template': "tags",
         'tags_paginate': False,
         
@@ -117,17 +117,17 @@ TYPE_SETTINGS = {
         'feed_rss': None
     },
     "downloads": {
-        'index_title': "mrwonko's downloads",
+        'index_title': "mrwonko - downloads",
         'index_save_as': "downloads/index.html",
         'index_template': "index",#"download_index",
         'index_paginate': False,
         
-        'tags_title': "mrwonko's downloads - tags",
+        'tags_title': "mrwonko - downloads/tags",
         'tags_save_as': "downloads/tags.html",
         'tags_template': "tags",
         'tags_paginate': False,
         
-        'categories_title': "mrwonko's downloads - categories",
+        'categories_title': "mrwonko - download categories",
         'categories_save_as': "downloads/categories.html",
         'categories_template': "categories",
         'categories_paginate': False,

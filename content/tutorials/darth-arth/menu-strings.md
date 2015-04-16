@@ -1,6 +1,6 @@
 ﻿title: Menu Coding - Einbinden und Erklärung von Strings
 date: 2008-01-14
-type: tutorials
+type: tutorials/darth-arth
 author: opiwahn
 category: scripts
 tags: Menu

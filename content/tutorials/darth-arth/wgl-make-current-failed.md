@@ -1,6 +1,6 @@
 ﻿title: "wglMakeCurrent failed" Fehler beheben
 date: 2008-04-07
-type: tutorials
+type: tutorials/darth-arth
 author: Darth Arth (Artur L.)
 category: editor
 tags: Fehler

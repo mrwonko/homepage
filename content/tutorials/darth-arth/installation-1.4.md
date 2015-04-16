@@ -1,6 +1,6 @@
 ﻿title: Installation - GTK Radiant 1.4 (Raven)
 date: 2004-01-01
-type: tutorials
+type: tutorials/darth-arth
 author: Killermic (Michael S.)
 category: editor
 tags: Installation

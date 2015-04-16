@@ -3,7 +3,7 @@ date: 2008-10-11
 modified: 2015-04-12
 author: kaloeffel
 tags: Aufzug
-type: tutorials
+type: tutorials/darth-arth
 category: mapping
 slug: entity-aufzug-ohne-lip
 

@@ -1,6 +1,6 @@
 ﻿title: func_breakables respawnen
 date: 2008-11-04
-type: tutorials
+type: tutorials/darth-arth
 author: mrwonko
 category: mapping
 tags: Entities

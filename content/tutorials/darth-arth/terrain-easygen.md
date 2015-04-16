@@ -1,6 +1,6 @@
 ﻿title: Terrain Erstellung mit EasyGen
 date: 2003-01-01
-type: tutorials
+type: tutorials/darth-arth
 author: Darth Arth (Artur L.)
 category: advanced
 tags: Terrain
