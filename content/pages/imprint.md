@@ -1,6 +1,9 @@
-﻿title: Imprint/Impressum
+﻿title: Imprint (Impressum)
 status: hidden
 save_as: imprint.html
+parent_title: home
+parent_url: index.html
+tab: home
 
 ```
 Willi Schinmeyer

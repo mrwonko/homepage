@@ -78,7 +78,7 @@ TYPE_SETTINGS = {
     "blog": {
         'index_title': "mrwonko's blog",
         'index_save_as': "blog/index.html",
-        'index_template': "index",#"blog_index",
+        'index_template': "blog_index",
         'index_paginate': True,
         
         'tags_title': "mrwonko's blog - tags",
@@ -91,7 +91,7 @@ TYPE_SETTINGS = {
         'categories_template': "categories",
         'categories_paginate': True,
         
-        'article_template': "article",
+        'article_template': "blog_article",
         
         'feed_atom': "feeds/blog.atom",
         'feed_rss': "feeds/blog.rss"
@@ -111,7 +111,7 @@ TYPE_SETTINGS = {
         
         'categories_save_as': None,
         
-        'article_template': "article",#"tutorial",
+        'article_template': "tutorial",
         
         'feed_atom': None,
         'feed_rss': None
@@ -119,7 +119,7 @@ TYPE_SETTINGS = {
     "downloads": {
         'index_title': "mrwonko - downloads",
         'index_save_as': "downloads/index.html",
-        'index_template': "index",#"download_index",
+        'index_template': "download_index",
         'index_paginate': False,
         
         'tags_title': "mrwonko - downloads/tags",

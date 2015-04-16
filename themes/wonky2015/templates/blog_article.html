@@ -1,0 +1,30 @@
+﻿{% set current_tab = "blog" %}
+{% set breadcrumbs = [ ( type, type_settings.index_save_as ), ( article.title, article.url ) ] %}
+
+{% extends "base.html" %}
+{% block title %}{{ article.title|striptags }}{% endblock %}
+{% block content %}
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+      {% include 'twitter.html' %}
+    </header>
+
+    <div class="entry-content">
+      {% include 'article_infos.html' %}
+      {{ article.content }}
+    </div><!-- /.entry-content -->
+    {% if SITEURL and article.status != "draft" %}
+    <hr/>
+    <div class="comments">
+      <h2>Comments !</h2>
+      {% include 'comments.html' %}
+    </div>
+    {% endif %}
+
+  </article>
+</section>
+{% endblock %}

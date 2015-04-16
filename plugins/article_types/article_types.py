@@ -155,10 +155,8 @@ def write_articles_and_feeds( article_generator, writer ):
     
     write_file = partial( writer.write_file, relative_urls = self.settings[ 'RELATIVE_URLS' ] )
     
-    context_had_type = 'type' in self.context
-    previous_context_type = None
-    if context_had_type:
-        previous_context_type = self.context[ 'type' ]
+    new_keys = ( 'type', 'type_settings' )
+    previous_values = { key: self.context[ key ] for key in new_keys if key in self.context }
     
     for type, info in self.types.items():
         logger.debug( "Processing {} articles".format( type ) )
@@ -175,6 +173,7 @@ def write_articles_and_feeds( article_generator, writer ):
         context[ 'authors' ].sort()
         context[ 'tags' ] = list( info.articles_by_tag.items() )
         context[ 'type' ] = type
+        context[ 'type_settings' ] = info.settings
         
         paginated = { 'articles': info.articles, 'dates': info.dates }
 
@@ -241,10 +240,11 @@ def write_articles_and_feeds( article_generator, writer ):
     
     #   Reset context (we changed these for each type)
     self._update_context( [ "articles", "dates", "tags", "categories", "authors" ] )
-    if context_had_type:
-        self.context[ 'type' ] = previous_context_type
-    else:
-        del self.context[ 'type' ]
+    for key in new_keys:
+        if key in previous_values:
+            self.context[ key ] = previous_values[ key ]
+        else:
+            del self.context[ key ]
     
     #   Authors
     author_template = self.get_template( 'author' )

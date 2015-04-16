@@ -1,6 +1,11 @@
-﻿{% extends "base.html" %}
-{% block content_title %}{% endblock %}
+﻿{% set current_tab = "tutorials" %}
+{% set breadcrumbs = [ ( "tutorials", "tutorials/index.html" ), ( "Darth-Arth.de Archiv", type_settings.index_save_as ) ] %}
+
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} - {{ type }}{% endblock %}
 {% block content %}
+    
+    <h1>Darth-Arth.de Archiv</h1>
     
     <p>TODO description goes here</p>
     

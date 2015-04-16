@@ -1,8 +1,8 @@
-{% set current_tab = "home" %}
+{% set current_tab = type %}
 {# no breadcrumbs for top-level page #}
 
 {% extends "base.html" %}
-{% block content_title %}{% endblock %}
+{% block title %}{{ SITENAME }} - downloads{% endblock %}
 {% block content %}
 {% if articles %}
     {% for article in ( articles_page.object_list if articles_paginator else articles ) %}
