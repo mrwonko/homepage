@@ -388,7 +388,6 @@
     "button-groups.less",
     "input-groups.less",
     "navs.less",
-    "navbar.less",
     "breadcrumbs.less",
     "pager.less",
     "thumbnails.less",
@@ -398,5 +397,5 @@
     "responsive-embed.less"
   ],
   "js": [],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=8d754b8a4bd954bb16fb"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=76bd29d179bbdaaf9a0e"
 }
