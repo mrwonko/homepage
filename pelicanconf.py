@@ -98,7 +98,7 @@ TYPE_SETTINGS = {
     },
     "tutorials/darth-arth": {
         'index_title': "mrwonko - Darth-Arth tutorial archive",
-        'index_save_as': "tutorials/index.html",
+        'index_save_as': "tutorials/darth-arth/index.html",
         'index_template': "tutorial_index",
         'index_paginate': False,
         
