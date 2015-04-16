@@ -2,7 +2,17 @@
 {% block content_title %}{% endblock %}
 {% block content %}
     
-    <p>Für sämtliche Tutorials, die nicht von mrwonko sind, gilt: Alle Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: © 2000 - 2003 (Artur L.) Nur zur privaten Nutzung. Kopieren nicht gestattet. Hier gespiegelt mit freundlicher Erlaubnis von Darth-Arth a.k.a. MetalBeast (<a href="http://www.3d-get.de/metalbeast">Website</a>).</p>
+    <p>TODO description goes here</p>
+    
+    {# There are 63 tutorials in total, I think #}
+    <p>
+        Die Portierung der Tutorials ins neue Design ist noch in Arbeit, Fortschritt:
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{ len( articles ) }}" aria-valuemin="0" aria-valuemax="63" style="width: {{ round( len( articles ) / 63 * 100 ) }}%">
+                {{ len( articles ) }} / 63
+            </div>
+        </div>
+    </p>
     
     {% for category, articles in categories %}
         <h1>{{ category.name }}</h1>
