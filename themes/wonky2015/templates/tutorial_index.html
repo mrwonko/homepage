@@ -13,8 +13,8 @@
     <p>
         Die Portierung der Tutorials ins neue Design ist noch in Arbeit, Fortschritt:
         <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="{{ len( articles ) }}" aria-valuemin="0" aria-valuemax="63" style="width: {{ round( len( articles ) / 63 * 100 ) }}%">
-                {{ len( articles ) }} / 63
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{ articles | count }}" aria-valuemin="0" aria-valuemax="63" style="width: {{ ( articles | count ) / 63 * 100 }}%">
+                {{ articles | count }} / 63
             </div>
         </div>
     </p>
