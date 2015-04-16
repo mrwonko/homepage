@@ -391,10 +391,12 @@
     "navbar.less",
     "breadcrumbs.less",
     "pager.less",
+    "thumbnails.less",
     "alerts.less",
+    "progress-bars.less",
     "panels.less",
     "responsive-embed.less"
   ],
   "js": [],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=ed1afd71fe569256dcf8"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=8d754b8a4bd954bb16fb"
 }
