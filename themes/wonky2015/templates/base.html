@@ -47,17 +47,16 @@
                 
                 {# Breadcrumbs #}
                 {% if breadcrumbs is defined %}
-                    <p>
-                        <ol class="breadcrumb">
-                            {% for title, link in breadcrumbs %}
-                                {% if loop.last %}
-                                    <li class="active">{{ title|striptags }}</li>
-                                {% else %}
-                                    <li><a href="{{ SITEURL }}/{{ link }}">{{ title|striptags }}</a></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ol>
-                    </p>
+                    <br/>
+                    <ol class="breadcrumb">
+                        {% for title, link in breadcrumbs %}
+                            {% if loop.last %}
+                                <li class="active">{{ title|striptags }}</li>
+                            {% else %}
+                                <li><a href="{{ SITEURL }}/{{ link }}">{{ title|striptags }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ol>
                 {% endif %}
             </header>
             
@@ -70,12 +69,21 @@
             
             {# Footer #}
             <footer>
-                <p>
-                    <small>
-                        Powered by <a href="http://getpelican.com/">Pelican</a> and <a href="http://nginx.org/">nginx</a>.
-                        <a href="{{ SITEURL }}/imprint.html">Imprint / Impressum</a>
-                    </small>
-                </p>
+                <small>
+                    {% block footer %}
+                        <p>
+                            {# '-' strips whitespace #}
+                            {% if LINKS %}
+                                Powered by {% for name, link in LINKS -%}
+                                    {%- if not loop.first and not loop.last %}, {% endif -%}
+                                    {%- if loop.last and not loop.first %} and {% endif -%}
+                                    <a href="{{ link }}">{{ name }}</a>
+                                {%- endfor -%}.
+                            {% endif %}
+                            <a href="{{ SITEURL }}/imprint.html">Imprint / Impressum</a>
+                        </p>
+                    {% endblock %}
+                </small>
             </footer>
         </div>
     </body>

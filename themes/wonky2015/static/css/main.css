@@ -23,6 +23,28 @@
     {
         white-space: nowrap;
     }
-    {
-    
+}
+
+/* fixed-width thumbnails */
+.download-thumbnail
+{
+    width: 200px;
+    margin: 5px;
+}
+
+/* Font Awesome adblock social removal workaround */
+.mrw-fa-youtube:before {
+  content: "\f167";
+}
+.mrw-fa-twitter:before {
+  content: "\f099";
+}
+.mrw-fa-github:before {
+  content: "\f09b";
+}
+.mrw-fa-linkedin:before {
+  content: "\f0e1";
+}
+.mrw-fa-steam:before {
+  content: "\f1b6";
 }

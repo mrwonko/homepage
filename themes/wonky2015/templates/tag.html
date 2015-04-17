@@ -1,2 +1,19 @@
-{% extends "index.html" %}
-{% block title %}{{ SITENAME }} - {{ tag }}{% endblock %}
+{% extends "flat_list.html" %}
+
+{% set current_tab = type_settings.tab %}
+{% set breadcrumbs = type_settings.parent_breadcrumbs + [ ( type_settings.title, type_settings.index_save_as ), ( "tags", type_settings.tags_save_as ), ( tag.name, output_file ) ] %}
+
+{% set flat_list_iterable = articles %}
+
+{% block title %}
+    {{ SITENAME }} - {{ type_settings.title | striptags }} - tag {{ tag.name | striptags }}
+{% endblock %}
+
+{% block introduction %}
+    <h1>{{ tag.name }}</h1>
+{% endblock introduction %}
+
+{% block list_item -%}
+    {% set article = flat_list_current -%}
+    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+{%- endblock list_item %}

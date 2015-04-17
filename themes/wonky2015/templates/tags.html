@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}{{ SITENAME }} - Tags{% endblock %}
+{% if current_tab is not defined %}
+    {% set current_tab = type %}
+{% endif %}
+{% if breadcrumbs is not defined %}
+    {% set breadcrumbs = [ ( type, type_settings.index_save_as ), ( "tags", output_file ) ] %}
+{% endif %}
+
+{% block title %}tags{% endblock %}
 
 {% block content %}
 
 <section id="content" class="body">
-    <h1>Tags for {{ SITENAME }}</h1>
+    <h1>tags for {{ type_settings.title }}</h1>
     <ul>
     {% for tag, articles in tags|sort %}
         <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>

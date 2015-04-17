@@ -1,45 +1,43 @@
-{% set current_tab = "downloads" %}
-{% set breadcrumbs = [ ( type, type_settings.index_save_as ), ( article.title, article.url ) ] %}
-
 {% extends "base.html" %}
-{% block title %}{{ article.title|striptags }}{% endblock %}
+
+{% set current_tab = "downloads" %}
+{% set breadcrumbs = type_settings.parent_breadcrumbs + [ ( type_settings.title, type_settings.index_save_as ), ( article.title, output_file ) ] %}
+
+{% block title %}
+    {{ article.title|striptags }}
+{% endblock %}
+
 {% block content %}
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
-      {% include 'twitter.html' %}
-    </header>
-
-    <div class="entry-content">
-      {% include 'article_infos.html' %}
-      <img src="{{ article.thumbnail }}" alt="thumbnail" />
-      <p>
-        <a href="{{ SITEURL }}/{{ article.link }}">Download</a>
-      </p>
-
-      {{ article.content }}
-    </div><!-- /.entry-content -->
-    {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
-    <div class="comments">
-      <h2>Comments !</h2>
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-        var disqus_shortname = '{{ DISQUS_SITENAME }}';
-        var disqus_identifier = '{{ article.url }}';
-        var disqus_url = '{{ SITEURL }}/{{ article.url }}';
-        (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the comments.</noscript>
+    <h1>{{ article.title }}</h1>
+    
+    <p>
+        <a class="btn btn-default" href="{{ SITEURL }}/{{ article.link }}"><i class="fa fa-download"></i> Download</a></strong>
+    </p>
+    
+    {# clearfix makes pulls not escape the parent element #}
+    <div class="clearfix">
+        <div class="pull-left">
+            <span class="thumbnail download-thumbnail"><img src="{{ article.thumbnail }}" alt="image"/></span>
+        </div>
+        {# this will wrap if there is too little space #}
+        <p class="pull-left">
+            Author{% if article.authors | count > 1 %}s{% endif %}: {% include "authorlist.html" %}
+            <br/>
+            Published: <abbr title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
+            {% if article.modified %}
+                <br/>
+                Modified: <abbr title="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</abbr>
+            {% endif %}
+            <br/>
+            Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category.name }}</a>
+            {% if article.tags %}
+                <br/>
+                Tags: {% include "taglist.html" %}
+            {% endif %}
+            <br/>
+            Downloads: [download counter will go here FIXME]
+        </p>
     </div>
-    {% endif %}
 
-  </article>
-</section>
+    {{ article.content }}
 {% endblock %}

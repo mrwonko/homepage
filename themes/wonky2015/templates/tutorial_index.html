@@ -1,27 +1,30 @@
-﻿{% set current_tab = "tutorials" %}
-{% set breadcrumbs = [ ( "tutorials", "tutorials/index.html" ), ( "Darth-Arth.de Archiv", type_settings.index_save_as ) ] %}
+﻿{% extends "base.html" %}
 
-{% extends "base.html" %}
-{% block title %}{{ SITENAME }} - {{ type }}{% endblock %}
+{% set current_tab = type_settings.tab %}
+{% set breadcrumbs = type_settings.parent_breadcrumbs + [ ( type_settings.title, type_settings.index_save_as ) ] %}
+
+{# not 100% sure about this, but seems about right #}
+{% set tutorial_count = 63 %}
+
+{% block title %}
+    {{ type_settings.title }}
+{% endblock %}
+
 {% block content %}
+    <h1>{{ type_settings.title }}</h1>
     
-    <h1>Darth-Arth.de Archiv</h1>
+    <p>Diese deutschen Tutorials rund um Jedi Knight II: Jedi Outcast und Jedi Knight: Jedi Academy Modding waren ursprünglich auf Darth-Arth.de gehostet. Dort sind sie mittlerweile nicht mehr verfügbar, daher werden sie hier mit freundlicher Genehmigung gespiegelt.</p>
     
-    <p>TODO description goes here</p>
+    <p>Die Portierung der Tutorials ins neue Design ist noch in Arbeit, Fortschritt:</p>
     
-    {# There are 63 tutorials in total, I think #}
-    <p>
-        Die Portierung der Tutorials ins neue Design ist noch in Arbeit, Fortschritt:
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="{{ articles | count }}" aria-valuemin="0" aria-valuemax="63" style="width: {{ ( articles | count ) / 63 * 100 }}%">
-                {{ articles | count }} / 63
-            </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{ articles | count }}" aria-valuemin="0" aria-valuemax="{{ tutorial_count }}" style="width: {{ ( articles | count ) / tutorial_count * 100 }}%">
+            {{ articles | count }} / {{ tutorial_count }}
         </div>
-    </p>
+    </div>
     
     {% for category, articles in categories %}
-        <h1>{{ category.name }}</h1>
-
+        <h2>{{ category.name }}</h2>
         <ul>
             {% for article in articles %}
                 <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>

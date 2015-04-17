@@ -1,0 +1,17 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+    {% block introduction %}
+        <h1>flat_list introduction goes here</h1>
+    {% endblock introduction %}
+    <ul>
+        {% for flat_list_current in flat_list_iterable %}
+            <li>
+                {# 'scoped' lets the block access the loop variables #}
+                {% block list_item scoped %}
+                    flat_list item "{{ flat_list_current }}" goes here.
+                {% endblock list_item %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

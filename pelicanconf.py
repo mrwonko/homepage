@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
 AUTHOR = "Willi Schinmeyer"
-SITENAME = "mrwonko"
+SITENAME = "mrwonko.de"
 # hack for this to work both locally and deployed
 SITEURL = "http://mrwonko.de"
 
@@ -61,73 +61,85 @@ MENUITEMS = [
 DISPLAY_CATEGORIES_ON_MENU = False
 PAGE_ORDER_BY = 'page-order'
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/')
-    ,('Python.org', 'http://python.org/')
-    ,('Jinja2', 'http://jinja.pocoo.org/')
-    #,('You can modify those links in your config file', '#')
-    )
+# Credits
+LINKS = [
+    ( "Pelican", "http://getpelican.com" ),
+    ( "Bootstrap", "http://getbootstrap.com" ),
+    ( "Font Awesome", "http://fontawesome.io" ),
+    ( "Git", "http://git-scm.com" ),
+    ( "nginx", "http://nginx.org" )
+]
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = [
+    ( "Twitter", "mrw-fa-twitter", "@mrwonko", "https://twitter.com/mrwonko" ),
+    ( "Github", "mrw-fa-github", "mrwonko", "http://github.com/mrwonko/" ),
+    ( "Youtube", "mrw-fa-youtube", "mrwonko", "https://www.youtube.com/user/mrwonko/" ),
+    ( "Steam", "mrw-fa-steam", "mrwonko", "http://steamcommunity.com/id/mrwonko/" ),
+    ( "LinkedIn", "mrw-fa-linkedin", "Willi Schinmeyer", "https://www.linkedin.com/profile/view?id=67044848" ),
+]
 
 #   Article Types
 
 TYPE_SETTINGS = {
     "blog": {
-        'index_title': "mrwonko's blog",
+        'title': "blog",
+        'tab': "blog",
+        'parent_breadcrumbs': [],
+        'comments': True,
+        
         'index_save_as': "blog/index.html",
         'index_template': "blog_index",
         'index_paginate': True,
         
-        'tags_title': "mrwonko's blog - tags",
         'tags_save_as': "blog/tags.html",
         'tags_template': "tags",
         'tags_paginate': True,
         
-        'categories_title': "mrwonko's blog - categories",
         'categories_save_as': "blog/categories.html",
         'categories_template': "categories",
         'categories_paginate': True,
         
-        'article_template': "blog_article",
+        'article_template': "article",
         
         'feed_atom': "feeds/blog.atom",
         'feed_rss': "feeds/blog.rss"
     },
     "tutorials/darth-arth": {
-        'index_title': "mrwonko - Darth-Arth tutorial archive",
+        'title': "Darth-Arth.de Archiv",
+        'tab': "tutorials",
+        'parent_breadcrumbs': [ ( "tutorials", "tutorials/index.html" ) ],
+        'hide_date': True,
+        
         'index_save_as': "tutorials/darth-arth/index.html",
         'index_template': "tutorial_index",
         'index_paginate': False,
         
-        'tags_title': "mrwonko's tutorials - tags",
         'tags_save_as': "tutorials/darth-arth/tags.html",
         'tags_template': "tags",
         'tags_paginate': False,
         
-        'tag_template': "tutorial_tag",
-        
         'categories_save_as': None,
         
-        'article_template': "tutorial",
+        'article_template': "article",
+        'article_footer': u'Alle Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: © 2000 - 2003 (Artur L.) Nur zur privaten Nutzung. Kopieren nicht gestattet. Hier gespiegelt mit freundlicher Erlaubnis von Darth-Arth a.k.a. MetalBeast (<a href="http://www.3d-get.de/metalbeast">Website</a>).',
         
         'feed_atom': None,
         'feed_rss': None
     },
     "downloads": {
-        'index_title': "mrwonko - downloads",
+        'title': "downloads",
+        'tab': "downloads",
+        'parent_breadcrumbs': [],
+        
         'index_save_as': "downloads/index.html",
         'index_template': "download_index",
         'index_paginate': False,
         
-        'tags_title': "mrwonko - downloads/tags",
         'tags_save_as': "downloads/tags.html",
         'tags_template': "tags",
         'tags_paginate': False,
         
-        'categories_title': "mrwonko - download categories",
         'categories_save_as': "downloads/categories.html",
         'categories_template': "categories",
         'categories_paginate': False,

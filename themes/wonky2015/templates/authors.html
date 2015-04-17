@@ -1,16 +1,22 @@
-{% extends "base.html" %}
+{% extends "flat_list.html" %}
 
-{% block title %}{{ SITENAME }} - Authors{% endblock %}
+{% set current_tab = "home" %}
+{% set breadcrumbs = [ ( "home", "index.html" ), ( "authors", output_file ) ] %}
 
-{% block content %}
+{% set flat_list_iterable = articles_by_type_by_author | sort %}
 
-<section id="content" class="body">
-    <h1>Authors on {{ SITENAME }}</h1>
-    <ul>
-    {% for author, articles_by_type in articles_by_type_by_author|sort %}
-        <li><a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a> ({% for type, articles in articles_by_type.items()|sort %}{% if not loop.first %}, {% endif %}{{ type }}: {{ articles|count }}{% endfor %})</li>
-    {% endfor %}
-    </ul>
-</section>
+{% block title %}
+    {{ SITENAME }} - authors
+{% endblock title %}
 
-{% endblock %}
+{% block introduction %}
+    <h1>authors</h1>
+{% endblock introduction %}
+
+{% block list_item %}
+    {% set author, articles_by_type = flat_list_current %}
+    <a href="{{ SITEURL }}/{{ author.url }}">{{ author.name }}</a>
+    ({% for type, articles in articles_by_type.items() | sort %}
+        {{ types[ type ].settings.title }}: {{ articles | count }}{% if not loop.last %}, {% endif %}
+    {% endfor %})
+{% endblock list_item %}

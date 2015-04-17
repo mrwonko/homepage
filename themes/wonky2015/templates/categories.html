@@ -1,0 +1,19 @@
+﻿{% extends "flat_list.html" %}
+
+{% set current_tab = type_settings.tab %}
+{% set breadcrumbs = type_settings.parent_breadcrumbs + [ ( type_settings.title, type_settings.index_save_as ), ( "categories", output_file ) ] %}
+
+{% set flat_list_iterable = categories %}
+
+{% block title %}
+    {{ SITENAME }} - {{ type_settings.title | striptags }} - categories
+{% endblock %}
+
+{% block introduction %}
+    <h1>categories</h1>
+{% endblock introduction %}
+
+{% block list_item -%}
+    {% set category, articles = flat_list_current %}
+    <a href="{{ SITEURL }}/{{ category.url }}">{{ category.name }}</a>
+{%- endblock list_item %}

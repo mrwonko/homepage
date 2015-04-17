@@ -1,2 +1,22 @@
-{% extends "index.html" %}
-{% block title %}{{ SITENAME }} - {{ author }}{% endblock %}
+{% extends "base.html" %}
+
+{% set current_tab = "home" %}
+{% set breadcrumbs = [ ( "home", "index.html" ), ( "authors", "authors.html" ), ( author.name, output_file ) ] %}
+
+{% block title %}
+    {{ SITENAME }} - content by {{ author.name | striptags }}
+{% endblock %}
+
+{% block content %}
+    <h1>content by {{ author.name }}</h1>
+    
+    {% for type, articles in articles_by_type %}
+        <h2>{{ types[ type ].settings.title }}</h2>
+        {# TODO: might want to give user option to hide this? It can get very long #}
+        <ul>
+            {% for article in articles %}
+                <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock content %}
