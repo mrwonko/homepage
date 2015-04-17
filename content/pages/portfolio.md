@@ -25,7 +25,9 @@ I'm not a very good artist, but I still do some modelling, and Blender is my too
 
 # Mini Blue Box Boy
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/OHFIjCSOEQ0?rel=0" frameborder="0" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-4by3">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OHFIjCSOEQ0?rel=0" allowfullscreen></iframe>
+</div>
 
 I have to admit I tend not to finish big games, so having constraints helps. Like Ludum Dare, where you have to create a game within 48 hours. This is one such game, a platformer I wrote in C++ using the framework SFML and the physics library Box2D for Ludum Dare 22.
 
