@@ -4,6 +4,7 @@ Hindsight
 :author: mrwonko
 :category: Programming
 :tags: Programming, 3D-GET, Jedi Academy: Renaissance, Blender
+:type: blog
 :slug: hindsight
 :summary: I think back to what I achieved last year and make some plans for the next one. You don't have to wait for New Year's Day to do that, right?
 

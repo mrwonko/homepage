@@ -4,6 +4,7 @@ Steam Give & Get Sale
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Sam & Max, Prototype, Half-Life 2
+:type: blog
 :slug: steam-give-get-sale
 :summary: Steam Sale time! Yay!
 

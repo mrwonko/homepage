@@ -4,6 +4,7 @@ I've got a website!
 :author: mrwonko
 :tags: Programming, this website, Videogames
 :category: Mixed
+:type: blog
 :slug: ive-got-a-website
 :summary: I've got a website. Yay! So who am I and what is this website all about?
 

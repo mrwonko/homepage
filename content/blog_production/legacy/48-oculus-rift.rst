@@ -4,6 +4,7 @@ Oculus Rift
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Oculus Rift
+:type: blog
 :slug: oculus-rift
 :summary: So I got an Oculus Rift! Exciting, right? Right?
 

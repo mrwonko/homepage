@@ -4,6 +4,7 @@ Non-Update
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, PS3, Dark Souls 2
+:type: blog
 :slug: non-update
 :summary: Not much happened
 

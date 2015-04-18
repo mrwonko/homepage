@@ -4,6 +4,7 @@ University Summer Semester 2013
 :author: mrwonko
 :category: University
 :tags: University, Computer Graphics, Discipline
+:type: blog
 :slug: university-summer-semester-2013
 
 So what happened in Uni last Semester, the 4th one? Nothing

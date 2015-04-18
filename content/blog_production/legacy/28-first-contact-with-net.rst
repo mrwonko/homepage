@@ -4,6 +4,7 @@ first contact with .NET
 :author: mrwonko
 :category: Programming
 :tags: Programming, Videogames, Razer Hydra, Gamescom
+:type: blog
 :slug: first-contact-with-net
 :summary: The Razer Hydra is supposed to get DirectInput support. Some time this winter. I think I'm faster.
 

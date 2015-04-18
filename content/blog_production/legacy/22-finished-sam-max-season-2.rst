@@ -4,6 +4,7 @@ finished: Sam & Max: Season 2
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Sam & Max
+:type: blog
 :slug: finished-sam-max-season-2
 
 I just finished Sam & Max: Season 2. And I had a lot of fun! Probably

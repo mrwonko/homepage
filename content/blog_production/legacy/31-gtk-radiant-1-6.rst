@@ -5,6 +5,7 @@ GTK Radiant 1.6
 :author: mrwonko
 :category: Programming
 :tags: Jedi Academy, Programming, GTK Radiant
+:type: blog
 :slug: gtk-radiant-1-6
 :summary: There's a version 1.6 of the GTK Radiant
 

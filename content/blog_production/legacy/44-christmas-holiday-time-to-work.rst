@@ -4,6 +4,7 @@ Christmas holiday - time to work?
 :author: mrwonko
 :category: Mixed
 :tags: Blender, Job, Programming, University, Videogames
+:type: blog
 :slug: christmas-holiday-time-to-work
 :summary: Holidays! How should I spend them? How do I spend them? Do I regret anything? Answers be here!
 

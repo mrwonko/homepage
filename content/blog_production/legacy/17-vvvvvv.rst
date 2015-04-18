@@ -4,6 +4,7 @@ VVVVVV
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, VVVVVV
+:type: blog
 :slug: vvvvvv
 :summary: I tell you why I liked VVVVVV.
 

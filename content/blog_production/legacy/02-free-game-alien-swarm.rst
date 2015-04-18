@@ -4,6 +4,7 @@ Free Game: Alien Swarm
 :author: mrwonko
 :category: Videogames
 :tags: Programming, Videogames, Alien Swarm, free
+:type: blog
 :slug: free-game-alien-swarm
 :summary: Alien Swarm just got released. For free. Hooray? Yep.
 

@@ -3,6 +3,7 @@ It's been a loooong time... again.
 :date: 2013-09-01 10:46
 :author: mrwonko
 :category: Other
+:type: blog
 :slug: its-been-a-loooong-time-again
 :summary: Just a bit of me regretting not updating the blog more often. More posts to come.
 

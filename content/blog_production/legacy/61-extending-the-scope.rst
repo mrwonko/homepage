@@ -4,6 +4,7 @@ Extending the Scope
 :author: mrwonko
 :category: Other
 :tags: this website
+:type: blog
 :slug: extending-the-scope
 
 I just realized I should more often do things beyond just keeping a

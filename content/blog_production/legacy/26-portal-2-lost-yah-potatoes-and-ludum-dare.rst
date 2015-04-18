@@ -4,6 +4,7 @@ Portal 2, lost Yah, potatoes and Ludum Dare
 :author: mrwonko
 :category: Mixed
 :tags: Programming, School, Videogames, Portal 2, Ludum Dare, Hat
+:type: blog
 :slug: portal-2-lost-yah-potatoes-and-ludum-dare
 
 I seem to not have written a blog post for a while. That's probably

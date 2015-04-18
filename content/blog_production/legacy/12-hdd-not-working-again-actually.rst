@@ -4,6 +4,7 @@ HDD not working again, actually.
 :author: mrwonko
 :category: Mixed
 :tags: HDD, Videogames
+:type: blog
 :slug: hdd-not-working-again-actually
 :summary: My HDD seems to be broken, probably permanently.
 

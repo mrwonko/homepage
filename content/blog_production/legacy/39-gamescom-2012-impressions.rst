@@ -4,6 +4,7 @@ Gamescom 2012 Impressions
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Gamescom, Vlambeer, Hotline Miami, Far Cry 3, Hitman: Absolution, Dishonored, Street Fighter X Tekken, DMC
+:type: blog
 :slug: gamescom-2012-impressions
 :summary: What I did at Gamescom
 

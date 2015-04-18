@@ -4,6 +4,7 @@ More programming?
 :author: mrwonko
 :category: Programming
 :tags: Programming, Ludum Dare
+:type: blog
 :slug: more-programming
 
 Hi,

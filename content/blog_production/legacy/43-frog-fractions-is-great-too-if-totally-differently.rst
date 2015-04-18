@@ -4,6 +4,7 @@ Frog Fractions is great, too, if totally differently.
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Frog Fractions
+:type: blog
 :slug: frog-fractions-is-great-too-if-totally-differently
 
 Go play `Frog Fractions <http://twinbeardstudios.com/frog-fractions>`__.

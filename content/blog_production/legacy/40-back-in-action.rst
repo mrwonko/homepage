@@ -4,6 +4,7 @@ Back in action!
 :author: mrwonko
 :category: Mixed
 :tags: 3D-GET, Jedi Academy: Renaissance
+:type: blog
 :slug: back-in-action
 :summary: Modding ftw!
 

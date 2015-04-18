@@ -4,6 +4,7 @@ Review: SFML Game Development
 :author: mrwonko
 :category: Programming
 :tags: Programming, SFML, Review
+:type: blog
 :slug: review-sfml-game-development
 :summary: I review SFML Game Development. Spoiler: I like it.
 

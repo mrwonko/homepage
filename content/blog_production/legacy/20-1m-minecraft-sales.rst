@@ -4,6 +4,7 @@
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Minecraft
+:type: blog
 :slug: 1m-minecraft-sales
 :summary: One million minecraft sales!
 

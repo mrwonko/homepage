@@ -4,6 +4,7 @@ Making money
 :author: mrwonko
 :category: Mixed
 :tags: Programming, University
+:type: blog
 :slug: making-money
 :summary: Some thoughts on making an indie game and making money with it.
 

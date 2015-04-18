@@ -4,6 +4,7 @@ Sometimes I can't think of a good title.
 :author: mrwonko
 :category: Mixed
 :tags: Blender, Jedi Academy, Jedi Academy: Renaissance, Modelling, Programming, University, Videogames, Trine 2, MD3View
+:type: blog
 :slug: sometimes-i-cant-think-of-a-good-title
 
 What am I up to recently? Quite a lot, apparently, judging from `my

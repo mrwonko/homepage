@@ -4,6 +4,7 @@ Not happening any time soon? Humbug!
 :author: mrwonko
 :category: Mixed
 :tags: Programming, Videogames, PS3, University
+:type: blog
 :slug: not-happening-any-time-soon-humbug
 :summary: I bought a PS3 after all, and I'm coding.
 

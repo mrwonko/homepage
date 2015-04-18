@@ -4,6 +4,7 @@ Wait, e-books?
 :author: mrwonko
 :category: Mixed
 :tags: Computer, Modelling, Programming, Videogames, Vlambeer, Travel
+:type: blog
 :slug: wait-e-books
 :summary: How I went to Utrecht and thoughts on my new Tablet.
 

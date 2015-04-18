@@ -4,6 +4,7 @@ On "GamerGate" and hateful people
 :author: mrwonko
 :category: Other
 :tags: Internet
+:type: blog
 :slug: on-gamergate-and-hateful-people
 :summary: I'm Anti-GamerGate. Also, can we all please be nice to each other?
 

@@ -4,6 +4,7 @@ Completed: Darksiders
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Darksiders
+:type: blog
 :slug: completed-darksiders
 :summary: Darksiders Review: Good fun!
 

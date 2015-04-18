@@ -4,6 +4,7 @@ Programming again :-)
 :author: mrwonko
 :category: Programming
 :tags: Programming
+:type: blog
 :slug: programming-again
 :summary: I'm programming again. Finally.
 

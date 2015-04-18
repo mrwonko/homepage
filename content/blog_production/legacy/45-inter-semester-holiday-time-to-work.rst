@@ -4,6 +4,7 @@ inter-semester holiday - time to work?
 :author: mrwonko
 :category: Mixed
 :tags: Blender, Job, Programming, University, Videogames, DMC, Dota 2, The Cave
+:type: blog
 :slug: inter-semester-holiday-time-to-work
 
 So my last lecture was last Thursday. That means I get over 2 months of

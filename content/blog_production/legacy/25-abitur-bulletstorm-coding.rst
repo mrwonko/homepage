@@ -4,6 +4,7 @@ Abitur, Bulletstorm, coding
 :author: mrwonko
 :category: Mixed
 :tags: Programming, School, Videogames, Bulletstorm, Call of Juarez: Bound in Blood
+:type: blog
 :slug: abitur-bulletstorm-coding
 :summary: I talk about my final exams in school, games and coding.
 

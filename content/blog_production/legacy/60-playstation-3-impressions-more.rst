@@ -4,6 +4,7 @@ PlayStation 3 impressions & more
 :author: mrwonko
 :category: Mixed
 :tags: Programming, University, Videogames, Metal Gear Solid
+:type: blog
 :slug: playstation-3-impressions-more
 
 Another month has passed, which means I skipped one blog post. Oh.

@@ -4,6 +4,7 @@ A MAZE 2014
 :author: mrwonko
 :category: Mixed
 :tags: Job, Spirits of the Sith, Videogames, Major Bueno, Vlambeer
+:type: blog
 :slug: a-maze-2014
 
 Hey everybody!

@@ -4,6 +4,7 @@
 :author: mrwonko
 :category: Programming
 :tags: Programming, Vlambeer, 7DFPS
+:type: blog
 :slug: 7-day-fps
 :summary: My experience with 7dfps
 

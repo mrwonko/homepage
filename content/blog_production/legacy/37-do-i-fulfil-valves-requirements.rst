@@ -4,6 +4,7 @@ Do I fulfill Valve's requirements?
 :author: mrwonko
 :category: Other
 :tags: Valve
+:type: blog
 :slug: do-i-fulfil-valves-requirements
 :summary: Do I?
 

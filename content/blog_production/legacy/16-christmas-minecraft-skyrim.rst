@@ -4,6 +4,7 @@ Christmas! Minecraft! Skyrim!
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Minecraft, Skyrim, VVVVVV, Oddworld, Skyrim, Mass Effect
+:type: blog
 :slug: christmas-minecraft-skyrim
 :summary: I'm talking about christmas, minecraft and other games.
 

@@ -4,6 +4,7 @@ A MAZEing!
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, A MAZE, Berlin, Luftrausers, Samurai Gunn, Sos, Stille Tänzer, Vlambeer
+:type: blog
 :slug: a-mazeing
 :summary: My experiences at A MAZE. Indie Connect in Berlin in April.
 

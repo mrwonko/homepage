@@ -4,6 +4,7 @@ HDD Working again?
 :author: mrwonko
 :category: Other
 :tags: HDD
+:type: blog
 :slug: hdd-working-again
 :summary: Good news?
 

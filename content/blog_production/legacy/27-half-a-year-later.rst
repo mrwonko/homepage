@@ -4,6 +4,7 @@
 :author: mrwonko
 :category: Mixed
 :tags: Jedi Academy, School, My Little Pony, University, 3D-GET
+:type: blog
 :slug: half-a-year-later
 :summary: A lot has happened in the last 3 months.
 

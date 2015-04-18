@@ -4,6 +4,7 @@ Plans
 :author: mrwonko
 :category: Programming
 :tags: Programming, Ludum Dare
+:type: blog
 :slug: plans
 
 Just recently I saw `a talk about not telling your

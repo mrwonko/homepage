@@ -4,6 +4,7 @@ What have I done?
 :author: mrwonko
 :category: Other
 :tags: portfolio, résumé, Valve
+:type: blog
 :slug: what-have-i-done
 :summary: I reflect on my life so far in a slightly résumé/portfolio-esque way.
 

@@ -4,6 +4,7 @@ screwing up Windows
 :author: mrwonko
 :category: Mixed
 :tags: Computer, Programming, University, GTA
+:type: blog
 :slug: screwing-up-windows
 :summary: I fiddle with Windows' registry. I break stuff. I install Ubuntu and try to fix stuff. I should code Tetris.
 

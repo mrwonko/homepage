@@ -4,6 +4,7 @@ Humble Indie Bundle 2
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Humble Bundle
+:type: blog
 :slug: humble-indie-bundle-2
 :summary: Once again: 5 Indie games for a price you can choose! DRM free and cross-platform! Yay!
 

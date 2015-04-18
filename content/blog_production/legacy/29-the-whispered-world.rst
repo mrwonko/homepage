@@ -4,6 +4,7 @@ The Whispered World
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, The Whispered World
+:type: blog
 :slug: the-whispered-world
 :summary: I've finished the whispered world - and I'm moved. Read my thoughts on its ending - if you don't mind spoilers. Otherwise, there's still a little review for you at the beginning.
 

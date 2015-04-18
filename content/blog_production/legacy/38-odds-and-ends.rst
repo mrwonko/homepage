@@ -4,6 +4,7 @@ Odds and ends
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Planetary Annihilation, Total Annihilation, Anachronox, Humble Bundle, Borderlands 2, Darksiders 2
+:type: blog
 :slug: odds-and-ends
 
 A couple of things from recent months that don't warrant a whole post

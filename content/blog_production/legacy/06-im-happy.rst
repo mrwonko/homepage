@@ -4,6 +4,7 @@ I'm happy :-)
 :author: mrwonko
 :category: Mixed
 :tags: Blender, Modelling, School, Videogames, Dead Rising 2, Midnight Riders, Zombie Driver
+:type: blog
 :slug: im-happy
 :summary: Isn't it great to accomplish stuff? I accomplished stuff, was lucky and had fun!
 

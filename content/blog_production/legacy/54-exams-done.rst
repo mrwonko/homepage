@@ -4,6 +4,7 @@ Exams: Done.
 :author: mrwonko
 :category: Mixed
 :tags: Projects, University, Videogames
+:type: blog
 :slug: exams-done
 :summary: Exams are over. Now what's next?
 

@@ -4,6 +4,7 @@ Recently playing: Darksiders, Dead Rising 2, Borderlands, Metro 2033
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Darksiders, Dead Rising 2, Borderlands, Metro 2033
+:type: blog
 :slug: recently-playing-darksiders-dead-rising-2-borderlands-metro-2033
 :summary: Let me tell you about Dead Rising 2, Darksiders, Borderlands and Metro 2033.
 

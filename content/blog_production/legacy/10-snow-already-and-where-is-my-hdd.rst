@@ -4,6 +4,7 @@ Snow? Already? And where is my HDD?
 :author: mrwonko
 :category: Other
 :tags: HDD
+:type: blog
 :slug: snow-already-and-where-is-my-hdd
 :summary: Snow and data loss - are they connected?
 

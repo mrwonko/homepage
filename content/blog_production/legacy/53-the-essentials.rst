@@ -4,6 +4,7 @@ The Essentials
 :author: mrwonko
 :category: Mixed
 :tags: Programming, University, Discipline
+:type: blog
 :slug: the-essentials
 :summary: Why you can expect to see more of me in the future.
 

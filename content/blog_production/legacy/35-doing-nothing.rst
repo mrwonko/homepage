@@ -4,6 +4,7 @@ Doing nothing
 :author: mrwonko
 :category: Mixed
 :tags: Blender, Jedi Academy, Programming, University, Videogames, Mass Effect
+:type: blog
 :slug: doing-nothing
 :summary: I talk about the last few months during which I played a lot of games, including Mass Effect 3, and didn't do much else... until I did.
 

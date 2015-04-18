@@ -4,6 +4,7 @@ TIGCompo: Versus
 :author: mrwonko
 :category: Programming
 :tags: Jedi Academy: Renaissance, Programming
+:type: blog
 :slug: tigcompo-versus
 
 Recently I wrote about my plans. They included participating in Mini

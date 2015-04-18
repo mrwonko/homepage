@@ -4,6 +4,7 @@ coding again
 :author: mrwonko
 :category: Mixed
 :tags: Jedi Academy: Renaissance, Programming, Videogames
+:type: blog
 :slug: coding-again
 :summary: I'm working on a new big coding project!
 

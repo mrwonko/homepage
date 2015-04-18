@@ -4,6 +4,7 @@ Holiday's over, GamesCom too
 :author: mrwonko
 :tags: School, Videogames, Holiday
 :category: Mixed
+:type: blog
 :slug: holidays-over-gamescom
 :summary: I'm talking about my holidays in England and my visit to the GamesCom and the games I saw there.
 

@@ -4,6 +4,7 @@ Jedi Academy source code!
 :author: mrwonko
 :category: Programming
 :tags: Jedi Academy, Programming, Videogames, Jedi Outcast
+:type: blog
 :slug: jedi-academy-source-code
 :summary: Jedi Academy and Jedi Outcast Source Code WOOT! :D
 

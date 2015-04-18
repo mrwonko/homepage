@@ -4,6 +4,7 @@ It's jammed!
 :author: mrwonko
 :category: Mixed
 :tags: Programming, University
+:type: blog
 :slug: its-jammed
 :summary: I went to a game jam and wrote a (de)serialization library.
 

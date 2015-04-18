@@ -4,6 +4,7 @@ OpenJK for the win!
 :author: mrwonko
 :category: Mixed
 :tags: Jedi Academy, OpenJK, Programming, University
+:type: blog
 :slug: openjk-for-the-win
 
 Small update on my exams: The remaining results are in and they did

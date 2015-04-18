@@ -4,6 +4,7 @@ cleaning up
 :author: mrwonko
 :category: Other
 :tags: HDD, WinDirStat
+:type: blog
 :slug: cleaning-up
 :summary: Moving folders or: How I freed 16 GB on C:
 

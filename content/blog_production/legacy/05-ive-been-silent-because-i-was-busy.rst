@@ -4,6 +4,7 @@ I've been silent - because I was busy.
 :author: mrwonko
 :category: Mixed
 :tags: Blender, Modelling, Programming, School, Valve
+:type: blog
 :slug: ive-been-silent-because-i-was-busy
 :summary: I've been busy: Creating a music video, programming a wildfire simulation and planning a class trip...
 

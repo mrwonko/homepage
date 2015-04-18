@@ -4,6 +4,7 @@ Dishonored is actually great!
 :author: mrwonko
 :category: Videogames
 :tags: Videogames, Dishonored
+:type: blog
 :slug: dishonored-is-actually-great
 :summary: Some corrections on my initial Gamescom impression of Dishonored...
 
