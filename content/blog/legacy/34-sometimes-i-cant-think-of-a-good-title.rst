@@ -20,7 +20,7 @@ Then there's some Jedi Academy stuff. The community may be dying, but
 it's not quite dead yet. Almost, but not quite. Won't keep me from
 working on it though. In particular I've been trying to model a sword in
 Blender 2.6a. I had to fix some bugs in an `md3
-exporter <{filename}/pages/download.html#id=33>`__ and
+exporter <{filename}/downloads/blender-2-58a-md3-exporter-1-5.md>`__ and
 `md3view <https://github.com/mrwonko/MD3View>`__ (`whose sources I
 luckily acquired last
 year <http://sandervanrossen.blogspot.com/2010/05/md3view.html>`__)
@@ -37,13 +37,13 @@ used to import a model, UV map it again (so there's no mirroring) and
 create a hipoly version for normal/height baking. Because I'd like to
 eventually add normal- and parallax occlusion mapping to my engine.
 
-Once he heard `I had compiled GTK Radiant
-1.6 <http://www.mrwonko.de/downloads/view.php?id=28>`__, Darth-Arth
+Once he heard I had compiled GTK Radiant
+1.6, Darth-Arth
 requested I did some changes. We're still working on Spirits of the
 Sith, a Jedi Academy SP mod, after all. Actually, I'm hardly
 contributing at the moment, so anything coding related is the least I
-can do. (My ghoul 2 importer already was of use, too.) So `I made some
-changes <{filename}/pages/download.html#id=30>`__, and while I
+can do. (My ghoul 2 importer already was of use, too.) So I made some
+changes, and while I
 have no problem with making my sources available anyway I did not even
 have a choice here once I published binaries, it's GPL after all. `So my
 changes are available on

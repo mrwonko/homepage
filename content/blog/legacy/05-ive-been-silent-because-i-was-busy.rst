@@ -76,7 +76,7 @@ the job done and there are no bugs I know of. (Of course that doesn't
 necessarily mean there are no bugs.)
 
 The Fire Simulation `can be downloaded
-here <{filename}/pages/download.html#id=23>`__.
+here <{filename}/downloads/wildfire-simulation.md>`__.
 
 Next week I'll be in Amsterdam with my class. We're going to visit
 museums and stuff, but I'm looking forward most to my planned visit to

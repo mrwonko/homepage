@@ -9,7 +9,7 @@ TIGCompo: Versus
 
 Recently I wrote about my plans. They included participating in Mini
 Ludum Dare 23 - `which I successfully
-did <{filename}/pages/download.html#id=25>`__ - and in the Versus
+did <{filename}/downloads/year-of-the-rooster.md>`__ - and in the Versus
 competition at `TIGSource.com <http://www.tigsource.com/>`__. Which I'm
 also doing - see `my forum thread
 there <http://forums.tigsource.com/index.php?topic=17218>`__ for updates
