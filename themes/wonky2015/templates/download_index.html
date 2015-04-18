@@ -9,5 +9,23 @@
 
 {% block content %}
     <h1>downloads</h1>
-    <p>TODO Downloads go here</p>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>downloads</th>
+                <th>date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></td>
+                    <td>-1 {# FIXME #}</td>
+                    <td>{{ article.locale_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}
