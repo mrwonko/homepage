@@ -48,7 +48,7 @@ time stamps on the source files are to be trusted. Still, I started
 coding and by February 2006 I had done some of NeHe's tutorials on
 OpenGL and coded my first game, Suckman. It was supposed to be like
 pacman, but I knew it'd suck, hence the name. I actually still have
-`binaries <http://www.mrwonko.de/files/Suckman.7z>`__. Hell, after some
+`binaries <{filename}Suckman.7z>`__. Hell, after some
 more digging I found out I even still have the source code!
 
 |Screenshot of my first game "Suckman"|
