@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+
 {% if page.status == "hidden" %}
     {% set current_tab = page.tab %}
     {% set breadcrumbs = [ ( page.parent_title, page.parent_url ), ( page.title, output_file ) ] %}
@@ -6,7 +8,6 @@
     {# no breadcrumbs for top-level page #}
 {% endif %}
 
-{% extends "base.html" %}
 {% block title %}{{ SITENAME }} - {{ page.title }}{% endblock %}
 {% block content %}
 <section id="content" class="body">
