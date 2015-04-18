@@ -1,0 +1,11 @@
+﻿{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    {% if type_settings.feed_atom %}
+        <link href="{{ SITEURL }}/{{ type_settings.feed_atom }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} {{ type_settings.title }} Atom Feed" />
+    {% endif %}
+    {% if type_settings.feed_rss %}
+        <link href="{{ SITEURL }}/{{ type_settings.feed_rss }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} {{ type_settings.title }} RSS Feed" />
+    {% endif %}
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_typed.html" %}
 
 {% set current_tab = "blog" %}
 {# no breadcrumbs for top-level page #}
@@ -6,6 +6,30 @@
 {% block title %}{{ SITENAME }} - blog{% endblock %}
 {% block content %}
     <h1>blog</h1>
+    
+    {# TODO: link feeds somewhere? #}
 
-    <p>TODO</p>
+    {% for article in articles_page.object_list %}
+        <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+        
+        {{ article.summary }}
+        
+        <br/>
+    {% endfor %}
+    
+    {# pagination (TODO: get rid of that at some point?) #}
+    <nav>
+        <ul class="pager">
+            <li class="previous{% if not articles_page.has_previous() %} disabled{% endif %}">
+                <a href="{% if articles_page.has_previous() %}{{ SITEURL }}/{{ articles_previous_page.url }}{% else %}#{% endif %}">
+                    <i class="fa fa-angle-left"></i> newer
+                </a>
+            </li>
+            <li class="next{% if not articles_page.has_next() %} disabled{% endif %}">
+                <a href="{% if articles_page.has_next() %}{{ SITEURL }}/{{ articles_next_page.url }}{% else %}#{% endif %}">
+                    older <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
 {% endblock content %}
