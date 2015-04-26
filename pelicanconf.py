@@ -66,7 +66,11 @@ LINKS = [
     ( "Pelican", "http://getpelican.com" ),
     ( "Bootstrap", "http://getbootstrap.com" ),
     ( "Font Awesome", "http://fontawesome.io" ),
+    ( "AngularJS", "https://angularjs.org/" ),
     ( "Git", "http://git-scm.com" ),
+    ( "Flask", "http://flask.pocoo.org" ),
+    ( "PostgreSQL", "http://www.postgresql.org" ),
+    ( "Akismet", "https://akismet.com" ),
     ( "nginx", "http://nginx.org" )
 ]
 
