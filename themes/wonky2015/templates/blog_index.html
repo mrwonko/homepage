@@ -13,6 +13,8 @@
         <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
         
         {{ article.summary }}
+        
+        <p><a href="{{ SITEURL }}/{{ article.url }}">Read more</a></p>
     {% endfor %}
     
     {# pagination (TODO: get rid of that at some point?) #}
