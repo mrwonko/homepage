@@ -40,7 +40,7 @@ def check( data ):
     if body not in ( "true", "false" ):
         raise LogicError( "Invalid Akismet Request: {}".format( response.headers.get( "X-akismet-debug-help", "<no details available>" ) ) )
     if body == "true":
-        if reponse.headers.get( "X-akismet-pro-tip", "keep" ) == "discard":
+        if response.headers.get( "X-akismet-pro-tip", "keep" ) == "discard":
             return "DISCARD"
         return "SPAM"
     return "HAM"
