@@ -14,6 +14,7 @@ _engine = sqlalchemy.create_engine( _address )
 _metadata = sqlalchemy.MetaData( _engine )
 _comments = sqlalchemy.Table( "comments", _metadata, autoload = True )
 _downloads = sqlalchemy.Table( "downloads", _metadata, autoload = True )
+_download_names = sqlalchemy.Table( "download_names", _metadata, autoload = True )
 
 # prebuild the statement; doing it this way prevents SQL injections.
 _select_comments = sqlalchemy.\
@@ -30,6 +31,15 @@ _select_comments = sqlalchemy.\
     ).\
     order_by( _comments.c.time.asc() )
 
+_select_download_count = sqlalchemy.\
+    select( [ sqlalchemy.func.count( _downloads.c.id ) ] ).\
+    select_from( _downloads.join( _download_names ) ).\
+    where( _download_names.c.name == sqlalchemy.bindparam( "name" ) )
+
+_select_download_id = sqlalchemy.\
+    select( [ _download_names.c.id ] ).\
+    where( _download_names.c.name == sqlalchemy.bindparam( "name" ) )
+
 _delete_comment = sqlalchemy.\
     delete( _comments ).\
     where( _comments.c.id == sqlalchemy.bindparam( "deleted_id" ) )
@@ -39,6 +49,7 @@ _approve_comment = sqlalchemy.\
     where( _comments.c.id == sqlalchemy.bindparam( "approved_id" ) ).\
     values( approved = True, spam = False )
 
+# autocomitting connection (effectively no transaction)
 _connection = _engine.connect()
 
 #   Public functions
@@ -67,10 +78,27 @@ def new_comment( post, data, spam = False ):
     
     defaulted_data = {
         "url": None,
-        "referrer": ""
+        "referrer": None
     }
     defaulted_data.update( data )
     _connection.execute( _comments.insert().values( post = post, spam = spam, approved = False, **defaulted_data ) )
+
+def get_download_count( name ):
+    result = _connection.execute( _select_download_count, name = name )
+    return result.first()[ 0 ]
+
+def new_download( name ):
+    # we need atomicity for "insert if not exist" so we use a transaction
+    with _engine.begin() as connection:
+        result = connection.execute( _select_download_id, name = name )
+        if result.rowcount == 0:
+            result.close()
+            result = connection.execute( _download_names.insert().values( name = name ) )
+            id, = result.inserted_primary_key
+            result.close()
+        else:
+            id, = result.first()
+    _connection.execute( _downloads.insert().values( download = id ) )
 
 #   Admin functions
 
