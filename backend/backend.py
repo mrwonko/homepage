@@ -1,6 +1,11 @@
-import flask
-import logging
-import werkzeug.exceptions
+from __future__ import print_function
+import twisted.python.log as log
+from twisted.web.resource import Resource, NoResource
+from twisted.web.server import Site, NOT_DONE_YET
+from twisted.web.static import Data
+from twisted.internet import reactor
+import sys
+import json
 
 import just_mail
 import just_akismet
@@ -8,10 +13,11 @@ import just_database
 import just_sanitize
 import local_config
 
-logging.basicConfig()
+# make twisted log to stdout/stderr
+def _stdout_stderr_observer( log ):
+    print( *log[ "message" ], file = sys.stderr if log[ "isError" ] else sys.stdout )
 
-_logger = logging.Logger( __name__ )
-_logger.addHandler( logging.StreamHandler() ) # output to stdout/stderr
+log.startLoggingWithObserver( _stdout_stderr_observer, setStdout = False )
 
 _akismet_defaults_comment = {
     "blog": "http://mrwonko.de/blog",
@@ -55,6 +61,77 @@ def _comment_to_akismet( comment ):
         akismet[ dst ] = comment[ src ]
     return akismet
 
+
+def _print_error( failure, request ):
+    request.processingFailed( failure )
+
+def _print_json( obj, request ):
+    request.setHeader( "content-type", "application/json" )
+    text = json.dumps( obj, check_circular = False )
+    request.setHeader( "content-length", str( len( text ) ) )
+    if request.method != "HEAD":
+        request.write( text )
+    request.finish()
+
+class BlogComments( Resource ):
+    isLeaf = True
+    def __init__( self, year, slug ):
+        Resource.__init__( self )
+        self.post = "/".join( [ year, slug ] )
+    
+    def render_GET( self, request ):
+        just_database.get_comments( self.post )\
+        .addCallback( lambda comments: { "comments": comments } )\
+        .addCallback( _print_json, request )\
+        .addErrback( _print_error, request )
+        return NOT_DONE_YET
+    
+    def render_POST( self, request ):
+        # TODO
+        return '"posting comments for {}/{} goes here"'.format( self.year, self.slug )
+
+class BlogYear( Resource ):
+    def __init__( self, year ):
+        Resource.__init__( self )
+        self.year = year
+    def getChild( self, slug, request ):
+        index = Resource()
+        index.putChild( "comments", BlogComments( self.year, slug ) )
+        return index
+
+class Blog( Resource ):
+    def getChild( self, year, request ):
+        try:
+            int( year )
+        except ValueError:
+            return NoResource()
+        return BlogYear( year )
+
+class OnDownload( Resource ):
+    isLeave = True
+    # TODO
+
+def _create_tree( tree ):
+    root = Resource()
+    for path, value in tree.items():
+        root.putChild( path, _create_tree( value ) if type( value ) == dict else value )
+    return root
+
+_root = _create_tree( {
+    'rest': {
+        'blog': Blog()
+    },
+    'internal': {
+        'rest': {
+            'downloads': OnDownload()
+        }
+    }
+} )
+
+reactor.listenTCP( local_config.PORT, Site( _root ), interface = local_config.HOST )
+reactor.run()
+
+"""
 _app = flask.Flask( __name__ )
 
 _app.secret_key = local_config.SESSION_KEY
@@ -133,3 +210,4 @@ def admin_comment( id ):
 
 if __name__ == "__main__":
     _app.run( host = local_config.HOST, port = local_config.PORT )
+"""

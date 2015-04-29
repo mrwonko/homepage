@@ -1,5 +1,8 @@
 import sqlalchemy
 import itertools
+import alchimia
+import twisted.internet.defer as defer
+from twisted.internet import reactor
 
 import local_config
 
@@ -10,11 +13,12 @@ _address = "postgresql+psycopg2://{name}:{password}@{host}/{database}".format(
     database = local_config.DB_DB
 )
 
-_engine = sqlalchemy.create_engine( _address )
-_metadata = sqlalchemy.MetaData( _engine )
-_comments = sqlalchemy.Table( "comments", _metadata, autoload = True )
-_downloads = sqlalchemy.Table( "downloads", _metadata, autoload = True )
-_download_names = sqlalchemy.Table( "download_names", _metadata, autoload = True )
+_engine = sqlalchemy.create_engine( _address, reactor = reactor, strategy = alchimia.TWISTED_STRATEGY )
+_sync_engine = sqlalchemy.create_engine( _address )
+_sync_metadata = sqlalchemy.MetaData( _sync_engine )
+_comments = sqlalchemy.Table( "comments", _sync_metadata, autoload = True )
+_downloads = sqlalchemy.Table( "downloads", _sync_metadata, autoload = True )
+_download_names = sqlalchemy.Table( "download_names", _sync_metadata, autoload = True )
 
 # prebuild the statement; doing it this way prevents SQL injections.
 _select_comments = sqlalchemy.\
@@ -49,11 +53,9 @@ _approve_comment = sqlalchemy.\
     where( _comments.c.id == sqlalchemy.bindparam( "approved_id" ) ).\
     values( approved = True, spam = False )
 
-# autocomitting connection (effectively no transaction)
-_connection = _engine.connect()
-
 #   Public functions
 
+@defer.inlineCallbacks
 def get_comments( post ):
     """
     Returns list of comments for a specific post.
@@ -62,14 +64,16 @@ def get_comments( post ):
     """
     
     res = []
-    for time, author, content, url in _connection.execute( _select_comments, post = post ):
+    response = yield _engine.execute( _select_comments, post = post )
+    cols = yield response.fetchall()
+    for time, author, content, url in cols:
         res.append( {
                 "time":  time.isoformat(),
                 "author": author,
                 "content": content,
                 "url": url
             } )
-    return res
+    defer.returnValue( res )
 
 def new_comment( post, data, spam = False ):
     """
@@ -81,11 +85,11 @@ def new_comment( post, data, spam = False ):
         "referrer": None
     }
     defaulted_data.update( data )
-    result = _connection.execute( _comments.insert().values( post = post, spam = spam, approved = False, **defaulted_data ) )
+    result = _engine.execute( _comments.insert().values( post = post, spam = spam, approved = False, **defaulted_data ) )
     return result.inserted_primary_key[ 0 ]
 
 def get_download_count( name ):
-    result = _connection.execute( _select_download_count, name = name )
+    result = _engine.execute( _select_download_count, name = name )
     return result.first()[ 0 ]
 
 def new_download( name ):
@@ -99,7 +103,7 @@ def new_download( name ):
             result.close()
         else:
             id, = result.first()
-    _connection.execute( _downloads.insert().values( download = id ) )
+    _engine.execute( _downloads.insert().values( download = id ) )
 
 #   Admin functions
 
@@ -111,7 +115,7 @@ def get_unapproved_comments():
     """
     
     result = []
-    response = _connection.execute( _comments.select( _comments.c.approved == False ) )
+    response = _engine.execute( _comments.select( _comments.c.approved == False ) )
     for row in response:
         comment = { column : value for column, value in itertools.izip( response.keys(), row ) }
         comment[ "time" ] = comment[ "time" ].isoformat()

@@ -1,4 +1,4 @@
-﻿import flask
+﻿import twisted
 from urllib import urlencode
 import urllib2
 import logging
@@ -14,7 +14,7 @@ ham_url = "https://{apikey}.rest.akismet.com/1.1/submit-ham".format( apikey = lo
 spam_url = "https://{apikey}.rest.akismet.com/1.1/submit-spam".format( apikey = local_config.AKISMET_KEY )
 
 headers = {
-    "User-Agent": "Flask/{version} | just_akismet/1.0.0".format( version = flask.__version__ )
+    "User-Agent": "twisted/{version} | just_akismet/1.0.0".format( version = twisted.__version__ )
 }
 
 class LogicError( Exception ):
