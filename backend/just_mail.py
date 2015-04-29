@@ -38,7 +38,7 @@ def send( subject, body ):
         server.close()
         return False
     
-    msg = MIMEText( body )
+    msg = MIMEText( body, "html" )
     msg[ "Subject" ] = subject
     msg[ "From" ] = local_config.MAIL_FROM
     msg[ "To" ]  = ", ".join( local_config.MAIL_TO )
