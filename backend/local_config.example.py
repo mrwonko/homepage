@@ -4,6 +4,7 @@ PORT = 5000
 
 # Akismet Setup
 AKISMET_KEY = ""
+AKISMET_ENABLED = False
 
 # Database Setup
 DB_HOST = "localhost"
@@ -18,6 +19,10 @@ SMTP_PASS = ""
 
 MAIL_TO = [ "" ]
 MAIL_FROM = ""
+
+MAIL_BODY_NEW_COMMENT = """\
+New blog comment by {comment["author"]}, it's {spammy}.
+"""
 
 # Private key for session encryption
 SESSION_KEY = 'secret'

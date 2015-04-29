@@ -34,6 +34,10 @@ _comment_template = just_sanitize.Object(
     content = just_sanitize.Text
 )
 
+_comment_admin_template = just_sanitize.Object(
+    action = just_sanitize.Text
+)
+
 _comment_to_akismet_LUT = {
     "author": "comment_author",
     "email": "comment_author_email",
@@ -51,9 +55,6 @@ def _comment_to_akismet( comment ):
         akismet[ dst ] = comment[ src ]
     return akismet
 
-#just_mail.send( "another test", "test 123" )
-#just_akismet.check( test_data )
-
 _app = flask.Flask( __name__ )
 
 _app.secret_key = local_config.SESSION_KEY
@@ -65,18 +66,26 @@ def get_comments( year, slug ):
 
 @_app.route( "/rest/blog/<year>/<slug>/comments", methods = [ 'POST' ] )
 def post_comment( year, slug ):
-    print( flask.request.get_json() )
+    post = "/".join( ( year, slug ) )
+    
     comment = _comment_template.sanitize( flask.request.get_json() )
     comment[ "user_agent" ] = flask.request.headers.get( "User-Agent" )
     comment[ "referrer" ] = flask.request.environ.get( "HTTP_REFERER", None )
     comment[ "ip" ] = flask.request.remote_addr # environ[ "REMOTE_ADDR" ]
     
-    spammy = just_akismet.check( _comment_to_akismet( comment ) )
+    spammy = just_akismet.check( _comment_to_akismet( comment ) ) if local_config.AKISMET_ENABLED else "HAM"
     if spammy == "DISCARD":
         return flask.json.jsonify( spam = True )
     # make the html in the comment body nice and safe
     comment[ "content" ] = just_sanitize.clean( comment[ "content" ] )
-    just_database.new_comment( "/".join( ( year, slug ) ), comment, spammy == "SPAM" )
+    
+    id = just_database.new_comment( post, comment, spammy == "SPAM" )
+    
+    _logger.info( "New comment by {author}, it's {spammy}.".format( author = comment[ "author" ], spammy = spammy ) )    
+    escaped_comment = { key: just_sanitize.escape( value ) for key, value in comment.items() }
+    escaped_comment[ "id" ] = id
+    escaped_comment[ "post" ] = post
+    just_mail.send( "New Blog Comment", local_config.MAIL_BODY_NEW_COMMENT.format( comment = escaped_comment, spammy = spammy ) )
     return flask.json.jsonify( spam = False )
 
 @_app.route( "/rest/downloads/<path:filename>", methods = [ 'GET' ] )
@@ -86,6 +95,40 @@ def get_downloads( filename ):
 @_app.route( "/internal/rest/downloads/<path:filename>", methods = [ 'POST' ] )
 def on_download( filename ):
     just_database.new_download( filename )
+    return flask.json.jsonify( success = True )
+
+@_app.route( "/admin/rest/blog/comments/unapproved", methods = [ 'GET' ] )
+def get_unapproved_comments():
+    return flask.json.jsonify( comments = just_database.get_unapproved_comments() )
+
+@_app.route( "/admin/rest/blog/comments/<id>", methods = [ 'POST' ] )
+def admin_comment( id ):
+    body = _comment_admin_template.sanitize( flask.request.get_json() )
+    action = body[ "action" ]
+    if action not in ( "delete", "spam", "approve" ):
+        raise werkzeug.exceptions.BadRequest( "Invalid action!" )
+    
+    if action == "delete":
+        return flask.json.jsonify( success = just_database.trash_comment( id ) )
+    
+    # retrieve comment (so we can send it to Akismet) and delete/approve it
+    # use a transaction so it's atomic (deletion then shouldn't ever fail)
+    with just_database.new_transaction() as transaction:
+        comment = just_database.get_comment( transaction, id )
+        if not Comment:
+            return flask.json.jsonify( success = False, error = "No such comment!" )
+        if action == "spam":
+            success = just_database.trash_comment( transaction, id )
+        else:
+            assert( action == "approve" )
+            success = just_database.approve_comment( transaction, id )
+        assert success
+    # spamming an undetected comment
+    if action == "spam" and not comment[ "spam" ] and local_config.AKISMET_ENABLED:
+        just_akismet.spam( _comment_to_akismet( comment ) )
+    # approving a detected comment implies hamming it
+    if action == "approve" and comment[ "spam" ] and local_config.AKISMET_ENABLED:
+        just_akismet.ham( _comment_to_akismet( comment ) )
     return flask.json.jsonify( success = True )
 
 if __name__ == "__main__":

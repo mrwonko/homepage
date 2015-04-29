@@ -81,7 +81,8 @@ def new_comment( post, data, spam = False ):
         "referrer": None
     }
     defaulted_data.update( data )
-    _connection.execute( _comments.insert().values( post = post, spam = spam, approved = False, **defaulted_data ) )
+    result = _connection.execute( _comments.insert().values( post = post, spam = spam, approved = False, **defaulted_data ) )
+    return result.inserted_primary_key[ 0 ]
 
 def get_download_count( name ):
     result = _connection.execute( _select_download_count, name = name )
@@ -118,8 +119,21 @@ def get_unapproved_comments():
     response.close()
     return result
 
-def trash_comment( id ):
-    return _connection.execute( _delete_comment, deleted_id = id ).rowcount > 0
+def new_transaction():
+    return _engine.begin()
 
-def approve_comment( id ):
-    return _connection.execute( _approve_comment, approved_id = id ).rowcount > 0
+def get_comment( transaction, id ):
+    response = transaction.execute( _comments.select( _comments.c.id == id ) )
+    if response.rowcount == 0:
+        response.close()
+        return None
+    comment = { key: value for key, value in zip( response.keys(), response.first() ) }
+    comment[ "time" ] = comment[ "time" ].isoformat()
+    return comment
+
+def trash_comment( transaction, id ):
+    return transaction.execute( _delete_comment, deleted_id = id ).rowcount > 0
+
+def approve_comment( transaction, id ):
+    return transaction.execute( _approve_comment, approved_id = id ).rowcount > 0
+
