@@ -7,6 +7,11 @@
     {{ article.title|striptags }}
 {% endblock %}
 
+{% block head %}
+    {{ super() }}
+    {# <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/FIXME angular goes here"></script> #}
+{% endblock head %}
+
 {% block content %}
 <article>
     <header>
@@ -35,7 +40,7 @@
     
     {% if type_settings.comments and article.status != "draft" %}
         <hr />
-        {% include 'comments.html' %}
+        {# FIXME comments go here #}
     {% endif %}
 
 </article>
