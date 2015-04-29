@@ -1,6 +1,7 @@
 import flask
 import werkzeug.exceptions
 import bleach
+import tidylib
 
 import local_config
 
@@ -67,9 +68,11 @@ Text = _Text()
 def clean( html ):
     if not html:
         return html
-    return bleach.clean( html, tags = local_config.TAG_WHITELIST, attributes = local_config.ATTRIBUTE_WHITELIST )
+    clean = bleach.clean( html, tags = local_config.TAG_WHITELIST, attributes = local_config.ATTRIBUTE_WHITELIST )
+    # catches some additional problems
+    tidy, warnings = tidylib.tidy_fragment( clean )
+    return tidy
 
-# this will probably not get used since Angular takes care of unsafe data, I think
 def escape( html ):
     if not html:
         return html
