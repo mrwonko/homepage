@@ -87,6 +87,7 @@ def _from_json( request, template = None ):
 def get_comments( request, year, slug ):
     post = "/".join( [ str( year ), slug ] )
     return just_database.get_comments( post )\
+        .addCallback( lambda comments: { "comments": comments } )\
         .addCallback( _to_json, request )
 
 @app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'POST' ] )
