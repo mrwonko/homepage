@@ -1,5 +1,8 @@
 import klein
 import json
+import werkzeug.exceptions
+from twisted.internet import defer
+from twisted.python import log
 
 import just_mail
 import just_akismet
@@ -51,53 +54,77 @@ def _comment_to_akismet( comment ):
 
 app = klein.Klein()
 
-def to_json( data, request = None ):
+def _to_json( data, request = None ):
+    text = json.dumps( data, check_circular = False )
     if request:
         request.setHeader( "content-type", "application/json" )
-    return json.dumps( data, check_circular = False )
+        request.setHeader( "content-length", str( len( text ) ) )
+        if request.method == "HEAD":
+            return ""
+    return text
+
+def _get_content_type( request ):
+    content_type = request.getHeader( b"content-type" )
+    if not content_type:
+        raise werkzeug.exceptions.BadRequest( "no content-type set!" )
+    if content_type.find( ";" ) == -1:
+        return content_type, []
+    content_type, parameters = content_type.split( ";", 1 )
+    return content_type, [ param.strip() for param in parameters.split( ";" ) ]
+
+def _from_json( request, template = None ):
+    content_type, params = _get_content_type( request )
+    print( "content type: {}".format( content_type ) )
+    if not content_type or content_type.lower() != "application/json":
+        raise werkzeug.exceptions.BadRequest( "content-type must be application/json!" )
+    try:
+        obj = json.loads( request.content.read() )
+    except ValueError:
+        raise werkzeug.exceptions.BadRequest( "invalid json!" )
+    return template.sanitize( obj ) if template else obj
 
 @app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'GET' ] )
 def get_comments( request, year, slug ):
     post = "/".join( [ str( year ), slug ] )
     return just_database.get_comments( post )\
-        .addCallback( to_json, request )
+        .addCallback( _to_json, request )
+
+@app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'POST' ] )
+@defer.inlineCallbacks
+def post_comment( request, year, slug ):
+    year = str( year )
+    post = "/".join( ( year, slug ) )
+    
+    comment = _from_json( request, _comment_template )
+    comment[ "user_agent" ] = request.getHeader( "user-agent" )
+    comment[ "referrer" ] = request.getHeader( "referer" )
+    comment[ "ip" ] = request.getClientIP()
+    
+    # akismet check, if desired
+    spammy = ( yield just_akismet.check( _comment_to_akismet( comment ) ) ) if local_config.AKISMET_ENABLED else "HAM"
+    if spammy == "DISCARD":
+        # only trash if Akismet is sure, otherwise let admin decide
+        defer.returnValue( _to_json( { "spam": True }, request ) )
+    
+    # make the html in the comment body nice and safe
+    comment[ "content" ] = just_sanitize.clean( comment[ "content" ] )
+    
+    # insert comment into database
+    id = yield just_database.new_comment( post, comment, spammy == "SPAM" )
+    
+    log.msg( "New comment by {author}, it's {spammy}.".format( author = comment[ "author" ], spammy = spammy ) )
+    
+    # send mail notification
+    escaped_comment = { key: just_sanitize.escape( value ) for key, value in comment.items() }
+    escaped_comment[ "id" ] = id
+    escaped_comment[ "post" ] = post
+    yield just_mail.send( "New Blog Comment", local_config.MAIL_BODY_NEW_COMMENT.format( comment = escaped_comment, spammy = spammy.lower() ) )
+    
+    defer.returnValue( _to_json( { "spam": False }, request ) )
 
 app.run( local_config.HOST, local_config.PORT )
 
 """
-_app = flask.Flask( __name__ )
-
-_app.secret_key = local_config.SESSION_KEY
-
-@_app.route( "/rest/blog/<year>/<slug>/comments", methods = [ 'GET' ] )
-def get_comments( year, slug ):
-    post = "/".join( ( year, slug ) )
-    return flask.json.jsonify( comments = just_database.get_comments( post ) )
-
-@_app.route( "/rest/blog/<year>/<slug>/comments", methods = [ 'POST' ] )
-def post_comment( year, slug ):
-    post = "/".join( ( year, slug ) )
-    
-    comment = _comment_template.sanitize( flask.request.get_json() )
-    comment[ "user_agent" ] = flask.request.headers.get( "User-Agent" )
-    comment[ "referrer" ] = flask.request.environ.get( "HTTP_REFERER", None )
-    comment[ "ip" ] = flask.request.remote_addr # environ[ "REMOTE_ADDR" ]
-    
-    spammy = just_akismet.check( _comment_to_akismet( comment ) ) if local_config.AKISMET_ENABLED else "HAM"
-    if spammy == "DISCARD":
-        return flask.json.jsonify( spam = True )
-    # make the html in the comment body nice and safe
-    comment[ "content" ] = just_sanitize.clean( comment[ "content" ] )
-    
-    id = just_database.new_comment( post, comment, spammy == "SPAM" )
-    
-    _logger.info( "New comment by {author}, it's {spammy}.".format( author = comment[ "author" ], spammy = spammy ) )    
-    escaped_comment = { key: just_sanitize.escape( value ) for key, value in comment.items() }
-    escaped_comment[ "id" ] = id
-    escaped_comment[ "post" ] = post
-    just_mail.send( "New Blog Comment", local_config.MAIL_BODY_NEW_COMMENT.format( comment = escaped_comment, spammy = spammy ) )
-    return flask.json.jsonify( spam = False )
-
 @_app.route( "/rest/downloads/<path:filename>", methods = [ 'GET' ] )
 def get_downloads( filename ):
     return flask.json.jsonify( downloads = just_database.get_download_count( filename ) + local_config.LEGACY_DOWNLOADS.get( filename, 0 ) )

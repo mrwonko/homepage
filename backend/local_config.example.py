@@ -17,6 +17,8 @@ SMTP_SERVER = ""
 SMTP_USER = ""
 SMTP_PASS = ""
 
+MAIL_ENABLED = False
+
 MAIL_TO = [ "" ]
 MAIL_FROM = ""
 

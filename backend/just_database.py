@@ -1,8 +1,7 @@
 import sqlalchemy
 import itertools
 import alchimia
-import twisted.internet.defer as defer
-from twisted.internet import reactor
+from twisted.internet import reactor, defer
 
 import local_config
 
@@ -75,6 +74,7 @@ def get_comments( post ):
             } )
     defer.returnValue( res )
 
+@defer.inlineCallbacks
 def new_comment( post, data, spam = False ):
     """
     Create a new comment, using mostly the data in "data".
@@ -85,25 +85,30 @@ def new_comment( post, data, spam = False ):
         "referrer": None
     }
     defaulted_data.update( data )
-    result = _engine.execute( _comments.insert().values( post = post, spam = spam, approved = False, **defaulted_data ) )
-    return result.inserted_primary_key[ 0 ]
+    result = yield _engine.execute( _comments.insert().values( post = post, spam = spam, approved = False, **defaulted_data ) )
+    defer.returnValue( result.inserted_primary_key[ 0 ] )
 
+@defer.inlineCallbacks
 def get_download_count( name ):
-    result = _engine.execute( _select_download_count, name = name )
-    return result.first()[ 0 ]
+    result = yield _engine.execute( _select_download_count, name = name )
+    first = yield result.first()
+    defer.returnValue( first[ 0 ] )
 
+@defer.inlineCallbacks
 def new_download( name ):
     # we need atomicity for "insert if not exist" so we use a transaction
-    with _engine.begin() as connection:
-        result = connection.execute( _select_download_id, name = name )
+    with ( yield _engine.begin() ) as connection:
+        result = yield connection.execute( _select_download_id, name = name )
         if result.rowcount == 0:
             result.close()
-            result = connection.execute( _download_names.insert().values( name = name ) )
-            id, = result.inserted_primary_key
+            result = yield connection.execute( _download_names.insert().values( name = name ) )
+            key = result.inserted_primary_key[ 0 ]
             result.close()
         else:
-            id, = result.first()
-    _engine.execute( _downloads.insert().values( download = id ) )
+            first = yield result.first()
+            key = first[ 0 ]
+    yield _engine.execute( _downloads.insert().values( download = key ) )
+    defer.returnValue( None )
 
 #   Admin functions
 
