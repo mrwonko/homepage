@@ -1,14 +1,26 @@
 import klein
 import json
+import sys
 import werkzeug.exceptions
 from twisted.internet import defer
 from twisted.python import log
+from twisted.web.server import Site
 
 import just_mail
 import just_akismet
 import just_database
 import just_sanitize
 import local_config
+
+#    Logging
+
+# make twisted log to stdout/stderr
+def _stdout_stderr_observer( log ):
+    print( *log[ "message" ], file = sys.stderr if log[ "isError" ] else sys.stdout )
+
+log.startLoggingWithObserver( _stdout_stderr_observer, setStdout = False )
+
+#    Akismet
 
 _akismet_defaults_comment = {
     "blog": "http://mrwonko.de/blog",
@@ -52,7 +64,7 @@ def _comment_to_akismet( comment ):
         akismet[ dst ] = comment[ src ]
     return akismet
 
-app = klein.Klein()
+#    Utility
 
 def _to_json( data, request = None ):
     text = json.dumps( data, check_circular = False )
@@ -82,6 +94,10 @@ def _from_json( request, template = None ):
     except ValueError:
         raise werkzeug.exceptions.BadRequest( "invalid json!" )
     return template.sanitize( obj ) if template else obj
+
+#    Routes
+
+app = klein.Klein()
 
 @app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'GET' ] )
 def get_comments( request, year, slug ):
@@ -123,17 +139,23 @@ def post_comment( request, year, slug ):
     
     defer.returnValue( _to_json( { "spam": False }, request ) )
 
+@app.route( "/rest/downloads/<path:filename>", methods = [ 'GET' ] )
+@defer.inlineCallbacks
+def get_downloads( request, filename ):
+    downloads = ( yield just_database.get_download_count( filename ) ) + local_config.LEGACY_DOWNLOADS.get( filename, 0 )
+    defer.returnValue( _to_json( { "downloads": downloads }, request ) )
+
+@app.route( "/internal/rest/downloads/<path:filename>", methods = [ 'POST' ] )
+@defer.inlineCallbacks
+def on_download( request, filename ):
+    yield just_database.new_download( filename )
+    defer.returnValue( _to_json( { "success": True }, request ) )
+
+log.startLoggingWithObserver
+
 app.run( local_config.HOST, local_config.PORT )
 
 """
-@_app.route( "/rest/downloads/<path:filename>", methods = [ 'GET' ] )
-def get_downloads( filename ):
-    return flask.json.jsonify( downloads = just_database.get_download_count( filename ) + local_config.LEGACY_DOWNLOADS.get( filename, 0 ) )
-
-@_app.route( "/internal/rest/downloads/<path:filename>", methods = [ 'POST' ] )
-def on_download( filename ):
-    just_database.new_download( filename )
-    return flask.json.jsonify( success = True )
 
 @_app.route( "/admin/rest/blog/comments/unapproved", methods = [ 'GET' ] )
 def get_unapproved_comments():

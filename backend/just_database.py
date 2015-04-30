@@ -1,7 +1,8 @@
 import sqlalchemy
 import itertools
-import alchimia
+import alchimia # TODO: maybe txpostgres would be better? a threaded solution is not very nice, and alchimia is lacking some sqlalchemy features anyway?
 from twisted.internet import reactor, defer
+from twisted.python import log
 
 import local_config
 
@@ -96,18 +97,37 @@ def get_download_count( name ):
 
 @defer.inlineCallbacks
 def new_download( name ):
+    log.msg( "new_download( \"{}\" )".format( name ) )
     # we need atomicity for "insert if not exist" so we use a transaction
-    with ( yield _engine.begin() ) as connection:
-        result = yield connection.execute( _select_download_id, name = name )
-        if result.rowcount == 0:
-            result.close()
-            result = yield connection.execute( _download_names.insert().values( name = name ) )
-            key = result.inserted_primary_key[ 0 ]
-            result.close()
+    connection = yield _engine.connect()
+    log.msg( "connection established")
+    try:
+        transaction = yield connection.begin()
+        log.msg( "transaction started" )
+        try:
+            result = yield transaction.execute( _select_download_id, name = name )
+            log.msg( "download name looked up" )
+            if result.rowcount == 0:
+                result.close()
+                result = yield transaction.execute( _download_names.insert().values( name = name ) )
+                log.msg( "new download name inserted" )
+                key = result.inserted_primary_key[ 0 ]
+                result.close()
+            else:
+                first = yield result.first()
+                key = first[ 0 ]
+        except:
+            yield transaction.rollback()
+            log.msg( "transaction rolled back" )
+            raise
         else:
-            first = yield result.first()
-            key = first[ 0 ]
-    yield _engine.execute( _downloads.insert().values( download = key ) )
+            yield transaction.commit()
+            log.msg( "transaction comitted" )
+        yield connection.execute( _downloads.insert().values( download = key ) )
+        log.msg( "download inserted" )
+    finally:
+        connection.close()
+        log.msg( "connection closed" )
     defer.returnValue( None )
 
 #   Admin functions
@@ -128,10 +148,7 @@ def get_unapproved_comments():
     response.close()
     return result
 
-def new_transaction():
-    return _engine.begin()
-
-def get_comment( transaction, id ):
+def _get_comment( transaction, id ):
     response = transaction.execute( _comments.select( _comments.c.id == id ) )
     if response.rowcount == 0:
         response.close()
