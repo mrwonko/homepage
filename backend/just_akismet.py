@@ -4,6 +4,7 @@ from twisted.internet.protocol import Protocol
 from twisted.web.client import Agent, FileBodyProducer, ResponseDone
 from twisted.web.http_headers import Headers
 from twisted.python.failure import Failure
+from twisted.python import log
 import werkzeug.exceptions
 from urllib import urlencode
 from StringIO import StringIO # cStringIO may be faster?
@@ -54,6 +55,9 @@ def check( data ):
     or raises BadGateway/InternalServerError on failure
     
     """
+    if not local_config.AKISMET_ENABLED:
+        defer.returnValue( "HAM" )
+    
     body = urlencode( { key: value for key, value in data.items() if value != None }, doseq = True )
     try:
         response = yield agent.request( "POST", check_url, headers, FileBodyProducer( StringIO( body ) ) )
@@ -76,6 +80,10 @@ def check( data ):
 
 @defer.inlineCallbacks
 def spam( data ):
+    if not local_config.AKISMET_ENABLED:
+        log.msg( "Comment by '{}' spammed but Akismet submission disabled".format( data["comment_author"] ) )
+        defer.returnValue( None )
+    
     body = urlencode( { key: value for key, value in data.items() if value != None }, doseq = True )
     response = yield agent.request( "POST", spam_url, headers, FileBodyProducer( StringIO( body ) ) )
     if response.code / 100 != 2:
@@ -85,6 +93,9 @@ def spam( data ):
 
 @defer.inlineCallbacks
 def ham( data ):
+    if not local_config.AKISMET_ENABLED:
+        log.msg( "Comment by '{}' hammed but Akismet submission disabled".format( data["comment_author"] ) )
+        defer.returnValue( None )
     body = urlencode( { key: value for key, value in data.items() if value != None }, doseq = True )
     response = yield agent.request( "POST", ham_url, headers, FileBodyProducer( StringIO( body ) ) )
     if response.code / 100 != 2:

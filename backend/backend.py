@@ -87,7 +87,6 @@ def _get_content_type( request ):
 
 def _from_json( request, template = None ):
     content_type, params = _get_content_type( request )
-    print( "content type: {}".format( content_type ) )
     if not content_type or content_type.lower() != "application/json":
         raise werkzeug.exceptions.BadRequest( "content-type must be application/json!" )
     try:
@@ -100,6 +99,13 @@ def _from_json( request, template = None ):
 
 app = klein.Klein()
 
+@app.route( "/head", methods = [ 'HEAD' ] )
+def head_test( request ):
+    request.setHeader( "content-type", "text/plain" )
+    # request.setHeader( "content-length", "1337" )
+    return ""
+
+# get comments for article
 @app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'GET' ] )
 def get_comments( request, year, slug ):
     post = "/".join( [ str( year ), slug ] )
@@ -107,6 +113,7 @@ def get_comments( request, year, slug ):
         .addCallback( lambda comments: { "comments": comments } )\
         .addCallback( _to_json, request )
 
+# post comment to article
 @app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'POST' ] )
 @defer.inlineCallbacks
 def post_comment( request, year, slug ):
@@ -118,14 +125,15 @@ def post_comment( request, year, slug ):
     comment[ "referrer" ] = request.getHeader( "referer" )
     comment[ "ip" ] = request.getClientIP()
     
+    # make the html in the comment body nice and safe
+    # this might lead to a slightly worse akismet detection, but is required for spam submission to use the same content as the check.
+    comment[ "content" ] = just_sanitize.clean( comment[ "content" ] )
+    
     # akismet check, if desired
-    spammy = ( yield just_akismet.check( _comment_to_akismet( comment ) ) ) if local_config.AKISMET_ENABLED else "HAM"
+    spammy = yield just_akismet.check( _comment_to_akismet( comment ) )
     if spammy == "DISCARD":
         # only trash if Akismet is sure, otherwise let admin decide
         defer.returnValue( _to_json( { "spam": True }, request ) )
-    
-    # make the html in the comment body nice and safe
-    comment[ "content" ] = just_sanitize.clean( comment[ "content" ] )
     
     # insert comment into database
     id = yield just_database.new_comment( post, comment, spammy == "SPAM" )
@@ -136,21 +144,64 @@ def post_comment( request, year, slug ):
     escaped_comment = { key: just_sanitize.escape( value ) for key, value in comment.items() }
     escaped_comment[ "id" ] = id
     escaped_comment[ "post" ] = post
-    yield just_mail.send( "New Blog Comment", local_config.MAIL_BODY_NEW_COMMENT.format( comment = escaped_comment, spammy = spammy.lower() ) )
+    # not yielded, i.e. we don't wait for success/failure; we just log failure and answer the request straight away
+    just_mail.send( "New Blog Comment", local_config.MAIL_BODY_NEW_COMMENT.format( comment = escaped_comment, spammy = spammy.lower() ) )\
+    .addErrback( log.err )
     
     defer.returnValue( _to_json( { "spam": False }, request ) )
 
+# get download count
 @app.route( "/rest/downloads/<path:filename>", methods = [ 'GET' ] )
 @defer.inlineCallbacks
 def get_downloads( request, filename ):
     downloads = ( yield just_database.get_download_count( filename ) ) + local_config.LEGACY_DOWNLOADS.get( filename, 0 )
     defer.returnValue( _to_json( { "downloads": downloads }, request ) )
 
+# register a finished download (internally called by nginx, not proxied)
 @app.route( "/internal/rest/downloads/<path:filename>", methods = [ 'POST' ] )
 @defer.inlineCallbacks
 def on_download( request, filename ):
     yield just_database.new_download( filename )
     defer.returnValue( _to_json( { "success": True }, request ) )
+
+# admin: retrieve unapproved comments
+@app.route( "/admin/rest/blog/comments/unapproved", methods = [ 'GET' ] )
+@defer.inlineCallbacks
+def get_unapproved( request ):
+    comments = yield just_database.get_unapproved_comments()
+    defer.returnValue( _to_json( { "comments": comments }, request ) )
+
+# admin a comment
+@app.route( "/admin/rest/blog/comments/<int:comment_id>", methods = [ 'POST' ] )
+@defer.inlineCallbacks
+def admin_comment( request, comment_id ):
+    def respond( success ):
+        defer.returnValue( _to_json( { "success": success }, request ) )
+    body = _from_json( request, _comment_admin_template )
+    action = body[ "action" ]
+    if action == "delete":
+        comment = yield just_database.trash_comment( comment_id )
+        respond( comment != None )
+    elif action == "approve":
+        comment = yield just_database.approve_comment( comment_id )
+        if not comment:
+            respond( False )
+        if comment[ "spam" ]:
+            # report false positive to Akismet
+            yield just_akismet.ham( _comment_to_akismet( comment ) )
+        respond( True )
+    elif action == "spam":
+        comment = yield just_database.trash_comment( comment_id )
+        if not comment:
+            respond( False )
+        if not comment[ "spam" ]:
+            # report false negative to Akismet
+            yield just_akismet.spam( _comment_to_akismet( comment ) )
+        respond( True )
+    else:
+        raise werkzeug.exceptions.BadRequest( "Invalid action!" )
+
+#    Entry Point
 
 @defer.inlineCallbacks
 def main():
@@ -160,43 +211,3 @@ def main():
 
 main()
 reactor.run()
-
-"""
-
-@_app.route( "/admin/rest/blog/comments/unapproved", methods = [ 'GET' ] )
-def get_unapproved_comments():
-    return flask.json.jsonify( comments = just_database.get_unapproved_comments() )
-
-@_app.route( "/admin/rest/blog/comments/<id>", methods = [ 'POST' ] )
-def admin_comment( id ):
-    body = _comment_admin_template.sanitize( flask.request.get_json() )
-    action = body[ "action" ]
-    if action not in ( "delete", "spam", "approve" ):
-        raise werkzeug.exceptions.BadRequest( "Invalid action!" )
-    
-    if action == "delete":
-        return flask.json.jsonify( success = just_database.trash_comment( id ) )
-    
-    # retrieve comment (so we can send it to Akismet) and delete/approve it
-    # use a transaction so it's atomic (deletion then shouldn't ever fail)
-    with just_database.new_transaction() as transaction:
-        comment = just_database.get_comment( transaction, id )
-        if not Comment:
-            return flask.json.jsonify( success = False, error = "No such comment!" )
-        if action == "spam":
-            success = just_database.trash_comment( transaction, id )
-        else:
-            assert( action == "approve" )
-            success = just_database.approve_comment( transaction, id )
-        assert success
-    # spamming an undetected comment
-    if action == "spam" and not comment[ "spam" ] and local_config.AKISMET_ENABLED:
-        just_akismet.spam( _comment_to_akismet( comment ) )
-    # approving a detected comment implies hamming it
-    if action == "approve" and comment[ "spam" ] and local_config.AKISMET_ENABLED:
-        just_akismet.ham( _comment_to_akismet( comment ) )
-    return flask.json.jsonify( success = True )
-
-if __name__ == "__main__":
-    _app.run( host = local_config.HOST, port = local_config.PORT )
-"""

@@ -135,14 +135,14 @@ def get_unapproved_comments():
     Unlike get_comments() this returns *all* columns since it's for administrative use.
     """
     
-    rows = _connection.runQuery(
+    rows = yield _connection.runQuery(
         """SELECT {}
-        FROM downloads
+        FROM comments
         WHERE approved = false
         ORDER BY time DESC""".format( _comment_columns_string )
     )
     result = []
-    for row in response:
+    for row in rows:
         result.append( _comment_row_to_dict( row ) )
     defer.returnValue( result )
 
@@ -159,7 +159,7 @@ def trash_comment( comment_id ):
 
 def approve_comment( comment_id ):
     @defer.inlineCallbacks
-    def get_and_delete( cursor ):
+    def get_and_approve( cursor ):
         yield cursor.execute(
             """SELECT {}
             FROM comments
@@ -170,10 +170,13 @@ def approve_comment( comment_id ):
             defer.returnValue( None )
         else:
             row = yield cursor.fetchone()
-            yield cursor.execute(
-                """DELETE FROM comments
-                WHERE id = %s""",
-                [ comment_id ]
-            )
-            defer.returnValue( _comment_row_to_dict( row ) )
-    return _connection.runInteraction( get_and_delete )
+            comment = _comment_row_to_dict( row )
+            if not comment[ "approved" ]:
+                yield cursor.execute(
+                    """UPDATE comments
+                    SET approved = true, spam = false
+                    WHERE id = %s""",
+                    [ comment_id ]
+                )
+            defer.returnValue( comment )
+    return _connection.runInteraction( get_and_approve )
