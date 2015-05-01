@@ -9,6 +9,7 @@ AKISMET_CHECK_CERTS = True
 
 # Database Setup
 DB_HOST = "localhost"
+DB_PORT = 5432
 DB_DB = ""
 DB_USER = "root"
 DB_PASS = ""

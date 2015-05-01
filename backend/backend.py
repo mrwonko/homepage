@@ -1,8 +1,9 @@
+from __future__ import print_function
 import klein
 import json
 import sys
 import werkzeug.exceptions
-from twisted.internet import defer
+from twisted.internet import defer, reactor
 from twisted.python import log
 from twisted.web.server import Site
 
@@ -151,9 +152,14 @@ def on_download( request, filename ):
     yield just_database.new_download( filename )
     defer.returnValue( _to_json( { "success": True }, request ) )
 
-log.startLoggingWithObserver
+@defer.inlineCallbacks
+def main():
+    yield just_database.connect()
+    # only start the server once a database connection has been established
+    reactor.listenTCP( local_config.PORT, Site( app.resource() ), interface = local_config.HOST )
 
-app.run( local_config.HOST, local_config.PORT )
+main()
+reactor.run()
 
 """
 
