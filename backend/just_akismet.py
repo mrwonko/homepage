@@ -20,12 +20,11 @@ headers = Headers( {
     "Content-Type": [ "application/x-www-form-urlencoded" ]
 } )
 
-# FIXME: accepts all certificates without checking anything
 class WebClientContextFactory(ssl.ClientContextFactory):
     def getContext( self, hostname, port ):
         return ssl.ClientContextFactory.getContext( self )
 
-agent = Agent( reactor, WebClientContextFactory() )
+agent = Acent( reactor ) if local_config.AKISMET_CHECK_CERTS else Agent( reactor, WebClientContextFactory() )
 
 class BodyReceiver( Protocol ):
     def __init__( self, finished ):

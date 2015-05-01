@@ -5,6 +5,7 @@ PORT = 5000
 # Akismet Setup
 AKISMET_KEY = ""
 AKISMET_ENABLED = False
+AKISMET_CHECK_CERTS = True
 
 # Database Setup
 DB_HOST = "localhost"
