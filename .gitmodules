@@ -1,0 +1,3 @@
+[submodule "themes/wonky2015/definitelytyped"]
+	path = themes/wonky2015/definitelytyped
+	url = https://github.com/borisyankov/DefinitelyTyped.git

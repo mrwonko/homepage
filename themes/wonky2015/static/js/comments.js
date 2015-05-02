@@ -1,12 +1,18 @@
+// definitely typed references
+/// <reference path="../../definitelytyped/angularjs/angular.d.ts" />
+/// <reference path="../../definitelytyped/lodash/lodash.d.ts" />
+
 // second parameter is list of required modules, omitting it turns this into a module lookup instead of a definition.
 angular.module( 'commentsApp', [ 'lodash', 'ngSanitize', 'backend' ] )
 .controller( 'CommentListCtrl', function( $scope, _, backend, post ) {
-    $scope.comments = []
-    $scope.loading = true
-    $scope.error = null
+    ///<summary>Controller for list of comments</summary>
+    ///<param name="backend" type="string"></param>
+    $scope.comments = [];
+    $scope.loading = true;
+    $scope.error = null;
     backend.getComments( post )
     .success( function( data, status, headers, config ) {
-            $scope.loading = false
+            $scope.loading = false;
             if( headers( "Content-Type" ) != "application/json" ) {
                 $scope.error = "Server did not send json!";
                 return;
@@ -18,7 +24,7 @@ angular.module( 'commentsApp', [ 'lodash', 'ngSanitize', 'backend' ] )
     } )
     .error( function( data, status, headers, config ) {
             $scope.loading = false;
-            $scope.error = data;
-    } )
+            $scope.error = status == 0 ? 'Connection refused.' : data;
+    } );
 } )
 ;
