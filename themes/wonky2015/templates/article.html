@@ -9,11 +9,22 @@
 
 {% block head %}
     {{ super() }}
-    {# <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/FIXME angular goes here"></script> #}
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lib/angular.min.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lib/angular-sanitize.min.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lib/lodash.min.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/backend.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/comments.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lodash.js"></script>
+    {% include "angular.html" %}
+    <script>
+        angular.module( 'templateGenerated' )
+        .constant( "post", "{{ article.date.year }}/{{ article.slug }}" )
+        ;
+    </script>
 {% endblock head %}
 
 {% block content %}
-<article>
+<article x-ng-app="commentsApp">
     <header>
         <h1>{{ article.title }}</h1>
         <p>
@@ -40,7 +51,24 @@
     
     {% if type_settings.comments and article.status != "draft" %}
         <hr />
-        {# FIXME comments go here #}
+        <h2>Comments</h2>
+        <div x-ng-controller="CommentListCtrl" x-ng-cloak="">
+            <i class="fa fa-3x fa-spinner fa-spin" x-ng-if="loading"></i>
+            <div class="alert alert-danger" x-ng-if="error"><strong>Failed to load comments!</strong> {{ '{{ error }}' }}</div>
+            <p x-ng-if="!loading && !error && comments.length == 0">No comments.</p>
+            <article x-ng-repeat="comment in comments" x-ng-if="!loading && !error">
+                <h3>
+                    {# conditional link #}
+                    <a x-ng-href="{{ '{{ comment.url }}' }}" x-ng-if="comment.url">{{ '{{ comment.author }}' }}</a>
+                    <span ng-if="!comment.url">{{ '{{ comment.author }}' }}</span>
+                    
+                    <small>on {{ '{{ comment.time.toLocaleString() }}' }}</small>
+                </h3>
+                
+                <div x-ng-bind-html="comment.content">
+                </div>
+            </article>
+        </div>
     {% endif %}
 
 </article>
