@@ -395,8 +395,9 @@
     "progress-bars.less",
     "list-group.less",
     "panels.less",
-    "responsive-embed.less"
+    "responsive-embed.less",
+    "close.less"
   ],
   "js": [],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=89a36441a98a14393911"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=3be628faa1fe28b7a300"
 }

@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=89a36441a98a14393911)
- * Config saved to config.json and https://gist.github.com/89a36441a98a14393911
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=3be628faa1fe28b7a300)
+ * Config saved to config.json and https://gist.github.com/3be628faa1fe28b7a300
  */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -3870,6 +3870,31 @@ a.list-group-item-danger.active:focus {
 }
 .embed-responsive-4by3 {
   padding-bottom: 75%;
+}
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.close:hover,
+.close:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
 }
 .clearfix:before,
 .clearfix:after,
