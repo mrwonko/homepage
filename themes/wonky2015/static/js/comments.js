@@ -24,7 +24,7 @@ angular.module( 'commentsApp', [ 'lodash', 'ngSanitize', 'templateGenerated' ] )
     } )
     .error( function( data, status, headers, config ) {
             $scope.loading = false;
-            $scope.error = status == 0 ? 'Connection refused.' : data;
+            $scope.error = status == 0 ? 'Connection refused.' : 'Error ' + status + '.';
     } );
 } )
 .controller( 'newCommentCtrl', function( $scope, backendUrl, $http, post ) {
@@ -50,7 +50,7 @@ angular.module( 'commentsApp', [ 'lodash', 'ngSanitize', 'templateGenerated' ] )
         })
         .error( function( data, status, headers, config ) {
             $scope.loading = false;
-            $scope.error = status == 0 ? 'Connection refused.' : data;
+            $scope.error = status == 0 ? 'Connection refused.' : 'Error ' + status + '.';
         } );
     };
     $scope.dismissError = function() {
