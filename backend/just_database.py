@@ -40,7 +40,7 @@ def get_comments( post ):
     rows = yield _connection.runQuery( 
         """SELECT time, author, content, url
         FROM comments
-        WHERE post = %s
+        WHERE post = %s and approved = true
         ORDER BY time ASC;""",
         [ post ]
     )
