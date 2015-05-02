@@ -1,0 +1,7 @@
+{# be careful not to save as UTF8 with BOM, since that would get included verbatim, leading to invalid html #}
+<script>
+// create a module for template-created code, which the static modules can depend on
+angular.module( 'templateGenerated', [] )
+.constant( "backendUrl", "{% if RELATIVE_BACKENDURL %}{{ SITEURL }}/{{ BACKENDURL }}{% else %}{{ BACKENDURL }}{% endif %}" )
+;
+</script>

@@ -7,6 +7,9 @@ SITENAME = "mrwonko.de"
 # hack for this to work both locally and deployed
 SITEURL = "http://mrwonko.de"
 
+RELATIVE_BACKENDURL = False
+BACKENDURL = "http://localhost:5000"
+
 #   Plugins
 
 PLUGIN_PATHS = [ "plugins" ]
