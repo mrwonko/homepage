@@ -99,24 +99,24 @@ def _from_json( request, template = None ):
 
 app = klein.Klein()
 
-@app.route( "/head", methods = [ 'HEAD' ] )
-def head_test( request ):
-    request.setHeader( "content-type", "text/plain" )
-    # request.setHeader( "content-length", "1337" )
-    return ""
-
 # get comments for article
 @app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'GET' ] )
+@defer.inlineCallbacks
 def get_comments( request, year, slug ):
+    if local_config.ALLOW_CROSS_ORIGIN:
+        request.setHeader( 'Access-Control-Allow-Origin', '*' )
     post = "/".join( [ str( year ), slug ] )
-    return just_database.get_comments( post )\
-        .addCallback( lambda comments: { "comments": comments } )\
-        .addCallback( _to_json, request )
+    comments = yield just_database.get_comments( post )
+    for comment in comments:
+        comment[ "content" ] = comment[ "content" ].replace( "\n", "<br/>" )
+    defer.returnValue( _to_json( { "comments": comments }, request ) )
 
 # post comment to article
 @app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'POST' ] )
 @defer.inlineCallbacks
 def post_comment( request, year, slug ):
+    if local_config.ALLOW_CROSS_ORIGIN:
+        request.setHeader( 'Access-Control-Allow-Origin', '*' )
     year = str( year )
     post = "/".join( ( year, slug ) )
     
@@ -127,7 +127,10 @@ def post_comment( request, year, slug ):
     
     # make the html in the comment body nice and safe
     # this might lead to a slightly worse akismet detection, but is required for spam submission to use the same content as the check.
+    log.msg( comment["content"] )
+    comment[ "content" ] = comment[ "content" ].replace( "\n", "<br/>" )
     comment[ "content" ] = just_sanitize.clean( comment[ "content" ] )
+    log.msg( comment["content"] )
     
     # akismet check, if desired
     spammy = yield just_akismet.check( _comment_to_akismet( comment ) )
@@ -154,6 +157,8 @@ def post_comment( request, year, slug ):
 @app.route( "/rest/downloads/<path:filename>", methods = [ 'GET' ] )
 @defer.inlineCallbacks
 def get_downloads( request, filename ):
+    if local_config.ALLOW_CROSS_ORIGIN:
+        request.setHeader( 'Access-Control-Allow-Origin', '*' )
     downloads = ( yield just_database.get_download_count( filename ) ) + local_config.LEGACY_DOWNLOADS.get( filename, 0 )
     defer.returnValue( _to_json( { "downloads": downloads }, request ) )
 
@@ -161,6 +166,8 @@ def get_downloads( request, filename ):
 @app.route( "/internal/rest/downloads/<path:filename>", methods = [ 'POST' ] )
 @defer.inlineCallbacks
 def on_download( request, filename ):
+    if local_config.ALLOW_CROSS_ORIGIN:
+        request.setHeader( 'Access-Control-Allow-Origin', '*' )
     yield just_database.new_download( filename )
     defer.returnValue( _to_json( { "success": True }, request ) )
 
@@ -168,6 +175,8 @@ def on_download( request, filename ):
 @app.route( "/admin/rest/blog/comments/unapproved", methods = [ 'GET' ] )
 @defer.inlineCallbacks
 def get_unapproved( request ):
+    if local_config.ALLOW_CROSS_ORIGIN:
+        request.setHeader( 'Access-Control-Allow-Origin', '*' )
     comments = yield just_database.get_unapproved_comments()
     defer.returnValue( _to_json( { "comments": comments }, request ) )
 
@@ -175,6 +184,8 @@ def get_unapproved( request ):
 @app.route( "/admin/rest/blog/comments/<int:comment_id>", methods = [ 'POST' ] )
 @defer.inlineCallbacks
 def admin_comment( request, comment_id ):
+    if local_config.ALLOW_CROSS_ORIGIN:
+        request.setHeader( 'Access-Control-Allow-Origin', '*' )
     def respond( success ):
         defer.returnValue( _to_json( { "success": success }, request ) )
     body = _from_json( request, _comment_admin_template )
@@ -207,7 +218,8 @@ def admin_comment( request, comment_id ):
 def main():
     yield just_database.connect()
     # only start the server once a database connection has been established
-    reactor.listenTCP( local_config.PORT, Site( app.resource() ), interface = local_config.HOST )
+    yield reactor.listenTCP( local_config.PORT, Site( app.resource() ), interface = local_config.HOST )
+    defer.returnValue( None )
 
 main()
 reactor.run()

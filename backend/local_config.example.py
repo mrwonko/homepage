@@ -2,6 +2,9 @@
 HOST = "127.0.0.1"
 PORT = 5000
 
+# when hosting the backend on a different host than the frontend, you may want to enable cross origin requests
+ALLOW_CROSS_ORIGIN = False
+
 # Akismet Setup
 AKISMET_KEY = ""
 AKISMET_ENABLED = False
@@ -59,6 +62,7 @@ TAG_WHITELIST = sorted( [
     u'acronym',
     u'b',
     u'blockquote',
+    u'br',
     u'code',
     u'em',
     u'i',
