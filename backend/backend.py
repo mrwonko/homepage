@@ -177,13 +177,14 @@ def get_downloads( request, filename ):
     defer.returnValue( _to_json( { "downloads": downloads }, request ) )
 
 # register a finished download (internally called by nginx, not publicly proxied)
-@app.route( "/internal/rest/downloads/<path:filename>", methods = [ 'POST' ] )
+@app.route( "/internal/onDownload", methods = [ 'GET' ] )
 @defer.inlineCallbacks
-def on_download( request, filename ):
+def on_download( request ):
     _handle_cors( request )
-    if "completion" not in request.args or request.args[ "completion" ] != "OK":
+    print( "{}".format( request.args ) )
+    if "file" not in request.args or request.args.get( "completion", [ "" ] )[ 0 ] != "OK" or request.args.get( "method", [ "" ] )[ 0 ] != "GET":
         defer.returnValue( _to_json( { "success": False }, request ) )
-    yield just_database.new_download( filename )
+    yield just_database.new_download( request.args[ "file" ][ 0 ].lstrip( "/" ) )
     defer.returnValue( _to_json( { "success": True }, request ) )
 
 # admin: retrieve unapproved comments
