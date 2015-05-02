@@ -7,7 +7,6 @@ import just_akismet
 
 import local_config
 
-_connection = None
 _comment_columns = [ "id", "post", "spam", "user_agent", "referrer", "author", "time", "email", "url", "content", "approved", "ip" ]
 _comment_columns_string = ", ".join( _comment_columns ) 
 def _comment_row_to_dict( row ):
@@ -17,16 +16,27 @@ def _comment_row_to_dict( row ):
 
 #   Public functions
 @defer.inlineCallbacks
-def connect():
+def _connect():
     global _connection
-    _connection = txpostgres.Connection( detector = reconnection.DeadConnectionDetector() )
-    yield _connection.connect(
+    connection = txpostgres.Connection( detector = reconnection.DeadConnectionDetector() )
+    yield connection.connect(
         host = local_config.DB_HOST,
         port = local_config.DB_PORT,
         user = local_config.DB_USER,
         password = local_config.DB_PASS,
         dbname = local_config.DB_DB
     )
+    defer.returnValue( connection )
+
+_deferred_connection = _connect()
+
+def _get_connection():
+    result = defer.Deferred()
+    def return_and_pass( connection ):
+        result.callback( connection )
+        return connection
+    _deferred_connection.addCallback( return_and_pass )
+    return result
 
 @defer.inlineCallbacks
 def get_comments( post ):
@@ -37,7 +47,8 @@ def get_comments( post ):
     """
     
     res = []
-    rows = yield _connection.runQuery( 
+    connection = yield _get_connection()
+    rows = yield connection.runQuery( 
         """SELECT time, author, content, url
         FROM comments
         WHERE post = %s and approved = true
@@ -72,7 +83,9 @@ def new_comment( post, data, spam = False ):
     for key, value in defaulted_data.items():
         keys.append( key )
         values.append( value )
-    key = yield _connection.runQuery(
+    
+    connection = yield _get_connection()
+    key = yield connection.runQuery(
         """INSERT INTO comments( {keys} )
         VALUES ( {values} )
         RETURNING id""".format(
@@ -85,7 +98,8 @@ def new_comment( post, data, spam = False ):
 
 @defer.inlineCallbacks
 def get_download_count( name ):
-    rows = yield _connection.runQuery(
+    connection = yield _get_connection()
+    rows = yield connection.runQuery(
         """SELECT COUNT( * )
         FROM downloads JOIN download_names ON downloads.download = download_names.id
         WHERE download_names.name = %s""",
@@ -117,8 +131,9 @@ def new_download( name ):
             download_id = row[ 0 ]
             defer.returnValue( download_id )
     
-    name_id = yield _connection.runInteraction( get_or_create_name )
-    yield _connection.runOperation( 
+    connection = yield _get_connection()
+    name_id = yield connection.runInteraction( get_or_create_name )
+    yield connection.runOperation( 
         """INSERT INTO downloads( download )
         VALUES ( %s )""",
         [ name_id ]
@@ -135,7 +150,8 @@ def get_unapproved_comments():
     Unlike get_comments() this returns *all* columns since it's for administrative use.
     """
     
-    rows = yield _connection.runQuery(
+    connection = yield _get_connection()
+    rows = yield connection.runQuery(
         """SELECT {}
         FROM comments
         WHERE approved = false
@@ -149,7 +165,8 @@ def get_unapproved_comments():
 
 @defer.inlineCallbacks
 def trash_comment( comment_id ):
-    rows = yield _connection.runQuery(
+    connection = yield _get_connection()
+    rows = yield connection.runQuery(
         """DELETE FROM comments
         WHERE id = %s
         RETURNING {}""".format( _comment_columns_string ),
@@ -179,4 +196,5 @@ def approve_comment( comment_id ):
                     [ comment_id ]
                 )
             defer.returnValue( comment )
-    return _connection.runInteraction( get_and_approve )
+    return _get_connection()\
+    .addCallback( lambda connection: connection.runInteraction( get_and_approve ) )

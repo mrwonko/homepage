@@ -13,14 +13,6 @@ import just_database
 import just_sanitize
 import local_config
 
-#    Logging
-
-# make twisted log to stdout/stderr
-def _stdout_stderr_observer( log ):
-    print( *log[ "message" ], file = sys.stderr if log[ "isError" ] else sys.stdout )
-
-log.startLoggingWithObserver( _stdout_stderr_observer, setStdout = False )
-
 #    Akismet
 
 _akismet_defaults_comment = {
@@ -95,28 +87,51 @@ def _from_json( request, template = None ):
         raise werkzeug.exceptions.BadRequest( "invalid json!" )
     return template.sanitize( obj ) if template else obj
 
+def _handle_cors( request ):
+    if local_config.ALLOW_CROSS_ORIGIN:
+        request.setHeader( 'Access-Control-Allow-Origin', '*' )
+        request.setHeader( 'Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept' )
+
+def _options( request, options ):
+    request.setHeader( 'Allow', options )
+    _handle_cors( request )
+
 #    Routes
 
 app = klein.Klein()
+
+# options requests; adding CORS so Cross Origin Requests work
+@app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'OPTIONS' ] )
+def comments_options( request, year, slug ):
+    _options( request, 'GET, HEAD, POST' )
+    return ""
+@app.route( "/rest/downloads/<path:filename>", methods = [ 'OPTIONS' ] )
+def download_options( request, year, slug ):
+    _options( request, 'GET, HEAD' )
+    return ""
+@app.route( "/admin/rest/blog/comments/unapproved", methods = [ 'OPTIONS' ] )
+def unapproved_options( request, year, slug ):
+    _options( request, 'GET, HEAD' )
+    return ""
+@app.route( "/admin/rest/blog/comments/<int:comment_id>", methods = [ 'OPTIONS' ] )
+def admin_options( request, year, slug ):
+    _options( request, 'POST' )
+    return ""
 
 # get comments for article
 @app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'GET' ] )
 @defer.inlineCallbacks
 def get_comments( request, year, slug ):
-    if local_config.ALLOW_CROSS_ORIGIN:
-        request.setHeader( 'Access-Control-Allow-Origin', '*' )
+    _handle_cors( request )
     post = "/".join( [ str( year ), slug ] )
     comments = yield just_database.get_comments( post )
-    for comment in comments:
-        comment[ "content" ] = comment[ "content" ].replace( "\n", "<br/>" )
     defer.returnValue( _to_json( { "comments": comments }, request ) )
 
 # post comment to article
 @app.route( "/rest/blog/<int:year>/<slug>/comments", methods = [ 'POST' ] )
 @defer.inlineCallbacks
 def post_comment( request, year, slug ):
-    if local_config.ALLOW_CROSS_ORIGIN:
-        request.setHeader( 'Access-Control-Allow-Origin', '*' )
+    _handle_cors( request )
     year = str( year )
     post = "/".join( ( year, slug ) )
     
@@ -157,17 +172,17 @@ def post_comment( request, year, slug ):
 @app.route( "/rest/downloads/<path:filename>", methods = [ 'GET' ] )
 @defer.inlineCallbacks
 def get_downloads( request, filename ):
-    if local_config.ALLOW_CROSS_ORIGIN:
-        request.setHeader( 'Access-Control-Allow-Origin', '*' )
+    _handle_cors( request )
     downloads = ( yield just_database.get_download_count( filename ) ) + local_config.LEGACY_DOWNLOADS.get( filename, 0 )
     defer.returnValue( _to_json( { "downloads": downloads }, request ) )
 
-# register a finished download (internally called by nginx, not proxied)
+# register a finished download (internally called by nginx, not publicly proxied)
 @app.route( "/internal/rest/downloads/<path:filename>", methods = [ 'POST' ] )
 @defer.inlineCallbacks
 def on_download( request, filename ):
-    if local_config.ALLOW_CROSS_ORIGIN:
-        request.setHeader( 'Access-Control-Allow-Origin', '*' )
+    _handle_cors( request )
+    if "completion" not in request.args or request.args[ "completion" ] != "OK":
+        defer.returnValue( _to_json( { "success": False }, request ) )
     yield just_database.new_download( filename )
     defer.returnValue( _to_json( { "success": True }, request ) )
 
@@ -175,8 +190,7 @@ def on_download( request, filename ):
 @app.route( "/admin/rest/blog/comments/unapproved", methods = [ 'GET' ] )
 @defer.inlineCallbacks
 def get_unapproved( request ):
-    if local_config.ALLOW_CROSS_ORIGIN:
-        request.setHeader( 'Access-Control-Allow-Origin', '*' )
+    _handle_cors( request )
     comments = yield just_database.get_unapproved_comments()
     defer.returnValue( _to_json( { "comments": comments }, request ) )
 
@@ -184,8 +198,7 @@ def get_unapproved( request ):
 @app.route( "/admin/rest/blog/comments/<int:comment_id>", methods = [ 'POST' ] )
 @defer.inlineCallbacks
 def admin_comment( request, comment_id ):
-    if local_config.ALLOW_CROSS_ORIGIN:
-        request.setHeader( 'Access-Control-Allow-Origin', '*' )
+    _handle_cors( request )
     def respond( success ):
         defer.returnValue( _to_json( { "success": success }, request ) )
     body = _from_json( request, _comment_admin_template )
@@ -214,12 +227,14 @@ def admin_comment( request, comment_id ):
 
 #    Entry Point
 
-@defer.inlineCallbacks
-def main():
-    yield just_database.connect()
-    # only start the server once a database connection has been established
-    yield reactor.listenTCP( local_config.PORT, Site( app.resource() ), interface = local_config.HOST )
-    defer.returnValue( None )
+# for using twistd
+resource = app.resource()
 
-main()
-reactor.run()
+if __name__ == "__main__":
+    # make twisted log to stdout/stderr
+    def _stdout_stderr_observer( log ):
+        print( *log[ "message" ], file = sys.stderr if log[ "isError" ] else sys.stdout )
+    log.startLoggingWithObserver( _stdout_stderr_observer, setStdout = False )
+
+    reactor.listenTCP( local_config.PORT, Site( resource ), interface = local_config.HOST )
+    reactor.run()
