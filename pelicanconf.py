@@ -71,7 +71,8 @@ LINKS = [
     ( "Font Awesome", "http://fontawesome.io" ),
     ( "AngularJS", "https://angularjs.org/" ),
     ( "Git", "http://git-scm.com" ),
-    ( "Flask", "http://flask.pocoo.org" ),
+    ( "Twisted", "https://twistedmatrix.com" ),
+    ( "Klein", "https://github.com/twisted/klein" ),
     ( "PostgreSQL", "http://www.postgresql.org" ),
     ( "Akismet", "https://akismet.com" ),
     ( "nginx", "http://nginx.org" )
