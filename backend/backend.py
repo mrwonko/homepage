@@ -229,7 +229,7 @@ def admin_comment( request, comment_id ):
 #    Entry Point
 
 # for using twistd
-resource = app.resource()
+resource = app.resource
 
 if __name__ == "__main__":
     # make twisted log to stdout/stderr
