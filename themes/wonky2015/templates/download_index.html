@@ -16,7 +16,7 @@
         <thead>
             <tr>
                 <th>name</th>
-                <th>downloads</th>
+                {# <th>downloads</th> #}
                 <th>date</th>
             </tr>
         </thead>
@@ -24,7 +24,7 @@
             {% for article in articles %}
                 <tr>
                     <td><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></td>
-                    <td>-1 {# FIXME #}</td>
+                    {# <td>-1</td> #}
                     <td>{{ article.locale_date }}</td>
                 </tr>
             {% endfor %}
