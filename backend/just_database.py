@@ -35,7 +35,10 @@ def _get_connection():
     def return_and_pass( connection ):
         result.callback( connection )
         return connection
-    _deferred_connection.addCallback( return_and_pass )
+    def err_and_pass( failure ):
+        result.errback( failure )
+        return failure
+    _deferred_connection.addCallbacks( return_and_pass, err_and_pass )
     return result
 
 @defer.inlineCallbacks
