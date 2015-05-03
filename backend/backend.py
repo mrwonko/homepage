@@ -182,7 +182,7 @@ def get_downloads( request, filename ):
 def on_download( request ):
     _handle_cors( request )
     print( "{}".format( request.args ) )
-    if "file" not in request.args or request.args.get( "completion", [ "" ] )[ 0 ] != "OK" or request.args.get( "method", [ "" ] )[ 0 ] != "GET":
+    if "file" not in request.args or request.args.get( "completion", [ "" ] )[ 0 ] != "OK" or request.args.get( "method", [ "" ] )[ 0 ] != "GET" or not request.args.get( "status", [ "404" ])[ 0 ].startswith( "2" ):
         defer.returnValue( _to_json( { "success": False }, request ) )
     yield just_database.new_download( request.args[ "file" ][ 0 ].lstrip( "/" ) )
     defer.returnValue( _to_json( { "success": True }, request ) )
