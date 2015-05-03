@@ -25,7 +25,7 @@ class WebClientContextFactory(ssl.ClientContextFactory):
     def getContext( self, hostname, port ):
         return ssl.ClientContextFactory.getContext( self )
 
-agent = Acent( reactor ) if local_config.AKISMET_CHECK_CERTS else Agent( reactor, WebClientContextFactory() )
+agent = Agent( reactor ) if local_config.AKISMET_CHECK_CERTS else Agent( reactor, WebClientContextFactory() )
 
 class BodyReceiver( Protocol ):
     def __init__( self, finished ):
