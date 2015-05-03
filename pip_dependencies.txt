@@ -1,0 +1,21 @@
+bleach==1.4.1
+blinker==1.3
+docutils==0.12
+feedgenerator==1.7
+html5lib==0.99999
+Jinja2==2.7.3
+klein==15.0.0
+Markdown==2.6.2
+MarkupSafe==0.23
+-e git+https://github.com/getpelican/pelican@ac844eacf4588eb410348a4bf477d9b781ca3d37#egg=pelican-master
+psycopg2==2.6
+Pygments==2.0.2
+python-dateutil==2.4.2
+pytidylib==0.2.4
+pytz==2015.2
+six==1.9.0
+Twisted==15.1.0
+txpostgres==1.2.0
+Unidecode==0.4.17
+Werkzeug==0.10.4
+zope.interface==4.1.2
