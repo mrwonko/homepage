@@ -7,7 +7,7 @@
 {% block content %}
     <h1>blog</h1>
     
-    {# TODO: link feeds somewhere? #}
+    <p>Article feed: <a href="/feeds/blog.atom">atom</a>, <a href="/feeds/blog.rss">rss</a>.</p>
 
     {% for article in articles_page.object_list %}
         <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
