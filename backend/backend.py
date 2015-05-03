@@ -237,5 +237,5 @@ if __name__ == "__main__":
         print( *log[ "message" ], file = sys.stderr if log[ "isError" ] else sys.stdout )
     log.startLoggingWithObserver( _stdout_stderr_observer, setStdout = False )
 
-    reactor.listenTCP( local_config.PORT, Site( resource ), interface = local_config.HOST )
+    reactor.listenTCP( local_config.PORT, Site( resource() ), interface = local_config.HOST )
     reactor.run()
