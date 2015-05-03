@@ -1,4 +1,4 @@
-import flask
+from twisted.web import microdom
 import werkzeug.exceptions
 import bleach
 import tidylib
@@ -76,4 +76,4 @@ def clean( html ):
 def escape( html ):
     if not html:
         return html
-    return flask.escape( html )
+    return microdom.escape( html )
