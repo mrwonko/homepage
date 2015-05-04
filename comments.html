@@ -32,8 +32,8 @@
 			
 			<p>
 				<button ng-click="moderate( comment, 'approve' )" ng-disabled="comment.loading" class="btn btn-success">approve</button>
-				<button ng-click="moderate( comment, 'spam' )" ng-disabled="comment.loading" class="btn btn-danger">spam</button>
-				<button ng-click="moderate( comment, 'trash' )" ng-disabled="comment.loading" class="btn btn-danger">trash</button>
+				<button ng-click="moderate( comment, 'spam' )" ng-disabled="comment.loading" class="btn btn-danger">spam (&amp; delete)</button>
+				<button ng-click="moderate( comment, 'delete' )" ng-disabled="comment.loading" class="btn btn-danger">delete</button>
 				{{ comment.loading ? "Loading..." : ""}}
 			</p>
 			
