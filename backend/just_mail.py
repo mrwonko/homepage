@@ -11,17 +11,17 @@ def send( subject, body ):
     
     finished = defer.Deferred()
     
-    msg = MIMEText( body.encode( 'UTF-8' ), "html" )
-    msg[ "Subject" ] = subject
-    msg[ "From" ] = local_config.MAIL_FROM
-    msg[ "To" ]  = ", ".join( local_config.MAIL_TO )
+    msg = MIMEText( unicode( body ), "html", "utf-8" )
+    msg[ "Subject" ] = unicode( subject )
+    msg[ "From" ] = unicode( local_config.MAIL_FROM )
+    msg[ "To" ]  = u", ".join( local_config.MAIL_TO )
     
     senderFactory = smtp.ESMTPSenderFactory(
         local_config.SMTP_USER,
         local_config.SMTP_PASS,
         local_config.MAIL_FROM,
         ", ".join( local_config.MAIL_TO ),
-        StringIO( str( msg ) ),
+        StringIO( msg.as_string().encode( 'ascii' ) ),
         finished
     )
 
