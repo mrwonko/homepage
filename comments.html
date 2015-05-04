@@ -31,9 +31,9 @@
 			<h3>Actions</h3>
 			
 			<p>
-				<button ng-click="approve( comment )" ng-disabled="comment.loading" class="btn btn-success">approve</button>
-				<button ng-click="spam( comment )" ng-disabled="comment.loading" class="btn btn-danger">spam</button>
-				<button ng-click="trash( comment )" ng-disabled="comment.loading" class="btn btn-danger">trash</button>
+				<button ng-click="moderate( comment, 'approve' )" ng-disabled="comment.loading" class="btn btn-success">approve</button>
+				<button ng-click="moderate( comment, 'spam' )" ng-disabled="comment.loading" class="btn btn-danger">spam</button>
+				<button ng-click="moderate( comment, 'trash' )" ng-disabled="comment.loading" class="btn btn-danger">trash</button>
 				{{ comment.loading ? "Loading..." : ""}}
 			</p>
 			
