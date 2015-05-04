@@ -27,7 +27,8 @@ MAIL_ENABLED = False
 MAIL_TO = [ "" ]
 MAIL_FROM = ""
 
-MAIL_BODY_NEW_COMMENT = """\
+# mind the unicode - if the comment contains any, you'll want the format string to be unicode as well.
+MAIL_BODY_NEW_COMMENT = u"""\
 New blog comment by {comment["author"]}, it's {spammy}.
 """
 
