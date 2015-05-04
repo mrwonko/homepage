@@ -6,9 +6,12 @@ angular.module( "commentsAdminApp", [ "ngSanitize" ] )
 	$scope.comments = [];
 	$scope.error = null;
 	$scope.success = null;
-	$scope.approve = function( comment ) {
-		comment.loading = true;
-	};
+	$scope.dismissError = function() {
+		$scope.error = null;
+	}
+	$scope.dismissSuccess = function() {
+		$scope.success = null;
+	}
 	$scope.moderate = function( comment, action ) {
 		comment.loading = true;
 		$http.post( "rest/blog/comments/" + comment.id, { action: action } )
