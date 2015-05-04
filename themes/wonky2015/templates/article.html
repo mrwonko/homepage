@@ -78,7 +78,7 @@
                 </button>
                 <strong>Failed to submit comment!</strong> {{ '{{ error }}' }}
             </div>
-            <div class="alert alert-success" x-ng-if="submitted && !error">
+            <div class="alert alert-success" x-ng-if="submitted">
                 Comment submitted!
             </div>
             <form name="form" class="form-horizontal" novalidate x-ng-if="!submitted">

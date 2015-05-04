@@ -45,6 +45,7 @@ angular.module( 'commentsApp', [ 'lodash', 'ngSanitize', 'templateGenerated' ] )
             if( data.spam ) {
                 $scope.error = "You appear to be a spammer. Boo! Boo!";
             } else {
+                $scope.error = null; // dismiss potential previous errors
                 $scope.submitted = true;
             }
         })
