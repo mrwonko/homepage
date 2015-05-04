@@ -11,7 +11,7 @@ def send( subject, body ):
     
     finished = defer.Deferred()
     
-    msg = MIMEText( body, "html" )
+    msg = MIMEText( body.encode( 'UTF-8' ), "html" )
     msg[ "Subject" ] = subject
     msg[ "From" ] = local_config.MAIL_FROM
     msg[ "To" ]  = ", ".join( local_config.MAIL_TO )
