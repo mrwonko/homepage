@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+		<script src="js/lib/angular.js"></script>
+		<script src="js/lib/angular-sanitize.min.js"></script>
+		<script src="js/comments.js"></script>
+	</head>
+	<body ng-app="commentsAdminApp" ng-controller="commentsCtrl" ng-cloak>
+		<h1>Comment admin</h1>
+		<div class="alert alert-danger alert-dismissable" ng-if="error">
+			<button type="button" class="close" ng-click="error = null">&times;</button>
+			{{ error }}
+		</div>
+		<div class="alert alert-success alert-dismissable" ng-if="success">
+			<button type="button" class="close" ng-click="success = null">&times;</button>
+			{{ success }}
+		</div>
+		
+		<p ng-if="comments.length == 0 && !loading">No unapproved comments.</p>
+		
+		<p ng-if="loading">Loading...</p>
+		
+		
+		<article ng-repeat="comment in comments">
+			<h2><a ng-href="/blog/{{ comment.post }}.html">{{ comment.post }}</a>: {{ comment.author }} ({{ comment.email }})</h2>
+			<p>At {{ date( comment.time ) }}. {{ comment.spam ? "Spam" : "Ham" }}.</p>
+			
+			<h3>Actions</h3>
+			
+			<p>
+				<button ng-click="approve( comment )" ng-disabled="comment.loading" class="btn btn-success">approve</button>
+				<button ng-click="spam( comment )" ng-disabled="comment.loading" class="btn btn-danger">spam</button>
+				<button ng-click="trash( comment )" ng-disabled="comment.loading" class="btn btn-danger">trash</button>
+				{{ comment.loading ? "Loading..." : ""}}
+			</p>
+			
+			<h3>Content</h3>
+			<p>
+				<button class="btn btn-default" ng-click="comment.showPreview = !comment.showPreview">{{ comment.showPreview ? 'Code' : 'Preview' }}</button>
+			</p>
+			
+			<pre ng-if="!comment.showPreview">{{ comment.content }}</pre>
+			<div ng-if="comment.showPreview" ng-bind-html="comment.content"></div>
+		</article>
+	</body>
+</html>
