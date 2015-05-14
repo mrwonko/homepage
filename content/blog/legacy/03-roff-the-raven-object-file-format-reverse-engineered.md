@@ -2,7 +2,7 @@ Title: ROFF - the Raven Object File Format reverse engineered
 date: 2010-07-27 19:45
 modified: 2015-04-08 15:15
 author: mrwonko
-tags: Blender, Jedi Academy, Modelling, Programming, broken link
+tags: Blender, Jedi Academy, Modelling, Programming
 category: Programming
 type: blog
 slug: roff-the-raven-object-file-format-reverse-engineered
@@ -76,7 +76,7 @@ rows turned out to be deltaLocationX, deltaLocationY, deltaLocationZ,
 deltaRotationY, deltaRotationZ and deltaRotationX.
 
 So eventually I was done and the result can be downloaded [on this very
-website](../downloads/view.php?id=22). There's an [example on
+website]({filename}../../downloads/blender-2-49-roff-im-exporter.md). There's an [example on
 youtube](http://www.youtube.com/watch?v=t6JISk-h1cs).
 
 And I'm happy.
