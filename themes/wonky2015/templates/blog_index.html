@@ -10,7 +10,10 @@
     <p>Article feed: <a href="{{ SITEURL }}/feeds/blog.atom">atom</a>, <a href="{{ SITEURL }}/feeds/blog.rss">rss</a>.</p>
 
     {% for article in articles_page.object_list %}
-        <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+        <h2>
+            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            <small>{{ article.locale_date }}</small>
+        </h2>
         
         {{ article.summary }}
         
