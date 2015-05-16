@@ -11,6 +11,7 @@ I actually completely ditch the ArticleGenerator's usual variables (articles etc
 
 Known issues:
 *   {category} and {tag} links don't work if the tag/category URL includes {type} since they create a new, type-agnostic URLWrapper object
+*   Drafts are not supported.
 """
 
 from pelican import signals
