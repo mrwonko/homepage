@@ -7,6 +7,18 @@
     {{ article.title|striptags }}
 {% endblock %}
 
+{% block head %}
+    {{ super() }}
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lib/angular.min.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/download.js"></script>
+    {% include "angular.html" %}
+    <script>
+        angular.module( 'templateGenerated' )
+        .constant( "filename", "{{ article.link }}" )
+        ;
+    </script>
+{% endblock %}
+
 {% block content %}
     <h1>{{ article.title }}</h1>
     
@@ -19,8 +31,8 @@
         <div class="pull-left">
             <span class="thumbnail download-thumbnail"><img src="{{ article.thumbnail }}" alt="image"/></span>
         </div>
-        {# this will wrap if there is too little space #}
-        <p class="pull-left">
+        {# pull-left will wrap if there is too little space #}
+        <p class="pull-left" x-ng-app="downloadApp" x-ng-controller="DownloadCtrl" x-ng-cloak>
             Author{% if article.authors | count > 1 %}s{% endif %}: {% include "authorlist.html" %}
             <br/>
             Published: <abbr title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
@@ -35,7 +47,7 @@
                 Tags: {% include "taglist.html" %}
             {% endif %}
             <br/>
-            Downloads: [download counter will go here FIXME]
+            Downloads: {{ '{{ downloadCount }}' }}
         </p>
     </div>
 
