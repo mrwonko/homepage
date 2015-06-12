@@ -46,9 +46,9 @@ Zuerst ein paar Erklärungen zu den Grid Einstellungen:
 
 In dem 3D-Fenster bewegt man sich wie folg:
 
-*   linke Maustaste = 3D Rundumsicht
-*   rechte Maustaste = vorwärts, rückwärts, nach links, nach rechts
-*   beide Maustasten = nach oben oder nach unten bewegen
+*   <kbd>linke Maustaste</kbd> = 3D Rundumsicht
+*   <kbd>rechte Maustaste</kbd> = vorwärts, rückwärts, nach links, nach rechts
+*   <kbd>beide Maustasten</kbd> = nach oben oder nach unten bewegen
 
 ![image]({filename}terrain-easygen/Image33.gif)
 
@@ -72,7 +72,7 @@ Jetzt wählen wir einen Texturen-Ordner. Dieser ist für uns unwichtig, da wir j
 
 Das Programm braucht jedoch die Einstellungen, um die Export-Funktion durchführen zu können (Q3-bedingt).
 
-Wähle am besten einen kleinen Texturen-Ordner, wie z.B. "common", da das Laden der Texturen eine Weile dauern kann.
+Wähle am besten einen kleinen Texturen-Ordner, wie z.B. `common`, da das Laden der Texturen eine Weile dauern kann.
 
 ![image]({filename}terrain-easygen/Image6.gif)
 
@@ -88,7 +88,7 @@ Nachdem wir unsere minimalen Alphamap-Einstellungen vorgenommen wurden, können 
 
 Klicke jetzt auf `Modifier` und wähle `Cone`. In der Mitte des Terrains erscheint der Modifier (Modifikator, eine rote Draht-Box). Man erkennt, wie sich an dieser Stelle das Terrain verformt hat. 
 
-Den Modifikator kann man bewegen, in dem man die Taste <kbd>Strg</kbd> festhält und die linke Maustaste benutzt. 
+Den Modifikator kann man bewegen, in dem man die Taste <kbd>Strg</kbd> festhält und die <kbd>linke Maustaste</kbd> benutzt. 
 
 ![image]({filename}terrain-easygen/Image28.gif)
 
@@ -96,11 +96,11 @@ Mit der <kbd>Leertaste</kbd> kann man dann an der Stelle, wo sich der Modifikato
 
 ![image]({filename}terrain-easygen/Image13.gif)
 
-Wenn du die Taste <kbd>Shift</kbd> (Umschalttaste) festhältst und dann die rechte Maustaste benutzt, kannst du die Breite des Modifikators ändern:
+Wenn du die Taste <kbd>Shift</kbd> (Umschalttaste) festhältst und dann die <kbd>rechte Maustaste</kbd> benutzt, kannst du die Breite des Modifikators ändern:
 
 ![image]({filename}terrain-easygen/Image24.gif) ![image]({filename}terrain-easygen/Image25.gif)
 
-Mit der Taste <kbd>Strg</kbd> und der rechten Maustaste kannst du die Höhe des Modifikators ändern.
+Mit der Taste <kbd>Strg</kbd> und der <kbd>rechten Maustaste</kbd> kannst du die Höhe des Modifikators ändern.
 
 ![image]({filename}terrain-easygen/Image26.gif) ![image]({filename}terrain-easygen/Image27.gif)
 
