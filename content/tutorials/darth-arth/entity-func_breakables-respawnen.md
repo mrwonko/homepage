@@ -22,7 +22,7 @@ targetname ziel_on</pre>
 3.  `target_delay` erstellen mit den Eigenschaften:
 
     <pre>targetname ziel_off
-    target     ziel on
-    wait       2</pre>
+target     ziel on
+wait       2</pre>
 
 Dann wird bei Zerstörung (= null health) des `func_usable` der `target_delay` aktiviert, der nach 2 Sekunden die `func_usable` wieder einschaltet.
