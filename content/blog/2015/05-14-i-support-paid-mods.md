@@ -1,7 +1,7 @@
 Title: I support paid mods.
 date: 2015-05-14 22:30
 author: mrwonko
-tags: Videogames, Mods
+tags: Videogames, Modding
 category: Videogames
 type: blog
 slug: 05-15-i-support-paid-mods
