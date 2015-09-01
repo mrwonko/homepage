@@ -44,7 +44,7 @@ Zuerst ein paar Erklärungen zu den Grid Einstellungen:
     <dt>Div.Widr.</dt><dd>Breite und Länge einer einzelnen Zelle im Terrain. (je kleiner die Zellen, desto feiner das Terrain. Geht jedoch auch kosten der Performance, da viel mehr Brushes erstellt werden müssen. Man sollte keine Zellen definieren, die kleiner sind als 64-Einheiten)</dd>
 </dl>
 
-In dem 3D-Fenster bewegt man sich wie folg:
+In dem 3D-Fenster bewegt man sich wie folgt:
 
 *   <kbd>linke Maustaste</kbd> = 3D Rundumsicht
 *   <kbd>rechte Maustaste</kbd> = vorwärts, rückwärts, nach links, nach rechts
