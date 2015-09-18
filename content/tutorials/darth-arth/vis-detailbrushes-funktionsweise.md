@@ -17,15 +17,15 @@ Beim Kompilieren werden u.a. aus den Brushes einzelne Dreiecke gemacht, sogenann
 
 Jedenfalls, wie brushes zerschnitten werden, hängt davon ab, welchen Typ sie haben. Im Radiant sieht das ganze z.B. noch so aus:
 
-![image](wonko822.wo.funpic.de/downloads/detailbrushes/images/radiant.jpg)
+![image]({filename}vis-detailbrushes-funktionsweise-1.jpg)
 
 Wenn alles Structural-Brushes sind, man also keine Detailbrushes benutzt, sieht es im Spiel so aus:
 
-![image](wonko822.wo.funpic.de/downloads/detailbrushes/images/game_structural.jpg)
+![image]({filename}vis-detailbrushes-funktionsweise-2.jpg)
 
 Ist jedoch der Quader ein Detail-Brush, so zerschneidet er die Fläche nicht und es sieht so aus:
 
-![image](wonko822.wo.funpic.de/downloads/detailbrushes/images/game_detail.jpg)
+![image]({filename}vis-detailbrushes-funktionsweise-3.jpg)
 
 [color=red]Möglicherweise sind die Bilder falsch und Detailbrushes haben darauf überhaupt keine Auswirkung. Diskussion siehe [hier](darth-arth.de/forum/viewtopic.php?p=38752)[/color] FIXME
 
