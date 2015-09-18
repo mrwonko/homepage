@@ -7,17 +7,17 @@ Here are some of the things I've made.
 
 # This Website
 
-Built using [Pelican](http://blog.getpelican.com/) from [this Github repo](https://github.com/mrwonko/homepage/) with a custom plugin to allow different types of articles (blog, downloads, tutorials) and a custom theme.
+Built using [Pelican](http://blog.getpelican.com/) from [this Github repo](https://github.com/mrwonko/homepage/) with a custom plugin to allow different types of articles (blog, downloads, tutorials) and a custom theme with a Python backend for comments.
 
 # Perseus Compiler & VM
 
-For my Bachelor thesis I wrote a [compiler and virtual machine for a subset of a programming language of my design](https://github.com/mrwonko/perseus). It currently does little more than integer arithmetic, but with continued work I hope to one day have a useful embedded language for scripts in video games with unique serialization capabilities.
+For my Bachelor thesis I wrote a [compiler and virtual machine for a subset of a programming language of my design](https://github.com/mrwonko/perseus) in modern C++ using Boost.Spirit. It currently does little more than integer arithmetic, but with continued work I hope to one day have a useful embedded language for scripts in video games with unique serialization capabilities.
 
-# Jedi Knight: Jedi Academy Plugin Suite for Blender
+# Various Jedi Knight: Jedi Academy modding
 
-I'm not a very good artist, but I still do some modelling, and Blender is my tool of choice. It's a wonderful program which can be further adapted to your needs using Python plugins. And that's just what I did - I added support for just about every model-/animation-related file format from Jedi Knight: Jedi Academy so I can mod that game to my heart's content.
+Back in 2003 I got into modding; first with Jedi Knight 2: Jedi Outcast, then its sequel Jedi Academy. Over the years I learned about the basics of level design, scripting, materials, modelling, rigging, animation and eventually coding. The visible results are [a small level here](http://mrwonko.de/jk3files/Jedi%20Academy/Maps/Multiple%20Gamemodes/64416/) and [a new player model there](http://jkhub.org/files/file/5-fluttershy/), but never anything large; the most important result is the broad knowledge I gained, I just had not learned to finish projects at that time.
 
-[Download]({filename}/downloads/blendersuite.md)
+In any case I found coding to be more to my liking so I started working on tools instead of content. In particular Blender, my modelling tool of choice, lacked support for Jedi Academy's player model and animation formats, but can be extended through Python plugins. So I compiled [a suite of plugins](http://jkhub.org/files/file/1413-blender-264-jedi-academy-plugin-suite/) - some written from scratch, others modified existing scripts - for working with Jedi Academy related formats. I also wrote [a tutorial on using it to create new vehicles](http://jkhub.org/tutorials/article/127-creating-new-vehicles-with-blender/).
 
 # Razer Hydra DirectInput Virtual Gamepad
 
@@ -29,13 +29,13 @@ So I wrote a tool that allows you to map the axes and buttons to a virtual gamep
 
 # Mini Blue Box Boy
 
-<div class="embed-responsive embed-responsive-4by3">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OHFIjCSOEQ0?rel=0" allowfullscreen></iframe>
-</div>
-
 I have to admit I tend not to finish big games, so having constraints helps. Like Ludum Dare, where you have to create a game within 48 hours. This is one such game, a platformer I wrote in C++ using the framework SFML and the physics library Box2D for Ludum Dare 22.
 
 [Download]({filename}/downloads/miniblueboxboy.md)
+
+<div class="embed-responsive embed-responsive-4by3">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OHFIjCSOEQ0?rel=0" allowfullscreen></iframe>
+</div>
 
 # Github
 
