@@ -19,6 +19,12 @@ Back in 2003 I got into modding; first with Jedi Knight 2: Jedi Outcast, then it
 
 In any case I found coding to be more to my liking so I started working on tools instead of content. In particular Blender, my modelling tool of choice, lacked support for Jedi Academy's player model and animation formats, but can be extended through Python plugins. So I compiled [a suite of plugins](http://jkhub.org/files/file/1413-blender-264-jedi-academy-plugin-suite/) - some written from scratch, others modified existing scripts - for working with Jedi Academy related formats. I also wrote [a tutorial on using it to create new vehicles](http://jkhub.org/tutorials/article/127-creating-new-vehicles-with-blender/).
 
+Later Jedi Academy's source code was released; I'm now part of a team maintaining it in a project called [OpenJK](https://github.com/JACoders/OpenJK). We aim to fix bugs and enhance the game while maintaining binary compatibility with existing mods.
+
+# PPHPBB2 to HTML
+
+While archiving an old PHPBB2 forum I wanted to render it to static HTML; to this end I wrote a small [Python app](https://github.com/mrwonko/phpbb2_to_html) that connects to a MySQL database and renders its contents using Jinja2.
+
 # Razer Hydra DirectInput Virtual Gamepad
 
 The Razer Hydra is a motion controller for the PC. The bundled software allows you to map motions to your mouse and keyboard so games without direct support can still be played with it, but mapping 6 axes (plus trigger and analog sticks, and all of that twice; once for each hand) to only 2 analog axes (mouse movement) and buttons is such a waste.
