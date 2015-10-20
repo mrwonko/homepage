@@ -80,6 +80,7 @@ LINKS = [
 
 # Social widget
 SOCIAL = [
+	( "Mail", "fa-envelope", "willi+homepage@mrwonko.de", "mailto:willi+homepage@mrwonko.de" ),
     ( "Twitter", "mrw-fa-twitter", "@mrwonko", "https://twitter.com/mrwonko" ),
     ( "Github", "mrw-fa-github", "mrwonko", "http://github.com/mrwonko/" ),
     ( "Youtube", "mrw-fa-youtube", "mrwonko", "https://www.youtube.com/user/mrwonko/" ),
