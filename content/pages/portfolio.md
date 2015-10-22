@@ -21,6 +21,12 @@ In any case I found coding to be more to my liking so I started working on tools
 
 Later Jedi Academy's source code was released; I'm now part of a team maintaining it in a project called [OpenJK](https://github.com/JACoders/OpenJK). We aim to fix bugs and enhance the game while maintaining binary compatibility with existing mods.
 
+# Octarine Optimizer - Same Game Solver
+
+Made for a programming competition at university where it placed first, this multithreaded C++ game AI finds high-scoring solutions for [the Same Game](http://www.factmonster.com/games/samegame.html) (albeit with slightly different scoring).
+
+[Github Repo](https://github.com/mrwonko/pwb2015/)
+
 # PPHPBB2 to HTML
 
 While archiving an old PHPBB2 forum I wanted to render it to static HTML; to this end I wrote a small [Python app](https://github.com/mrwonko/phpbb2_to_html) that connects to a MySQL database and renders its contents using Jinja2.
@@ -33,15 +39,9 @@ So I wrote a tool that allows you to map the axes and buttons to a virtual gamep
 
 [Website](http://sixense.com/forum/vbulletin/showthread.php?3203-DirectInput-virtual-gamepad-%28version-0-4f%29)
 
-# Mini Blue Box Boy
+# <Watch this space>
 
-I have to admit I tend not to finish big games, so having constraints helps. Like Ludum Dare, where you have to create a game within 48 hours. This is one such game, a platformer I wrote in C++ using the framework SFML and the physics library Box2D for Ludum Dare 22.
-
-[Download]({filename}/downloads/miniblueboxboy.md)
-
-<div class="embed-responsive embed-responsive-4by3">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OHFIjCSOEQ0?rel=0" allowfullscreen></iframe>
-</div>
+I've just started working on a small action platformer; I plan to release a playable prototype by mid-November.
 
 # Github
 
