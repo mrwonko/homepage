@@ -9,11 +9,12 @@ Since there's no markup in metadata (besides summary), you can only mark the ful
 from pelican import signals
 from pelican.utils import memoized
 from pelican.contents import Content
-from itertools import ifilter
+import sys
+if sys.version_info < (3, 0):
+    from itertools import ifilter as filter
 from six.moves.urllib.parse import urlparse, urlunparse
 import logging
 import os
-import sys
 
 logger = logging.getLogger( __name__ )
 
@@ -68,7 +69,7 @@ def fix_metadata( self ):
     #   save / remove current values
     for article in self.articles:
         article._mrw_metadata_attributes = {}
-        for key in ifilter( lambda key: key in valid_keys, article.metadata.keys() ):
+        for key in filter( lambda key: key in valid_keys, article.metadata.keys() ):
             # rename save_as and url like Content.__init__() does
             if key in [ 'save_as', 'url' ]:
                 key = 'override_' + key

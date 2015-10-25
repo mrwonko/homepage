@@ -16,7 +16,10 @@ Known issues:
 
 from pelican import signals
 from collections import defaultdict
-from itertools import groupby as uniq, ifilter, imap, chain
+from itertools import groupby as uniq, chain
+import sys
+if sys.version_info < (3, 0):
+    from itertools import ifilter as filter
 from functools import partial
 from operator import attrgetter
 import os
@@ -36,11 +39,11 @@ def constant( x ):
     """
     return lambda: x
 
-def fst( (x, _) ):
-    return x
+def fst( pair ):
+    return pair[ 0 ]
 
-def snd( (_, x) ):
-    return x
+def snd( pair ):
+    return pair[ 1 ]
 
 def group_by( keyfunc, iterable ):
     return uniq( sorted( iterable, key = keyfunc ), keyfunc )
@@ -119,7 +122,7 @@ def taxonomy( article_generator ):
         for type, articles in group_by(
             attrgetter( 'type' ),
             # only take articles that have the 'type' metadata
-            ifilter(
+            filter(
                 lambda article: hasattr( article, 'type' ),
                 self.articles
             )
@@ -251,7 +254,7 @@ def write_articles_and_feeds( article_generator, writer ):
     #   Authors
     author_template = self.get_template( 'author' )
     for author, articles_by_type in self.articles_by_type_by_author.items():
-        articles = list( chain.from_iterable( articles_by_type.itervalues() ) )
+        articles = list( chain.from_iterable( articles_by_type.values() ) )
         articles.sort( key = attrgetter( 'date' ), reverse = True )
         dates = list( articles )
         if not self.settings[ 'NEWEST_FIRST_ARCHIVES' ]:
