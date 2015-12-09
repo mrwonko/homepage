@@ -12,8 +12,7 @@
 @import url("bootstrap.min.css");
 @import url("bootstrap-theme.min.css");
 @import url("font-awesome.min.css");
-/* todo: remove http: to make protocol-relative, preventing mixed content warnings on IE when using HTTPS */
-@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
 
 /* prevent first column in table from wrapping */
 @media (min-width: 768px)
