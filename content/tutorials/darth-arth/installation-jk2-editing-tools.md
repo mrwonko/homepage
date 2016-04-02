@@ -9,7 +9,7 @@ slug: installation-jk2-editing-tools
 
 # Voraussetzungen
 
-*   [Jedi Knight II - Editing Tools](http://www.jk2files.com/file.info?ID=2433)
+*   [Jedi Knight II - Editing Tools](http://mrwonko.de/jk3files/Jedi%20Outcast/Official%20Releases/Others/2433/)
 
 # Tutorial
 
