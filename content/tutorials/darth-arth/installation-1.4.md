@@ -3,7 +3,7 @@ date: 2004-01-01
 type: tutorials/darth-arth
 author: Killermic (Michael S.)
 category: editor
-tags: Installation
+tags: Installation, Radiant
 modified: 2015-04-12
 slug: installation-1.4
 

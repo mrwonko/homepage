@@ -4,7 +4,7 @@ date: 2004-01-01
 modified: 2015-04-14
 category: mapping
 type: tutorials/darth-arth
-tags: Tür, Entities, auto-generated
+tags: Entities
 slug: entity-lift
 
 Es gibt grundsätzlich mehrere Arten um einen Aufzug zu erstellen. Dies ist meiner Meinung nach aber die einfachste.

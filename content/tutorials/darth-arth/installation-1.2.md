@@ -4,7 +4,7 @@ date: 2003-01-01
 modified: 2015-04-14
 category: editor
 type: tutorials/darth-arth
-tags: Installation, auto-generated
+tags: Radiant, Installation
 slug: installation-1.2
 
 # Voraussetzungen

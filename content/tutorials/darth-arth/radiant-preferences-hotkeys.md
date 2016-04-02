@@ -4,7 +4,7 @@ date: 2004-01-01
 modified: 2015-04-14
 category: editor
 type: tutorials/darth-arth
-tags: Radiant, auto-generated
+tags: Radiant
 slug: radiant-preferences-hotkeys
 
 In diesem Tutorial werde
