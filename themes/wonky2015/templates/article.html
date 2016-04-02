@@ -1,10 +1,14 @@
 {% extends "base_typed.html" %}
 
+{% set tag_title = article.title | striptags %}
+{% set attribute_title = tag_title | replace( '&', '&amp;' ) | replace( '"', '&quot;' ) %}
+{% set attribute_summary = article.summary | striptags | replace( '&', '&amp;' ) | replace( '"', '&quot;' ) %}
+
 {% set current_tab = type_settings.tab %}
-{% set breadcrumbs = type_settings.parent_breadcrumbs + [ ( type_settings.title, type_settings.index_save_as ), ( article.title|striptags, output_file ) ] %}
+{% set breadcrumbs = type_settings.parent_breadcrumbs + [ ( type_settings.title, type_settings.index_save_as ), ( tag_title, output_file ) ] %}
 
 {% block title %}
-    {{ article.title|striptags }}
+    {{ tag_title }}
 {% endblock %}
 
 {% block head %}
@@ -24,14 +28,14 @@
     {# Twitter Metadata #}
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@mrwonko"/>
-    <meta name="twitter:title" content="{{ article.title | striptags }}"/>
-    <meta name="twitter:description" content="{{ article.summary | striptags }}"/>
+    <meta name="twitter:title" content="{{ attribute_title }}"/>
+    <meta name="twitter:description" content="{{ attribute_summary }}"/>
     
     {# Facebook Metadata #}
     <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ article.title | striptags }}"/>
-    <meta property="og:description" content="{{ article.summary | striptags }}"/>
+    <meta property="og:title" content="{{ attribute_title }}"/>
+    <meta property="og:description" content="{{ attribute_summary }}"/>
     <meta property="og:site_name" content="mrwonkos blog"/>
     
     {#
