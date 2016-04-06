@@ -39,10 +39,6 @@ So I wrote a tool that allows you to map the axes and buttons to a virtual gamep
 
 [Website](http://sixense.com/forum/vbulletin/showthread.php?3203-DirectInput-virtual-gamepad-%28version-0-4f%29)
 
-# <Watch this space>
-
-I've just started working on a small action platformer; I plan to release a playable prototype by mid-November.
-
 # Github
 
 Also check out my [Github profile](https://github.com/mrwonko) for an assortment of other projects.
