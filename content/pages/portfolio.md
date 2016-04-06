@@ -3,7 +3,7 @@ save_as: portfolio.html
 url: portfolio.html
 page-order: 20
 
-Here are some of the things I've made.
+Hi, I'm Willi and I currently work at [freiheit.com](https://freiheit.com) creating web applications. Here are some of the things I've made.
 
 # This Website
 
