@@ -86,7 +86,7 @@ SOCIAL = [
     ( "Youtube", "mrw-fa-youtube", "mrwonko", "https://www.youtube.com/user/mrwonko/" ),
     ( "Steam", "mrw-fa-steam", "mrwonko", "http://steamcommunity.com/id/mrwonko/" ),
     ( "LinkedIn", "mrw-fa-linkedin", "Willi Schinmeyer", "https://www.linkedin.com/profile/view?id=67044848" ),
-    ( "Public Key", "fa-key", "5DA07BD8", "/pgp/0x5DA07BD8.asc" ),
+    ( "Public Key", "fa-key", "5DA07BD8", "https://mrwonko.de/pgp/0x5DA07BD8.asc" ),
 	( "JKHub", "fa-gamepad", "mrwonko", "http://jkhub.org/user/50-mrwonko/" ),
 ]
 
