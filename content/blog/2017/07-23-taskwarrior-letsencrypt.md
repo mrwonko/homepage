@@ -22,9 +22,9 @@ Here's an explanation of the server settings:
 - `server.crl`: Certificate Revocation List. This could presumably be used to reject compromised clients. I left it empty, as I don't currently need it.
 - `client.key` / `client.cert`: here's what the guide says about these:
 
-  > These are for API access, and not for your Taskwarrior client.
+    > These are for API access, and not for your Taskwarrior client.
 
-  So I think they're safe to ignore.
+    So I think they're safe to ignore.
 
 - `ca.cert`: these are the root Certificate Authorities accepted by the server. They are used to verify the identity of the clients. Apparently the file can contain multiple root certificates, but I only use one: The self-signed one whose generation is described in the guide, created using `pki/generate.ca`.
 
