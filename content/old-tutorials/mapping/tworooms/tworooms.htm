@@ -1,0 +1,181 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Zuerst müssen wir in der Map unsere Kamera</title>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font></p>
+
+<hr>
+
+<p><font color="#FFFFFF" size="4" face="Arial">2 Räume verbinden, erste Tür</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools I ( <a href="../../radiant/jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools 2 ( <a href="../../radiant/jk2_etools2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="../../radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Mein Erster Raum ( <a href="../firstroom/firstroom.htm">Tutorial</a> )&lt;&lt;</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">In</font><font face="Arial" size="2" color="#C0C0C0">
+dieser Lehreinheit (Tutorial) wird beschrieben, wie man auf einfachste Weise 2
+Räume miteinander verbinden kann und wie erstellt man eine einfache Tür.</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Als erstes, benötigen wie einen
+einfachen Raum, wie in dem Tutorial &gt;&gt; &quot;<a href="../firstroom/firstroom.htm">Mein
+erster Raum</a>&quot; &lt;&lt; beschrieben. Nur sollte er nicht ganz so groß
+sein, max. 1000 x 1000 Map - Einheiten.</font></p>
+<p><img border="0" src="Image41.jpg" width="313" height="287"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Bitte ESC-Taste drücken um
+sicher zu gehen, dass nichts markiert ist. Dann, legen wir in der 2D-Ansicht
+einen Brush um den kompletten Raum, siehe Bild unten:</font></p>
+<p><img border="0" src="Image39.jpg" width="369" height="325"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt klicken wir auf </font><img border="0" src="Image40.jpg" width="21" height="23">
+<font face="Arial" size="2" color="#C0C0C0">um den ganzen Inhalt zu markieren.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Es sieht danach später so aus, wie auf
+diesem
+Bild:</font></p>
+<p><img border="0" src="Image38.jpg" width="644" height="317"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt bitte die &quot;Leertaste
+drücken um den ganzen Raum zu kopieren. Die Kopie setzen wir neben dem Original,
+aber nicht direkt, sondern mit ein wenig Entfernung, damit wir einen schönen
+Gang dazwischen bauen können.</font></p>
+<p><img border="0" src="Image37.jpg" width="831" height="279"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Beim erstellen von Türem Gängen
+usw., sollte man sehr auf die Größen-Verhältnisse achten. Denn, falsche
+Maßstäbe haben schon so manchen Mapper zur Verzweiflung getrieben. Deswegen
+ist es immer wichtig, ein Bezugsobjekt zu finden, an dessen Größe man sich
+orientieren kann. Bei JKII eignet sich &quot;</font><font face="Arial" size="2" color="#FFFFFF">Info_player_start</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+sehr gut zu diesem Zweck, denn das Entity ist genauso groß, wie der Player im
+Spiel . Wir setzen jetzt ein &quot;</font><font face="Arial" size="2" color="#FFFFFF">Info_player_start</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+nah an die Stelle wo unser Durchgang gebaut wird.</font></p>
+<p><img border="0" src="Image36.jpg" width="489" height="181"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt in der 2D-Sicht (Top)
+erstellen wir einen Brush der die beiden Räume verbindet. Die beiden Seiten,
+die in das Innere der Räume zeigen, sollten ein wenig länger sein (16-32
+Einheiten), das wird dann unser Tür-Rahmen :D Der Brush soll nicht breiter als
+4 x Player-Breite sein.</font></p>
+<p><img border="0" src="Image35.jpg" width="535" height="231"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Als nächstes schalten wir in die
+Seitenansicht und ziehen den Brush hoch, aber nur so, dass er maximal 2 x so
+hoch ist, wie der Player.</font></p>
+<p><img border="0" src="Image33.jpg" width="565" height="233"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Wenn alles passend eingestellt
+ist, sind wir bereit ein Loch in beide Wände zu schneiden. Benutze dafür den
+&quot;CSG - Substract&quot; Befehl.</font></p>
+<p><img border="0" src="Image30.jpg" width="99" height="69"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Die zwei Wände werden in jeweils
+3 Teile zerschnitten.</font></p>
+<p><img border="0" src="Image29.jpg" width="683" height="251"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt wandeln wir unseren Brush
+in eine Box. Nutze dafür den &quot;Make Hollow&quot; Befehl <img border="0" src="../firstroom/button_hollow.jpg" width="21" height="20">.</font></p>
+<p><img border="0" src="Image32.jpg" width="555" height="243"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">damit aus unserer Box ein Gang
+wird, müssen wir die beiden Seiten im Inneren der Räume löschen. Markiere die
+Seiten und drücke &quot;Backspace&quot;</font></p>
+<p><img border="0" src="Image31.jpg" width="587" height="199"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Wir wissen aus den vorherigen
+Tutorials, dass der &quot;</font><font face="Arial" size="2" color="#FFFFFF">Make
+Hollow</font><font face="Arial" size="2" color="#C0C0C0">&quot; - Befehl, Boxen
+erstellt, deren wände sich gegenseitig überschneiden. Da wir bereits 2 von 6
+Wänden gelöscht haben, brauchen wir nur noch 2 zu schneiden. Markiere den
+Gangboden und -Decke und klicke wieder auf &quot;</font><font face="Arial" size="2" color="#FFFFFF">CSG
+- Substract</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font> <img border="0" src="Image30.jpg" width="99" height="69"></p>
+<p><img border="0" src="Image27.jpg" width="635" height="215"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Unser Durchgang ist fertig. Jetzt
+bauen wir noch eine Tür. Erstelle einen Brush im Durchgang und zwar so, dass er
+auf der Höhe der Wand ist, aber ein wenig schmaler, damit die Tür beim
+Aufmachen, keine Grafik-Fehler verursacht, sondern komplett in der Wand
+verschwindet. Der Brush darf auch keine der Gang-Wände überschneiden. Jetzt
+noch eine Passende Textur drauf legen, z.B.. &quot;</font><font face="Arial" size="2" color="#00FFFF">kejim/blastdoor_onoff</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+und mit Surface Ispector (&quot;S&quot; drücken) anpassen.</font></p>
+<p><img border="0" src="Image26.jpg" width="585" height="243"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Danach müssen wir, dem Brush
+noch die Tür-Funktionalität geben. Klicke in der 2D-Ansicht auf rechte
+Maustaste (der Brush muss markiert sein! ) und wähle:</font></p>
+<p><font face="Arial" size="2" color="#00FFFF">func </font><font face="Arial" size="2" color="#C0C0C0">&gt;</font><font face="Arial" size="2" color="#00FFFF">
+func_door.</font></p>
+<p><img border="0" src="Image25.jpg" width="609" height="373"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Als nächstes sollten wir
+festlegen, in welche Richtung die Tür aufgeht, wenn wir uns ihr nähern.
+Drücke die &quot;N&quot;-Taste und klicke auf &quot;UP&quot;, damit die Tür
+nach oben aufgeht. In der Key-liste wird dann eingetragen: KEY angle, VALUE -1.</font></p>
+<p><img border="0" src="Image24.jpg" width="338" height="362"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt kannst du noch die Tür
+kopieren (Leertaste) und die Kopie in die Wand des anderen Raumes setzen.&nbsp;</font></p>
+<p><img border="0" src="Image23.jpg" width="615" height="249"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Damit haben wir einen schönen
+Durchgang geschaffen, der von beiden Seiten jeweils eine Tür hat :D</font></p>
+<p><img border="0" src="Image22.jpg" width="571" height="257"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Danach, können wir in dem
+anderen Raum noch einen Gegner setzten, damit das Testen nicht ganz so
+langweilig wird.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Drücke rechte Maustaste in der
+2D Ansicht (innerhalb des zweiten Raumes) und wähle &quot;</font><font face="Arial" size="2" color="#00FFFF">NPC</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#00FFFF">NPC_Reborn</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt kannst du noch, in dem Gang
+ein paar passende Texturen setzen und dann speichern. Die Map speichern wir
+unter dem Namen &quot;</font><font face="Arial" size="2" color="#00FFFF">tworooms</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p><img border="0" src="Image21.jpg" width="613" height="265"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt JKII im SP-Modus starten, Konsole
+aufmachen und angeben &quot;</font><font face="Arial" size="2" color="#00FF00">map tworooms</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Und im Spiel sieht das ganze dann
+so aus:</font></p>
+<p><img border="0" src="Image42.jpg" width="354" height="343"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">so, das innere des Ganges:</font></p>
+<p><img border="0" src="Image44.jpg" width="402" height="390"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">und da kommt auch schon unser
+Gegner, ... AUA !!!&nbsp; :D</font></p>
+<p><img border="0" src="Image43.jpg" width="301" height="350"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><u><a href="../../downloads/tworooms.zip"><font face="Arial" size="2" color="#FFFF00">DOWNLOAD
+DER TUTORIAL MAP</font></a></u></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0" size="1">(.map
+- Datei und enthalten)</font></p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF"><b>TIP:</b></font><font face="Arial" size="2" color="#C0C0C0">
+</font><font face="Arial" size="2" color="#C0C0C0">&nbsp;Beim Verbinden von
+Räumen und Bauen vor Durchgängen achte darauf, dass keine undichten Stellen
+entstehen. Denn sonst hast du ein LEAK (ein Leck, siehe Fehlerliste) und die Map
+lässt sich nicht mehr kompilieren. Vor allem beim Umgang mir der &quot;</font><font face="Arial" size="2" color="#FFFFFF">CSG
+- Substract</font><font face="Arial" size="2" color="#C0C0C0">&quot; Funktion
+sollte man sehr vorsichtig sein und sie nur dann benutzten, wenn man ganz genau weißt,
+was als Ergebnis herauskommt.</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.Net ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+&nbsp;
+
+</body>
+
+</html>

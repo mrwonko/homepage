@@ -1,0 +1,763 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Shader - Wasser</title>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font></p>
+
+<hr>
+
+<p><font color="#FFFFFF" size="4" face="Arial">SHADER: Wasser</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools I ( <a href="../radiant/jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools 2 ( <a href="../radiant/jk2_etools2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="../radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Mein Erster Raum ( <a href="../mapping/firstroom/firstroom.htm">Tutorial</a> )&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Shader: Was sind Shader ? ( <a href="shader1.htm">Tutorial</a> )&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">In</font><font face="Arial" size="2" color="#C0C0C0">
+dieser Lehreinheit (Tutorial) wird erklärt, wie man einen Wasser - Shader
+erstellen kann.</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Wasser-Shader gehören zu den
+sehr komplizierten und sehr komplexen Shader - Definitionen.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Sie enthalten mehrere
+Oberflächen-Parameter und verschiedene Optionen.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Anhand von folgendem Beispiel,
+versuche ich zu erklären, wie ein Wasser-Shader zusammengebaut ist:</font></p>
+<font size="2"></font><font size="2"></font><font SIZE="2">
+<table border="1" style="border-collapse: collapse; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0cm 3.5pt 0cm 3.5pt; border-style: none; border-width: medium" width="998" bordercolor="#808080" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+  <tr>
+    <td width="559" valign="top" style="background-color: #000000; border: .5pt solid #000000; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font face="Arial" size="2" color="#FFFFFF"><b>Shader-Bestandteil:</b></font><span style="font-size:10.0pt;font-family:&quot;Courier Neu&quot;"><o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="822" valign="top" style="background-color: #000000; border: .5pt solid #000000; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" size="2" color="#FFFFFF"><b>Beschreibung:</b></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="border: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt">textures/yavin/wasser01<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="border: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Name
+      des Shaders</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt">{<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt"><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>qer_editorimage<span style="mso-tab-count:1">&nbsp;&nbsp; </span>textures/yavin/wasser01<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Bild
+      Im Editor</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt"><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>surfaceparm<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>nonsolid<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      macht den Brush nonsolid (damit man nicht auf dem Wasser steht)</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt"><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>surfaceparm<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>nonopaque<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font SIZE="2"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      Lichtdurchlässig</span></font></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt"><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>surfaceparm<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>water<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font SIZE="2"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      Wasser-Brush</span></font></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt"><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>surfaceparm<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>trans<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font SIZE="2"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      Durchsichtig</span></font></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt"><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>qer_trans<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>0.9<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font SIZE="2"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      Stufe der Transparenz (Durchsichtigkeit 0 - 1)</span></font></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="mso-tab-count: 1; font-size: 10.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US">surfaceparm<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>fog<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font SIZE="2"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      Nebel (definier die innere Umgebung des Wassers)</span></font></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>fogparms<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>( 0.462464 0.571832 0.967132 ) 1024.0<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt">Nebel-Parameter:
+      ( R-Farbenanteil G-Farbenanteil B-Farbenanteil ) sichtweite</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>q3map_material<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>Water<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font SIZE="2"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      Wasser (Q3-Engine)</span></font></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>q3map_nolightmap<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font SIZE="2"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      Empfängt keine Schatten</span></font></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>q3map_onlyvertexlighting<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font SIZE="2"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      nur Vertex-Belichtung</span></font></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>cull disable<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font SIZE="2"><font face="Arial" color="#008080"><span style="font-size: 10.0pt">Oberflächen-Parameter:
+      Beide Seiten einer Wand sind sichtbar</span></font></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+      </span>{<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>map textures/yavin/wasser01<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">Erste
+      Textur für die Wasser-Oberfläche</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>blendFunc GL_ONE
+      GL_ONE_MINUS_SRC_ALPHA<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">Blend-Funktion:
+      Leichte Durchsichtigkeit</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rgbGen exactVertex<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">definiert
+      Vertex-Belichtung (ist nicht unbedingt notwendig)</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>alphaGen const 0.5<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">generiert
+      Alpha-Channel (für Durchsichtigkeit)</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tcMod turb 0 0.08 0.04
+      0.08<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">generiert
+      Oberflächen Turbulenzen</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tcMod scroll -0.05 -0.001<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">generiert
+      Oberflächen Bewegung X Y</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tcMod scale 3 3<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">skaliert
+      die Textur X Y</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="mso-spacerun: yes; font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">&nbsp;&nbsp;&nbsp;
+      </span><span style="font-size: 10.0pt">}<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt"><span style="mso-spacerun:
+  yes">&nbsp;&nbsp;&nbsp; </span>{<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt"><span style="mso-spacerun:
+  yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>map textures/yavin/wasser01<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">Zweite
+      Textur für die Wasser-Oberfläche (ist nicht notwendig, sieht aber besser
+      aus :D )</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span style="font-size: 10.0pt"><span style="mso-spacerun:
+  yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span></span><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US">blendFunc<span style="mso-spacerun: yes">&nbsp;
+      </span>GL_DST_COLOR GL_ONE<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">Blend-Funktion:
+      stärkere Durchsichtigkeit</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>alphaGen const 0.5<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">generiert
+      Alpha-Channel (für Durchsichtigkeit)</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tcMod turb 0 0.08 0.04
+      0.08<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">generiert
+      Oberflächen Turbulenzen</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tcMod scroll 0.05 0.001<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">generiert
+      Oberflächen Bewegung X Y</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tcMod scale 3 3<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080"><font face="Arial" color="#008080" SIZE="2"><span style="font-size: 10.0pt; mso-ansi-language: EN-US" lang="EN-US">skaliert
+      die Textur X Y</span></font></td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+      </span>}<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="559" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><font color="#00FF00" face="Arial"><span lang="EN-US" style="font-size: 10.0pt; mso-ansi-language: EN-US">}<o:p>
+      </o:p>
+      </span></font></p>
+    </td>
+    <td width="822" valign="top" style="mso-border-top-alt: solid windowtext .5pt; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-style: none; border-top-width: medium; border-bottom: .5pt solid windowtext; padding-left: 3.5pt; padding-right: 3.5pt; padding-top: 0cm; padding-bottom: 0cm" bordercolorlight="#C0C0C0" bordercolordark="#808080">&nbsp;</td>
+  </tr>
+</table>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Ich
+habe auf diese Weise, mit Hilfe von 4 neuen Texturen, 4 neue Wasser Shader
+gebastelt.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Wobei
+diese verschiedene Eigenschaften besitzen, vor allem was die Farbe und Durchsichtigkeit
+betrifft:</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="water/wasser01.jpg" width="256" height="256"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser01</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+qer_editorimage textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser01</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm nonsolid</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm nonopaque</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm water</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm trans</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+qer_trans 0.9</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm fog</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+fogparms ( </font><font face="Arial" size="2" color="#FF0000">0.462464 0.571832
+0.967132</font><font face="Arial" color="#00FF00" size="2"> ) </font><font face="Arial" size="2" color="#FF0000">1024.0</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_material Water</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_nolightmap</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_onlyvertexlighting</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+cull disable</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+map textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser01</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blendFunc GL_ONE GL_ONE_MINUS_SRC_ALPHA</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rgbGen exactVertex</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+alphaGen const 0.5</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod turb 0 0.08 0.04 0.08</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scroll -0.05 -0.001</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scale 3 3</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+map textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser01</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blendFunc GL_DST_COLOR GL_ONE</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+alphaGen const 0.5</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod turb 0 0.08 0.04 0.08</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scroll 0.05 0.001</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scale 3 3</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">}</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Hier
+habe ich die Farbe des &quot;Wasser-Nebels&quot;,&nbsp; ein wenig an die Textur
+angepasst und die Unterwasser-Sichtweite geändert:</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="water/wasser02.jpg" width="256" height="256"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser02</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+qer_editorimage textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser02</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm nonsolid</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm nonopaque</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm water</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm trans</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+qer_trans 0.9</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm fog</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+fogparms ( </font><font face="Arial" size="2" color="#FF0000">0.294506 0.474182
+0.990098</font><font face="Arial" color="#00FF00" size="2"> ) </font><font face="Arial" size="2" color="#FF0000">512.0</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_material Water</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_nolightmap</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_onlyvertexlighting</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+cull disable</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+map textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser02</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blendFunc GL_ONE GL_ONE_MINUS_SRC_ALPHA</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rgbGen exactVertex</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+alphaGen const 0.5</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod turb 0 0.08 0.04 0.08</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scroll -0.05 -0.001</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scale 3 3</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+map textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser02</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blendFunc GL_DST_COLOR GL_ONE</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+alphaGen const 0.5</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod turb 0 0.08 0.04 0.08</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scroll 0.05 0.001</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scale 3 3</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">}</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0" SIZE="2">Hier
+habe ich auch die Farbe des &quot;Wasser-Nebels&quot; an die Textur angepasst
+und die Unterwasser-Sichtweite geändert:</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="water/wasser03.jpg" width="256" height="256"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser03</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+qer_editorimage textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser03</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm nonsolid</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm nonopaque</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm water</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm trans</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+qer_trans 0.9</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm fog</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+fogparms ( </font><font face="Arial" size="2" color="#FF0000">0.347634 0.773388
+0.933534</font><font face="Arial" color="#00FF00" size="2"> ) </font><font face="Arial" size="2" color="#FF0000">256.0</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_material Water</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_nolightmap</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_onlyvertexlighting</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+cull disable</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+map textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser03</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blendFunc GL_ONE GL_ONE_MINUS_SRC_ALPHA</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rgbGen exactVertex</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+alphaGen const 0.5</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod turb 0 0.08 0.04 0.08</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scroll -0.05 -0.001</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scale 3 3</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+map textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser03</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blendFunc GL_DST_COLOR GL_ONE</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+alphaGen const 0.5</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod turb 0 0.08 0.04 0.08</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scroll 0.05 0.001</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scale 3 3</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">}</font></p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Und
+hier noch mal ein paar kleine Änderungen an der Farbe und der Sichtweite</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="water/wasser04.jpg" width="256" height="256"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser04</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+qer_editorimage textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser04</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm nonsolid</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm nonopaque</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm water</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm trans</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+qer_trans 0.9</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+surfaceparm fog</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+fogparms ( </font><font face="Arial" size="2" color="#FF0000">0.264814 0.366370
+0.757764</font><font face="Arial" color="#00FF00" size="2"> ) </font><font face="Arial" size="2" color="#FF0000">512.0</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_material Water</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_nolightmap</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+q3map_onlyvertexlighting</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;
+cull disable</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+map textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser04</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blendFunc GL_ONE GL_ONE_MINUS_SRC_ALPHA</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rgbGen exactVertex</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+alphaGen const 0.5</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod turb 0 0.08 0.04 0.08</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scroll -0.05 -0.001</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scale 3 3</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+map textures/yavin/</font><font face="Arial" size="2" color="#FF0000">wasser04</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blendFunc GL_DST_COLOR GL_ONE</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+alphaGen const 0.5</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod turb 0 0.08 0.04 0.08</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scroll 0.05 0.001</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tcMod scale 3 3</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="2">}</font></p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Den
+Shader habe ich unter </font><font face="Arial" color="#00FFFF">base/shader</font><font face="Arial" color="#00FFFF">s</font><font face="Arial" color="#C0C0C0">
+mit dem Namen &quot;</font><font face="Arial" color="#00FFFF">mywater.shader</font><font face="Arial" color="#C0C0C0">&quot;
+abgespeichert.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Damit,
+die selbst erstellten Shader im Editor angezeigt werden, müssen diese in der
+Shader-Liste eingetragen werden.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Suche
+in dem </font><font face="Arial" color="#00FFFF">base/shaders</font><font face="Arial" color="#C0C0C0">
+Ordner nach der Datei &quot;</font><font face="Arial" color="#00FFFF">shaderlist.txt</font><font face="Arial" color="#C0C0C0">&quot;.
+Öffne sie mit dem Notepad und füge am Schluss den Namen unseres neuen Shaders </font><font face="Arial" color="#00FFFF">mywater</font><font face="Arial" color="#C0C0C0">
+ein.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">(</font><font face="Arial" color="#FFFFFF"><b>WICHTIG!</b></font><font face="Arial" color="#C0C0C0">:
+ohne Datei-Erweiteung, nur den Namen eintragen!)</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Speichere
+dann die Shader-Liste.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Jetzt
+kannst du den Editor starten und die neuen Wasser-Shader ( &quot;</font><font face="Arial" color="#FFFFFF">wasser01
+- 04</font><font face="Arial" color="#C0C0C0">&quot; ) unter </font><font face="Arial" color="#FFFFFF">Textures
+</font><font face="Arial" color="#C0C0C0">&gt; &quot;</font><font face="Arial" color="#FFFFFF">yavin</font><font face="Arial" color="#C0C0C0">&quot;
+finden.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#FFFFFF"><b><u>HINWEIS:</u></b></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Wenn
+du selbsterstellte Shader, auch im MP-Modus nutzen möchtest, müssen diese
+zusammen mit dem Unterordner &quot;</font><font face="Arial" color="#00FFFF">shaders</font><font face="Arial" color="#C0C0C0">&quot;
+in eine pk3-Datei gepackt werden. Die Pk3-Datei muss dann in den </font><font face="Arial" color="#00FFFF">base</font><font face="Arial" color="#C0C0C0">-Ordner
+kopiert werden.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Vergiss
+nicht die selbsterstellte Shader-Dateien und Texturen mitzuliefern, wenn du
+deine Maps veröffentlichen möchtest !</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="water/water_test.jpg" width="800" height="600"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Im
+Anschluss an dieses Tutorial, findest du die neuen Shader zum Download. Folgende
+Dateien sind in dem ZIP-Achiv &quot;</font><font face="Arial" color="#00FFFF">my_water.zip</font><font face="Arial" color="#C0C0C0">&quot;
+enthalten:</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FFFF">mywater.pk3</font><font face="Arial" color="#C0C0C0">
+= pk3-Datei mit der Shader-Datei und den 4 neuen Texturen für MP - Modus (muss
+in den </font><font face="Arial" color="#00FFFF">base </font><font face="Arial" color="#C0C0C0">-
+Ordner kopiert werden)</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FFFF">water_test.bsp</font><font face="Arial" color="#C0C0C0">
+= Test-Map für unseren neuen Lava Shader (in den </font><font face="Arial" color="#00FFFF">base/maps</font><font face="Arial" color="#C0C0C0">
+Ordner kopieren)</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FFFF">water_test.map</font><font face="Arial" color="#C0C0C0">
+= Test-Map Quellcode (in den </font><font face="Arial" color="#00FFFF">base/maps</font><font face="Arial" color="#C0C0C0">
+Ordner kopieren)</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FFFF">mywater.shader</font><font face="Arial" color="#C0C0C0">
+= Shader-Datei, die in den </font><font face="Arial" color="#00FFFF">base/shaders</font><font face="Arial" color="#C0C0C0">
+- Ordner kopiert werden muss ( nicht vergessen, den Namen in die </font><font face="Arial" color="#00FFFF">shaderlist.txt</font><font face="Arial" color="#C0C0C0">
+einzutragen! )</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><u><a href="../downloads/my_water.zip"><font face="Arial" size="2" color="#FFFF00">DOWNLOAD
+DER TUTORIAL MAP</font></a></u></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0" size="1">(.map
+- Dateie enthalten)</font></p>
+</font>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF"><b>TIP:</b></font><font face="Arial" size="2" color="#C0C0C0">
+</font><font face="Arial" size="2" color="#C0C0C0">&nbsp;In dem &quot;</font><font face="Arial" size="2" color="#00FFFF">base/shaders</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+- Ordner befinden sich die original Shader - Definitionen aus dem JKII - Spiel.
+Wenn du einen nuenen speziellen Shader erstellen möchtest, ist es immer ratsam,
+sich einen bereits existierenden Shader als Vorlage zu nehmen.</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.Net ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+
+</body>
+
+</html>

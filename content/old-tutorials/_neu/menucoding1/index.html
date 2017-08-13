@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>Darth-Arth.de - Menü Coding Tutorial</title>
+<style type="text/css">
+<!--
+.style1 {font-size: 1cm}
+.style2 {color: #FF0000}
+.style3 {
+	font-size: large;
+	color: #00FF00;
+}
+-->
+</style>
+<meta name="Author" content="Biki (Benjamin K.)">
+</head>
+
+<body bgcolor="#333333">
+<p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;" align="center"><b><font color="#008080" face="Arial" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+<p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;" align="left">&nbsp;</p>
+<p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;" align="center"><font color="#808080" face="Arial" size="3">(c)
+2004</font><font color="#c0c0c0" face="Arial" size="3"> <a href="http://www.darth-arth.de/" target="_blank">www.darth-arth.de</a></font></p>
+
+<hr>
+
+<p class="style1"><font color="#ffffff" face="Arial">Men&uuml; Coding - Die ersten Schritte</font> </p>
+
+<p><font color="#ffffff" face="Arial" size="4">Author: Biki (Benjamin K.) </font></p>
+<p align="left"><b><u><font color="#ffff00" face="Arial" size="2">VORAUSSETZUNG</font></u><font color="#ffff00" face="Arial" size="2"><u>EN</u>:</font></b></p>
+<p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;" align="left"><font color="#ffffff" face="Arial" size="2">&gt;&gt; einen installierten Editor (wie Notepad oder Wordpad)
+&lt;&lt;</font></p>
+<p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;" align="left"><font color="#ffffff" size="2" face="Arial">&gt;&gt; WinRAR (<a href="http://winrar.de" target="_blank">download</a>)&lt;&lt; </font></p>
+<p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;" align="left">&nbsp;</p>
+<hr>
+<p><font color="#c0c0c0" face="Arial" size="2">In dieser Lehreinheit (Tutorial) lernen wir die wichtigsten Befehle und Eigenschaften des Men&uuml; Codings kennen. &nbsp;</font></p>
+
+<p><font color="#c0c0c0" face="Arial" size="2">In den Nachfolgenden Lehreinheiten schreiten wir dann zu fortgeschrittenen Methoden und Funktionen hin!<br>
+  <br>
+Ein kleines Wort vorweg: Men&uuml; Coding ist nicht schwer, und vor allem nicht so schwer wie die ersten Schritte im Scripten. <br>
+Ich, z.B. habe mir das meiste Wissen dadurch angeeignet, indem ich einfach mal in die Dateien geschaut habe! It's that easy! </font></p>
+
+<hr>
+<strong><span class="style3">Kapitel 1 - der &quot;Header&quot; (oder Allgemeiner Bereich) </span></strong><br>
+<hr>
+<br>
+<p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;" align="left">
+<font color="#ffffff" face="Arial" size="2"> Der erste Schritt, den wir erledigen m&uuml;ssen, wird sein, aus <strong>assets1.pk3 </strong>
+den &quot;UI&quot; Ordner zu entpacken (mit WinRAR). Dazu erstellt ihr am besten ein eigenes <br>
+Verzeichnis im /GameData/ Verzeichnis und kopiert den Ordner dort hinein.<br>
+<br>
+Anschlie&szlig;end &ouml;ffnen wir die &quot;main.menu&quot; Datei mit einem Text-Editor wie Notepad!
+<br>
+Wenn ihr sie ge&ouml;ffnet habt, sollte das wie folgt aussehen:<br>
+<br>
+<img src="menuimages/menu1.jpg" width="800" height="600" alt="Die Main.Menu Datei"><br>
+<br>
+</font><font color="#ffffff" face="Arial" size="2">Den Abschnitt, der im Bild gezeigt wird, sind die Allgemeinen Optionen des Men&uuml;s - die man in jeder anderen Men&uuml; Datei auch findet!<br>
+Als erstes sollten wir mal die wichtigstens Eigenschaften und Befehle aufz&auml;hlen und beschreiben:<br>
+<br>
+<em>assetGlobalDef</em> - Definiert Einstellungen, die f&uuml;r das gesamte Men&uuml; gelten (Laden, Speichern, Neues Spiel etc... )<br>
+<em>menuDef</em> - Gilt jeweils nur f&uuml;r das aktuelle Men&uuml;. <br>
+&nbsp;- <em>name </em>- Definiert den Namen der Datei (</font><font face="Arial" size="2"><span class="style2">MERKE:</span></font><font color="#ffffff" face="Arial" size="2"> Nicht, wie die .menu datei hei&szlig;t, sondern wie die Datei vom Spiel aus ansprechbar ist)</font></p>
+<p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;" align="left"><font color="#ffffff" face="Arial" size="2">&nbsp;-<em> fullscreen (Vollbild) </em>- immer auf 1 (es sei denn, ihr wollt ein Fenster, was nur die h&auml;lfte des Bildschirm einnimmt, o.&auml;.)<br>
+&nbsp;- <em>rect</em> <em>(Position)</em> - Wohl eine der wichtigsten Befehle. Rect gibt die Position an, wo der Text steht, der Button ist, usw... </font><font color="#ffffff" face="Arial" size="2"> In dem Fall (sofern bei fullscreen 1 angegeben ist, ist die rect &quot;0 0 640 480&quot;. Doch sp&auml;ter mehr zu dieser Funktion!<br>
+- <em>descX, descY</em> - Gibt die Position der Beschreibung des jeweiligen Buttons an. (z.B. man geht mit der Maus &uuml;ber &quot;Neues Spiel&quot;. Dann erscheint unten in der Mitte &quot;Starte ein neues Spiel mit Jaden&quot;, oder sowas... )<br>
+- <em>descScale</em> - die Gr&ouml;&szlig;e der Beschreibung. <br>
+- <em>descColor </em>- die Farbe der Beschreibung.<br>
+- <em>descAlignment</em> - die Ausrichtung der Beschreibung (Rechts, Mitte, Links; immer in englisch angeben)
+<br>
+<br>
+Anschlie&szlig;end kommen noch spezielle Befehle (onOpen, onESC), die jedoch auf au&szlig;erhalb des sog. &quot;Headers&quot; (Dem Allgemeinem Bereich) vorkommen. Das ist allerdings schon fortgeschritten, deswegen in den Nachfolgenden Tutorials mehr dazu! </font></p>
+<p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;" align="left">&nbsp;</p>
+<hr>
+<strong><span class="style3">Kapitel 2 - Der Background und das Logo </span></strong><br>
+<hr>
+<p><font color="#ffffff" face="Arial" size="2">Nachfolgend zum &quot;Header&quot; folgt der mit &quot;MENU BACKGROUND&quot; kommentierter Bereich. Auch diesen werdet ihr in allen Men&uuml; Dateien finden (jedenfalls in den meisten). <br>
+Hier wird schon mehr definiert und es kommen auch gleich ein paar neue Befehle vor. Also auf geht's:</font></p>
+<p><font color="#ffffff" face="Arial" size="2"><img src="menuimages/menu2.jpg" width="800" height="600" alt="Die Main.Menu Datei"></font><br>
+  <br>
+  <font color="#ffffff" face="Arial" size="2">Und nun erstmal wieder die Erkl&auml;rung der (neuen) Befehle:<br>
+  <br>
+  - <em>group</em> - Sehr n&uuml;tzlich um mehrere Elemente in eine Gruppe zu fassen, um sie einfacher anzusprechen (siehe Radiant ;) )<br> 
+  - <em>style</em> - So 100%ig sicher bin ich mir nicht, jedoch verkn&uuml;pft sich das irgendwie mit den von Windows definierten Arten (bla...)<br> 
+  - <em>background</em> - Falls ein Bild im Codeblock definiert wird, so gibt man mit &quot;background&quot; den Pfad an.<br>
+  - <em>forececolor</em> - die Farbe... (Farbcodes siehe unten)<br>
+ - <em>visible</em> - Gibt an, ob der Block angezeigt werden soll, oder nicht. (Kann auch sp&auml;ter noch per Befehl angezeigt werden... siehe n&auml;chste Tuts.. )<br> 
+   - <em>decoration</em> - Falls du das als letztes schreibst, kann man den Block im Spiel nicht anklicken (bzw. es passiert kein Hover-Effekt etc.. )</font></p>
+<hr>
+<strong><span class="style3">Kapitel 3 - Die Buttons </span></strong><br>
+<hr>
+<p><font color="#ffffff" size="2" face="Arial">Das war's erstmal hierzu. Jetzt widmen wir uns zum Schlu&szlig; noch den wichtigen Dingen ;) Genau.. einem Button.<br>
+Mit Buttons kann man in JKA viel erreichen, man kann ein Neues Spiel starten, man kann ein Spiel Laden etc...</font></p>
+<p><font color="#ffffff" size="2" face="Arial">Hier ein Beispiel: </font></p>
+<p><font color="#ffffff" face="Arial" size="2"><img src="menuimages/menu3.jpg" width="337" height="158" alt="Die Main.Menu Datei"></font><br>
+  <br>
+<font color="#ffffff" size="2" face="Arial">Danken wir Raven, dass sie auch so sch&ouml;n jeden Block kommentiert haben ;)<br>
+  <br>
+  Erstmal wieder der theoretische Teil (gibt es &uuml;berhaupt einen praktischen Teil?... ):<br>
+  <br>
+  - <em>type</em> - Definiert die Art, was wir hier gerade coden... (im Beispiel ein ITEM_TYPE_BUTTON = Button)<br>
+ - <em>text</em> - Der Text, den der Button anzeigen soll (Starten, Laden, etc.. ). Entweder per &quot;@&quot; eine string-Datei ansprechen oder einfach &quot;Text&quot; schreiben.<br>
+ - <em>font</em> - die Schriftart (von 1 - 4)<br> 
+ - <em>textscale</em> - die Textgr&ouml;&szlig;e.<br>
+ -<em> textaligny</em> - bisher unklar<br> 
+ - <em>textalign</em> - s.o. (Left, Middle, Right)<br>
+ -<em> textstyle</em> - bisher unklar<br>
+- <em>textalignx</em> - bisher unklar<br>
+- <em>forcecolor</em> - die Farbe des Textes (wie schon erw&auml;hnt, im Anhang ein paar Farbcodes<strong>)</strong></font></p>
+<p><strong><font color="#ffffff" size="2" face="Arial">Gratulation! Ihr habt den ersten Teil geschafft. Nun beherrscht ihr alle Funktionen, die ihr zum Men&uuml; Coden braucht. Oder zumindest die, die ein Anf&auml;nger braucht. Erstmal durchatmen, nochmal alles durchlesen und verarbeiten. Und dann kann's weitergehen zum &gt;&gt;N&Auml;CHSTEN TUTORIAL (hier kommt mal ein Link hin)&lt;&lt; </font></strong></p>
+<hr>
+<strong><span class="style3">Kapitel 4 - Anhang; Farbcodes </span></strong><br>
+<hr>
+<p><font color="#ffffff" size="2" face="Arial">Wer schon gleich loslegen will, kann sich hier einen &Uuml;berblick &uuml;ber die Farbcodes im JKA-Men&uuml;-Coding verschaffen. (Das sind bis jetzt alle, die ich wei&szlig;):<br>
+  <br>
+  - <em>1 .682 0 1</em> - Dieses standart-gelb. <br>
+  - <em>1 0 0 1</em> - Rot<br>
+  - <em>1 1 1 1</em> - Wei&szlig;</font></p>
+<p class="style2"><font size="2" face="Arial">WICHTIG: Bitte immer auf das LEERZEICHEN nach jeder Stelle und die PUNKTE achten!!! </font></p>
+<hr>
+<div align="center">
+  <font class="box" color="#008080" face="Verdana, Arial, Helvetica, sans-serif" size="1">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" color="#008080" face="Verdana, Arial, Helvetica, sans-serif" size="1">©
+  2000 - 2004 (Artur L.) <a href="http://www.darth-arth.de/" target="_blank">www.darth-arth.de</a></font>
+</div>
+<div align="center">
+  <font class="box" color="#008080" face="Verdana, Arial, Helvetica, sans-serif" size="1">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.de ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+&nbsp;
+
+
+</body>
+</html>

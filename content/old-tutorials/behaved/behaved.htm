@@ -1,0 +1,142 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Zuerst müssen wir in der Map unsere Kamera</title>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font></p>
+
+<hr>
+<p><font size="4" face="Arial" color="#FFFFFF">Konfiguration des BehavEd -
+Script Editors</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools I ( <a href="../radiant/jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools 2 ( <a href="../radiant/jk2_etools2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Der BehavEd-Editor hilft bei der
+Erstellung von Icarus-Scripten. Die Scripte werden benötigt um Cutscenes (Im
+Spiel gemachte Filme) und verschiedene Events im Single-Player Modus von JK2 zu
+programmieren.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Nach der Installation von
+Editing-Tools, ist der Editor jedoch noch nicht ganz arbeitsbereit. Damit man
+mit dem Scripte-Erstellen beginnen kann, müssen vorher noch ein paar Einstellungen
+angepasst werden.</font></p>
+<hr>
+<p><b><font face="Arial" color="#FFFFFF" size="2">Die Konfiguration:</font></b></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Starte deinen BehavEd ( der
+befindet sich in deinem </font><font face="Arial" size="2" color="#00FFFF">GameData/Tools</font><font face="Arial" size="2" color="#C0C0C0">
+- Ordner )</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Wenn dein BehavEd nicht richtig
+konfiguriert ist, stehen in dem Status Fenster eine ganze menge Fehler:</font></p>
+<p><img border="0" src="behaved_errors.jpg" width="683" height="98"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Diese bedeuten, dass der Editor
+seine Game-Ressoucen nicht finden kann, weil die Pfade nicht richtig eingestellt
+sind.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Im das zu ändern, klicke auf der
+rechten Seite des Editor-Fensters auf &quot;</font><font face="Arial" size="2" color="#FFFFFF">Prefs</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+in dem &quot;</font><font face="Arial" size="2" color="#FFFFFF">Applikation</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+- Bereich:</font></p>
+<p><img border="0" src="behaved_prefs.jpg" width="121" height="72"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt erscheint das
+Konfigurations-Fenster in dem alle relevanten Pfade angezeigt werden.</font></p>
+<p><img border="0" src="behaved_prefs2.jpg" width="389" height="478"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Wichtig sind folgende Pfade:</font></p>
+<table border="1" width="72%" height="120">
+  <tr>
+    <td width="34%" style="background-color: #000000" height="16"><font face="Arial" size="2" color="#FFFFFF">Pfad-Bezeichnung</font></td>
+    <td width="66%" style="background-color: #000000" height="16"><font face="Arial" size="2" color="#FFFFFF">Beschreibung</font></td>
+  </tr>
+  <tr>
+    <td width="34%" height="17"><font face="Arial" size="2" color="#C0C0C0">Script
+      Path</font></td>
+    <td width="66%" height="17"><font face="Arial" size="2" color="#C0C0C0">Der
+      komplette Pfad zu deinem </font><font face="Arial" size="2" color="#00FFFF">base/scripts</font><font face="Arial" size="2" color="#C0C0C0">
+      - Ordner</font>
+      <p><font face="Arial" size="2" color="#00FFFF">&lt;dein
+      JK2-Installationspfad&gt;/GameData/</font><font face="Arial" size="2" color="#00FFFF">base/scripts</font></td>
+  </tr>
+  <tr>
+    <td width="34%" height="19"><font face="Arial" size="2" color="#C0C0C0">Location
+      of IBIZE.EXE</font></td>
+    <td width="66%" height="19"><font face="Arial" size="2" color="#C0C0C0">Hier
+      wird angegeben wo sich der Script-Kompiler befindet. Der sollte in deinem </font><font face="Arial" size="2" color="#00FFFF">GameData/Tools</font><font face="Arial" size="2" color="#C0C0C0">
+      - Ordner liegen.</font>
+      <p><font face="Arial" size="2" color="#C0C0C0">Die Angabe sollte dann so
+      aussehen:</font></p>
+      <p><font face="Arial" size="2" color="#00FFFF">&lt;dein
+      JK2-Installationspfad&gt;/GameData/Tools/IBIze.exe</font></td>
+  </tr>
+  <tr>
+    <td width="34%" height="19"><font face="Arial" size="2" color="#C0C0C0">Command
+      Description File</font></td>
+    <td width="66%" height="19"><font face="Arial" size="2" color="#C0C0C0">Die Beschreibung
+      der Script-Befehle. </font><font face="Arial" size="2" color="#C0C0C0">Befindet
+      sich in deinem </font><font face="Arial" size="2" color="#00FFFF">GameData/Tools</font><font face="Arial" size="2" color="#C0C0C0">
+      - Ordner </font>
+      <p><font face="Arial" size="2" color="#C0C0C0">Die richtige Eingabe:</font></p>
+      <p><font face="Arial" size="2" color="#00FFFF">&lt;dein
+      JK2-Installationspfad&gt;/GameData/Tools/behavEd.bhc</font></td>
+  </tr>
+  <tr>
+    <td width="34%" height="19"><font face="Arial" size="2" color="#C0C0C0">Source
+      Files path</font></td>
+    <td width="66%" height="19"><font face="Arial" size="2" color="#C0C0C0">Der
+      Pfad zu Spiel-Beschreibungen. Die Standard-Angaben zu diesem Pfad sind
+      meistens falsch!</font>
+      <p><font face="Arial" size="2" color="#C0C0C0">Die richtige Einstellung
+      lautet:</font></p>
+      <p><font face="Arial" size="2" color="#00FFFF">&lt;dein
+      JK2-Installationspfad&gt;/GameData/Tools/gamesource</font></td>
+  </tr>
+</table>
+<p><font face="Arial" size="2" color="#C0C0C0">Falls einer der Pfade nicht
+richtig ist, klicke auf &quot;</font><font face="Arial" size="2" color="#FFFFFF">Browse...</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+und finde den richtigen Pfad.</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Nach dem du alle Pfade eingestellt hast, klicke auf </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;OK&gt;</b></font><font face="Arial" size="2" color="#C0C0C0">.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Wenn alle Angaben richtig
+sind, sollte dann im Status-Fenster folgendes erscheinen:</font></p>
+<p><img border="0" src="behaved_ready.jpg" width="700" height="55"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Die eine übrig gebliebene
+Fehlermeldung, kann ignoriert werden...</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#FFFFFF"><b>Gratuliere, du hast jetzt
+einen funktionsfähigen Script-Editor!</b></font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.Net ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+<div align="center">
+  &nbsp;
+</div>
+
+</body>
+
+</html>

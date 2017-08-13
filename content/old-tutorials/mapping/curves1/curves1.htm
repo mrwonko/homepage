@@ -1,0 +1,199 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Zuerst müssen wir in der Map unsere Kamera</title>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font></p>
+
+<hr>
+
+<p><font color="#FFFFFF" size="4" face="Arial">Curves &amp; Patches: Tor-Bogen</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools I ( <a href="../../radiant/jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools 2 ( <a href="../../radiant/jk2_etools2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="../../radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Mein Erster Raum ( <a href="../firstroom/firstroom.htm">Tutorial</a> )&lt;&lt;</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">In</font><font face="Arial" size="2" color="#C0C0C0">
+dieser Lehreinheit (Tutorial) wird beschrieben, wie man einen Tor-Bogen mit
+Hilfe von </font><font face="Arial" size="2" color="#00FFFF">Simple Patches</font><font face="Arial" size="2" color="#C0C0C0">
+und </font><font face="Arial" size="2" color="#00FFFF">Curves</font><font face="Arial" size="2" color="#C0C0C0">
+erstellt.</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Zuerst brauchen wir zwei Säulen
+(aus 2 normalen, 4-eckigen Brushes). Zwischen den Säulen werden wir unseren
+Torbogen bauen.</font></p>
+<p><img border="0" src="Image2.jpg" width="511" height="343"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Da, es im Editor recht schwierig
+ist, runde Formen zu erstellen, benötigen wir ein Hilfsmittel. Wir basteln
+einen rechteckigen Brush zwischen den beiden Säulen und zwar so hoch, dass die
+obere Kante des Brushes ungefähr dahin kommt, wo unserer spätere Bogen, seine
+oberste Kante haben wird.</font></p>
+<p><img border="0" src="Image3.jpg" width="491" height="229"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt müssen wir diesen Brush
+Rund machen. Um das zu erreichen gehen wir auf &quot;</font><font face="Arial" size="2" color="#FFFFFF">Menu</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Brush</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Arbitrary sided</font><font face="Arial" size="2" color="#C0C0C0">&quot;.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">In dem Dialog-Feld tragen wir </font><font face="Arial" size="2" color="#00FFFF">32</font><font face="Arial" size="2" color="#C0C0C0">
+ein, damit der Brush annähernd rund wird.</font></p>
+<p><img border="0" src="Image4.jpg" width="135" height="199">&nbsp;&nbsp; <img border="0" src="Image5.jpg" width="271" height="61"></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Nach dem unser Hilfs-Brush fertig
+ist, können wir mit dem Bau des Torbogens beginnen. Zuerst erstelle einen
+weiteren Brush, wie auf diesem Bild:</font></p>
+<p><img border="0" src="Image6.jpg" width="493" height="279"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt müssen wir diesen Brush zu
+einem &quot;Patch&quot; konvertieren. Dafür gehen wir ins Menü &quot;</font><font face="Arial" size="2" color="#FFFFFF">Curve</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Simple&nbsp; Patch
+Mesh</font><font face="Arial" size="2" color="#C0C0C0">&quot; und tragen jeweils
+</font><font face="Arial" size="2" color="#FFFFFF">5</font><font face="Arial" size="2" color="#C0C0C0">
+für die Breite (Width) und Höhe (Hight) des Patches. Diese Zahlen legen fest,
+wie komplex der Patch sein wird. Generell gilt für Patches un Curves, je größer
+die Figur, desto komplexer sollte der Patch sein. Denn sonst kann die Struktur
+nicht solide &quot;Löcher&quot; bekommen.</font></p>
+<p><img border="0" src="Image7.jpg" width="213" height="365">&nbsp; <img border="0" src="Image8.jpg" width="294" height="65"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Nach dem unser Patch da ist,
+sollten wir prüfen, ob seine sichtbare Seite in die richtige Richtung zeigt.
+Wenn es nicht der Fall ist, dass heißt, die sichtbare Seite zeigt nach innen
+unseres zukünftigren Bogens (wie auf dem Bild unten), dann müssen wir den
+Patch umdrehen.</font></p>
+<p><img border="0" src="Image9.jpg" width="533" height="275"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Um die Sichtbaren Seiten zu wechseln,
+geht man ins Menü &quot;</font><font face="Arial" size="2" color="#FFFFFF">Curve</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Matrix</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Invert</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p><img border="0" src="Image10.jpg" width="423" height="381"></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt können wir damit anfangen
+unseren Patch zu &quot;verbiegen&quot;. Drücke auf die Taste &quot;</font><font face="Arial" size="2" color="#FFFFFF">V</font><font face="Arial" size="2" color="#C0C0C0">&quot;,
+es erscheinen viele farbigen Punkte. Diese helfen uns, den Patch in die richtige
+Form zu biegen.</font></p>
+<p><img border="0" src="Image11.jpg" width="539" height="279"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Zuerst klicke den Punk unten,
+zwischen der Säule und unserem Hilfsbrush. Ziehe den Punkt dann nach unten, wie
+auf dem Bild, bis der ungefähr in der Mitte zwischen unserem Hilfsbrush und der
+Säule ist.</font></p>
+<p><img border="0" src="Image12.jpg" width="539" height="397"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Dann versuche die anderem Punkte
+nach unten zu ziehen, so dass die untere Kante des Patches, sich mit der runden
+Kante des Hilfsbrushes deckt. Wenn du feststellst, dass du zu wenig Punkte hast,
+um richtig runde Form zu erreichen, musst du welche hinzufügen. ( weiter unter
+dem Bild )</font></p>
+<p><img border="0" src="Image13.jpg" width="533" height="391"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Um noch paar Punkte hinzufügen,
+markiere einen der existierenden Punkte in der Nähe (wie auf dem Bild oben,
+blau) und wähle aus dem Menu &gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Curve</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Insert</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">add (2) Columns</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+oder &quot;</font><font face="Arial" size="2" color="#FF00FF">add (2) Rows</font><font face="Arial" size="2" color="#C0C0C0">&quot;,
+je nach dem, was du benötigst. Du brauchst keine Angst zu haben, dass etwas
+daneben geht. Du kannst immer, deinen letzten Schritt, durch das Drücken von </font><font face="Arial" size="2" color="#FFFFFF">STRG
++ &quot;Z&quot; </font><font face="Arial" size="2" color="#C0C0C0">,
+rückgängig machen.</font></p>
+<p><img border="0" src="Image14.jpg" width="321" height="377"></p>
+<p>&nbsp;</p>
+<p><font face="Arial" size="2" color="#C0C0C0">Mit den zusätzlichen Punkten,
+lässt sich der Patch besser bearbeiten und zu Recht biegen.</font></p>
+<p><img border="0" src="Image15.jpg" width="569" height="419"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Wenn du mit dem Formen, fertig
+bist, drücke ein mal die </font><font face="Arial" size="2" color="#FFFFFF">ESC</font><font face="Arial" size="2" color="#C0C0C0">
+- Taste, um den Bearbeitungs-Modus zu beenden.</font></p>
+<p><img border="0" src="Image16.jpg" width="547" height="395"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Unserer Patch hat jetzt zwar die
+richtige Form, ist noch aber viel zu Flach. Bevor wir den Patch dicker machen,
+brauchen wir die richtige Breite.&nbsp;</font></p>
+<p><img border="0" src="Image17.jpg" width="551" height="199"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Falls, du Dich nicht mehr dran
+erinnern kannst, schalte deine 2D-Sicht auf &quot;top&quot; und klicke eine der
+Säulen, um die Maße zu sehen.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Wenn es in deinem Editor nicht
+angezeigt wird, kannst du es im Menü einstellen, unter &quot;</font><font face="Arial" size="2" color="#FFFFFF">Edit</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Preferences</font><font face="Arial" size="2" color="#C0C0C0">&quot;,
+dann unter &quot;</font><font face="Arial" size="2" color="#FFFFFF">2D Display/Renderin</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Display Size Info</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+anklicken.</font></p>
+<p><img border="0" src="Image18.jpg" width="579" height="211"></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt drücke ESC und markiere
+wieder unseren Patch.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Da wir jetzt die Maße kennen,
+können wir unserem Patch, die richtige Breite verpassen</font></p>
+<p><img border="0" src="Image17.jpg" width="551" height="199"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Gehe ins Menü &gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Curve</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Thicken...</font><font face="Arial" size="2" color="#C0C0C0">&quot;,
+in der Dialogbox gebe dann die Breite an. In unserem Fall, die 32 (Einheiten).</font></p>
+<p><img border="0" src="Image19.jpg" width="231" height="371">&nbsp;&nbsp; <img border="0" src="Image20.jpg" width="340" height="119"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Als Ergebnis, bekommen wir die
+Hälfte unseres Torbogens. Jetzt müssen wir, diese Figur nur noch kopieren.</font></p>
+<p><img border="0" src="Image21.jpg" width="617" height="219"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Um dies zu tun, drücke einfach
+auf die </font><font face="Arial" size="2" color="#FFFFFF">Leertaste</font><font face="Arial" size="2" color="#C0C0C0">.</font></p>
+<p><img border="0" src="Image22.jpg" width="727" height="353"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">So, jetzt haben wir die andere
+Hälfte unseres Bogens, nur leider falsch rum.</font></p>
+<p><img border="0" src="Image23.jpg" width="781" height="367"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Um die Kopie zu drehen, geh ins
+Menü &quot;</font><font face="Arial" size="2" color="#FFFFFF">Selection</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Rotate</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Arbitrary rotation</font><font face="Arial" size="2" color="#C0C0C0">&quot;.
+In dem Dialogfeld, gebe unter &quot;</font><font face="Arial" size="2" color="#00FFFF">Z</font><font face="Arial" size="2" color="#C0C0C0">&quot;,
+</font><font face="Arial" size="2" color="#00FFFF">180</font><font face="Arial" size="2" color="#C0C0C0">
+ein und klicke &quot;</font><font face="Arial" size="2" color="#FFFFFF">Apply</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+um die Figur zu drehen. Klicke dann auf </font><font face="Arial" size="2" color="#FFFFFF">OK</font></p>
+<p><img border="0" src="Image24.jpg" width="263" height="341">&nbsp;&nbsp;&nbsp; <img border="0" src="Image25.jpg" width="160" height="92"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt muss alles noch ein wenig
+zu Rech geschoben werden und wir sind auch fast mit dem Bauen fertig.</font></p>
+<p><img border="0" src="Image26.jpg" width="779" height="359"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Da unser Bogen steht, können wir
+den Hilfsbrush löschen. Markiere den runden Hilfsbrush und drücke die Taste
+&quot;</font><font face="Arial" size="2" color="#FFFFFF">Back-Space</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p><img border="0" src="Image27.jpg" width="297" height="289"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Gratuliere, du hast deinen
+Torbogen fertiggestellt.</font></p>
+<p><img border="0" src="Image28.jpg" width="625" height="302"></p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF"><b>TIP:</b></font><font face="Arial" size="2" color="#C0C0C0">
+</font><font face="Arial" size="2" color="#C0C0C0">&nbsp;&nbsp;&nbsp; Wenn man
+Figuren und Objekte aus Curves und Patches baut, sollte man sie immer mit der
+Funktion &quot;func_group&quot; zusammen binden. Denn Curves und Patches sind
+nur von einer Seite sichtbar und falls etwas verschoben, gedreht oder gelöscht
+werden muss, könnten Konstruktions-Teile übrig bleiben.</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.Net ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+&nbsp;
+
+</body>
+
+</html>

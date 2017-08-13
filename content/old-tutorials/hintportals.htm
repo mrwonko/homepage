@@ -1,0 +1,176 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Zuerst müssen wir in der Map unsere Kamera</title>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font></p>
+
+<hr>
+
+<p><font color="#FFFFFF" size="4" face="Arial">Performance , FPS -Optimierung:
+Hint-Portale</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools I ( <a href="radiant/jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools 2 ( <a href="radiant/jk2_etools2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Mein Erster Raum ( <a href="mapping/firstroom/firstroom.htm">Tutorial</a> )&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Zwei Räume verbinden, erste Tür ( <a href="mapping/tworooms/tworooms.htm">Tutorial</a> )&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Performance, FPS Optinierung:Area-Portale ( <a href="mapping/aportals/aportals.htm">Tutorial</a> )&lt;&lt;</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">In</font><font face="Arial" size="2" color="#C0C0C0">
+dieser Lehreinheit (Tutorial) wird beschrieben, wie man mit Hilfe der Hint-Portale
+die FPS-Rate einer Map durch VIS-Blocking mit Hint-Portalen verbessern kann.</font></p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#FFFFFF"><b>WAS
+SIND HINT-PORTALE ?</b></font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Hint
+Portale dienen, ähnlich wie die Area-Portale, dem VIS-Blocking.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Das
+bedeutet, dass man mit ihrer Hilfe, die Q3-Engine dran hindern kann, die Teile
+der Map zu berechnen, die der Spieler sowieso nicht sehen kann.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Es gibt jedoch einige
+Unterschiede in der Funktion der Hint Portale im Vergleich zu den Area-Portalen:</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">- Anzahl der Hint-Portale ist
+nicht begrenzt (nur durch die Brush-Zahl Begrenzung 32.000)</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">- Hint-Portale benötigen keine
+Türen (wie Area-Portale)</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">- Hint-Portale funktionieren NUR
+in gut verwinkelten Maps (man darf nicht durch sie durchsehen können)</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">- Hint-Portale können auch in
+Outdoor-Maps genutzt werden.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">- Hint-Portale funktionieren nur
+dann richtig, wenn die Map mit FULLVIS kompiliert wurde.</font></p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#FFFFFF"><b>WIE
+SETZE ICH HINT-PORTALE ?</b></font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Die
+Hint Portale müssen an der Stelle, wo sie gesetzt werden, den Raum komplett
+Teilen. Das heisst, sie müssen an allen 4 Seiten den Raum abdichten.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Noch
+wichtiger: </font><font face="Arial" size="2" color="#FF0000"><u>sie müssen mindestens
+8 Einheiten in die angrenzenden Brushes einschneiden</u></font><font face="Arial" size="2" color="#C0C0C0">,
+sonst funktionieren sie nicht!</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Man
+erstellt einen dünnen Brush (aber mindestens 8 Einheiten), der einen Raum
+(überwiegend einen Korridor) abdihtet, Er Sollte von allen 4 Seiten (beide
+Wände, Decke und Boden) mindestens mit 8 Einheiten in die anderen Brushes
+einschneiden, siehe Bild unten:</font></p>
+<p><img border="0" src="mapping/hinportals/Image8.jpg" width="645" height="297"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Dann belegt man den Brush mit der
+Textur &quot;</font><font face="Arial" size="2" color="#00FFFF">system/hint</font><font face="Arial" size="2" color="#C0C0C0">&quot;.<img border="0" src="mapping/hinportals/hint.jpg" width="74" height="81"></font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Damit die Hint-Portale ihre
+Funktion erreichen, müssen mehre Hint-Brushe den Raum in viele Abschnitte
+Teilen.&nbsp;</font></p>
+<p><img border="0" src="mapping/hinportals/Image1_a.jpg" width="265" height="159"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Die Sichtbarkeit der einzelnen
+Abschnitte entscheidet dann, ob die Hint-Portale funktionieren oder nicht.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Deswegen sind nur gut verwinkelte
+Bereiche einer Map für die Hint-Portale geeignet, z.B. Korridore, Räume mit
+vielen Winkeln, Cannyons in Außenmaps usw.</font></p>
+<p><img border="0" src="mapping/hinportals/Image1_b.jpg" width="585" height="380"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Um die richtige Anwendung der
+Hint-Portale zu zeigen, habe ich eine Beispiel-Map gebastelt. Ich habe ein
+herkömmliches Raum-Prefab genommen und diesen 3 mal reingesetzt. Dann habe ich
+die 3 Räume mit 2 Korridoren verbunden, wobei jeder der Durchgänge 2 mal
+abgewinkelt wurde. Siehe auf dem Bild unten:</font></p>
+<p><img border="0" src="mapping/hinportals/Image4.jpg" width="550" height="327"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Hier noch mal, die Sicht auf die gesetzten
+Hint-Brushes, im 3D-Fenster:</font></p>
+<p><img border="0" src="mapping/hinportals/Image3.jpg" width="383" height="310"><img border="0" src="mapping/hinportals/Image10.jpg" width="386" height="310"></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Um die Wirkung der Hint-Portale
+zu zeigen, habe ich 2 Versionen der Map erstellt. Eine Version ist mit den
+Hint-Brushes und die andere ohne.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">So sieht die mit Fullvis
+kompilierte Map, ohne der gesetzten Hint-Portale.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Man sieht deutlich, das die
+Engine die komplette Map berechnet.</font></p>
+<p><img border="0" src="mapping/hinportals/hint4.jpg" width="620" height="429"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Und so, sieht die Map-Version mit
+den gesetzten Hint-Portalen.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Man kann gut erkennen, dass
+obwohl der Raum keine Tür besitzt, nur der Sichtbare Abschnitt der Map, von der
+Q3-Engine, berechnet wird.</font></p>
+<p><img border="0" src="mapping/hinportals/hint3.jpg" width="619" height="446"></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Hier noch mal, illustrativ
+dargestellt, die Funktionalität der Hint-Portale.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">So sieht es aus, so lange wir um
+dei Ecke bleiben :</font></p>
+<p><img border="0" src="mapping/hinportals/hint1.jpg" width="644" height="539"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">und so, wenn wir
+weitergehen.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Man erkennt ganz gut, wie die
+Hint-Portale ihre Wirkung verlieren, sobald wir durch den unsichtbaren
+Hint-Brush durchgehen.</font></p>
+<p><img border="0" src="mapping/hinportals/hint2.jpg" width="720" height="449"></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Link zum Download beider Maps
+findest du unten in diesem Tutorial.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Um die Wirkung der Hintportale zu
+testen:</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">1. Starte JKII im SP-Modus</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">2. Öffne die Konsole und gebe
+ein</font></p>
+<p><font face="Arial" size="2" color="#00FF00">map nohintportals</font><font face="Arial" size="2" color="#C0C0C0">
+(für die Version ohne Hintportale)</font></p>
+<p><font face="Arial" size="2" color="#00FF00">map hintportals</font><font face="Arial" size="2" color="#C0C0C0">
+(für die Version mit Hint-Brushes)</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">3. Nach dem die Map geladen
+wurde, öffne noch mal die Konsole und gebe ein:</font></p>
+<p><font face="Arial" size="2" color="#00FF00">helpusobi 1</font></p>
+<p><font face="Arial" size="2" color="#00FF00">r_showtris 1</font></p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><u><a href="downloads/hintportals.zip"><font face="Arial" size="2" color="#FFFF00">DOWNLOAD
+DER TUTORIAL MAP</font></a></u></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0" size="1">(Beide
+.map - Dateien enthalten)</font></p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF"><b>TIP:</b></font><font face="Arial" size="2" color="#C0C0C0">
+</font><font face="Arial" size="2" color="#C0C0C0">&nbsp;&nbsp;&nbsp; Plane deine Map, bevor du anfängst sie zu
+bauen. Wenn Du Hint-Portale einsetzen möchtest, muss die Map genug
+Winkel-Abschnitte besitzen. So kannst du die Wirkung der Hint-Portale optimal nutzen.</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.Net ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+
+</body>
+
+</html>

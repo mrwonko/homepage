@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<title>NPCs Befehle erteilen</title>
+<style type="text/css">
+body        {background-color:#333333; color:#C0C0C0; font-family:Arial; font-size:12.0pt;}
+.title      {font-size:14.0pt; color:white;}
+.heading    {text-align:center; color:teal; font-size:20.0pt;}
+.copyright  {text-align:center; color:gray; font-size:14pt;}
+.copyright2 {text-align:center; font-size:7.5pt; font-family:Verdana; color:teal;}
+.needed     {color:yellow;}
+</style>
+</head>
+
+<body bgcolor="#333333" lang=DE link=blue vlink=blue style='tab-interval:35.4pt'>
+
+<p class="heading"><b>&gt;&gt; Mapping Academy - Tutorials &lt;&lt;</b></p>
+<p class="copyright">(c) 2006 <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></p>
+
+<hr />
+
+<p class="title">NPCs Befehle erteilen</p>
+<p class="needed"><b><u>VORRAUSSETZUNGEN</u>:</b></p>
+<p><span style="color:white;">&gt;&gt; Tutorial Scripting - Installation BehavEd (Script-Editor) (<a
+href="../../behaved/behaved.htm" target="_blank">hier</a>)<br />
+&gt;&gt; Tutorial Mein erster Raum (<a href="../../mapping/firstroom/firstroom.htm" target="_blank">hier</a>)</span></p>
+
+<hr />
+
+<p>In dieser Lehreinheit (Tutorial) Lernen wir, einen NPC durch die Gegend zu schicken, und ihn eine bestimmte Animation abspielen zu lassen.</p>
+
+<hr />
+
+<p>
+
+Dieses Tutorial besch&auml;ftigt sich mit NPC's und damit, wie man sie mit Hilfe von Scripts steuern kann.<br /><br />
+Zuerst brauchen wir einen Raum mit einem info_player_start einem NPC (Rechtsklick und im Men&uuml; ausw&auml;hlen). Ich nehme mal einen npc_stormtrooper.<br /><br />
+<img src="images/pic1.jpg" /><br /><br />
+Als n&auml;chstes m&uuml;ssen wir an den Punkten, zu denen der NPC laufen soll, Waypoint_navgoals platzieren. (Rechtsklick->Waypoint_->Waypoint_Navgoal).<br />
+Diese Wegpunkte kriegen jetzt noch Namen. Wir klicken sie einen nach dem anderen an, dr&uuml;cen N und geben ein: <br /><br />
+-targetname Punkt1 (bzw. Punkt2, Punkt3 usw.)<br /><br />
+<img src="images/pic2.jpg" /><br /><br />
+Zu guter Letzt klicken wir den NPC an, dr&uuml;cken N und geben ein:<br /><br />
+-spawnscript mein_npc_script1 (das ist der Name des Scripts das ausgef&uuml;hrt wird, wenn der NPC auf der Map erscheint, ausgehend von JKA/GameData/Base/Scripts)<br />
+-und wir machen ein H&auml;kchen bei Cinematic, damit er von alleine nichts tut.<br /><br />
+Jetzt speichern wir die Map ab und kompilieren sie (bsp -meta).<br /><br />
+Nun fehlt nur noch das Script. &Ouml;ffnen wir zuerst BehavEd. So sieht das aus:<br /><br />
+<img src="images/pic3.jpg" /><br /><br />
+Danach &uuml;berlegen wir: Was soll der NPC tun?<br />
+Sagen wir mal, er soll immer im Kreis von einem Wegpunkt zum n&auml;chsten gehen, einen E11-Blaster haben und bei Wegpunkt 1 f&uuml;r f&uuml;nf Sekunden warten.<br /><br />
+Zuerst stellen wir die Waffe ein.<br />
+Also ziehen wir den Befehl Set(Set_types) in unser Script. Damit stellen wir Sachen ein.<br />
+Als n&auml;chstes bearbeiten wir das Kommando durch Doppelklicken darauf. In der Liste links w&auml;hlen wir SET_WEAPON aus, klicken unten auf Re-Evaluate, stellen dann rechts WP_BLASTER ein und dr&uuml;cken Ok.<br /><br />
+Nun hat der Stormtrooper einen E11-Blaster. (Hatte er eigentlich schon vorher, aber ein NPC_Jedi h&auml;tte ihn z.B. nicht gehabt)<br /><br />
+Jetzt zum Laufen: <br />
+Erstmal erstellen wir tasks mit den Laufkommandos:<br /><br />
+Wir erstellen so viele Tasks, wie wir Wegpunkte haben, geben jedem einen eigenen Namen (z.B. task1, task2 etc. <b>Es darf aber keine zwei tasks mit gleichem Namen geben!</b>) und tun da jeweils ein Set(set_types) mit SET_NAVGOAL und den targetnames der Waypoints rein.<br /><br />
+Da er <b>immer</b> im Kreis laufen soll, machen wir anschlie&szlig;end eine Endlosschleife.<br />
+Das geht mit dem Loop Kommando. Also f&uuml;gen wir das zu unserem Lift hinzu.<br /><br />
+<img src="images/pic4.jpg" /><br /><br />
+F&uuml;r eine Endlosschleife m&uuml;ssen wir -1 beim loop eingeben, aber das ist schon standard also &ouml;ffnen wir gleich den Loop mit Klick auf das +.<br /><br />
+Nun f&uuml;gen wir ein DoWait hinzu (in den Loop). Damit f&uuml;hrt man tasks aus, und es wird gewartet, bis der task fertig ausgef&uuml;hrt ist.<br />
+In das DoWait m&uuml;ssen wir task1 schreiben, damit der task mit dem Namen task1 ausgef&uuml;hrt wird.<br /><br />
+Ein Wait Kommando kommt als n&auml;chstes. Wir stellen es auf 3000 (Millisekunden = 3 Sekunden) ein.<br /><br />
+Letztendlich kommen noch die restlichen DoWaits.<br /><br />
+<img src="images/pic5.jpg" /><br /><br />
+Jetzt nur noch speichern (unter base/scripts/mein_npc_script1) und kompilieren. Fertig! Wir k&ouml;nnen testen. Wir starten JKA und geben in die Konsole ein:<br /><br />
+sv_pure 0 (damit auch Sachen, die nicht in pk3's sind, wie unser Script, geladen werden)<br />
+map mapname (mapname ist nat&uuml;rlich der mapname)<br /><br /><br />
+mfG Mr. Wonko
+
+</p>
+
+<hr />
+
+<p>Download der Sourcefiles: <a href="downloads/source.zip">Download</a></p>
+
+<hr />
+
+<p class="copyright2">Alle Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet:<br /><br />
+© 2000 - 2006 (Artur L.) <a href="http://www.darth-arth.de"
+target="_blank">www.darth-arth.de</a><br /><br />
+Nur zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.De
+ist ausdrücklich nicht für den Inhalt externer Seiten verantwortlich. Es gelten
+die angegebenen Nutzungsbedingungen.</p>
+
+</body>
+
+</html>

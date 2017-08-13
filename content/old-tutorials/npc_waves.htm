@@ -1,0 +1,912 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>NPC's: Angriffswellen</title>
+<style fprolloverstyle>A:hover {color: #00FFFF; font-style: italic}
+</style>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0">  <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font></p>
+
+<hr>
+
+<p><font size="3" face="Arial" color="#FFFFFF"><b>NPC's - Angriffswellen</b></font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools I ( <a href="radiant/jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools 2 ( <a href="radiant/jk2_etools2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2">&gt;&gt; Mein Erster Raum ( <a href="mapping/firstroom/firstroom.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<hr>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><b><u><font face="Arial" color="#FFFFFF" size="3">Vorbereitung:</font></u></b></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><b><font size="2" face="Arial" color="#FFFFFF">NPC’s
+in eine SP Map einfügen</font></b></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Um
+NPC’s in eine SP-Map einzufügen gibt es 2 Möglichkeiten. Die erste Möglichkeit
+ist, einen vordefinierten NPC-Namen aus dem Kontextmenu der rechten Maustaste
+auszuwählen (rechte Maustaste im 2D-Fenster &gt; NPC &gt; NPC_name).</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Um
+selbsterstellte NPC’s in eine Map einzufügen benötigt man das Entity „</font><font size="2" face="Arial" color="#00FFFF">NPC_spawner</font><font size="2" face="Arial" color="#C0C0C0">“
+(rechte Maustaste im 2D-Fenster &gt; NPC &gt; NPC_spawner). Falls der
+NPC_spawner in deiner NPC-Liste nicht verfügbar ist, hast du eine veraltete „</font><font size="2" face="Arial" color="#00FFFF">sp_entities.def</font><font size="2" face="Arial" color="#C0C0C0">“
+- Datei oder einen veralteten Editor. Empfohlen wird der GTKRadiant, ab der
+Version ab 2.1.12.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Bei
+älteren Versionen des GTKRadiant gibt es einen Bug in der NPC_Liste, bei
+Bildschirmauflösungen bis 1024 x 768 Pixel, wird die NPC_Liste nicht komplett
+dargestellt, so dass man bestimmte NPC’s nicht auswählen kann.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">Lösung
+1:</font><font size="2" face="Arial" color="#C0C0C0"> den GTKRadiant ab der
+Version 2.1.12 installieren</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">Lösung
+2:</font><font size="2" face="Arial" color="#C0C0C0"> Lösche aus der Datei „scripts/sp_entities.def„
+alle NPC_Namen außer dem „NPC_spawner“. Du kannst dann alle NPC-Namen aus
+der Liste in der „ext_data/npcs.cfg“ - Datei + deine eigenen NPC-Namen
+benutzten (selbsterstellte NPC’s laut Tutorial).</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Falls
+in deiner </font><font size="2" face="Arial" color="#00FFFF">sp_entities.def</font><font size="2" face="Arial" color="#C0C0C0">
+- Datei, der </font><font size="2" face="Arial" color="#00FFFF">NPC_spawner</font><font size="2" face="Arial" color="#C0C0C0">
+nicht existiert, füge folgende Definition dort ein:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">================
+<b>8&gt;&lt;</b> ===================================</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">/*QUAKED
+NPC_spawner (1 0 0) (-16 -16 -24) (16 16 32) x x x x DROPTOFLOOR CINEMATIC
+NOTSOLID STARTINSOLID SHY<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">CINEMATIC
+- Will spawn with no default AI (BS_CINEMATIC)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">NOTSOLID
+- Starts not solid<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">STARTINSOLID
+- Don't try to fix if spawn in solid<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">SHY
+- Spawner is shy<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">targetname
+- name this NPC goes by for targetting<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">target
+- NPC will fire this when it spawns it's last NPC (should this be when the last
+NPC it spawned dies?)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">If
+targeted, will only spawn a NPC when triggered<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">count
+- how many NPCs to spawn (only if targetted) default = 1<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">NPC_type
+- name of NPC (in NPCs.cfg) to spawn<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">NPC_targetname
+- NPC's targetname AND script_targetname<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">NPC_target
+- NPC's target to fire when killed<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">health
+- starting health (default = 100)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">playerTeam
+- Who not to shoot! (default is TEAM_STARFLEET)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_FREE (none) = 0<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_RED = 1<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_BLUE = 2<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_GOLD = 3<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_GREEN = 4<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_STARFLEET = 5<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_BORG = 6<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_SCAVENGERS = 7<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_STASIS = 8<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_NPCS = 9<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_HARVESTER, = 10<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">TEAM_FORGE = 11<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">enemyTeam
+- Who to shoot (all but own if not set)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">spawnscript
+- default script to run once spawned (none by default)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">usescript
+- default script to run when used (none by default)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">awakescript
+- default script to run once awoken (none by default)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">angerscript
+- default script to run once angered (none by default)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">painscript
+- default script to run when hit (none by default)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">fleescript
+- default script to run when hit and below 50% health (none by default)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">deathscript
+- default script to run when killed (none by default)<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">These
+strings can be used to activate behaviors instead of scripts - these are checked<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">first
+and so no scripts should be names with these names:<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-spacerun: yes"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">default - 0: whatever<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">idle - 1: Stand around,
+do abolutely nothing<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">roam - 2: Roam around,
+collect stuff<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">walk - 3: Crouch-Walk
+toward their goals<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">run - 4: Run toward
+their goals<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">standshoot - 5: Stay
+in one spot and shoot- duck when neccesary<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">standguard - 6: Wait
+around for an enemy<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">patrol - 7: Follow a
+path, looking for enemies<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">huntkill - 8: Track
+down enemies and kill them<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">evade - 9: Run from
+enemies<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">evadeshoot - 10: Run
+from enemies, shoot them if they hit you<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">runshoot - 11: Run to
+your goal and shoot enemy when possible<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">defend - 12: Defend an
+entity or spot?<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">snipe - 13: Stay
+hidden, shoot enemy only when have perfect shot and back turned<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">combat - 14: Attack,
+evade, use cover, move about, etc.<span style="mso-spacerun: yes">&nbsp; </span>Full
+combat AI - id NPC code<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">medic - 15: Go for
+lowest health buddy, hide and heal him.<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">takecover - 16: Find
+nearest cover from enemies<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">getammo - 17: Go get
+some ammo<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">advancefight - 18: Go
+somewhere and fight along the way<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">face - 19: turn until
+facing desired angles<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">wait - 20: do nothing<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">formation - 21:
+Maintain a formation<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><span style="mso-tab-count:1"><font face="Arial" color="#00FF00" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><font face="Arial" color="#00FF00" size="1">crouch - 22:
+Crouch-walk toward their goals<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font face="Arial" color="#00FF00" size="1">delay
+- after spawned or triggered, how many seconds to wait to spawn the NPC<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="1">*/</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FF00" size="1">&nbsp;</font><font size="2" face="Arial" color="#C0C0C0"><o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">================
+<b>8&gt;&lt;</b> ===================================</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Welcher
+NPC durch den NPC_spawner aufgerufen wird, definiert man mit dem KEY „</font><font size="2" face="Arial" color="#00FFFF">NPC_type</font><font size="2" face="Arial" color="#C0C0C0">“
+in den Entity Eigenschaften. Dort kann man sowohl die bereits definierten
+NPC-Namen aus der „</font><font size="2" face="Arial" color="#00FFFF">ext_data/npcs.cfg</font><font size="2" face="Arial" color="#C0C0C0">“
+– Datei verwenden oder NPC-Namen von selbsterstellten NPC’s (erweiterung der
+</font><font size="2" face="Arial" color="#00FFFF">npcs.cfg</font><font size="2" face="Arial" color="#C0C0C0">
+oder eingene </font><font size="2" face="Arial" color="#00FFFF">.npc</font><font size="2" face="Arial" color="#C0C0C0">-Dateien,
+siehe NPC - Tutorial)</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#FFFFFF"><u><b>Beispiele:</b></u></font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Vordefinierter
+NPC:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_type<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+reborn</font><font size="2" face="Arial" color="#C0C0C0"><o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Oder
+eigener NPC:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_type<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+jedi_yoda<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;</font><font size="2" face="Arial" color="#C0C0C0"><o:p>
+</o:p>
+</font></span></p>
+<hr>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><b><font size="2" face="Arial" color="#FFFFFF">Die
+erste Angriffswelle:</font></b></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wenn
+man Angriffswellen programmieren möchte, ist es wichtig, dass die NPC’s beim
+laden der Map nicht automatisch erscheinen. Das erreicht man in dem man den
+NPC’s einen Zielnamen (</font><font size="2" face="Arial" color="#00FFFF">targetname</font><font size="2" face="Arial" color="#C0C0C0">)
+gibt. Sobald bei einem NPC, der „targetname“ festgelegt ist, erscheint
+dieser nicht automatisch im Spiel, sondern muss zuerst per Script oder Trigger,
+aktiviert werden.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Damit
+man auch mehrere NPC’s pro Angriffswelle definieren kann, braucht man noch
+eine Möglichkeit die bereits besiegten NPC’s zu zählen. Dafür benötigt man
+das Entity „</font><font size="2" face="Arial" color="#FFFFFF">target_counter</font><font size="2" face="Arial" color="#C0C0C0">“
+(gibt es nur im SP Modus !)</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Zum
+Erstellen unserer Angriffswelle-Testmap, benötigen wir einen Raum, wie z.B. aus
+dem Tutorial „</font><font size="2" face="Arial" color="#00FFFF">Mein erster
+Raum</font><font size="2" face="Arial" color="#C0C0C0">“.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+platzieren wir in diesem Raum 3 </font><font size="2" face="Arial" color="#00FFFF">NPC_spawner</font><font size="2" face="Arial" color="#C0C0C0">.
+Diese, stellen unsere ersten Gegner dar.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+markieren wir alle 3 NPC’s, drücken die „</font><b><font size="2" face="Arial" color="#FFFFFF">N</font></b><font size="2" face="Arial" color="#C0C0C0">“-Taste<span style="mso-spacerun: yes">&nbsp;
+</span>und fügen folgendes ein:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_type<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+reborn<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle0<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_target<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle1count</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#C0C0C0"><o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#C0C0C0">&nbsp;</font></span><font size="2" face="Arial" color="#C0C0C0"><img border="0" src="npc/waves/Image13.jpg" width="329" height="110"></font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#C0C0C0"><o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#FF00FF">Erklärung:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#FF00FF">=======</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">NPC_type</font><font size="2" face="Arial" color="#C0C0C0">
+= Name des NPC’s aus einer NPC-Definitionsdatei (in diesem Fall ein „</font><font size="2" face="Arial" color="#00FFFF">reborn</font><font size="2" face="Arial" color="#C0C0C0">“,
+aus der original „</font><font size="2" face="Arial" color="#00FFFF">npcs.cfg</font><font size="2" face="Arial" color="#C0C0C0">“)</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">Targetname</font><font size="2" face="Arial" color="#C0C0C0">
+= Name der NPC’s, mit dem sie aktiviert werden können. Die aktivierung kann
+per Skript mit dem „</font><font size="2" face="Arial" color="#00FFFF">USE</font><font size="2" face="Arial" color="#C0C0C0">“-Befehl
+erfolgen, per „</font><font size="2" face="Arial" color="#00FFFF">trigger_once</font><font size="2" face="Arial" color="#C0C0C0">“,
+„</font><font size="2" face="Arial" color="#00FFFF">target_relay</font><font size="2" face="Arial" color="#C0C0C0">“
+oder mit jedem anderen Entity, das „</font><font size="2" face="Arial" color="#00FFFF">targets</font><font size="2" face="Arial" color="#C0C0C0">“
+(Ziele) aktivieren kann.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">NPC_target</font><font size="2" face="Arial" color="#C0C0C0">
+= Name eines Ziels, das aktiviert wird, wenn der NPC stirbt. In unserem Fall,
+der Name unseres Zählers (</font><font size="2" face="Arial" color="#00FFFF">target_counter</font><font size="2" face="Arial" color="#C0C0C0">)</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Damit
+die erste Angriffswelle gleich mit dem Spieler in der Map erscheint benötigen
+wir noch einen &quot;</font><font size="2" face="Arial" color="#00FFFF">target_relay</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+,welcher mit dem Spieler-Startpunkt (</font><font size="2" face="Arial" color="#00FFFF">info_play_start</font><font size="2" face="Arial" color="#C0C0C0">)
+verbunden ist.&nbsp;</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">R</font><font size="2" face="Arial" color="#C0C0C0">echte
+Maustaste in dem 2D Fenster klicken, dann &gt; </font><font size="2" face="Arial" color="#00FFFF">target</font><font size="2" face="Arial" color="#C0C0C0">
+&gt; </font><font size="2" face="Arial" color="#00FFFF">target_relay</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+&quot;</font><font size="2" face="Arial" color="#FFFFFF"><b>N</b></font><font size="2" face="Arial" color="#C0C0C0">&quot;
+drücken und dann folgendes eingeben:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+startwelle0<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+target<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle0</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/waves/Image14.jpg" width="297" height="102"></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+müssen wir noch unseren Spiele-Startpunkt mit dem </font><font size="2" face="Arial" color="#00FFFF">target_relay</font><font size="2" face="Arial" color="#C0C0C0">
+verbinden.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Drücke
+zuerst ESC-Taste um sicher zu gehen, dass nicht mehr markiert ist, markiere dann
+das </font><font size="2" face="Arial" color="#00FFFF">Info_play_start</font><font size="2" face="Arial" color="#C0C0C0">
+und drücke &quot;</font><font size="2" face="Arial" color="#FFFFFF"><b>N</b></font><font size="2" face="Arial" color="#C0C0C0">&quot;...</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">...gebe
+folgendes ein:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+target<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+startwelle0</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/waves/Image10.jpg" width="283" height="108"></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">So,
+wird der Spieler-Startpunkt mit dem &quot;</font><font size="2" face="Arial" color="#00FFFF">target_relay</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+verbunden.&nbsp;</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dieser
+wiederum aktiviert unsere erste Angriffswelle.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0"><o:p>
+</o:p>
+<img border="0" src="npc/waves/Image8.jpg" width="421" height="251"></font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;</font></p>
+<hr>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0"><o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Als
+nächstes stellen wir in der Nähe der 3 NPC’s unseren Ziel-Zähler („</font><font size="2" face="Arial" color="#00FFFF">target_counter</font><font size="2" face="Arial" color="#C0C0C0">“).</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dann
+drücken wir „</font><font size="2" face="Arial" color="#FFFFFF"><b>N</b></font><font size="2" face="Arial" color="#C0C0C0">“
+und geben folgende Optionen ein:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle1count<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+target<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle1<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+count<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+3</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00"><o:p>
+</o:p>
+<img border="0" src="npc/waves/Image12.jpg" width="305" height="114"></font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;</font><font size="2" face="Arial" color="#C0C0C0"><o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#FF00FF">Erklärung:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#FF00FF">=======</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">targetname</font><font size="2" face="Arial" color="#C0C0C0">
+= Name unseres Zählers, über welchen er aktiviert / angestoßen werden kann.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">target</font><font size="2" face="Arial" color="#C0C0C0">
+= Name eines Ziels, das aktiviert werden soll, wenn unserer Zähler seinen
+maximal Wert erreicht. In unserem Fall, die nächste Angrifsswelle.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">count</font><font size="2" face="Arial" color="#C0C0C0">
+= Dieser Wert definiert, wie oft der Zähler angestoßen werden muss, bevor er
+seinen Ziel aktiviert. In unserem Fall 3, da wir 3 Reborns haben, die besiegt werden müssen, bevor die
+nächste Angriffs-Welle erscheint.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/waves/Image3.jpg" width="399" height="359"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="Arial" size="3" color="#FFFFFF">die
+nächste Angriffswelle&nbsp;</font></b></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+platzieren wir ein wenig von den letzten entfernt, weitere 3 </font><font size="2" face="Arial" color="#00FFFF">NPC_spawner</font><font size="2" face="Arial" color="#C0C0C0">.&nbsp;</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Diese,
+stellen unsere weiteren Gegner dar. Dann markieren wir die 3 NPC’s, drücken
+die „</font><b><font size="2" face="Arial" color="#FFFFFF">N</font></b><font size="2" face="Arial" color="#C0C0C0">“-Taste<span style="mso-spacerun: yes">&nbsp;
+</span>und fügen folgendes ein:&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_type<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+rebornacrobat<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle1<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_target<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle2count</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Als
+nächstes stellen wir in der Nähe der 3 NPC’s unseren zweiten Ziel-Zähler
+(„</font><font size="2" face="Arial" color="#00FFFF">target_counter</font><font size="2" face="Arial" color="#C0C0C0">“).</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dann
+drücken wir „</font><font size="2" face="Arial" color="#FFFFFF"><b>N</b></font><font size="2" face="Arial" color="#C0C0C0">“
+und geben folgende Optionen ein:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle2count<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+target<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle2<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+count<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+3</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/waves/Image5.jpg" width="443" height="375"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="Arial" size="3" color="#FFFFFF">die
+nächste Angriffswelle&nbsp;</font></b></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+wiederholen wir das ganze noch mal, für weitere 3 </font><font size="2" face="Arial" color="#00FFFF">NPC_spawner</font><font size="2" face="Arial" color="#C0C0C0">.&nbsp;</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">D</font><font size="2" face="Arial" color="#C0C0C0">ie
+3 NPC’s markieren, „</font><b><font size="2" face="Arial" color="#FFFFFF">N</font></b><font size="2" face="Arial" color="#C0C0C0">“-Taste<span style="mso-spacerun: yes">
+drücken und folgendes </span>einfügen:&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_type<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+rebornforceuser<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle2<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_target<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle3count</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Als
+nächstes stellen wir in der Nähe der 3 NPC’s unseren dritten Ziel-Zähler
+(„</font><font size="2" face="Arial" color="#00FFFF">target_counter</font><font size="2" face="Arial" color="#C0C0C0">“).</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dann
+drücken wir „</font><font size="2" face="Arial" color="#FFFFFF"><b>N</b></font><font size="2" face="Arial" color="#C0C0C0">“
+und geben folgende Optionen ein:</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle3count<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+target<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle3<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+count<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+3</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/waves/Image7.jpg" width="423" height="355"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="Arial" size="3" color="#FFFFFF">die
+letzte Angriffswelle&nbsp;</font></b></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+wiederholen wir das ganze ein letztes mal, weitere 3 </font><font size="2" face="Arial" color="#00FFFF">NPC_spawner</font><font size="2" face="Arial" color="#C0C0C0">.&nbsp;</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">D</font><font size="2" face="Arial" color="#C0C0C0">ie
+3 NPC’s markieren, „</font><b><font size="2" face="Arial" color="#FFFFFF">N</font></b><font size="2" face="Arial" color="#C0C0C0">“-Taste<span style="mso-spacerun: yes">
+drücken und folgendes </span>einfügen:&nbsp;<o:p>
+</o:p>
+</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_type<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+rebornboss<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle3</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00"><o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FF00">&nbsp;<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-GB" style="mso-ansi-language:EN-GB"><font size="2" face="Arial" color="#00FFFF">NPC_target<o:p>
+</o:p>
+ </font></span><font size="2" face="Arial" color="#C0C0C0"><span style="mso-spacerun: yes">&lt;
+w</span></font><span style="mso-spacerun: yes"><font size="2" face="Arial" color="#C0C0C0">ird
+nicht mehr benötigt, da keine weiteren Angriffswellen vorhanden &gt;</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/waves/Image9.jpg" width="435" height="361"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Somit,
+sind wir mit der Programmierung der Angriffswellen fertig.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Natürlich
+kann man das ganze beliebig oft weitermachen.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dieses
+Prinzip wird bei den sogenannten &quot;LADDER&quot;-Maps verwendet, um immer
+wieder,&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">weitere
+und schwierigere Gegner erscheinen zu lassen.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+noch die Map unter dem namen &quot;</font><font size="2" face="Arial" color="#00FFFF">waves.map</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+(Wellen) in dem </font><font size="2" face="Arial" color="#00FFFF">base/maps</font><font size="2" face="Arial" color="#C0C0C0">
+- Ordner speichern, kompilieren und testen.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Viel
+Spaß !</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Darth
+Arth</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><u><a href="downloads/waves.zip"><font face="Arial" size="2" color="#FFFF00">DOWNLOAD
+DER TUTORIAL MAP</font></a></u></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0" size="1">(
+.map - Datei enthalten)</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.de ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+&nbsp;
+
+</body>
+
+</html>

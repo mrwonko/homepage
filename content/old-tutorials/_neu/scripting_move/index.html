@@ -1,0 +1,100 @@
+<html>
+
+<head>
+<title>Brushes via Script bewegen</title>
+<style type="text/css">
+body        {background-color:#333333; color:#C0C0C0; font-family:Arial; font-size:12.0pt;}
+.title      {font-size:14.0pt; color:white;}
+.heading    {text-align:center; color:teal; font-size:20.0pt;}
+.copyright  {text-align:center; color:gray; font-size:14pt;}
+.copyright2 {text-align:center; font-size:7.5pt; font-family:Verdana; color:teal;}
+.needed     {color:yellow;}
+</style>
+</head>
+
+<body bgcolor="#333333" lang=DE link=blue vlink=blue style='tab-interval:35.4pt'>
+
+<p class="heading"><b>&gt;&gt; Mapping Academy - Tutorials &lt;&lt;</b></p>
+<p class="copyright">(c) 2006 <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></p>
+
+<hr />
+
+<p class="title">Brushes via Script bewegen</p>
+<p class="needed"><b><u>VORRAUSSETZUNGEN</u>:</b></p>
+<p><span style="color:white;">&gt;&gt; Tutorial Scripting - Installation BehavEd (Script-Editor) (<a
+href="../../behaved/behaved.htm" target="_blank">hier</a>)<br />
+&gt;&gt; Tutorial Mein erster Raum (<a href="../../tutorials/mapping/firstroom/firstroom.htm" target="_blank">hier</a>)</span></p>
+
+<hr />
+
+<p>In dieser Lehreinheit (Tutorial) Lernen wir, einen Lift auf Knopfdruck erst in eine, dann in eine andere Richtung und wieder zur&uuml;ckfahren zu lassen, bzw. Brushes mit Hilfe eines Scripts zu bewegen.</p>
+
+<hr />
+
+<p>
+
+Dieses Tutorial besch&auml;ftigt sich mit dem Bewegen von Brushes mithilfe von Scripts.<br />
+Damit wir einen Brush via Script bewegen k&ouml;nnen, m&uuml;ssen wir erstmal einen haben. Also erstellen wir einen kleinen Raum mit einem Lift, der nach oben und dann nach vorne fahren soll, sobald man einen Knopf dr&uuml;ckt, und einem Info_player_start:<br /><br />
+<img src="images/pic1.jpg" /><br /><br />
+Damit wir diesen Brush vom Script aus bewegen k&ouml;nnen, m&uuml;ssen wir ihn in ein Entity tun. Es funktionieren die meisten `func_****`s, aber da wir im Moment keine besonderen Eigenschaften wie z.B. Zerst&ouml;rbarkeit wollen, nehmen wir einen func_static, der eigentlich nichts tut.<br />
+Dieser braucht einen Brush mit der Textur system/origin, der als Mittelpunkt dient. Den f&uuml;gen wir hinzu, w&auml;hlen alle Brushes des Lifts und den Origin-Brush aus und machen Rechtsklick->Func_->Func_Static.<br /><br />
+Au&szlig;erdem brauchen wir noch ref_tag's, das sind die Positionen zu denen der Lift nachher f&auml;hrt. Da es drei Positionen sind (Startposition, &Uuml;bergangsposition und Enposition), brauchen wir auch drei ref_tags.<br />
+Der erste kommt an die gleiche Position wie der Origin-Brush des Lifts, der zweite an die Stelle, wo der Lift abbiegen soll, und der dritte an die Endposition des Origin-Brushes:<br /><br />
+<img src="images/pic2.jpg" /><br /><br />
+Falls n&ouml;tig, k&ouml;nnt ihr den Func_static kopieren, um zu sehen, wo ihr die ref_tags platzieren m&uuml;sst.<br />
+L&ouml;scht die Kopien aber hinterher wieder.<br /><br />
+Damit wir die ref_tag's und den func_static vom Script aus auch "ansprechen" k&ouml;nnen, m&uuml;ssen wir ihnen noch Namen geben. Beim ref_tag geht das im Entitymen&uuml; (N) mit targetname, beim func_static mit script_targetname.<br />
+Geben wir dem func_static den Namen "Lift" und den drei ref_tag's die Namen "tag_start", "tag_mitte" und "tag_ende":<br /><br />
+<img src="images/pic3.jpg" /><br /><br />
+Wir k&ouml;nnten dem Lift noch ein Soundset geben, z.B. soundset platform.<br /><br />
+Jetzt fehlen nur noch eine Konsole zum Starten des Lifts und nat&uuml;rlich das Script selber.<br />
+Erstmal die Konsole: Wir nehmen einen Brush mit einer Konsolentextur, und tun einen trigger_multiple (Brush mit System/Trigger Textur -> Rechtsklick -> trigger_ -> trigger_multiple) davor, den wir wie folgt einstellen (N):<br /><br />
+- Je ein H&auml;kchen bei "player_use" und "facing" (damit man den "Benutzen" Knopf dr&uuml;cken und dabei in die richtige Richtung sehen muss)<br />
+- wait - 20 (damit man das Script nicht nochmal ausf&uuml;hren kann, ehe der Lift fertig ist)<br />
+- target - script (das wird beim Benutzen des Triggers benutzt)<br />
+- unten links bei den Zahlen (0, 45, 90 usw.) diejenige anklicken, die in die Richtung zeigt, in die man gucken m&uuml;ssen soll, also die, in die, vom Trigger aus gesehen, die Konsole liegt (aus der Vogelperspektive) (das wird von "facing" ben&ouml;tigt)<br /><br />
+Jetzt fehlt nur noch ein target_scriptrunner (nichts anklicken (ESC) -> Rechtsklick -> target_ -> target_scriptrunner), den wir so einstellen:<br /><br />
+targetname - script (hei&szlig;t, dass er benutzt wird, wenn der Trigger_multiple ausgel&ouml;st wird)<br />
+count - -1 (damit er unendlich (= -1) Mal benutzt werden kann)<br />
+usescript - mein_move_script (Das ist das Script, das bei Benutzung ausgef&uuml;hrt wird (ausgehend von "JKA/GameData/Base/Scripts"))<br /><br />
+<img src="images/pic4.jpg" /><br /><br />
+So, jetzt k&ouml;nnen wir schon kompilieren. "Bsp -meta" reicht, wenn ihr Lichter eingebaut habt, k&ouml;nnt ihr noch "bsp -ligt -fast" dazu nehmen.<br /><br />
+Nun zum Script:<br />
+Zuerst starten wir BehavEd (habt ihr warscheinlich schon... Ich auch xD).<br /><br />
+<b>Anmerkung:</b> BehavEd f&uuml;r JKA ist beim JKA SDK dabei. (<a href="http://www.pcgamemods.com/3195/" target="_blank">Link1</a>, <a href="http://www.jk2files.com/file.info?ID=20909" target="_blank">Link2</a>)<br /><br />Das Fenster m&uuml;sstet ihr ja eigentlich schon aus dem BehavEd Einrichten Tutorial kennen. Hier noch ein kleiner Auffrischungskurs:<br /><br />
+<img src="images/pic5.jpg" /><br /><br />
+Also, dann zieht mal zuerst das Kommando "affect" ins Script. Damit sagen wir, dass das Script nicht auf den Scriptrunner, sondern ein angegebenes Entity ausgef&uuml;hrt wird. Welches, m&uuml;ssen wir jetzt eingeben: Bearbeitet das affect und ersetzt das "DEFAULT" durch ein "lift", da wir ja den Lift (wir erinnern uns: mit dem script_targetname "lift") bewegen wollen.<br /><br />
+Dann ziehen wir ein "move (vec vec float)" in das affect. Mit dem Move Kommando bewegt man Entity. Wohin, stellen wir jetzt ein:<br /><br />
+Erst klicken wir neben dem Eingabefeld links auf "Expr!", damit erweiterte Kommandos angezeigt werden, danach auf "Tag", da der Lift zu einem ref_tag fahren soll. Anschlie&szlig;end ersetzen wir das "targetname" durch ein "tag_mitte", und &auml;ndern letztendlich im Eingabefeld rechts die 1000 (Millisekunden, = eine Sekunde) in eine 4000 um, womit wir eingestellt haben, dass der Lift in vier Sekunden zum mittleren Tag f&auml;hrt.<br /><br />
+Vor dem n&auml;chsten Move Kommando m&uuml;ssen wir nun noch ein "wait (float)" Kommando einbauen, weil das Script nicht von alleine wartet, bis das Move Kommando ausgef&uuml;hrt ist. Hier stellen wir wieder 4000 ein.<br /><br />
+Dann kopieren wir die beiden Kommandos (mehrere Kommandos anklicken: strg+LMB (left mouse button = linke Maustaste)) und f&uuml;gen sie 3 mal ein: ein mal f&uuml;r die Fahrt zum Endpunkt, und &uuml;ber den Mittelpunkt wieder zur&uuml;ck zum Startpunkt.<br /><br />
+Nun m&uuml;ssen wir nur noch die Tag-Namen anpassen, und den zweiten wait Wert &auml;ndern, damit der Lift am Endpunkt l&auml;nger wartet.<br /><br />
+Den letzten wait k&ouml;nnen wir l&ouml;schen, da danach nichts mehr passiert.<br /><br />
+Wir m&uuml;ssen aber aufpassen, das die Zeit insgesamt (in meinem Fall 4 + 8 + 4 + 4 = 20) die oben festgelegten 20 Sekunden wait des trigger_multiples nicht &uuml;berschreitet, und  m&uuml;ssen zur Not die Map anpassen.<br /><br />
+<img src="images/pic6.jpg" /><br /><br />
+Achja: Das rem("comment"); ist ein Kommentar, da k&ouml;nnen wir z.B. reinschreiben was das Script tut.<br /><br />
+Danach m&uuml;ssen wir das Script nat&uuml;rlich speichern.<br />
+Wir klicken auf Save, und speichern es im Ordner JKA/GameData/Base/Scripts (Zur Not Scripts erstellen) unter dem Namen ab, den wir oben beim target_scriptrunner eingestellt haben, also mein_move_script.<br /><br />
+Jetzt nur noch unten rechts auf "Compile" klicken, und wir k&ouml;nnen testen: Wir starten Jedi Academy (oder den Jedi Outkast im SinglePlayer) und geben in die Konsole (shift + ^ (links neben 1)) ein:<br /><br />
+sv_pure 0 (damit auch dateien (unser Script), die nicht in pk3 dateien sind, geladen werden)<br />
+map mapname (wobei mapname nat&uuml;rlich der Name ist, den wir der Map gegeben haben)<br /><br />
+Und schon haben wir einen tollen Lift, der hoch und nach vorne F&auml;hrt.<br /><br /><br />
+mfG Mr. Wonko
+</p>
+
+<hr />
+
+<p>Download der Sourcefiles: <a href="downloads/source.zip">Download</a></p>
+
+<hr />
+
+<p class="copyright2">Alle Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet:<br /><br />
+© 2000 - 2006 (Artur L.) <a href="http://www.darth-arth.de"
+target="_blank">www.darth-arth.de</a><br /><br />
+Nur zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.De
+ist ausdrücklich nicht für den Inhalt externer Seiten verantwortlich. Es gelten
+die angegebenen Nutzungsbedingungen.</p>
+
+</body>
+
+</html>

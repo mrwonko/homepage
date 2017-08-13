@@ -1,0 +1,347 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Zuerst müssen wir in der Map unsere Kamera</title>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font></p>
+
+<hr>
+
+<p><font color="#FFFFFF" size="4" face="Arial">Mein erster Raum</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools I ( <a href="../../radiant/jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools 2 ( <a href="../../radiant/jk2_etools2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="../../radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">In</font><font face="Arial" size="2" color="#C0C0C0">
+dieser Lehreinheit (Tutorial) lernen wir einen Einfachen Raum mit einem
+Spieler-Startpunkt zu erstellen.</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">Zuerst schalte deine 2D-Ansicht
+im Editor auf &quot;Draufsicht von oben&quot;. Um das zu erreichen, klicke in
+der Symbol-Leiste auf dieses Symbol <img border="0" src="xyz.jpg" width="25" height="32">
+ &quot;</font><font face="Arial" size="2" color="#FFFFFF">Change Views</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+(Ansicht wechseln) oder drücke auf </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;STRG+TAB&gt;</b></font><font face="Arial" size="2" color="#C0C0C0">
+so lange, bis die Achsen-Darstellung so aussieht:</font></p>
+<p><img border="0" src="z_view.jpg" width="70" height="69"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">oder geh ins Menu und wähle
+&quot;</font><font face="Arial" size="2" color="#FFFFFF">View</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Layout</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">XY (Top)</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p><img border="0" src="view_top.jpg" width="256" height="328"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Als nächstes schalten wir den
+Grid auf 32-Einheiten um. Die Wände von Räumen, vor allem wenn sie groß sind,
+sollten immer mindestens 16 Einheiten dick sein, ansonsten können im Spiel
+komische Grafik-Fehler auftreten. Geh ins Menu und wähle &quot;</font><font face="Arial" size="2" color="#FFFFFF">Grid</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Grid32</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+oder drücke die Taste &quot;</font><font face="Arial" size="2" color="#FFFFFF"><b>6</b></font><font face="Arial" size="2" color="#C0C0C0">&quot;.</font></p>
+<p><img border="0" src="grid32.jpg" width="107" height="278"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt brauchen wir eine spezial
+Textur (Shader) mit dem Namen &quot;</font><font face="Arial" size="2" color="#FF00FF">Caulk</font><font face="Arial" size="2" color="#C0C0C0">&quot;.
+Um diese zu finden gehen wir ins Menü und wählen: &quot;</font><font face="Arial" size="2" color="#FFFFFF">Textures</font><font face="Arial" size="2" color="#C0C0C0">&quot; &gt;
+&quot;</font><font face="Arial" size="2" color="#FFFFFF">system</font><font face="Arial" size="2" color="#C0C0C0">&quot;. Finde
+diese Textur und klicke sie an, so dass sie rot
+umrahmt ist.&nbsp;</font></p>
+<p><img border="0" src="caulk.jpg" width="487" height="199"></p>
+<p><font face="Arial" size="2" color="#FF0000">ACHTUNG!</font><font face="Arial" size="2" color="#C0C0C0">:
+Bitte nicht verwechseln mit &quot;</font><font face="Arial" size="2" color="#FFFFFF">Caulk_nonsolid</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+!</font></p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Jetzt
+erstellen wir in dem 2D-Fenster einen rechteckigen Brush, der mindestens 1000
+Einheiten breit und 1000 Einheiten lang ist. Klicke einfach auf die Linke
+Maustaste halte sie fest und ziehe dann einen Rechteck. Wenn dieser groß genug
+ist, lasse die Maustaste los.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstbrush.jpg" width="793" height="401"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Du
+kannst die Größe des Brushes korrigieren in dem du außerhalb des Brushes mit
+der linken Maustaste klickst, sie festhältst und dann bewegst.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Wenn
+der Brush erstellt ist, schalten wir die Sicht jetzt auf Seitenansicht um, damit
+wir die Höhe des Brushes verändern können.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Klicke
+auf die Sichtänderung <img border="0" src="xyz.jpg" width="25" height="32"> oder geh ins Menu und
+wähle &quot;</font><font face="Arial" size="2" color="#FFFFFF">View</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Layout</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">YZ</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="view_side1.jpg" width="255" height="323"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Klicke
+jetzt mit der linken Maustaste oberhalb des brushes und ziehe ihn mindestens
+1000 Einheiten hoch.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstbrush_hight.jpg" width="803" height="365"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Das
+ganze sieht dann so aus:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstbrush_hight2.jpg" width="801" height="413"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF"><b>ACHTUNG:</b></font><font face="Arial" size="2" color="#C0C0C0">
+Wenn du in deiner 3D-Ansicht den Würfel nicht sehen kannst, dann liegt es
+wahrscheinlich daran, dass du dich innerhalb des Würfels befindest. Benutze
+einfach das Scrollrad deiner Maus oder die Pfeiltasten um aus dem
+Würfel herauszukommen.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Jetzt
+haben wir einen großen Würfel. Was wir aber brauchen, ist eine Box.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Um
+aus dem Würfel eine Box zu machen klicke auf das Symbol (Hollow) <img border="0" src="button_hollow.jpg" width="21" height="20">
+oder geh ins Menu und wähle &quot;</font><font face="Arial" size="2" color="#FFFFFF">Selection</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">CSG</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Make Hollow</font><font face="Arial" size="2" color="#C0C0C0">&quot;.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="make_hollow.jpg" width="276" height="260"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Danach,
+sieht das ganze dann so aus:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstbrush_hollow.jpg" width="803" height="411"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Wie
+dick die Wände nach Ausführung dieser Funktion bleiben, hängt von der
+aktuellen &quot;</font><font face="Arial" size="2" color="#FFFFFF">Grid</font><font face="Arial" size="2" color="#C0C0C0">&quot;-Einstellung.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">So
+nützlich diese Funktion auch ist, doch hat sie einen Fehler. Das heißt, die
+jetzt neu erstellten 6 Brushes, die unsere Box darstellen, überschneiden sich
+an den Kanten. Und dies sollte man, bei dem Level-Aufbau, möglichst vermeiden.
+Denn Überscheidungen bei den Brushes verlängern erheblich die Kompilierzeit
+und produzieren im Spiel die merkwürdigsten Grafik-Fehler.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Um
+das Problem bei unserer Box zu lösen benutzen wir die mächtige Funktion &quot;CSG&nbsp;
+Substract&quot;. Wenn man diese Funktion bei einem selektierten Brush
+durchführt werden, alle anderen ihn überlappenden Brushes an den
+Überlappungsstellen abgeschnitten und wenn notwendig geteilt. Aus diesem Grund
+sollte man diese Funktion nur mit äußerster Vorsicht und Überlegung benutzen.
+Und wirklich nur dann, wenn man weißt, was als Ergebnis herauskommt.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Zuerst
+aber, müssen wir die Selektierung aller 6 Brusehes aufheben in dem wir auf die </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;ESC&gt;</b></font><font face="Arial" size="2" color="#C0C0C0">-Taste
+drücken.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Jetzt
+bewegen wir uns in der 3D-Ansicht, in das innere unserer Box um die Wände
+passend zu schneiden.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Markiere
+jetzt den Oberen und Unteren Brush (Decke und Boden)&nbsp;. Benutze </font><font face="Arial" size="2" color="#FFFFFF">SHIFT</font><font face="Arial" size="2" color="#C0C0C0">
+(Umschalttaste) </font><font face="Arial" size="2" color="#FFFFFF">und die linke
+Maustaste</font><font face="Arial" size="2" color="#C0C0C0">.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstbrush_substract.jpg" width="731" height="359"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Klicke dann auf <img border="0" src="button_csg_substract.jpg" width="21" height="22"> (CSG-Substract)
+oder geh über's Menu auf &quot;</font><font face="Arial" size="2" color="#FFFFFF">Selection</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">CSG</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">CSG Substract</font><font face="Arial" size="2" color="#C0C0C0">&quot;.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="csg_substract.jpg" width="276" height="340"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#C0C0C0" face="Arial" size="2">Alle
+4 Wände werden oben und unten abgeschnitten. In der Console sollte dann
+erscheinen:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#00FF00"><font face="Arial" size="2">Subs</font><font face="Arial" size="2">tracting...<br>
+done. (created 4 fragments out of 4 brushes)</font><br>
+</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Jetzt
+drücke noch mal die </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;ESC&gt;</b></font><font face="Arial" size="2" color="#C0C0C0">-Taste
+um die Markierung aufzuheben.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Markiere</font><font face="Arial" size="2" color="#C0C0C0">
+jetzt 2 gegenüberliegende Wände:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstbrush_substract2.jpg" width="803" height="413"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">und
+klicke noch mal auf <img border="0" src="button_csg_substract.jpg" width="21" height="22"> (CSG-Substract).</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Die
+anderen 2 Wände werden an den Seiten geschnitten. In der Console sollte dann
+erschienen:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">Subtracting...<br>
+done. (created 2 fragments out of 2 brushes)</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Jetzt
+drücke noch mal die </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;ESC&gt;</b></font><font face="Arial" size="2" color="#C0C0C0">-Taste.</font></p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Unsere
+Box ist perfekt :D</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Jetzt
+suchen wir uns ein paar passende Texturen um unseren ersten Raum ein wenig zu
+verschönern. Geh ins Menu auf &quot;</font><font face="Arial" size="2" color="#FFFFFF">Textures</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">kejim</font><font face="Arial" size="2" color="#C0C0C0">&quot;.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Nach
+dem die Texturen geladen wurden, markiere die obere Seite des Boden-Brushes in
+dem du die tasten </font><font face="Arial" size="2" color="#FFFFFF"> &lt;SHIFT+STRG+ALT&gt;</font><font face="Arial" size="2" color="#C0C0C0"> festhältst
+</font><font face="Arial" size="2" color="#FFFFFF"> und mit der linken
+Maustaste</font><font face="Arial" size="2" color="#C0C0C0"> drauf klickst (im 3D-Fenster). Es ist wichtig, dass du nur die eine
+Seite und nicht den ganzen Brush markierst!</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Suche
+nun die Textur &quot;</font><font face="Arial" size="2" color="#FFFFFF">floor02</font><font face="Arial" size="2" color="#C0C0C0">&quot; und klicke drauf. Die Textur wird unserem
+Boden zugeordnet.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstroom_floor.jpg" width="789" height="515"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Drücke
+</font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;ESC&gt;</b></font><font face="Arial" size="2" color="#C0C0C0">
+um die Markierung aufzuheben.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Markiere
+auf die gleiche Weise (mit </font><font face="Arial" size="2" color="#FFFFFF">SHIFT+STRG+ALT</font><font face="Arial" size="2" color="#C0C0C0">) die untere Seite des Decken-Brushes.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Suche
+eine Textur mit dem Namen &quot;</font><font face="Arial" size="2" color="#FFFFFF">bigwall02</font><font face="Arial" size="2" color="#C0C0C0">&quot; und klicke
+darauf. Drücke
+dann&nbsp;</font><font face="Arial" size="2" color="#C0C0C0"> </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;ESC&gt;.&nbsp;</b></font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstroom_ceiling.jpg" width="783" height="429"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Unsere
+Decke hat jetzt auch eine Textur.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Als
+nächstes, markiere mit der gleichen Methode, die inneren Seiten aller 4 Wände.
+Suche dann die Textur &quot;</font><font face="Arial" size="2" color="#FFFFFF">kej_wall</font><font face="Arial" size="2" color="#C0C0C0">&quot; und klicke
+sie an.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstroom_walls.jpg" width="781" height="505"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Falls
+die Texturen nicht ganz auf die Wände passen, drücke &quot;</font><font face="Arial" size="2" color="#FFFFFF"><b>S</b></font><font face="Arial" size="2" color="#C0C0C0">&quot;
+für den &quot;Surface-Inspector&quot; und passe die Wand-Texturen an.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="surface_insp.jpg" width="276" height="370"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Nach
+dem die Texturen angepasst sind, klicke im Surface-Inspector auf &quot;</font><font face="Arial" size="2" color="#FFFFFF">Apply</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+und dann auf &quot;</font><font face="Arial" size="2" color="#FFFFFF">Done</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Drücke
+dann&nbsp;</font><font face="Arial" size="2" color="#C0C0C0"> </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;ESC&gt;.&nbsp;</b></font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Nun
+ist unser Raum komplett texturiert.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstroom_textured.jpg" width="386" height="299"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Als
+letztes setzen wir noch einen Spieler-Starpunkt in diesen Raum, damit wir unsere
+Map kompilieren und ausprobieren können.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Stell
+das 2D-Fenster auf die TOP-Ansicht (&quot;</font><font face="Arial" size="2" color="#FFFFFF">View</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Layout</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">XY (Top)</font><font face="Arial" size="2" color="#C0C0C0">&quot;)</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Klicke
+rechte Mauste ( irgendwo im inneren der Box) und wähle &quot;</font><font face="Arial" size="2" color="#FFFFFF">info</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">info_player_start</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="info_player_start.jpg" width="329" height="235"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Schalte
+jetzt das 2D - Fenster auf die Seitenansicht und bewege das </font><font face="Arial" size="2" color="#FFFFFF">Entity</font><font face="Arial" size="2" color="#C0C0C0">
+so, dass es knapp über dem Boden steht.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="info_player_start2.jpg" width="509" height="283"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF"><b>Gratuliere!,
+du hast deinen ersten Raum erstellt !</b></font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Da
+die Map jetzt fertig ist, sollten wir sie speichern. Geh auf Menu &quot;</font><font face="Arial" size="2" color="#FFFFFF">File</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">Save as...</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+und gebe &quot;</font><font face="Arial" size="2" color="#00FFFF">firstroom</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+als Namen ein.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Jetzt
+nur noch die Map schnell kompilieren. Menu &gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">BSP</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">FastVis (nolight)</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+und wir können sie im Spiel ausprobieren:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">1.
+Starte Jedi Knight2 im SP oder MP Modus</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">2.
+Öffne die Console und tippe ein:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF">map
+firstroom</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="firstroom_shot.jpg" width="640" height="480"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Und
+nun befindest du dich in deinem ersten Raum...</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><u><a href="../../downloads/camscript1.zip"><font face="Arial" size="2" color="#FFFF00">DOWNLOAD
+DER TUTORIAL MAP</font></a></u></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0" size="1">(.map
+- Datei enthalten)</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF"><b>TIP:</b></font><font face="Arial" size="2" color="#C0C0C0">
+</font><font face="Arial" size="2" color="#C0C0C0">&nbsp;&nbsp;&nbsp; Benutze immer die &quot;</font><font face="Arial" size="2" color="#FF00FF">Caulk</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+- Textur für Brush-Seiten, die der Spieler sowieso nicht sehen kann.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;&nbsp;&nbsp;<font face="Arial" size="2" color="#C0C0C0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Das spart Kompilier-Zeit,
+hält die Dateigröße kleiner und steigert die Geschwindigkeit deiner Map im
+Spiel.</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.Net ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+&nbsp;
+
+</body>
+
+</html>

@@ -1,0 +1,458 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>NPC's: Schauspieler</title>
+<style fprolloverstyle>A:hover {color: #00FFFF; font-style: italic}
+</style>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0">  <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font></p>
+
+<hr>
+
+<p><font size="3" face="Arial" color="#FFFFFF"><b>NPC's - als Schauspieler</b></font></p>
+<p align="left"><b><font face="Arial" color="#FFFF00" size="2"><u>VORAUSSETZUNGEN</u>:</font></b></p>
+<p align="left"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt; Kamera
+Modus ( <a href="cutscenes/cam1/camera1.htm">Tutorial</a> ) &lt;&lt;</font></p>
+<p align="left"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt; Die erste
+Kamerafahrt ( <a href="cutscenes/cam2/camera2.htm">Tutorial</a> ) &lt;&lt;</font></p>
+<p align="left"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Konfiguration BehavEd ( <a href="behaved/behaved.htm">Tutorial</a> ) &lt;&lt;</font></p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial" color="#FFFFFF"><b>Der
+Filmset</b></font><font size="3" face="Arial" color="#FFFFFF"><b>:</b></font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Zuerst
+benötigen wir einen Raum, wie z.B.. den aus dem Tutorial &quot;<a href="mapping/firstroom/firstroom.htm">Meine erster
+Raum</a>&quot;.</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dort
+setzten wir ein &quot;</font><font size="2" face="Arial" color="#00FFFF">info_player_start</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+rein, falls noch nicht vorhanden.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+&quot;N&quot; drücken um die Entity Eigenschaften anzuschauen und folgendes
+eingeben:</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:
+target</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+startwelle0</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Damit
+verbinden wir den Startpunkt mit einem &quot;</font><font size="2" face="Arial" color="#00FFFF">target_relay</font><font size="2" face="Arial" color="#C0C0C0">&quot;,
+der dann automatisch unsere &quot;Reborn-Schauspieler&quot; erscheinen lässt.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image2.jpg" width="198" height="92"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+erstellen wir den &quot;</font><font size="2" face="Arial" color="#00FFFF">target_relay</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+(rechte Maustaste in der 2D-Ansincht &gt; target &gt; target_relay ).</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dann
+gehen wir in die Eigenschaften von diesem Entity (&quot;N&quot; Taste) und geben
+folgendes ein:</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:
+target</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle0</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">target</font><font size="2" face="Arial" color="#C0C0C0">
+(Ziel) legt fest, was angestartet werden soll.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">In
+unserem Fall sind es die Reborns, die alle später den targetnamen &quot;</font><font size="2" face="Arial" color="#00FFFF">welle0</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+erhalten.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+startwelle0</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">targetname</font><font size="2" face="Arial" color="#C0C0C0">
+(wie heisse ich, falls mich jemand als </font><font size="2" face="Arial" color="#00FFFF">target</font><font size="2" face="Arial" color="#C0C0C0">
+benutzten will).</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Hier
+wird die Verbindung zu dem &quot;</font><font size="2" face="Arial" color="#00FFFF">info_player_start</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+hergestellt ( </font><font size="2" face="Arial" color="#00FFFF">info_player_start</font><font size="2" face="Arial" color="#C0C0C0">/target
+&gt; </font><font size="2" face="Arial" color="#00FFFF">target_relay</font><font size="2" face="Arial" color="#C0C0C0">/targetname)</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image4.jpg" width="184" height="95"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial" color="#FFFFFF"><b>Die
+Schauspieler</b></font><font size="3" face="Arial" color="#FFFFFF"><b>:</b></font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">So...,
+jetzt erstellen wir unsere 3 Schauspieler.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wir
+setzen in unseren Raum, drei &quot;</font><font size="2" face="Arial" color="#00FFFF">NPC_spawner</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+rein.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">In
+die Entity-Eigenschaften muss jeweils folgendes eingetragen werden:</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:
+targetname</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+welle0</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:
+NPC_type</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+reborn</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:
+spawnscript</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+go1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font><font size="2" face="Arial" color="#C0C0C0">(</font><font size="2" face="Arial" color="#FF0000">go2</font><font size="2" face="Arial" color="#C0C0C0">
+für den zweiten, </font><font size="2" face="Arial" color="#FF0000">go3</font><font size="2" face="Arial" color="#C0C0C0">
+für den dritten NPC )</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FFFF">Spawnscript</font><font size="2" face="Arial" color="#00FF00">
+</font><font size="2" face="Arial" color="#C0C0C0">legt fest, welches Script
+abgearbeitet werden soll, bei dem Erscheinen eines NPC's.</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Deswegen
+ist es wichtig, dass diese NPC's nicht mit der Map geladen werden,&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">sondern
+über den &quot;</font><font size="2" face="Arial" color="#00FFFF">targetnamen</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+aufgerufen werden (mit </font><font size="2" face="Arial" color="#00FFFF">trigger</font><font size="2" face="Arial" color="#C0C0C0">
+oder </font><font size="2" face="Arial" color="#00FFFF">target_relay</font><font size="2" face="Arial" color="#C0C0C0">,
+usw.).</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image12.jpg" width="325" height="166"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial" color="#FF0000"><b><u>ACHTUNG:</u></b></font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font color="#FF0000" size="2" face="Arial">Es
+ist wichtig, dass die NPC's, die als Schauspieler für Cutscenes benutzt werden,
+in den</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2"><font color="#FF0000">&quot;</font><font face="Arial" color="#00FFFF">CINEMATIC</font><font face="Arial" color="#FF0000">&quot;
+Modus gesetzt werden, ansonsten gehorchen sie den Animationsbefehlen nicht!</font></font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Da,
+der eigentliche Player, im Kamera-Modus nicht sichtbar ist, sollte man einen
+Fake hinstellen.</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wir
+machen es so, dass wir in der nähe des &quot;</font><font size="2" face="Arial" color="#00FFFF">Info_player_start</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+noch einen &quot;</font><font size="2" face="Arial" color="#00FFFF">NPC_Kyle</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+setzen.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image14.jpg" width="311" height="127"></p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="3" face="Arial" color="#FFFFFF"><b>Die
+Kameras:</b></font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+&quot;montieren&quot; wir unsere Kameras in die Scene.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wir
+plazieren 3 &quot;</font><font size="2" face="Arial" color="#00FFFF">ref_tag</font><font size="2" face="Arial" color="#C0C0C0">&quot;</font><font size="2" face="Arial" color="#00FFFF">'s</font><font size="2" face="Arial" color="#C0C0C0">
+die jeweils folgende Eigenschaften besitzen:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" size="2" face="Arial">K</font><font color="#FFFFFF" size="2" face="Arial">amera
+1:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image6.jpg" width="182" height="90"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" size="2" face="Arial">K</font><font color="#FFFFFF" size="2" face="Arial">amera
+2:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image8.jpg" width="163" height="88"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" size="2" face="Arial">K</font><font color="#FFFFFF" size="2" face="Arial">amera
+3:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image10.jpg" width="166" height="90"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Die
+Richtung und den Winkel, in die eine Kamera schauen soll, definieren wir mit
+jeweils einem endsprechenden</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">&quot;</font><font size="2" face="Arial" color="#00FFFF">info_not_null</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+, wie in dem &quot;Erste Kamera-Fahrt&quot; - Tutorial beschrieben.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Die
+</font><font size="2" face="Arial" color="#00FFFF">Info_notnull</font><font size="2" face="Arial" color="#C0C0C0">
+Entities, heißen dann jeweils &quot;</font><font size="2" face="Arial" color="#00FFFF">cam1point</font><font size="2" face="Arial" color="#C0C0C0">&quot;,
+&quot;</font><font size="2" face="Arial" color="#00FFFF">cam2point</font><font size="2" face="Arial" color="#C0C0C0">&quot;,
+&quot;</font><font size="2" face="Arial" color="#00FFFF">cam3point</font><font size="2" face="Arial" color="#C0C0C0">&quot;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image18.jpg" width="166" height="73"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="3" face="Arial" color="#FFFFFF"><b>Die
+Wegpunkte</b></font><font size="3" face="Arial" color="#FFFFFF"><b>:</b></font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Damit
+unsere Schauspieler wissen, wo sie entlang laufen sollen, müssen wir sogenannte
+&quot;</font><font size="2" face="Arial" color="#00FFFF">waypoints</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+(Wegpunkte) setzen.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Rechte
+Maustaste im 2D-Fenster &gt; </font><font size="2" face="Arial" color="#00FFFF">waypoint</font><font size="2" face="Arial" color="#C0C0C0">
+&gt; </font><font size="2" face="Arial" color="#00FFFF">waypoint_navgoal</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image16.jpg" width="191" height="88"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wir
+setzten für jeden Reborn jeweils 2 Wegpunkte die entsprechend heißen (</font><font size="2" face="Arial" color="#00FFFF">targetname</font><font size="2" face="Arial" color="#C0C0C0">):</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Reborn1:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wegpunkt1:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:targetname</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+p1_1</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wegpunkt2:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:targetname</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+p1_2</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#800000">=============================</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Reborn2:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wegpunkt1:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:targetname</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+p2_1</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wegpunkt2:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:targetname</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+p2_2</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#800000">=============================</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Reborn3:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wegpunkt1:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:targetname</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+p3_1</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wegpunkt2:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">KEY:targetname</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">VALUE:
+p3_2</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#800000">=============================</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wenn
+alle Entities gesetzt sind, sollte es ungefähr so aussehen wie auf dem Bild
+unten.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wenn
+alles stimmt , kann die Map gespeichert werden, z.B. unter dem Namen &quot;</font><font size="2" face="Arial" color="#00FFFF">cutscene_test.map</font><font size="2" face="Arial" color="#C0C0C0">&quot;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Da
+es sich hier um eine Test-Map handelt, kann diese ruhig mit </font><font size="2" face="Arial" color="#00FFFF">Fastvis/Nolight</font><font size="2" face="Arial" color="#C0C0C0">
+kompiliert werden.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="npc/cutscenes/Image20.jpg" width="795" height="555"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="3" face="Arial" color="#FFFFFF"><b>Die
+Anweisungen</b></font><font size="3" face="Arial" color="#FFFFFF"><b>:</b></font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+kommt der schwierigster Teil der Arbeit, die Ausarbeitung der Scripts.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jeder
+unserer 3 Schauspieler benötigt einen eigenen Script, da sie unterschiedliche Wege
+gehen.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Fangen
+wir mit dem ersten mal an.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Erstellt
+folgendes Script:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">//Generated by BehavEd<br>
+<br>
+rem ( "comment" );<br>
+camera ( /*@CAMERA_COMMANDS*/ ENABLE );<br>
+wait ( 1000.000 );<br>
+camera ( /*@CAMERA_COMMANDS*/ MOVE, $tag( &quot;</font><font size="2" face="Arial" color="#FF00FF">cam1</font><font size="2" face="Arial" color="#00FF00">&quot;, ORIGIN)$, 0 );<br>
+camera ( /*@CAMERA_COMMANDS*/ PAN, $tag( &quot;</font><font size="2" face="Arial" color="#FF00FF">cam1</font><font size="2" face="Arial" color="#00FF00">&quot;, ANGLES)$, &lt; 0.000 0.000 0.000 >, 0 );<br>
+camera ( /*@CAMERA_COMMANDS*/ ZOOM, 90.000, 0 );<br>
+set ( /*@SET_TYPES*/ &quot;</font><font size="2" face="Arial" color="#FF00FF">SET_WALKING</font><font size="2" face="Arial" color="#00FF00">&quot;, /*@BOOL_TYPES*/
+&quot;</font><font size="2" face="Arial" color="#FF00FF">true</font><font size="2" face="Arial" color="#00FF00">&quot; );<br>
+set ( /*@SET_TYPES*/ &quot;</font><font size="2" face="Arial" color="#FF00FF">SET_WALKSPEED</font><font size="2" face="Arial" color="#00FF00">&quot;,
+</font><font size="2" face="Arial" color="#FF00FF"> 80</font><font size="2" face="Arial" color="#00FF00"> );<br>
+set ( /*@SET_TYPES*/ &quot;</font><font size="2" face="Arial" color="#FF00FF">SET_NAVGOAL</font><font size="2" face="Arial" color="#00FF00">&quot;,
+&quot;</font><font size="2" face="Arial" color="#FF00FF">p1_1</font><font size="2" face="Arial" color="#00FF00">&quot; );<br>
+wait ( 4000.000 );<br>
+set ( /*@SET_TYPES*/ &quot;</font><font size="2" face="Arial" color="#FF00FF">SET_NAVGOAL</font><font size="2" face="Arial" color="#00FF00">&quot;,
+&quot;</font><font size="2" face="Arial" color="#FF00FF">p1_2</font><font size="2" face="Arial" color="#00FF00">&quot; );<br>
+wait ( 4000.000 );<br>
+camera ( /*@CAMERA_COMMANDS*/ MOVE, $tag( &quot;</font><font size="2" face="Arial" color="#FF00FF">cam2</font><font size="2" face="Arial" color="#00FF00">&quot;, ORIGIN)$, 2000 );<br>
+camera ( /*@CAMERA_COMMANDS*/ PAN, $tag( &quot;</font><font size="2" face="Arial" color="#FF00FF">cam2</font><font size="2" face="Arial" color="#00FF00">&quot;, ANGLES)$, &lt; 0.000 0.000 0.000 >, 2000 );<br>
+wait ( 7000.000 );<br>
+camera ( /*@CAMERA_COMMANDS*/ MOVE, $tag( &quot;</font><font size="2" face="Arial" color="#FF00FF">cam3</font><font size="2" face="Arial" color="#00FF00">&quot;, ORIGIN)$, 3000 );<br>
+camera ( /*@CAMERA_COMMANDS*/ PAN, $tag( &quot;</font><font size="2" face="Arial" color="#FF00FF">cam3</font><font size="2" face="Arial" color="#00FF00">&quot;, ANGLES)$, &lt; 0.000 0.000 0.000 >, 3000 );<br>
+wait ( 4000.000 );<br>
+camera ( /*@CAMERA_COMMANDS*/ ZOOM, 50.000, 2000 );<br>
+wait ( 5000.000 );<br>
+camera ( /*@CAMERA_COMMANDS*/ DISABLE );</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Mit
+dem </font><font size="2" face="Arial" color="#00FFFF">SET_WALKING</font><font size="2" face="Arial" color="#C0C0C0">
+= true, zwingen wir den NPC zu gehen und mit &quot;</font><font size="2" face="Arial" color="#00FFFF">WALKSPEED</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+kann man die Gehgeschwindigkeit festlegen.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Mit
+dem Befehl &quot;</font><font size="2" face="Arial" color="#00FFFF">SET_NAVGOAL</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+setzten wir fest, entlang welcher Punkte, der NPC laufen soll.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wichtig
+ist, dass man einen </font><font size="2" face="Arial" color="#00FFFF">WAIT</font><font size="2" face="Arial" color="#C0C0C0">
+- Befehl zwischen den einzelnen Gehpunkten setzt, so dass dem NPC genug Zeit
+bleibt von einem Punkt zum anderen zu gehen bevor er den nächsten Befehl
+erhält.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">A</font><font size="2" face="Arial" color="#C0C0C0">nsonsten
+kann passieren, dass die Ausführung des Scriptes unterbrochen wird, der NPC
+einfach stehen bleibt oder dumm durch die gegen hüpft.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wir
+nutzen dieses erste Script gleichzeitig dafür, die Kameras entsprechend zu
+steuern. Man könnte zwar dafür ein eigenes Script erstellen, dann ist es
+jedoch schwieriger, alles gut zu &quot;</font><font size="2" face="Arial" color="#00FFFF">timen</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+(Zeitliche Abstimmung des Ablaufs).</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Das
+&quot;</font><font size="2" face="Arial" color="#00FFFF">Timing</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+erfolgt durch richtig gesetzte &quot;</font><font size="2" face="Arial" color="#00FFFF">WAIT</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+Befehle und gehört zu den schwierigsten Aufgaben des &quot;</font><font size="2" face="Arial" color="#00FFFF">Regissers</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+(Scripters)</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Das
+Timing in diesem Script ist genau auf die, hier befindliche &quot;</font><font size="2" face="Arial" color="#FFFF00">Beispiel-Map</font><font size="2" face="Arial" color="#C0C0C0">&quot;
+abgestimmt.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Falls
+ihr das Script mit eure eigene Map ausprobieren wollt, müssen die </font><font size="2" face="Arial" color="#00FFFF">WAIT</font><font size="2" face="Arial" color="#C0C0C0">-Befehle
+eventuell noch angepasst werden.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+speichern wir dieses Script in den </font><font size="2" face="Arial" color="#C0C0C0">&quot;</font><font size="2" face="Arial" color="#00FFFF">base/scripts&quot;</font><font size="2" face="Arial" color="#C0C0C0">
+- Ordner unter dem Namen &quot;</font><font size="2" face="Arial" color="#00FFFF">go1.txt</font><font size="2" face="Arial" color="#C0C0C0">&quot;.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dann
+sollte dieses Script mit dem BehavEd-Editor kompiliert werden.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="../buttons/aliendf4.gif" width="344" height="9"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Für
+den zweiten Reborn erstellen wir folgendes Script:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">//Generated by BehavEd<br>
+<br>
+rem ( "comment" );<br>
+</font><font size="2" face="Arial" color="#FF00FF">wait</font><font size="2" face="Arial" color="#00FF00"> (
+</font><font size="2" face="Arial" color="#FF00FF">10000</font><font size="2" face="Arial" color="#00FF00">.000 );<br>
+set ( /*@SET_TYPES*/ "SET_WALKING", /*@BOOL_TYPES*/ "true" );<br>
+set ( /*@SET_TYPES*/ "SET_WALKSPEED", </font><font size="2" face="Arial" color="#FF00FF"> 80</font><font size="2" face="Arial" color="#00FF00"> );<br>
+set ( /*@SET_TYPES*/ "SET_NAVGOAL", &quot;</font><font size="2" face="Arial" color="#FF00FF">p2_1</font><font size="2" face="Arial" color="#00FF00">&quot; );<br>
+wait ( 5000.000 );<br>
+set ( /*@SET_TYPES*/ "SET_NAVGOAL", &quot;</font><font size="2" face="Arial" color="#FF00FF">p2_2</font><font size="2" face="Arial" color="#00FF00">&quot; );<br>
+</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Hier
+benötigen wir keine Kamera-Steuerbefehle, da dies schon von dem ersten Script
+erledigt wird.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Mit
+diesem Script erteilen wir dem zweiten NPC lediglich die Befehle zum Durchlaufen
+der Wegpunkte.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Wichtig
+hier, ist der erste &quot;</font><font size="2" face="Arial" color="#00FFFF">WAIT</font><font size="2" face="Arial" color="#C0C0C0">&quot;-Befehl,
+welcher den NPC zwingt zu warten, bis der erste Schauspieler seinen Weg gelaufen
+ist und die Kamera, die richtige Position erricht hat.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Jetzt
+speichern wir dieses Script in den &quot;</font><font size="2" face="Arial" color="#00FFFF">base/scripts&quot;</font><font size="2" face="Arial" color="#C0C0C0">
+- Ordner unter dem Namen &quot;</font><font size="2" face="Arial" color="#00FFFF">go2.txt</font><font size="2" face="Arial" color="#C0C0C0">&quot;.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dann
+sollte dieses Script mit dem BehavEd-Editor kompiliert werden.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="../buttons/aliendf4.gif" width="344" height="9"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Für
+unseren dritten Schauspieler erstellen wir folgendes Script:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">//Generated by BehavEd<br>
+<br>
+rem ( "comment" );<br>
+</font><font size="2" face="Arial" color="#FF00FF">wait</font><font size="2" face="Arial" color="#00FF00"> (
+</font><font size="2" face="Arial" color="#FF00FF">15000</font><font size="2" face="Arial" color="#00FF00">.000 );<br>
+set ( /*@SET_TYPES*/ "SET_WALKING", /*@BOOL_TYPES*/ "true" );<br>
+set ( /*@SET_TYPES*/ "SET_WALKSPEED", </font><font size="2" face="Arial" color="#FF00FF"> 80</font><font size="2" face="Arial" color="#00FF00"> );<br>
+set ( /*@SET_TYPES*/ "SET_NAVGOAL", &quot;</font><font size="2" face="Arial" color="#FF00FF">p3_1</font><font size="2" face="Arial" color="#00FF00">&quot; );<br>
+wait ( 5000.000 );<br>
+set ( /*@SET_TYPES*/ "SET_NAVGOAL", &quot;</font><font size="2" face="Arial" color="#FF00FF">p3_2</font><font size="2" face="Arial" color="#00FF00">&quot; );<br>
+</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dieses
+Script unterscheidet sich nur geringfügig von dem zweiten.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Der
+NPC läuft über andere Wegpunkte und muss ein wenig länger warten, da er als
+letzter dran ist :)</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dieses
+Script speichern wir in den &quot;</font><font size="2" face="Arial" color="#00FFFF">base/scripts&quot;</font><font size="2" face="Arial" color="#C0C0C0">
+- Ordner unter dem Namen &quot;</font><font size="2" face="Arial" color="#00FFFF">go3.txt</font><font size="2" face="Arial" color="#C0C0C0">&quot;.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">und
+kompillieren es, wie die anderen mit dem BehavEd-Editor.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="3" face="Arial" color="#FFFFFF"><b>Die
+Cutscene (Zwischensequenz) Testen</b></font><font size="3" face="Arial" color="#FFFFFF"><b>:</b></font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Nach
+dem die Map Fehlerfrei kompiliert wurde und alle 3 Scripte in dem </font><font size="2" face="Arial" color="#00FFFF">base/scripts</font><font size="2" face="Arial" color="#C0C0C0">
+- Ordner liegen und zu </font><font size="2" face="Arial" color="#00FFFF">IBI</font><font size="2" face="Arial" color="#C0C0C0">
+- Dateien kompiliert wurden, kann unsere Zwischensequenz getestet werden.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Starte
+Jedi-Knight2 im SP Modus, öffne die Konsole, gebe ein</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#00FF00">map
+cutscene_test</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">und
+genieße deine erste richtige Cutscene incl. Schauspieler ;)</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Falls
+die Kameras nicht ganz Synchron mit deinen Schauspielern laufen, müssen ev. die
+</font><font size="2" face="Arial" color="#00FFFF">WAIT</font><font size="2" face="Arial" color="#C0C0C0">-Befehle
+noch angepasst werden.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2" face="Arial" color="#C0C0C0">Dies
+ist jedoch, wie bereits erwähnt, das schwierigste und zeitaufwändigste beim
+erstellen von Cutscenes ...</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><u><a href="downloads/cutscene_test.zip"><font face="Arial" size="2" color="#FFFF00">DOWNLOAD
+DER TUTORIAL MAP</font></a></u></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0" size="1">(
+.map - Datei enthalten)</font></p>
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.de ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+&nbsp;
+
+</body>
+
+</html>

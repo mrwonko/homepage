@@ -1,0 +1,311 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Was sind Shader ?, Shader - Lava</title>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font></p>
+
+<hr>
+
+<p><font color="#FFFFFF" size="4" face="Arial">SHADER: Was sind Shader ?</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools I ( <a href="../radiant/jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools 2 ( <a href="../radiant/jk2_etools2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="../radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Mein Erster Raum ( <a href="../mapping/firstroom/firstroom.htm">Tutorial</a> )&lt;&lt;</font></p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">In</font><font face="Arial" size="2" color="#C0C0C0">
+dieser Lehreinheit (Tutorial) wird erklärt, was man unter Shader versteht, und
+wie man eigene Shader erstellen kann.</font></p>
+<hr>
+<font size="2"></font><b><i><font face="Arial">
+<p><font size="2" color="#C0C0C0">Was ist ein Shader?</font></font></i></b><font size="2"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Die Q3-Grafikengine wurde so
+entwickelt, dass die Map-Designer und Künstler, direkte Kontrolle über die
+Oberflächenqualität von Texturen haben.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Shader sind Spezial-Definitionen
+für Texturen. Es sind kleine Text-Skripte, die beschreiben, wie die Oberflächen
+im Spiel erscheinen und funktionieren. Konventionell werden die Shader-Dateien,
+die diese Skripts enthalten so benannt, wie der Texturen-Set, der die zu
+modifizierenden Texturen enthält (z.B.: system, bespin, yavin, etc.). Es gibt
+auch spezifische Shader-Dateien, die besondere Effekte behandeln, wie Gewässer,
+Nebel, Skyboxen, Special Effekte und Model-Skins.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">In Jedi Knight II sind die
+Skripte im &quot;</font><font face="Arial" size="2" color="#00FFFF">GameDate/base/shaders</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+zu finden.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Eine Shaderdatei besteht aus
+einer Serie von Oberflächenattributen und Render-Befehlen, die mit Klammern
+formatiert sind (&quot;</font><font face="Arial" size="2" color="#00FFFF"> {</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+und &quot;</font><font face="Arial" size="2" color="#00FFFF">}</font><font face="Arial" size="2" color="#C0C0C0">&quot;).&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Hier ein Syntax- und
+Formatierungsbeispiel für einen Lava-Shader (von mir leicht modifiziert, da der
+original Shader einen Bug hat).</font></p>
+</font>
+<table border="1" width="100%">
+  <tr>
+    <td width="28%" style="background-color: #000000"><font face="Arial" size="2" color="#FFFFFF"><b>Shader-Bestandteil:</b></font></td>
+    <td width="72%" style="background-color: #000000"><font face="Arial" size="2" color="#FFFFFF"><b>&nbsp;Beschreibung:</b></font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">textures/imp_mine/lava_neu</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Name des Shaders
+      (es muss nicht unbedingt eine Textur mit diesem Namen existieren)</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">{</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#FF0000">Shader -
+      Eröffnungs-Klammer</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font SIZE="2"><font face="Arial" color="#00FF00">qer_editorimage
+      textures/</font><font face="Arial" size="2" color="#00FF00">imp_mine/lava2</font></font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Textur-Bild, das
+      im Editor angezeigt wird </font><font face="Arial" size="2" color="#C0C0C0">(diese
+      Definition fehlt im Original, deswegen wird der Shader nicht richtig
+      angezeigt)</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">surfaceparm lava</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Oberflächen-Definition</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">deformvertexes
+      wave 100 sin 1 1 0 0.25</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Definition zum
+      deformieren der Textur-Oberfläche</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">{</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#FF00FF">Eröffnungs-Klammer
+      für den ersten Abschnitt (Oberflächenattribut)</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">map textures/imp_mine/lava2</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Textur-Name für
+      den ersten Abschnitt (diese muss vorhanden sein)</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">blendFunc GL_ONE
+      GL_ZERO</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Definition des
+      Blende-Effekts</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">tcMod scroll
+      0.01 0.01</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Definition des
+      Scroll- (Bewegungs-) Effekts</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">tcMod turb 1 0.1
+      1 0.005</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Definition des Turbulenzen-Effekts
+      (bringt ein wenig Unregelmäßigkeit in die Bewegung, damit die Lava
+      realistischer wirkt</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">tcMod stretch
+      noise 1 0.01 0 0.05</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Definition des
+      Stretch- (Auseinnanderzieh-) Effekts</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">}</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#FF00FF">Abschluss-Klammer
+      für den ersten Abschnitt</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">{</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#FF00FF">Eröffnungs-Klammer
+      für den zweiten Abschnitt</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">map $lightmap</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Licht-Map wir
+      eingeschaltet. Das bedeutet, die Oberfläche empfängt Schatten- und
+      Belichtungs-Effekte.</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">blendFunc
+      GL_DST_COLOR GL_SRC_COLOR</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#008080">Definition des
+      Blende-Effekts</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">}</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#FF00FF">Abschluss-Klammer
+      für den zweiten Abschnitt</font></td>
+  </tr>
+  <tr>
+    <td width="28%"><font face="Arial" size="2" color="#00FF00">}</font></td>
+    <td width="72%"><font face="Arial" size="2" color="#FF0000">Abschluss-Klammer
+      für den Shader</font></td>
+  </tr>
+</table>
+<font SIZE="2">
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Es
+ist sehr wichtig, das bei der Erstellung der Shader-Dateien, die Eröffnungs-
+und Abschluss-Klammern richtig gesetzt und nicht vergessen werden.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Da
+heißt jeder Shader braucht ein Eröffnungs- und eine Abschluss-Klammer. Das
+gleiche betrifft jeden Oberflächen-Attribut (Shader-Anschnitt).&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Aus
+diesem Grund ist es ratsam, die Shader so zu schreiben, dass die Attribute ein
+wenig eingerückt sind, damit man einen besseren Überblick hat. Vor allem, wenn
+in einer Datei, mehrere Shader-Definitionen vorhanden sind.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">textures/imp_mine/lava_neu</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FF0000">{</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;&nbsp;&nbsp;&nbsp; <font face="Arial" color="#00FF00">qer_editorimage
+textures/</font><font face="Arial" size="2" color="#00FF00">imp_mine/lava2</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+surfaceparm lava</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+deformvertexes wave 100 sin 1 1 0 0.25</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FF00FF">&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+map textures/imp_mine/lava2</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+blendFunc GL_ONE GL_ZERO</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+tcMod scroll 0.01 0.01</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+tcMod turb 1 0.1 1 0.005</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+tcMod stretch noise 1 0.01 0 0.05</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;</font><font face="Arial" size="2" color="#FF00FF">&nbsp;&nbsp;
+}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FF00FF">&nbsp;&nbsp;&nbsp;
+{</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+map $lightmap</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+blendFunc GL_DST_COLOR GL_SRC_COLOR</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">&nbsp;&nbsp;&nbsp;
+</font><font face="Arial" size="2" color="#FF00FF">}</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FF0000">}</font></p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Da,
+die Shader normale Text-Dateien sind, kann man sie ganz normal mit dem
+&quot;Notepad&quot; oder mit jedem anderen Text-Editor erstellen. Diese müssen
+jedoch als normaler unformatierter Text gespeichert werden.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Man
+kann auch den Shader-Editor zur der Erstellung nutzen, welcher sich in dem </font><font face="Arial" color="#00FFFF">GameData/tools</font><font face="Arial" color="#C0C0C0">
+- Ordner befindet. Der ist aber schwer zu bedienen und hat einige nervige Bugs.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Nach
+dem wir unseren Shader erstellt haben, speichern wir die Datei in den </font><font face="Arial" color="#00FFFF">base/shaders</font><font face="Arial" color="#C0C0C0">
+Ordner, unter dem Namen &quot;</font><font face="Arial" color="#00FFFF">mylava.shader</font><font face="Arial" color="#C0C0C0">&quot;
+(Es ist wichtig, dass du in Deiner Explorer-Ansicht die Datei-Erweiterungen
+eingeblendet hast!)</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Damit,
+die selbst erstellten Shader im Editor angezeigt werden, müssen diese in der
+Shader-Liste eingetragen werden.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Suche
+in dem </font><font face="Arial" color="#00FFFF">base/shaders</font><font face="Arial" color="#C0C0C0">
+Ordner nach der Datei &quot;</font><font face="Arial" color="#00FFFF">shaderlist.txt</font><font face="Arial" color="#C0C0C0">&quot;.
+Öffne sie mit dem Notepad und füge am Schluss den Namen unseres neuen Shaders </font><font face="Arial" color="#00FFFF">mylava</font><font face="Arial" color="#C0C0C0">
+ein.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">(</font><font face="Arial" color="#FFFFFF"><b>WICHTIG!</b></font><font face="Arial" color="#C0C0C0">:
+ohne Datei-Erweiteung, nur den Namen eintragen!)</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Speichere
+dann die Shader-Liste.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Jetzt
+kannst du den Editor starten und den neuen Lava-Shader ( &quot;</font><font face="Arial" color="#FFFFFF">lava_neu</font><font face="Arial" color="#C0C0C0">&quot;
+) unter </font><font face="Arial" color="#FFFFFF">Textures </font><font face="Arial" color="#C0C0C0">&gt;
+&quot;</font><font face="Arial" color="#FFFFFF">imp_mine</font><font face="Arial" color="#C0C0C0">&quot;
+finden.</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="lava.jpg" width="272" height="272"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#FFFFFF"><b><u>HINWEIS:</u></b></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Wenn
+du selbsterstellte Shader, auch im MP-Modus nutzen möchtest, müssen diese
+zusammen mit dem Unterordner &quot;</font><font face="Arial" color="#00FFFF">shaders</font><font face="Arial" color="#C0C0C0">&quot;
+in eine pk3-Datei gepackt werden. Die Pk3-Datei muss dann in den </font><font face="Arial" color="#00FFFF">base</font><font face="Arial" color="#C0C0C0">-Ordner
+kopiert werden.&nbsp;</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Vergiss
+nicht die selbsterstellte Shader-Dateien und Texturen mitzuliefern, wenn du
+deine Maps veröffentlichen möchtest !</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="margin-top: 0; margin-bottom: 0"><img border="0" src="lava_map.jpg" width="800" height="600"></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0">Im
+Anschluss an dieses Tutorial, findest du den neuen Shader zum Download. Folgende
+Dateien sind in dem ZIP-Achiv &quot;</font><font face="Arial" color="#00FFFF">my_lava.zip</font><font face="Arial" color="#C0C0C0">&quot;
+enthalten:</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FFFF">mylava.pk3</font><font face="Arial" color="#C0C0C0">
+= pk3-Datei mit dem Shader für MP - Modus (muss in den </font><font face="Arial" color="#00FFFF">base
+</font><font face="Arial" color="#C0C0C0">- Ordner kopiert werden)</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FFFF">lava_test.bsp</font><font face="Arial" color="#C0C0C0">
+= Test-Map für unseren neuen Lava Shader (in den </font><font face="Arial" color="#00FFFF">base/maps</font><font face="Arial" color="#C0C0C0">
+Ordner kopieren)</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FFFF">lava_test.map</font><font face="Arial" color="#C0C0C0">
+= Test-Map Quellcode (in den </font><font face="Arial" color="#00FFFF">base/maps</font><font face="Arial" color="#C0C0C0">
+Ordner kopieren)</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" color="#00FFFF">mylava.shader</font><font face="Arial" color="#C0C0C0">
+= Shader-Datei, die in den </font><font face="Arial" color="#00FFFF">base/shaders</font><font face="Arial" color="#C0C0C0">
+- Ordner kopiert werden muss ( nicht vergessen, den Namen in die </font><font face="Arial" color="#00FFFF">shaderlist.txt</font><font face="Arial" color="#C0C0C0">
+einzutragen! )</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><u><a href="../downloads/my_lava.zip"><font face="Arial" size="2" color="#FFFF00">DOWNLOAD
+DER TUTORIAL MAP</font></a></u></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0" size="1">(.map
+- Dateie enthalten)</font></p>
+</font>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF"><b>TIP:</b></font><font face="Arial" size="2" color="#C0C0C0">
+</font><font face="Arial" size="2" color="#C0C0C0">&nbsp;In dem &quot;</font><font face="Arial" size="2" color="#00FFFF">base/shaders</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+- Ordner befinden sich die original Shader - Definitionen aus dem JKII - Spiel.
+Wenn du einen nuenen speziellen Shader erstellen möchtest, ist es immer ratsam,
+sich einen bereits existierenden Shader als Vorlage zu nehmen.</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.Net ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+
+</body>
+
+</html>

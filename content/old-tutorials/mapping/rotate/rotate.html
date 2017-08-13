@@ -1,0 +1,259 @@
+<html>
+
+<head>
+<title>Darth-Arth.de - Rotierende T&uuml;r</title>
+</head>
+<body bgcolor="#333333">
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2004</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font></p>
+
+<hr>
+
+<p><font color="#FFFFFF" size="4" face="Arial">Rotierende T&uuml;r</font></p>
+
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" size="4" face="Arial">Author:
+Blue Wonder (Andreas P.)</font>&nbsp;</p>
+
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" face="Arial" size="2">überarbeitet
+durch Killermic</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="../../radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation des BehavEd Script Editors ( <a href="../../jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+JK2 SinglePlayer, JK JA Single- und Multiplayer &lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">In dieser Lehreinheit (Tutorial) lernen wir eine T&uuml;r zu machen, die sich an der T&uuml;rangel
+dreht</font></p>
+
+<hr>
+<p style="word-spacing: 0; line-height: 100%; margin: 0">
+<br>
+<font color="#FFFFFF" face="Arial" size="2">
+<u><b>Hilfreich:</b></u><br><br>
+
+ICARUS Manual.doc (ist bei den JK2 Editing Tools enthalten)<br>
+
+
+
+
+</font>
+<p style="word-spacing: 0; line-height: 100%; margin: 0">
+<font color="#FFFFFF" face="Arial" size="2">
+
+
+<u><b>einige Überlegungen vorab:</b></u><br><br>
+
+Da es in JK2 keine
+
+
+
+
+</font>
+<font color="#00FFFF" face="Arial" size="2">
+ func_door_rotating
+
+
+
+
+</font>
+<font color="#FFFFFF" face="Arial" size="2">
+ gibt wie z.B. bei &quot;</font><font color="#00FFFF" face="Arial" size="2">Return to Castle
+Wolfenstein</font><font color="#FFFFFF" face="Arial" size="2">&quot;, müssen wir einen kleinen Umweg gehen und ein Script für die Türfunktion im unsere Map einbinden.<br><br>
+
+Unsere "rotierende Tür" besteht aus 3 Untereinheiten, die miteinander verbunden werden:<br><br>
+
+</font><font color="#00FFFF" face="Arial" size="2">
+
+1) </font><font color="#FFFFFF" face="Arial" size="2"> für das &ouml;ffnen der Tür: ein
+</font><font color="#00FFFF" face="Arial" size="2">trigger_multiple</font><font color="#FFFFFF" face="Arial" size="2">. Dieser trigger wird mit einem
+</font><font color="#00FFFF" face="Arial" size="2"> target_scriptrunner</font><font color="#FFFFFF" face="Arial" size="2"> verbunden. Über den
+</font><font color="#00FFFF" face="Arial" size="2"> target_scriptrunner</font><font color="#FFFFFF" face="Arial" size="2"> wird die zweite Untereinheit unserer rotierenden Tür angesprochen: <br><br>
+
+2) ein </font><font color="#00FFFF" face="Arial" size="2">Script</font><font color="#FFFFFF" face="Arial" size="2">, das die Tür auf- und zu schwingen
+lässt<br><br>
+
+3) die Tür selbst mit einem </font><font color="#00FFFF" face="Arial" size="2"> origin</font><font color="#FFFFFF" face="Arial" size="2"> als Dreh- und Angelpunkt. Beide werden als
+</font><font color="#00FFFF" face="Arial" size="2"> func_static</font><font color="#FFFFFF" face="Arial" size="2"> gekennzeichnet.<br><br>
+
+
+<b><u>ans Werk:</u></b><br><br>
+
+Für dieses Tutorial brauchen wir zuerst einen einfachen Raum mit </font><font color="#00FFFF" face="Arial" size="2"> info_player_start</font><font color="#FFFFFF" face="Arial" size="2"> und ein paar
+</font><font color="#00FFFF" face="Arial" size="2">Lichtern</font><font color="#FFFFFF" face="Arial" size="2">. Ich habe ihn als rotierende_tuer im Ordner Gamedata/base/maps abgespeichert.<br><br>
+
+Wir beginnen von hinten mit Punkt 3):<br>
+
+Zuerst bauen wir uns ein beliebig großes Reckteck ("brush") irgend wo auf den Boden in diesen Raum. Das ist unsere Tür (meine hat eine H&ouml;he von 80 , Breite von 48 und Dicke von 8 Einheiten). Ich habe ihr im Beispiel die Textur bespin/door_new gegeben. Diese Tür braucht nun ihren Dreh- und Angelpunkt:<br><br>
+
+Dazu erstellen wir einen neuen Brush.&nbsp;</font></p>
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Die Gr&ouml;ße ist auch hier im Prinzip egal, allerdings hat sich ein Würfel mir gleichen Kantenl&auml;ngen ganz gut bew&auml;hrt (meiner hat eine Kantenl&auml;nge von 16 Einheiten). Diesem geben wir nun die Textur
+</font><font color="#00FFFF" face="Arial" size="2">system/origin</font><font color="#FFFFFF" face="Arial" size="2">.&nbsp;</font></p>
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Jetzt kommt das wichtige: Um die Mitte dieses
+origin-brushes wird sich unsere Tür sp&auml;ter drehen!&nbsp;</font></p>
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Also den origin-brush bitte in xy-Ansicht so setzen,
+dass seine Mitte genau an der Stelle liegt, um die sich die Tür drehen soll (die H&ouml;he über dem Boden ist dabei auch wieder egal).</font></p>
+<p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;</p>
+<p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font color="#FFFFFF" face="Arial" size="2">
+<img src="door1.jpg" border="0" width="698" height="552"></font></p>
+<p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0">&nbsp;</p>
+<p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font color="#FFFFFF" face="Arial" size="2">
+
+Als n&auml;chstes, zuerst den origin-brush, dann die Tür mit </font><font color="#00FFFF" face="Arial" size="2"> Strg</font><font color="#FFFFFF" face="Arial" size="2"> und
+</font><font color="#00FFFF" face="Arial" size="2"> linker Maustaste</font><font color="#FFFFFF" face="Arial" size="2"> selektieren.&nbsp;</font></p>
+<p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Jetzt mit dem Mauszeiger über der 2D-Ansich mit der rechten Maustaste klicken und bei
+</font><font color="#00FFFF" face="Arial" size="2"> func &gt; func_static</font><font color="#FFFFFF" face="Arial" size="2"> anklicken.&nbsp;</font></p>
+<p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Zum Überprüfen, ob wir nun aus den brushs eine func_static gemacht haben, einfach z.B. die Tür selektieren und auf die Taste
+&quot;</font><font face="Arial" size="2" color="#00FFFF">N</font><font color="#FFFFFF" face="Arial" size="2">&quot; drücken.&nbsp;</font></p>
+<p style="word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Da
+müsste jetzt classname </font><font color="#00FFFF" face="Arial" size="2"> func_static</font><font color="#FFFFFF" face="Arial" size="2"> stehen. Außerdem sind die beiden brushes nach Deselektion in der 2D-Ansicht jetzt blau dargestellt.</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"> <br>
+<img src="door2.jpg" border="0"><br><br>
+
+</font><font color="#00FFFF" face="Arial" size="2"><b>
+
+nun zu Punkt 2): das Skript</b></font><font color="#FFFFFF" face="Arial" size="2"><br><br>
+
+&ouml;ffne unter </font><font color="#00FFFF" face="Arial" size="2"> Programme > Zubeh&ouml;r</font><font color="#FFFFFF" face="Arial" size="2"> den Editor von Windows (oder auch das
+</font><font color="#00FFFF" face="Arial" size="2">WordPad</font><font color="#FFFFFF" face="Arial" size="2">).&nbsp;</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"> Falls nicht vorhanden, bitte von der Windows-Installations-CD nachinstallieren.<br>
+Dann folgendes dort reinschreiben:<br><br>
+
+</font><font color="#00FF00" face="Arial" size="2">
+
+//   alles, was hinter zwei Strichen steht, wird bein Compilieren nicht übersetzt.<br>
+//   ist ganz nützlich, um zum Testen einzelne Befehlszeilen <br>
+//     vorübergehened auszublenden<br>
+//<br>
+//<br>
+rem ( "hier kann man einen Kommentar reinschreiben" );<br>
+sound ( /*@CHANNELS*/ CHAN_AUTO, "sound/movers/switches/switch1.mp3" );<br>
+<br>
+affect ( "tuer", /*@AFFECT_TYPE*/ FLUSH )<br>
+{<br><br>
+
+	task ( "auf" )<br>
+	{<br>
+		rotate( <0 -90 0>, 1000 )<br>
+    	}	<br><br>
+	
+	task ( "zu" )<br>
+	{<br>
+		rotate( <0 0 0>, 1000 )<br>
+    	}<br><br>
+	
+	dowait ( "auf" );<br>
+	wait ( 2000.000 ); <br>
+	dowait ( "zu" );<br>
+}</font><font color="#FFFFFF" face="Arial" size="2"><br><br>
+
+Das Ganze als einfache Textdatei z.B. als </font><font color="#00FFFF" face="Arial" size="2"> tuer_script
+</font><font color="#FFFFFF" face="Arial" size="2"> abspeichern.&nbsp;</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"> Und zwar entweder direkt im </font><font color="#00FFFF" face="Arial" size="2"> Gamedata/base/scripts</font><font color="#FFFFFF" face="Arial" size="2"> Ordner oder, wie ich vorschlage, im scripts-Ordner einen eigenen Ordner erstellen z.B.
+</font><font color="#00FFFF" face="Arial" size="2"> eigen</font><font color="#FFFFFF" face="Arial" size="2"> und dort das
+</font><font color="#00FFFF" face="Arial" size="2"> tuer_script</font><font color="#FFFFFF" face="Arial" size="2"> speichern: <br></font><font color="#00FFFF" face="Arial" size="2">Gamedata/base/scripts/eigen/tuer_script</font><font color="#FFFFFF" face="Arial" size="2"> <br><br>
+
+<u>Hinweise zum Script:</u><br>
+- Die Zeile </font><font color="#00FFFF" face="Arial" size="2">Sound</font><font color="#FFFFFF" face="Arial" size="2"> gibt den
+Sound an, der beim Bet&auml;tigen der Tür gespielt wird.<br>
+- Die Zeile </font><font color="#00FFFF" face="Arial" size="2"> affect</font><font color="#FFFFFF" face="Arial" size="2"> sagt, daß das
+</font><font color="#00FFFF" face="Arial" size="2"> script</font><font color="#FFFFFF" face="Arial" size="2"> auf
+&quot;</font><font color="#00FFFF" face="Arial" size="2">tuer</font><font color="#FFFFFF" face="Arial" size="2">&quot; angewendet wird.&nbsp;</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"> Damit das in der Map auch klappt, bitte jetzt nochmals in den Radiant gehen, dort den origin-brush und die Tür selektieren, mit
+'</font><font color="#00FFFF" face="Arial" size="2">N</font><font color="#FFFFFF" face="Arial" size="2">' das Entity-Fenster &ouml;ffnen,&nbsp;</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"> bei '</font><font color="#00FFFF" face="Arial" size="2">key</font><font color="#FFFFFF" face="Arial" size="2">&quot;
+</font><font color="#00FFFF" face="Arial" size="2"> script_targetname</font><font color="#FFFFFF" face="Arial" size="2"> und bei
+&quot;</font><font color="#00FFFF" face="Arial" size="2">value</font><font color="#FFFFFF" face="Arial" size="2">&quot; dann eben wie im script
+&quot;</font><font color="#00FFFF" face="Arial" size="2">tuer</font><font color="#FFFFFF" face="Arial" size="2">&quot;
+eingeben.&nbsp;</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"> Mit der Enter-Taste best&auml;tigen</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"> <br>
+<img src="door3.jpg" border="0"></font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"><br>
+- Die Zeilen </font><font color="#00FFFF" face="Arial" size="2"> task</font><font color="#FFFFFF" face="Arial" size="2"> enthalten die Befehle, um die Tür in unserem Fall zu drehen (rotate): < 0 -90 0> gibt den Vektor, die 1000 die Zeit von 1000 Millisekunden an. < 0 90 0>    &ouml;ffnet die Tür um 90° in die andere Richtung.<br>
+- Die Zeile </font><font color="#00FFFF" face="Arial" size="2"> dowait</font><font color="#FFFFFF" face="Arial" size="2"> sagt: tue die task und warte mit dem Rest des Scriptes, bis die task ausgeführt ist.<br>
+- Die Zeile </font><font color="#00FFFF" face="Arial" size="2"> wait</font><font color="#FFFFFF" face="Arial" size="2"> sagt: es soll 2000 Millisekunden
+( 2 Sek.) gewartet werden.<br><br>
+
+<u>Jetzt BehavEd aufrufen:</u><br><br>
+
+- Auf</font><font color="#00FFFF" face="Arial" size="2"> File  > Open</font><font color="#FFFFFF" face="Arial" size="2"> gehen und unser
+</font><font color="#00FFFF" face="Arial" size="2"> tuer_script</font><font color="#FFFFFF" face="Arial" size="2">
+aus dem Ordner </font><font color="#00FFFF" face="Arial" size="2"> eigen</font><font color="#FFFFFF" face="Arial" size="2"> aufrufen.<br>
+- die folgende Nachricht mit </font><font color="#00FFFF" face="Arial" size="2"> Ja</font><font color="#FFFFFF" face="Arial" size="2"> best&auml;tigen: Da erscheint nun unser Script!!<br>
+- Jetzt auf </font><font color="#00FFFF" face="Arial" size="2">Compile</font><font color="#FFFFFF" face="Arial" size="2">! klicken und BehavEd wieder schließen.
+(</font><font color="#00FFFF" face="Arial" size="2">Im Gamedata/base/scripts/eigen</font><font color="#FFFFFF" face="Arial" size="2"> Ordner
+müsste jetzt eine Datei mit Namen </font><font color="#00FFFF" face="Arial" size="2"> tuer_script.IBI
+</font><font color="#FFFFFF" face="Arial" size="2"> erscheinen)<br><br>
+
+nun zu Punkt 1):<br><br>
+
+- stelle im Radianten einen großen brush vor die Tür und gib ihm die textur </font><font color="#00FF00" face="Arial" size="2">system/trigger</font><font color="#FFFFFF" face="Arial" size="2">. Dann mit der rechten Maustaste in der 2D-Ansicht klicken und bei immer noch selektiertem
+</font><font color="#00FFFF" face="Arial" size="2">system/trigger</font><font color="#FFFFFF" face="Arial" size="2"> brush auf
+</font><font color="#00FFFF" face="Arial" size="2"> trigger_multiple</font><font color="#FFFFFF" face="Arial" size="2"> klicken.<br><br>
+
+- nun alles deselektieren (ESC). Mit der rechten Maustaste in der 2D-Sicht auf </font><font color="#00FFFF" face="Arial" size="2"> target_scriptrunner</font><font color="#FFFFFF" face="Arial" size="2"> klicken. Diesen
+</font><font color="#00FFFF" face="Arial" size="2"> target_scriptrunner</font><font color="#FFFFFF" face="Arial" size="2"> irgendwo hinsetzen. Der Übersichtlichkeit wegen am besten in die N&auml;he des trigger_multiple.<br><br>
+
+- jetzt den </font><font color="#00FFFF" face="Arial" size="2"> trigger_multiple</font><font color="#FFFFFF" face="Arial" size="2"> auf den
+</font><font color="#00FFFF" face="Arial" size="2"> target_scriptrunner</font><font color="#FFFFFF" face="Arial" size="2"> verbinden: zuerst den
+</font><font color="#00FFFF" face="Arial" size="2">  trigger_multiple</font><font color="#FFFFFF" face="Arial" size="2"> selektieren, dann den
+</font><font color="#00FFFF" face="Arial" size="2"> target_scriptrunner</font><font color="#FFFFFF" face="Arial" size="2"> und mit
+</font><font color="#00FFFF" face="Arial" size="2"> Strg</font><font color="#FFFFFF" face="Arial" size="2"> und der Taste
+&quot;</font><font color="#00FFFF" face="Arial" size="2">k</font><font color="#FFFFFF" face="Arial" size="2">&quot; gleichzeitig verbinden. (vgl. Cutscenes - Kamera Modus von Darth Arth)<br><br>
+
+- nun den </font><font color="#00FFFF" face="Arial" size="2"> trigger_multiple</font><font color="#FFFFFF" face="Arial" size="2"> selektieren: Im Entity-Menü (Taste
+&quot;</font><font face="Arial" size="2" color="#00FFFF">N</font><font color="#FFFFFF" face="Arial" size="2">&quot;)
+</font><font color="#00FFFF" face="Arial" size="2"> usebutton</font><font color="#FFFFFF" face="Arial" size="2">
+ankreuzen und bei &quot;</font><font color="#00FFFF" face="Arial" size="2">key</font><font color="#FFFFFF" face="Arial" size="2">&quot;
+</font><font color="#00FFFF" face="Arial" size="2"> wait</font><font color="#FFFFFF" face="Arial" size="2"> und bei
+&quot;</font><font color="#00FFFF" face="Arial" size="2">value</font><font color="#FFFFFF" face="Arial" size="2">&quot;  z.B.
+</font><font color="#00FFFF" face="Arial" size="2"> 2</font><font color="#FFFFFF" face="Arial" size="2"> eingeben.<br><br>
+
+- den </font><font color="#00FFFF" face="Arial" size="2"> target_scriptrunner</font><font color="#FFFFFF" face="Arial" size="2"> selektieren und über Taste
+&quot;</font><font color="#00FFFF" face="Arial" size="2">N</font><font color="#FFFFFF" face="Arial" size="2">&quot; bei
+&quot;</font><font color="#00FFFF" face="Arial" size="2">key</font><font color="#FFFFFF" face="Arial" size="2">&quot;
+</font><font color="#00FFFF" face="Arial" size="2"> usescript</font><font color="#FFFFFF" face="Arial" size="2"> und bei
+&quot;</font><font color="#00FFFF" face="Arial" size="2">value</font><font color="#FFFFFF" face="Arial" size="2">&quot; unser eigenes Script eingeben:
+</font><font color="#00FFFF" face="Arial" size="2">eigen/tuer_script</font><font color="#FFFFFF" face="Arial" size="2"> (die Enter-Taste nicht vergessen!).&nbsp;</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"> Dann bei &quot;</font><font color="#00FFFF" face="Arial" size="2">key</font><font color="#FFFFFF" face="Arial" size="2">&quot; count und bei
+&quot;</font><font color="#00FFFF" face="Arial" size="2">value</font><font color="#FFFFFF" face="Arial" size="2">&quot; -1 eingeben.</font></p>
+<p><font color="#FFFFFF" face="Arial" size="2"><br>
+<img src="door4.jpg" border="0"><br><br>
+
+Das war's: die map kompilieren und in der Konsole (</font><font color="#00FFFF" face="Arial" size="2">Shift</font><font color="#FFFFFF" face="Arial" size="2"> und&nbsp;
+</font><font color="#00FFFF" face="Arial" size="2">^ </font><font color="#FFFFFF" face="Arial" size="2">gleichzeitig
+drücken) </font><font color="#00FFFF" face="Arial" size="2"> map rotierende_tuer</font><font color="#FFFFFF" face="Arial" size="2"> eingeben!<br><br>
+
+Bei Anregungen, Fragen oder neuen Erkenntnissen k&ouml;nnt ihr mich gerne unter "blue__wonder@gmx.de"
+anmailen.
+
+
+
+
+</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet:</font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2004 (Artur L.) <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.de ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+&nbsp;
+</body>
+</html>

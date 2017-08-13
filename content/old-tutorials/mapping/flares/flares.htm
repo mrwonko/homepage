@@ -1,0 +1,117 @@
+<html>
+
+<head>
+<title>Darth-Arth.de - Flares</title>
+</head>
+<body bgcolor="#333333">
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2004</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font></p>
+
+<hr>
+
+<p><font color="#FFFFFF" size="4" face="Arial">Light - Flare Tutorial</font></p>
+
+<p><font color="#FFFFFF" size="4" face="Arial">Author: Destroyer (Stephan K.)</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="../../radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Mein erster Raum ( <a href="../../mapping/firstroom/firstroom.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">In dieser Lehreinheit (Tutorial) lernen wir Einen
+Light - Flare zu machen.<br></font><font face="Arial" size="2" color="#FF0000"><b><u>ACHTUNG!
+: Dieses Tutorial ist für JK - JA ausgelegt.</u></b></font></p>
+
+<hr>
+<br>
+
+<font color="#FFFFFF" face="Arial" size="2">
+<p>Du kennst sicher die Map Rift, aus dem SP, aber auch im MP?! Da sind &uuml;berall 
+  so sch&ouml;ne Kristalle anstelle von Lampen an der Wand.<br>
+  Wie Du diese Lampen erstellst, und dem ganzen durch Flares einen &quot;Pepp&quot; 
+  gibts, erkl&auml;re ich Dir in diesem Tutorial.</p>
+<p>Legen wir los:<br>
+  Zuerst brauchst du nat&uuml;rlich einen kleinen Raum. Ich habe einen Testraum 
+  erstellt:</p>
+<p><img src="flares/1.jpg" width="640"></p>
+<p>Um nun eine Kristall-Lampe wie in Rift Sanctuary zu bekommen musst du 2x Rechtklick 
+  im 2D Fenster machen und folgendes w&auml;hlen:</p>
+<p><strong>misc -&gt; misc_model -&gt; (Im neuen Fenster) map_objects -&gt; rift 
+  -&gt; crystal_wall_lamp.md3</strong></p>
+<p>Dann kannst du das Model ausrichten mit &quot;N&quot; und den &quot;key: angle; 
+  value: xx&quot;.<br>
+  Ich habe die Lampe so platziert:</p>
+<p><img src="flares/2.jpg" width="640" height="464"></p>
+<p>So, jetzt sollte man nat&uuml;rlich noch das Model mit einem Clip-Brush einpacken, 
+  damit man im Spiel nicht hindruchsprigen kann. - Ich &uuml;berspringe diesen 
+  Teil aber - Was jetzt noch fehlt, ist das Licht, welches die Lampe abstrahlt.&nbsp;</p>
+<p> 
+  Dazu erstellt ihr ein Lightentity: Rechtsklick -&gt;
+</font>
+
+<font color="#00FFFF" face="Arial" size="2">
+ light</font><font color="#FFFFFF" face="Arial" size="2">.<br>
+  Bei
+</font>
+<font color="#00FFFF" face="Arial" size="2"> intensity
+</font>
+<font color="#FFFFFF" face="Arial" size="2"> stellst du
+</font>
+<font color="#00FFFF" face="Arial" size="2"> 10
+</font>
+<font color="#FFFFFF" face="Arial" size="2"> ein (Je nach notwendigkeit).&nbsp;
+</font>
+</p>
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Das Licht plazierst du so, 
+  wie du es f&uuml;r am Besten hältst.&nbsp;
+</font>
+</p>
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Ich setzte es mittig! - Jetzt aber 
+  kommt der interessante Teil: Die Flares.&nbsp;
+</font>
+</p>
+<font color="#FFFFFF" face="Arial" size="2">
+<p style="word-spacing: 0; line-height: 100%; margin: 0">Du selectierst das Light-Entity und dr&uuml;ckst &quot;</font><font color="#00FFFF" face="Arial" size="2">N</font><font color="#FFFFFF" face="Arial" size="2">&quot;. Dann &ouml;ffnet 
+  sich ein neues Fenster &quot;Entities&quot;.&nbsp;
+</font>
+</p>
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Unten im Feld <strong>&quot;Key&quot;</strong> 
+  gibst du <strong>&quot;_flareshader&quot;</strong> ein.&nbsp;
+</font>
+</p>
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> Bei <strong>&quot;Value&quot;</strong> 
+  den Pfad zur einen FlareTextur.&nbsp;
+</font>
+</p>
+<p style="word-spacing: 0; line-height: 100%; margin: 0"><font color="#FFFFFF" face="Arial" size="2"> In unserem Falle liegt <strong>&quot;textures/flares/flare_crystal&quot;</strong> 
+  nahe:</p>
+<p><img src="flares/3.jpg" width="403" height="565"></p>
+<p>Jetzt nur noch ein<strong> info_player_start</strong> <strong>einf&uuml;gen</strong> 
+  und <strong>kompilieren</strong> und man erh&auml;lt folgendes Ergebnis:</p>
+<p><img src="flares/4.jpg" width="330" height="453"></p>
+<p>Ich hoffe, dass euch das Tutorial weiterhilft!<br>
+  MfG Destroyer :D</p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2004 (Artur L.) <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.de ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+</font>
+</body>
+</html>

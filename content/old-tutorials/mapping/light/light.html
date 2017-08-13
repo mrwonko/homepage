@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<title>Darth-Arth.de - Lightning Tutorial</title>
+</head>
+<body bgcolor="#333333">
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2004</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font></p>
+
+<hr>
+
+<p><font color="#FFFFFF" size="4" face="Arial">Licht</font></p>
+
+<p><font color="#FFFFFF" size="4" face="Arial">Author: Killermic ( Michael S.)</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="../../radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Mein erster Raum ( <a href="../../mapping/firstroom/firstroom.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Kompilieren mit Q3map2 ( <a href="../../q3map2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p><font face="Arial" size="2" color="#C0C0C0">In dieser Lehreinheit (Tutorial) lernen wir in unserem ersten Raum ein Licht zu setzen.&nbsp;</font></p>
+
+<p><font face="Arial" size="2" color="#C0C0C0">Später auch ein paar Tricks um
+das Licht schöner aussehen zu lassen.<br>Dieses Tutorial ist für JK - JA ausgelegt.</font></p>
+
+<hr>
+<br>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">
+<font color="#FFFFFF" face="Arial" size="2">
+Nachdem wir unseren ersten Raum erstellt haben möchten wir ein richtiges Licht
+reinsetzen.
+</font>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">
+<font color="#FFFFFF" face="Arial" size="2">Zuerst rufen wir unseren ersten Raum
+im Editor auf.<br><br>
+<b>Der sieht jetzt ungefähr so aus:</b><br>
+<img src="firstroom1.jpg" border="0"><br><br><br>
+Jetzt setzen wir erst einmal unser erstes Licht.<br>
+Mit einem Rechtsklick auf das Raster bekommen wir das Entity-Menü und klicken
+&quot;</font><font face="Arial" size="2" color="#00FF00"><b>Light</b></font><font color="#FFFFFF" face="Arial" size="2">&quot; an.<br>
+<img src="entlight.jpg" border="0"><br><br>
+Auf der Map erscheint jetzt das Light-Entity und eine Box, wo die Stärke des Licht
+abgefragt wird.<br><br><br>
+<font color="#FF0000"><b>ACHTUNG:</b></font> 100 ist ein mäßig starkes Licht, jedoch 300 ist schon ein sehr intensives Licht. Aber die Beleuchtung
+hängt immer von dem Typ eurer Map an. Benutzt ihr sehr helle Texturen, so fällt Stärke 100 fast nicht auf. Doch benutzt ihr dunkle Texturen, fällt Stärke 100 schon ziemlich gut auf. Auch auf die Fläche die beleuchtet werden soll, kommt es sehr stark an.<br><br><br>
+Da wir eine große Fläche beleuchten wollen nehmen wir 4 Lichter, mit jeweils der Stärke 500.<br>
+<img src="light1.jpg" border="0"><br><br>
+Jetzt schieben wir noch die Light-Entities dort hin, wo wir die Quellen des Lichts haben wollen.<br>
+Dazu halten wir <b>SHIFT</b> gedrückt und klicken das Light-Entity an. Danach
+das Entity einfach mit der Maus an den gewünschten ort schieben.<br><br>
+Jetzt setzen wir die Kenntnisse aus dem Tutorial "<a href="../../q3map2.htm">Kompilieren mit Q3map2</a>" ein.<br>
+Kompiliert mit genau den selben Einstellungen von Q3map2, wie in den Optionen, dann ergibt es ein für den Anfang gutes Licht.<br><br><br>
+<img src="ingame1.jpg" border="0"><br>Jetzt sehen wir unser erstes Licht im
+Spiel:)
+
+<br><br><hr><br><br>
+
+<b><font size="+1"><u>Realistische Lichtquellen</u></font></b> (für etwas Fortgeschrittene)<br><br>
+Realistische Lichtquellen sind oft das Etwas, was eine gute Map ausmacht. Darum wollen wir das jetzt herstellen.<br><br>
+Dazu löschen wir die Lichter die wir vorher gesetzt haben, und machen eine (simple) Konstruktion, die eine Lampe darstellen soll. Darunter habe ich ein Light-Entity gesetzt, mit der Stärke 300:<br>
+<img src="lampe1.jpg" border="0"><br><br>
+Nachdem wir kompiliert haben, fällt es schon auf:<br>
+Es ist zu dunkel! Aber wenn wir das Licht noch heller machen, sieht es wieder unrealistisch aus. Auch eine zweite Lichtquelle sähe nicht gut aus.<br>
+Jetzt nutzen wir eine Einstellung im "Worldspawn" aus. Im Worldspawn werden Einstellungen gemacht, die für die <b>ganze</b> Map gelten.<br><br>
+Um Einstellungen am "Worldspawn" zu machen, klicken wir einen einfachen Wand-,
+Decken- oder Boden-Brush und drücken die Taste &quot;<b>N&quot;</b>:<br>
+<img src="light4.jpg" border="0"><br><br>
+Und zwar tragen wir einen "ambient" - Wert ein. Wir geben folgendes ein:<br><br>
+<font color="#00FF00"><b>KEY:</b> ambient</font><br>
+<font color="#00FF00"><b>VALUE:</b> 40</font><br><br>
+<img src="light5.jpg" border="0"><br><br>
+<font color="#FF0000"><b>ACHTUNG:</b></font> Ein "ambient"-Wert sollte sehr klein bleiben! 40 ist schon ziemlich hoch. Für eine gut beleuchtete Map sollte ein "ambient"-Wert von 10 reichen, um die schwarzen Flächen, wo kein Licht hinkommt, ein wenig aufzuhellen.
+Es kommt immer auf die Atmosphere und die Art eurer Map an, für helle Outdoor (aussengelände)
+Maps , kann man sehr hohe Ambient-Werte benutzen, wogegen für gut beleuchtete
+Indoor (Innenraum) Maps ein kleiner Wert ausreicht. Meistens heißt es einfach
+&quot;ausprobieren&quot; und den richtigen Wert selbst herausfinden.<br><br><br><br>
+<img src="ingame2.jpg" border="0"><br><br>
+Glückwunsch! Jetzt stehst du in deinem ersten Raum mit realistischer Lichtquelle. (Auf dem Screenshot sieht es etwas dunkel aus, aber im Spiel ist es in Ordnung)
+
+<br><br><hr><br><br>
+
+<b><font size="+1"><u>Generelle Fragen</u></font></b><br><br>
+Jetzt wollen wir nachträglich von dem Light-Entity die Stärke ändern. Aber wir machen kein Neues und löschen das Alte, sondern wählen das Alte einfach an mit <b>SHIFT</b> + Anklicken und drücken daraufhin <b>>N<</b>. Das ruft das <b>Entity-Menü</b> auf. Das sollte so aussehen:<br>
+<img src="light2.jpg" border="0"><br><br><br>
+Nun klicken wir "light 300" an und ändern unten, in den Eingabefeldern folgendes:
+<p>Key: light</p>
+<p>Value: 350</p>
+<p><br>
+<img src="light3.jpg" border="0"><br>Und drücken <b>>ENTER<</b><br><br>
+Jetzt ist das Licht etwas stärker.<br><br></p>
+<hr>
+</font>
+<p><b><font color="#FFFFFF" face="Arial" size="4">Farbiges Licht</font></b><font color="#FFFFFF" face="Arial" size="2"><br><br>
+Ein rotes Licht machen? Kein Problem!<br>
+Wir wählen einfach unser Licht an und drücken <b>>K<</b><br>
+Jetzt erscheint ein Menü, in dem man die Farbe wählen kann.<br>
+Jetzt stellen wir dort Rot ein.<br><br>
+<img src="light6.jpg" border="0"><br><br>
+Jetzt ist nach einem Klick auf "OK" euer Licht rot. Hier kann man natürlich auch alle möglichen Einstellungen vornehmen um Lichter farbig zu machen :)
+
+
+
+<br><br>
+</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2004 (Artur L.) <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.de ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+&nbsp;
+
+</body>
+
+</html>

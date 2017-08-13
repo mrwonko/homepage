@@ -1,0 +1,225 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#333333" text="#CCCCCC" background="../hinten.jpg">
+<p align="center"><font color="#009999"><b><font face="Arial, Helvetica, sans-serif" size="4">&gt;&gt; 
+  Mapping Academy - Tutorials &lt;&lt; </font></b></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif">(c) 2003 <a href="http://www.darth-arth.de">http://www.darth-arth.de</a></font></p>
+<hr>
+<p><b><font size="3" color="#FFFFFF"><font face="Arial, Helvetica, sans-serif" size="4">Outdoor-Mapping 
+  - Das richtige Licht</font></font><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="4">
+( Tutorial by Shooter )</font></b></p>
+<p><font color="#FFFF00" face="Arial, Helvetica, sans-serif" size="2"><b>VORRAUSSETZUNGEN</b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">&gt;&gt; Installation JK2 
+  Editing Tools I ( <a href="radiant/jk2_etools1.htm"> Tutorial</a> )&lt;&lt;<br>
+  &gt;&gt; Installation JK2 Editing Tools 2 ( <a href="radiant/jk2_etools2.htm"> Tutorial</a> )&lt;&lt;<br>
+  &gt;&gt; Installation GTK - Radiant ( <a href="radiant/gtk_radiant.htm"> Tutorial</a> )&lt;&lt;<br>
+  &gt;&gt; Terrain-Entities mit <a href="mapping/easygen/easygen.htm"> EasyGen</a></font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif" size="2">In diesem Tutorial werden 
+  wir das Setzen von Licht in freier Wildbahn (Outdoor) kennen lernen. Ihr braucht 
+  dazu eine Map mit einer schon vorhandenen Skybox und einem Gel&auml;nde, auf 
+  dem ihr euch bewegen k&ouml;nnt. Falls ihr diese Sachen noch nicht haben solltet 
+  und auch nicht wisst, wo ihr so etwas herbekommt, dann absolviert unbedingt 
+  erst das Tutorial &quot;Terrain-Entities mit EasyGen&quot; von der Mapping Academy.</font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Im Gegensatz zur Beleuchtung 
+  in abgeschlossenen R&auml;umen verwenden wir im Landschaftsbereich keine Punktlichter 
+  zur Beleuchtung. Viele Punklichter erzeugen unwirkliche Schatten und Lichtverh&auml;ltnisse, 
+  da es in der Natur nun einmal nur eine einzige Lichtquelle gibt und das ist 
+  eine Sonne bzw. ein Mond. Wir wollen daher einen echten Schattenwurf der Modelle 
+  haben und somit helle beschienene und dunkle schattige Pl&auml;tze erstellen. 
+  Die Beleuchtung selbst setzt sich aus zwei Teilen zusammen: Ambientes Licht 
+  &amp; Direktes Licht</font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>1. Ambientes Licht</b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Unter ambienten Licht versteht 
+  man die Grundhelligkeit einer Gegend. Selbst wenn im Freien keine Sonne scheint, 
+  ist es am Tage immer hell, da die Athmosph&auml;re und die Wolken das Licht 
+  einer Sonne indirekt weitergeben. Nachts ist dagegen das ambiente Licht fast 
+  Null, wenn nicht gerade zB. der Vollmond scheint. Wichtig ist das ambiente Licht 
+  vor allem f&uuml;r die Schattenbereiche, wo es sonst stockdunkel w&auml;re. 
+  Beginnen wir mit der Arbeit:</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">&Ouml;ffnet im GTK eure 
+  Map, die ihr belichten wollt. Bevor ihr weiter macht, kontrolliert bitte, ob 
+  ihr alle Punktlichter oder sonstige Lichtquellen gel&ouml;scht habt. Dr&uuml;ckt 
+  daf&uuml;r &quot;L&quot; im GTK, es erscheint folgendes Fenster</font></p>
+<p><img src="outdoor_light/screens/1.jpg" width="423" height="365"></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Wenn ihr den Eintrag &quot;<font color="#FFFFFF">light</font>&quot; 
+  seht, dann m&uuml;sst ihr das Licht selektieren und anschlie&szlig;end l&ouml;schen. 
+  (Select -&gt; Close -&gt; Backspace -&gt; &quot;<font color="#FFFFFF">L</font>&quot;) Erst wenn kein Eintrag 
+  f&uuml;r &quot;<font color="#FFFFFF">light</font>&quot; mehr vorhanden ist, bekommt ihr das gew&uuml;nschte 
+  Ergebnis am Ende. Wenn ihr kein Licht mehr habt, schlie&szlig;t das Fenster 
+  mit &quot;<font color="#FFFFFF">Close</font>&quot;.
+  </font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Jetzt markieren wir einen
+normalen Brush und drücken die Taste 
+  &quot;<font color="#FFFFFF"><b>N</b></font>&quot;, f&uuml;r das Entity-Fenster.
+  </font></p>
+<p><img src="outdoor_light/screens/2.jpg" width="379" height="417"></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Achtet darauf, dass im oberen 
+  Fenster &quot;<font color="#FFFFFF">worldspawn</font>&quot; markiert ist. Jetzt tragt ihr bei
+&quot;<font color="#FFFFFF"><b>Key</b>&quot;</font> den Schl&uuml;ssel 
+  &quot;<font color="#FFFFFF">ambient</font>&quot; ein und bei &quot;<font color="#FFFFFF"><b>Value</b></font>&quot; den Wert &quot;<font color="#FFFFFF">80</font>&quot;. Die H&ouml;he 
+  der Werte m&uuml;sst ihr selber herausbekommen, was zu eurer Map am besten passt. 
+  Die Helligkeit h&auml;ngt von der Tageszeit und den Wetterbedingungen (Wolken) 
+  ab. An einem herrlichen Sonnentag ist es selbst im Schatten ziemlich hell, so 
+  dass Werte bis 140 vorkommen k&ouml;nnen. In der Nacht hingegen kann das ambiente 
+  Licht schnell gegen 0 gehen, aber zu dunkel darf man es auch nicht machen, da 
+  man sonst nix mehr erkennt.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Der zweite wichtige Aspekt 
+  beim Licht ist die Farbe. Bei einem warmen r&ouml;tlich-gelbem Licht denkt man 
+  an einen Sonnenuntergang, w&auml;hrend der Mond nahezu wei&szlig;es kaltes Licht 
+  ausstrahlt. Bei Regen oder schlechten Wetter sind bl&auml;uliche Farben von 
+  Vorteil.<br>
+  Um die Farbe des ambienten Lichtes einzustellen, schlie&szlig;t ihr das Entity-Fenster 
+  und dr&uuml;ckt danach &quot;<font color="#FFFFFF"><b>K</b></font>&quot;.</font></p>
+<p><img src="outdoor_light/screens/3.jpg" width="453" height="278"></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Mit der Maus k&ouml;nnt 
+  ihr nun direkt den kleinen Kreis bewegen um die gew&uuml;nschte Lichtfarbe einzustellen. 
+  Nat&uuml;rlich geht es auch durch die Eingabe der Werte rechts im Fenster. Wenn 
+  ihr die richtige Farbe gefunden habt (ihr k&ouml;nnt es jeder Zeit wieder &auml;ndern) 
+  dr&uuml;ckt &quot;<font color="#FFFFFF"><b>OK</b></font>&quot;<br>
+  Ein Druck auf die &quot;N&quot;-Taste &ouml;ffnet wieder das bekannte Entity-Fenster 
+  und siehe da, der color-Wert hat sich automatisch eingetragen:</font></p>
+<p><img src="outdoor_light/screens/4.jpg" width="379" height="417"></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Das war schon alles zum
+Thema ambientes Licht.</font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>1. Sonnenlicht</b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Kommen wir nun zum zweiten 
+  Teil des Licht-Tutorials - das Sonnenlicht.&nbsp;</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"> Dazu ben&ouml;tigen wir einen Shader. 
+  Wer schon eine eigene Shader-Datei hat, kann diese benutzen, ansonsten legen 
+  wir uns nun einen Sonnenshader an.<br>
+  Im Ordner <font color="#00FFFF">GameData\base\shaders</font> befinden sich die bereits vorhandenen
+Shader-Dateien. 
+  &Ouml;ffnet Euren Texteditor ( z.B. Notepad) und kopiert folgenden Text in die leere 
+  Datei:</font></p>
+<p><font color="#00FF00">// skyparms work like this:<br>
+  // q3map_sun &lt;red&gt; &lt;green&gt; &lt;blue&gt; &lt;intensity&gt; &lt;degrees&gt; 
+  &lt;elevation&gt;<br>
+  // color will be normalized, so it doesn't matter what range you use<br>
+  // intensity falls off with angle but not distance 100 is a fairly bright sun<br>
+  // degree of 0 = from the east, 90 = north, etc. altitude of 0 = sunrise/set, 
+  90 = noon</font></p>
+<p><font color="#00FF00">textures/system/sonnenshader<br>
+  {<br>
+  qer_editorimage textures/skies/sky.tga<br>
+  q3map_surfacelight 10<br>
+  sun 1.00 0.82 0.42 300 80 45<br>
+  surfaceparm sky<br>
+  surfaceparm noimpact<br>
+  surfaceparm nomarks<br>
+  q3map_nolightmap<br>
+  skyParms textures/skies/yavin 512 -<br>
+  }</font></p>
+<p><br>
+  <font face="Arial, Helvetica, sans-serif" size="2">Dann speichert ihr die Textdatei 
+  in dem Verzeichnis <font color="#00FFFF">GameData\base\shaders</font> mit dem Namen <i><font color="#00FFFF">sonnenshader.shader</font></i> 
+  ab. Jetzt m&uuml;sst ihr im gleichen Verzeichnis die Datei <i><font color="#00FFFF">shaderlist.txt</font></i> 
+  &ouml;ffnen.<i> </i>Am Ende der Datei tragt ihr unter den anderen Namen jetzt 
+  eure eigene shaderdatei <i><font color="#00FFFF">sonnenshader</font> </i>ein. (ohne
+  die Endung &quot;.shader&quot; )&nbsp;</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Dann bitte Abspeichern und
+Schlie&szlig;en.</font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Zur Erkl&auml;rung der 
+  Datei:</b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">In den ersten 5 Zeilen findet 
+  ihr die originale Beschreibung eines Sonnenlichtes. Das es sich nur um Kommentare 
+  handelt, erkennt man an den <font color="#00FF00"> //</font> - Zeichen am Anfang der Zeile</font></p>
+<p><font color="#00FF00">textures/system/sonnenshader</font><br>
+  In dieser Zeile wird der Effekt bezeichnet (Name des Shaders). Ihr findet den Shader dann im GTK-Radiant 
+  im Ordner &quot;<font color="#00FFFF">textures/system</font>&quot; mit dem Namen
+<font color="#00FFFF">sonnenshader</font>.</p>
+<p><font color="#00FF00">qer_editorimage textures/skies/sky.tga</font><br>
+  <font face="Arial, Helvetica, sans-serif" size="2">gibt an, welches Bild im 
+  GTK f&uuml;r den Shader angezeigt werden soll. In diesem Fall ist es das kleine 
+  graue Quadrat, wo <font color="#FFFFFF"><b> SKY</b></font> draufsteht.</font></p>
+<p><font color="#00FF00">sun </font><font color="#800080"> 1.00 0.82 0.42</font><font color="#00FF00">
+</font><font color="#008080"> 300</font><font color="#00FF00"> </font><font color="#0000FF"> 80
+</font><font color="#800000"> 45</font><br>
+<font face="Arial, Helvetica, sans-serif" size="2">Hier nun der wichtige Teil 
+  des Shaders. Die ersten drei Zahlen (<font color="#800080">1.00 0.82 0.42</font>) bestimmen die Farbe des 
+  Sonnenlichtes. Diese Zahlen sind genau die gleichen wie im GTK wenn ihr &quot;<font color="#FFFFFF"><b>K</b></font>&quot; 
+  dr&uuml;ckt. Ihr k&ouml;nnt also im GTK euch die Farbe raussuchen und dann die 
+  Zahlen in der Textdatei eingeben.<br>
+  Die vierte Zahl ist die <font color="#008080"> Leuchtst&auml;rke</font> der Sonne.
+Der Wert &quot;<font color="#FFFFFF">300</font><font color="#C0C0C0">&quot;</font> entspricht einer guten
+Nachmittagssonne, ein Mond w&uuml;rde dagegen mit &quot;<font color="#FFFFFF">100</font>&quot; ausreichend leuchten.<br>
+die fünfte Zahl (<font color="#0000FF">80</font>) ist die Richtung aus der das Licht kommt. Wenn ihr zum Beispiel 
+  auf eurem Himmel eine Sonne habt oder im Nachhimmel einen Mond, ist es sinnvoll, 
+  wenn das Licht auch aus dieser Richtung kommt. Angegeben ist in Grad, also <font color="#0000FF">1
+- 360</font>&deg;.<br>
+  Die letzte Zahl (<font color="#800000">45</font>) ist der Winkel, wie hoch die Sonne/Mond
+steht (<font color="#800000">1</font><font color="#C0C0C0">bis</font><font color="#800000">
+90</font>). Dies hat 
+  entscheidenden Einfluss auf die Schatten in der Map. Mittags sollten es 
+  kurze Schatten sein, also bis zu <font color="#800000"> 90</font>&deg;. Lange Schatten wie bei einem Sonnenaufgang 
+  bekommt man mit Werten um die <font color="#800000"> 20</font>&deg;.</font></p>
+<p><font color="#00FF00">skyParms textures/skies/yavin 512 -</font><br>
+  <font size="2" face="Arial, Helvetica, sans-serif">In dieser Zeile wird beschrieben, 
+  welche Himmelbilder benutzt werden. In diesem Fall ist es der Himmel von Yavin. 
+  Die Bilder findet ihr in dem Verzeichnis <font color="#00FFFF">textures/skies</font>. Wenn ihr einen anderen 
+  Himmel wollt, m&uuml;sst ihr statt <font color="#00FFFF"> yavin</font> euren gew&uuml;nschten Namen eintragen. 
+  Beachtet bitte, dass eine Himmelstextur immer aus <font color="#FFFFFF"><b> 6 Bildern</b></font> besteht (Oben, Unten, 
+  Vorn, Hinten, Links, Rechts) Diese Dateien hei&szlig;en im Dateinamen immer 
+  am Anfang gleich und unterscheiden sich durch die K&uuml;rzel nach dem &quot;<b><font color="#FFFFFF">_</font></b>&quot; 
+  Zeichen (<font color="#FFFFFF">yavin_dn</font>, <font color="#FFFFFF"> yavin_rt</font> ...). In diese Zeile schreibt ihr aber nur den gemeinsamen 
+  Namen, der Teil vor dem &quot;<font color="#FFFFFF"><b>_</b></font>&quot; im Dateinamen, also
+  <font color="#FFFFFF"><b>yavin</b></font>. Die zahl &quot;<font color="#00FF00">512</font>&quot;
+  gibt die Größe den einzelnen Skybox-Teile in Pixel an (in diesem Fall <font color="#00FF00">512
+  x 512</font>). Wenn Ihr Skyboxbilder benutzen wollt, die andere Größe haben,
+  dann müsst Ihr diese Zahl dementsprechend anpassen. Zulässig sind : <font color="#00FF00">256,
+  512, 1024, 2048</font></font> </p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Die Bedeutung der anderen 
+  Eintr&auml;ge k&ouml;nnt ihr den Shader-Tutorials entnehmen, da sie hier keine 
+  Rolle spielen.</font></p>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Um die neue Shaderdatei 
+  nutzen zu k&ouml;nnen, m&uuml;sst ihr den GTK neu starten. Also Map speichern 
+  und alles neu laden.<br>
+  Nun m&uuml;ssen wir den Sonnenshader unserer Skybox zuweisen. Dazu markiert 
+  ihr die Innenseiten eurer Skybox mit der Kombination <font color="#FFFFFF"><b> STRG + SHIFT + ALT</b></font> +
+<font color="#FFFFFF"><b> Linke 
+  Maustaste</b></font> im 3D-Fenster. </font></p>
+<p><img src="outdoor_light/screens/5.jpg" width="833" height="602"></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Wenn ihr alle 4 W&auml;nde 
+  und die Decke markiert habt, &ouml;ffnet euren Texturen-Ordner und w&auml;hlt 
+  das Verzeichnis &quot;<font color="#00FFFF">system</font>&quot;. Unter den Texturen sollte sich unser
+<font color="#00FFFF">sonnenshader</font> 
+  verstecken.</font></p>
+<p><img src="outdoor_light/screens/6.jpg" width="93" height="61"></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">W&auml;hlt diesen nun aus, 
+  und eure Skybox ist nun mit unserem Sonnenshader belegt. </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Jetzt noch die Map
+speichern und kompilieren, aber bitte mit Licht! <font color="#FFFFFF"><b> ;)</b></font></font></p>
+<hr>
+<p><b><font face="Arial, Helvetica, sans-serif" size="4"><font color="#FFFFFF">Tutorial
+by Shooter</font>,&nbsp;</font></b></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"> thx to Darth 
+  Arth</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.de" target="_blank">www.darth-arth.de</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.de ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

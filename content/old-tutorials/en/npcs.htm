@@ -1,0 +1,262 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="dekoration.css" type="text/css">
+<meta http-equiv="Content-Language" content="de">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>-</title>
+<meta name="Microsoft Border" content="l">
+</head>
+
+<body background="../../hinten.jpg"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top" width="1%">
+
+
+
+</td><td valign="top" width="24"></td><!--msnavigation--><td valign="top">
+
+<p>&nbsp;</p>
+
+<p align="center"><font color="#808080" size="2" face="Arial">&gt;&gt; Tutorials
+:</font></p>
+
+<p align="left"><font face="Arial" color="#FFFFFF">NPC Tutorial</font><font color="#808080"><br>
+-------------</font></p>
+<p><font size="2" color="#808080" face="Arial">First, sorry, for my bad english
+:)</font></p>
+<p><font size="2" color="#808080" face="Arial">Darth Arth</font></p>
+<p><font size="2" color="#808080" face="Arial">=====================</font></p>
+<p><font size="2" color="#808080" face="Arial">Tutorial<br>
+--------<br>
+<br>
+Selfmade Non-Player-Characters ( NPCs) for Jedi-Knight II - Jedi Outcast.<br>
+=======================================================================================<br>
+<br>
+to make the new NPC you need a NPC configuration file and of course the
+Glm-Model with all Skins and Sounds.<br>
+<br>
+You can set the configuration in the &quot;NPCS.CFG&quot; or you can use a
+single &quot;.npc&quot;- file. Inside this file you can specify the properties
+abilities of your character.</font></p>
+<p><font size="2" color="#808080" face="Arial">The &quot;npcs.cfg&quot;-file
+exists in Folder &quot;ext_data&quot;of the assets0.pk3 – file in your JKII&nbsp;
+/base -directory.<br>
+In this file are all configuration-data stored for all Single-Player-Charakters
+of JKII.</font></p>
+<p><font size="2" color="#808080" face="Arial">The possibility of using a single
+&quot;.npc&quot;-file is not documented anyway :) But you can use it to define a
+new NPC, without replacing an existing one and without editing of the &quot;npcs.cfg&quot;.
+The file-structure of the &quot;.npc&quot;-file is equal to structure of &quot;npcs.cfg&quot;,
+but can contain aas well only a single character definition. You can also have
+more than one &quot;.npc&quot;-file</font></p>
+<p><font size="2" color="#808080" face="Arial"><br>
+Caution!:<br>
+_______<br>
+The &quot;.npc&quot;-file can not be used for replacing of existing characters (for
+example: if you want to replace Desann with Darth Vader). The only possibility
+to replace an existing charackter is to create new edited &quot;npcs.cfg&quot; !
+Otherwise you will have problems with the sound and NPC-properties.</font></p>
+<p><font size="2" color="#808080" face="Arial"><br>
+<b>Jedi -NPC's, the bright side of the force</b><br>
+----------------------------------------<br>
+To make a good jedi, you must take a &quot;jedi&quot;-NPC as template.</font></p>
+<p><font size="2" color="#808080" face="Arial">All jedi-NPC must have names like
+this:<br>
+<br>
+jedi_NPCname<br>
+</font></p>
+<p><font size="2" color="#808080" face="Arial">where, &quot;NPCname&quot; is the
+name of your new NPC.</font></p>
+<p><font size="2" color="#808080" face="Arial">It's also important for the
+Model-folder! Otherwise it will not work!<br>
+<b><u>Both, model- and NPC-names must begin with the word &quot;jedi&quot;.</u></b></font></p>
+<p><font size="2" color="#808080" face="Arial"><br>
+Example:<br>
+---------<br>
+<br>
+Jedi_yoda<br>
+{<br>
+playermodel&nbsp;&nbsp;&nbsp;&nbsp; jedi_yoda<br>
+saberColor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; green<br>
+rank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+commander<br>
+reactions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5<br>
+aim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5<br>
+move&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5<br>
+aggression&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5<br>
+evasion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5<br>
+intelligence&nbsp;&nbsp;&nbsp;&nbsp; 5<br>
+hfov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+180<br>
+vfov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+180<br>
+scale&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+55<br>
+playerTeam&nbsp;&nbsp;&nbsp;&nbsp; player<br>
+enemyTeam&nbsp;&nbsp;&nbsp;&nbsp; enemy<br>
+// race human<br>
+class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+jedi<br>
+snd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+yoda<br>
+sndcombat&nbsp;&nbsp;&nbsp;&nbsp; yoda<br>
+sndextra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; yoda<br>
+sndjedi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+yoda<br>
+yawSpeed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 200<br>
+walkspeed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 60<br>
+runspeed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+220<br>
+health&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+999<br>
+dismemberProbHead 0<br>
+dismemberProbArms 0<br>
+dismemberProbHands 0<br>
+dismemberProbLegs 0<br>
+dismemberProbWaist 0<br>
+}<br>
+<br>
+rank - is skill-level of NPC (IQ, capacity of reaction ...)<br>
+<br>
+There are following jedi rank-levels:<br>
+<br>
+(only for good jedis)<br>
+<br>
+captain - the best<br>
+Commander - very good<br>
+lt - good<br>
+<br>
+<br>
+raktion, aim, move, agression, evasion - properties of the abilities<br>
+1 = bad, 5 = very good<br>
+<br>
+hfov,vfov - is visionradius (horizontal and vertical)<br>
+<br>
+&quot;scale&quot; defines how big is the model in game, so is Desann bigger then
+yoda.<br>
+</font></p>
+<p><font size="2" color="#808080" face="Arial"><br>
+The following is also very important!:<br>
+-------------------------------------<br>
+<br>
+good jedis must alse be defined like this:<br>
+<br>
+PlayerTeam&nbsp;&nbsp;&nbsp;&nbsp; player<br>
+EnemyTeam&nbsp;&nbsp;&nbsp;&nbsp; enemy<br>
+<br>
+&quot;class &quot; must&nbsp; always be set to &quot;jedi&quot; !<br>
+<br>
+if you change this, your new NPC will not properly work.<br>
+</font></p>
+<p><font size="2" color="#808080" face="Arial">--------------------------------------<br>
+&quot;race&quot; is nonrelevant (Elite-Force)<br>
+<br>
+&quot;snd&quot;, &quot;sndcombat&quot; and so on, are sound-properties. Set it
+to &quot;modelname&quot;<br>
+<br>
+&quot;sound/chars/modelname/misc&quot;<br>
+<br>
+So if you save your new sounds in:<br>
+<br>
+&quot;sound/chars/Yoda&quot;<br>
+<br>
+it must be set as follows:<br>
+<br>
+snd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yoda<br>
+sndcombat Yoda<br>
+sndjedi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yoda</font></p>
+<p><font size="2" color="#808080" face="Arial">----------------------------<br>
+yawSpeed is the rotate speed<br>
+walkspeed und runspeed are ... :)<br>
+<br>
+&quot;health&quot; is the strengh of your NPC<br>
+</font></p>
+<p><font size="2" color="#808080" face="Arial">IMPORTANT:<br>
+----------------</font></p>
+<p><font size="2" color="#808080" face="Arial">many of the mappers do not Know,
+that you can also define &quot;halth&quot; bigger than &quot;999&quot;.</font></p>
+<p><font size="2" color="#808080" face="Arial">so, has &quot;the Emperor&quot;
+of my &quot;The CHallenge...&quot; -map abot 3000 health ! :)<br>
+</font></p>
+<p><font size="2" color="#808080" face="Arial">ok, it was all about good jedis.<br>
+<br>
+-------------------------------------------------------------<br>
+<b>The Dark Side - Sith Warriors</b><br>
+<br>
+The definition of dark jedis is similar to good jedis. There are only a few
+differences.</font></p>
+<p><font size="2" color="#808080" face="Arial">You must use the &quot;Reborn&quot;-NPC
+as template and replace the word &quot;jedi&quot; with &quot;reborn&quot;.<br>
+<br>
+it means:<br>
+<br>
+NPCname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reborn_Vader<br>
+Modelname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reborn_Vader<br>
+class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+reborn<br>
+<br>
+Playerteams must be set the other way around, as for&nbsp; good-Jedi's.&nbsp;</font></p>
+<p><font size="2" color="#808080" face="Arial">It means:</font></p>
+<p><font size="2" color="#808080" face="Arial">PlayerTeam&nbsp;&nbsp;&nbsp;&nbsp;
+enemy<br>
+EnemyTeam&nbsp;&nbsp;&nbsp;&nbsp; player<br>
+<br>
+<br>
+Also the rank levels are different:<br>
+---------------------------------<br>
+no rank defined - normal stupid reborn<br>
+crewman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - acrobat<br>
+ensign&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
+forceuser<br>
+ltjg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- fencer<br>
+lt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- boss<br>
+ltcomm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
+shadowtrooper</font></p>
+<p><font size="2" color="#808080" face="Arial">commander&nbsp;&nbsp;&nbsp; -
+very good (in game only set for Tavion)<br>
+captain&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - the
+best (in the game only set for Desann)<br>
+-----------------------------------------------------------------<br>
+- <b>Soldiers</b> -<br>
+<br>
+for enemy soldiers you must take &quot;stromtrooper&quot;-NPC as template and
+for allies<br>
+&quot;BespinCop&quot; or &quot;rebel&quot; - NPC.&nbsp;<br>
+</font></p>
+<p><font size="2" color="#808080" face="Arial">All other settings are analogical
+to &quot;Jedi&quot; and &quot;reborn&quot;-Settings<br>
+<br>
+<b>End-comments:</b><br>
+-----------------<br>
+It is recomended to make one &quot;.npc&quot;-file for all good guys and another
+one for the bad-guys.</font></p>
+<p><font size="2" color="#808080" face="Arial">If you have finished your
+NPC-denifintion, you can compress all the files in one &quot;.pk3&quot;-file</font></p>
+<p><font size="2" color="#808080" face="Arial">This file schould contain all the
+model/skin-files and folders as well sounds &amp; shaders (optionally) you need
+for your NPC's.</font></p>
+<p><font size="2" color="#808080" face="Arial">It is improtant, that you use a
+relative-path in your pk3-file. It means, your folders should beginn after the /base
+- directory.</font></p>
+<p><font size="2" color="#808080" face="Arial">For examlpe, if you make a
+pk3-file for yoda-NPC, it should contain the following folders:</font></p>
+<p><font size="2" color="#808080" face="Arial">ext_data/ - here all &quot;.npc&quot;-files
+or one &quot;npcs.cfg&quot;-file</font></p>
+<p><font size="2" color="#808080" face="Arial">models/players/jedi_yoda/ - here
+all the model/skin -files</font></p>
+<p><font size="2" color="#808080" face="Arial">shaders/ - [otional] here all
+skin-shaders</font></p>
+<p><font size="2" color="#808080" face="Arial">sound/chars/jedi_yoda/misc/ -
+[optional] here all yoda sounds</font></p>
+<p><font color="#808080" face="Arial">&nbsp;</font></p>
+<p><font size="2" color="#808080" face="Arial">If your &quot;pk3.&quot; - file
+is done, you can copy it to your mod-folder or to your &quot;base/&quot; -
+folder (for testing only).</font></p>
+<p><font size="2" color="#808080" face="Arial">==================================</font><!--msnavigation--></td></tr><!--msnavigation--></table></body>
+
+</html>

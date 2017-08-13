@@ -1,0 +1,292 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="dekoration.css" type="text/css">
+<meta http-equiv="Content-Language" content="de">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>-</title>
+<meta name="Microsoft Border" content="l">
+</head>
+
+<body background="../hinten.jpg"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top" width="1%">
+
+
+
+</td><td valign="top" width="24"></td><!--msnavigation--><td valign="top">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font></p>
+
+<hr>
+
+<p align="left"><b><font color="#FFFFFF" face="Arial" size="4">NPC Tutorial</font></b><font color="#808080" face="Arial" size="2"><br>
+<img border="0" src="../buttons/aliendf4.gif" width="344" height="9"><br>
+<br>
+</font><font color="#C0C0C0" face="Arial" size="2"><img border="0" src="../buttons/aliende4.gif" width="12" height="12">
+Erstellung von eigenen Nicht-Player-Charakteren (Non-Player-Characters, NPCs) für Jedi-Knight II - Jedi Outcast.
+</font><font color="#808080" face="Arial" size="2"><br>
+<br>
+<br>
+Um einen neuen, eigenen NPC zu erstellen braucht man eine NPC-Konfigurations-Datei und natürlich das entsprechende Glm-Model samt Skins und Sounds.<br>
+<br>
+Man braucht entweder die "NPCS.CFG" oder einzelne ".npc"- Dateien und die Fähigkeiten der Charaktere zu definieren.<br>
+Die Datei "npcs.cfg" befindet sich in dem "ext_data"-Ordner in der assets0.pk3 – Datei.<br>
+In dieser Datei sind alle NPC's für JKII-Single Player definiert.<br>
+Das mit den zusätzlichen ".npc"-Dateien ist nirgends dokumentiert. Damit kann man neue zusätzliche NPC's definieren, ohne jedes mal die "npcs.cfg" editieren zu müssen.<br>
+<br>
+Der Aufbau ist der Datei gleich wie bei „npcs.cfg“, man kann aber mehrere davon haben.<br>
+<br>
+</font><font color="#FF0000" face="Arial" size="2"><b><u>
+Achtung!:</u></b>
+</font><font color="#808080" face="Arial" size="2"><br>
+<br>
+Es funktioniert nicht wenn man vorhandene Charaktere gegen neue tauschen will (z.B. Desann mit Vader vertauschen), dann bleibt nichts anderes übrig als die NPCS.CFG zu editieren, ansonsten gibt es Probleme vor allem bei den Sounds.<br>
+<br>
+</font><font color="#FFFFFF" face="Arial" size="2"><img border="0" src="../buttons/aliende4.gif" width="12" height="12">
+Jedi -NPC's, die helle Seite der Macht:
+</font><font color="#808080" face="Arial" size="2"><br>
+<img border="0" src="../buttons/aliendf4.gif" width="344" height="9"><br>
+<br>
+wenn man gute jedis machen will, muss man den "Jedi"-NPC als Grundlage nehmen.<br>
+<br>
+die NPCs müssen immer heißen:<br>
+<br>
+Jedi_NPCname<br>
+<br>
+genauso die Model-Ordner, sonst funktionieren die NPCs nicht !<br>
+Modelname und NPCname müssen gleich sein und mit dem Wort "jedi" anfangen<br>
+Es ist sehr wichtig!, sonst funktioniert es nicht.<br>
+<br>
+</font><font color="#FFFFFF" face="Arial" size="2">
+Beispiel:
+</font><font color="#808080" face="Arial" size="2"><br>
+<img border="0" src="../buttons/aliendf4.gif" width="344" height="9"><br>
+<br>
+Jedi_yoda<br>
+{<br>
+playermodel jedi_yoda<br>
+saberColor green<br>
+rank commander<br>
+reactions 5<br>
+aim 5<br>
+move 5<br>
+aggression 5<br>
+evasion 5<br>
+intelligence 5<br>
+hfov 180<br>
+vfov 180<br>
+scale 55<br>
+playerTeam player<br>
+enemyTeam enemy<br>
+// race human<br>
+class jedi<br>
+snd yoda<br>
+sndcombat yoda<br>
+sndextra yoda<br>
+sndjedi yoda<br>
+yawSpeed 200<br>
+walkspeed 60<br>
+runspeed 220<br>
+health 999<br>
+dismemberProbHead 0<br>
+dismemberProbArms 0<br>
+dismemberProbHands 0<br>
+dismemberProbLegs 0<br>
+dismemberProbWaist 0<br>
+}
+</font></p>
+
+<p align="left"><font color="#808080" face="Arial" size="2"><br>
+<img border="0" src="../buttons/aliendf4.gif" width="344" height="9">
+</font></p>
+
+<p align="left"><font face="Arial" size="2" color="#C0C0C0"><u>Erklärung:</u></font></p>
+
+<p align="left"><font color="#808080" face="Arial" size="2">
+<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+rank
+</font><font color="#808080" face="Arial" size="2"> - bedeutet wie gut der NPC ist, (intelligent, Reaktionsvermögen usw.)<br>
+<br>
+Es gibt verschienene Rank-Level (betrifft nur Jedi):<br>
+<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+captain
+</font><font color="#808080" face="Arial" size="2"> - der beste<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+Commander
+</font><font color="#808080" face="Arial" size="2"> - sehr gut<br>
+</font><font face="Arial" size="2" color="#00FFFF">L</font><font color="#00FFFF" face="Arial" size="2">t
+</font><font color="#808080" face="Arial" size="2"> - gut<br>
+<br>
+<br>
+</font><font color="#00FFFF" face="Arial" size="2">raktion, aim, move, agression, evasion
+</font><font color="#808080" face="Arial" size="2"> - sind Einstellungen für die einzelnen Fähigkeiten<br>
+1=schlecht, 5=sehr gut<br>
+<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+hfov,vfov
+</font><font color="#808080" face="Arial" size="2"> - ist der Visionsradius (horizontal und vertikal)<br>
+<br>
+&quot;</font><font color="#00FFFF" face="Arial" size="2">scale</font><font color="#808080" face="Arial" size="2">&quot; ist die Skalierung des Models, so ist zum Beispiel Desann größer und Yoda kleiner.<br>
+<br>
+</font><font color="#FF0000" face="Arial" size="2"><u>Folgendes ist jetzt auch sehr wichtig:</u>
+</font><font color="#808080" face="Arial" size="2"><br>
+<br>
+bei den guten Jedis, muss immer:<br>
+<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+PlayerTeam&nbsp;&nbsp;</font> <font color="#00FFFF" face="Arial" size="2">player
+</font><font color="#808080" face="Arial" size="2"><br>
+</font><font color="#00FFFF" face="Arial" size="2">
+EnemyTeam&nbsp; enemy
+</font><font color="#808080" face="Arial" size="2"><br>
+<br>
+&quot;</font><font color="#00FFFF" face="Arial" size="2">class
+</font><font color="#808080" face="Arial" size="2"> " muss immer &quot;</font><font color="#00FFFF" face="Arial" size="2">jedi</font><font color="#808080" face="Arial" size="2">&quot; sein!<br>
+<br>
+dreht man das um, funktioniert der NPC nicht mehr!
+</font></p>
+
+<p align="left"><font color="#808080" face="Arial" size="2"><br>
+--------------------------------------<br>
+&quot;</font><font color="#00FFFF" face="Arial" size="2">race</font><font color="#808080" face="Arial" size="2">&quot; ist unwichtig (Überbleibsel von STV-EF)<br>
+<br>
+&quot;</font><font color="#00FFFF" face="Arial" size="2">snd</font><font color="#808080" face="Arial" size="2">&quot;,
+&quot;</font><font color="#00FFFF" face="Arial" size="2">sndcombat</font><font color="#808080" face="Arial" size="2">&quot; usw. sind die Ordner für die Sounds unter<br>
+<br>
+"sound/char/modelname"<br>
+<br>
+also wenn man die Sounds unter:<br>
+<br>
+sound/char/Yoda hat<br>
+<br>
+muss es heißen :<br>
+<br>
+snd Yoda<br>
+<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+yawSpeed
+</font><font color="#808080" face="Arial" size="2"> ist die Geschwindigkeit mit der sich der
+NPC drehen kann<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+walkspeed
+</font><font color="#808080" face="Arial" size="2"> und
+</font><font color="#00FFFF" face="Arial" size="2"> runspeed
+</font><font color="#808080" face="Arial" size="2"> sind wohl klar (Geh- und
+Renngeschwindigkeit)<br>
+<br>
+&quot;</font><font color="#00FFFF" face="Arial" size="2">health</font><font color="#808080" face="Arial" size="2">&quot; ist die Gesundheit
+</font></p>
+<p align="left"><font color="#808080" face="Arial" size="2"><br>
+</font><font color="#FFFFFF" face="Arial" size="2"><b><u>
+Bemerkung:</u></b>
+</font><font color="#808080" face="Arial" size="2"><br>
+<br>
+was hier die wenigsten wissen, man kann auch Werte
+</font><font color="#FFFFFF" face="Arial" size="2"> über 999
+</font><font color="#808080" face="Arial" size="2"> eintragen<br>
+so, hat mein Imperator 3000 Health in "The Challenge..."<br>
+ok, das waren die guten :D<br>
+<br>
+<br>
+<img border="0" src="../buttons/aliende4.gif" width="12" height="12"> </font><font face="Arial" size="2" color="#FFFFFF">Reborn
+NPC's die dunkle Seite der Macht</font><font color="#808080" face="Arial" size="2"><br>
+<img border="0" src="../buttons/aliendf4.gif" width="344" height="9"></font></p>
+<p align="left"><font color="#808080" face="Arial" size="2">
+<br>
+hier ist es ähnlich wie bei den guten, nur das statt &quot;</font><font color="#FFFFFF" face="Arial" size="2">Jedi</font><font color="#808080" face="Arial" size="2">&quot; überall das Wort
+&quot;</font><font color="#FFFFFF" face="Arial" size="2">Reborn</font><font color="#808080" face="Arial" size="2">&quot; vorne stehen muss.<br>
+<br>
+das heißt:<br>
+<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+NPCname
+</font><font color="#FFFFFF" face="Arial" size="2">Reborn</font><font color="#808080" face="Arial" size="2">_Vader<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+Modelname
+</font><font color="#808080" face="Arial" size="2">
+</font><font color="#FFFFFF" face="Arial" size="2">Reborn</font><font color="#808080" face="Arial" size="2">_Vader<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+class
+</font><font color="#808080" face="Arial" size="2">
+</font><font color="#FFFFFF" face="Arial" size="2"> reborn
+</font><font color="#808080" face="Arial" size="2"><br>
+<br>
+und die Playerteams müssen immer umgekehrt, als bei den Jedi's sein.<br>
+<br>
+Was noch bei den "reborns" anders ist, sind die Rank-Stufen.<br>
+<br>
+</font><font color="#FFFFFF" face="Arial" size="2"><u>
+Folgende Rank-Stufen gibt es:</u>
+</font><font color="#808080" face="Arial" size="2"><br>
+<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+kein rank
+</font><font color="#808080" face="Arial" size="2"> - der normale, dumme Reborn<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+crewman
+</font><font color="#808080" face="Arial" size="2"> - acrobat<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+ensign
+</font><font color="#808080" face="Arial" size="2"> - forceuser<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+ltjg
+</font><font color="#808080" face="Arial" size="2"> - fencer<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+lt
+</font><font color="#808080" face="Arial" size="2"> - boss<br>
+</font><font color="#00FFFF" face="Arial" size="2">
+ltcomm
+</font><font color="#808080" face="Arial" size="2"> - shadowtrooper<br>
+<br>
+<br>
+<img border="0" src="../buttons/aliende4.gif" width="12" height="12">
+</font><font color="#FFFFFF" face="Arial" size="2">Die Soldaten NPC's
+</font><font color="#808080" face="Arial" size="2"><br>
+<img border="0" src="../buttons/aliendf4.gif" width="344" height="9">
+</font></p>
+<p align="left"><font color="#808080" face="Arial" size="2">
+<br>
+Für die Soldaten der dunklen Seite nimmt man &quot;</font><font color="#FFFFFF" face="Arial" size="2">Stormtrooper</font><font color="#808080" face="Arial" size="2">&quot;
+und für die guten &quot;</font><font color="#FFFFFF" face="Arial" size="2">BespinCop</font><font color="#808080" face="Arial" size="2">&quot;
+</font><font color="#808080" face="Arial" size="2"> als Vorlage.<br>
+<br>
+Der Rest der Einstellungen ist analog zu den beiden beschriebenen Jedi-Klassen.<br>
+<br>
+</font><font color="#FFFFFF" face="Arial" size="2"><u>
+Schlussbemerkung:</u></font><font color="#808080" face="Arial" size="2"><br>
+<br>
+Am besten packt man dann alle guten-NPCs in eine &quot;</font><font color="#FFFFFF" face="Arial" size="2">.npc</font><font color="#808080" face="Arial" size="2">&quot; Datei und die bösen in eine andere.<br>
+Das gleiche dann natürlich mit den Soldaten, falls vorhanden.<br>
+Oder alternativ kann man eigene </font><font color="#FFFFFF" face="Arial" size="2"> npcs.cfg</font><font color="#808080" face="Arial" size="2"> - Datei erstellen.<br>
+<br>
+Dann die neu definierten Dateien in einen &quot;</font><font color="#00FFFF" face="Arial" size="2">my_npcs/ext_data</font><font color="#808080" face="Arial" size="2">&quot; - Ordner kopieren und mit ZIP zusammen packen.<br>
+</font></p>
+<p align="left"><font color="#808080" face="Arial" size="2">
+Die erstellte pk3.-Datei dann in ein Mod-Order oder direkt in den &quot;</font><font color="#00FFFF" face="Arial" size="2">base</font><font color="#808080" face="Arial" size="2">&quot; Ordner kopieren.</font></p>
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.Net ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+&nbsp;<!--msnavigation--></td></tr><!--msnavigation--></table></body>
+
+</html>

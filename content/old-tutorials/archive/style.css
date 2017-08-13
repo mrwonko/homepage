@@ -1,0 +1,129 @@
+body   {
+	scrollbar-3dlight-color: #83A1C4;
+	scrollbar-arrow-color: #FFFFFF;
+	scrollbar-darkshadow-color: #435E78;
+	scrollbar-face-color: #D2DEE7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #B5C3CE;
+	scrollbar-track-color: #EFEFEF;
+	background-color: #000000;
+	background-image: url(images/stars_back_main.gif);
+}
+
+a:link,a:active,a:visited   {
+	color: #83B7CD;
+	text-decoration: none;
+}
+a:hover		 { color: #FFCC00; text-decoration: none}
+
+font,th,td,p  {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.top	{
+	background-image: url(images/t_head_bkgd.gif);
+	color: #CCE3EE;
+	font-weight: bold;
+	font-size: 11px;
+	text-align: center;
+}
+.middle {
+	background-image: url(images/stars_back_lite.gif);
+}
+
+.middle_red{
+	background-image: url(images/stars_back_lite_red.gif);
+}
+
+.middle2 {
+	background-image: url(images/stars_back_lite.gif);
+	border:solid 1px black;
+	height: 18px;
+}
+.middle3 {
+	background-image: url(images/red.gif);
+	border:solid 1px black;
+	height: 18px;
+}
+.bottom	{
+	background-image: url(images/t_bottom_bkgd.gif);
+}
+.title	{
+	height: 28px;
+	background-image: url(images/cellpic1.gif);
+	text-align: center;
+	color: #CCE3EE;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+.title_left	{
+	height: 28px;
+	background-image: url(images/cellpic1.gif);
+	text-align: left;
+	color: #CCE3EE;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+.copyright	{
+	font-size: 12px;
+	color: white;
+}
+
+.blub {
+	height: 23px;
+}
+
+.red {
+	color:red;
+}
+
+.preview {
+	border:3pt double #aaaaaa;
+	padding: 10pt;
+	background-image: url(images/stars_back_main.gif);
+}
+
+.grey_m {
+	color:#aaaaaa;
+	text-align: center;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.quote {
+  background-image: url(images/stars_back_main.gif);
+}
+
+.code   {
+	color: #000000;
+	font-size: 13px;
+	font-family: Courier, "Courier New", sans-serif;
+	border: solid 1px #65492F;
+	background-color: #CCCCCC;
+}
+
+.blackbg {
+	background-color:black;
+}
+
+.redbg {
+	background-color:red;
+	color: black;
+}
+
+.greenbg {
+	background-color:green;
+	color: black;
+}
+
+.spacer {
+	height: 18px;
+}
+
+.right {
+	text-align: right;
+}

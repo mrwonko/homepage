@@ -1,0 +1,295 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Zuerst müssen wir in der Map unsere Kamera</title>
+<style fprolloverstyle>A:hover {color: #800000; font-style: italic}
+</style>
+</head>
+
+<body bgcolor="#333333">
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><b><font face="Arial" color="#008080" size="5">&gt;&gt;
+Mapping Academy - Tutorials &lt;&lt;</font></b></p>
+
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p align="center" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="3" color="#808080">(c)
+2003</font><font face="Arial" size="3" color="#C0C0C0"> <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font></p>
+
+<hr>
+<p><font size="4" face="Arial" color="#FFFFFF">Der Kamera Modus</font></p>
+<p align="left"><b><u><font face="Arial" size="2" color="#FFFF00">VORAUSSETZUNG</font></u><font face="Arial" size="2" color="#FFFF00"><u>EN</u>:</font></b></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools I ( <a href="../../radiant/jk2_etools1.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation JK2 Editing Tools 2 ( <a href="../../radiant/jk2_etools2.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font color="#FFFFFF" face="Arial" size="2">&gt;&gt;
+Installation GTK - Radiant ( <a href="../../radiant/gtk_radiant.htm">Tutorial</a>
+)&lt;&lt;</font></p>
+<p align="left" style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+
+<p><font face="Arial" size="2" color="#C0C0C0">Für diese Lehreinheit (Tutorial)
+benötigen wir einen Einfachen Raum mit einem &quot;</font><font face="Arial" size="2" color="#FFFFFF">info_player_start</font><font face="Arial" size="2" color="#C0C0C0">&quot;.
+Wenn du dabei Hilfe brauchst, schau hier: &gt;&gt; </font><a href="../../mapping/firstroom/firstroom.htm"><font face="Arial" size="2">mein
+erster Raum</font></a><font face="Arial" size="2" color="#C0C0C0"> &lt;&lt;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Speichere den Raum unter dem
+Namen &quot;</font><font face="Arial" size="2" color="#00FFFF">camscript1.map</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Zuerst müssen wir in dieser Map
+unsere Kamera-Position und deren Winkel festlegen.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Für eine Camera-Position braucht
+man einen &quot;</font><font face="Arial" size="2" color="#FFFFFF">ref_tag</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+(rechte Maustaste &quot;</font><font face="Arial" size="2" color="#FFFFFF">ref</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font color="#FFFFFF"><font face="Arial" size="2">re</font></font><font face="Arial" size="2" color="#FFFFFF">f_tag</font><font face="Arial" size="2" color="#C0C0C0">&quot;).&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0"><img border="0" src="ref_tag.jpg" width="176" height="155"></font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Damit wird der Punkt gesetzt, an
+dem sich die Kamera befinden soll. Man muss natürlich mehrere Punkte setzen,
+wenn man komplexe Kamera-Fahrten oder dynamische Szenen darstellen möchte. Für
+diesen Test benötigen wir aber nur eine Kamera.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0"><br>
+Die Richtung, in die eine Kamera schauen soll, wird mit &quot;</font><font face="Arial" size="2" color="#FFFFFF">info_notnull</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+festlegt (rechte Maustaste &quot;</font><font face="Arial" size="2" color="#FFFFFF">info</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+&gt; &quot;</font><font face="Arial" size="2" color="#FFFFFF">info_notnull</font><font face="Arial" size="2" color="#C0C0C0">&quot;).&nbsp;</font></p>
+<p><img border="0" src="info_notnull.jpg" width="226" height="195"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">&quot;</font><font face="Arial" size="2" color="#008000">info_notnull</font><font face="Arial" size="2" color="#C0C0C0">&quot;-Entity
+wird meistens nur für Ziel-, oder Positionsangaben benötigt.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt muss man die beiden
+Entities noch miteinander verbinden.&nbsp;</font></p>
+<p><img border="0" src="ent_connect_2d.jpg" width="276" height="277"><img border="0" src="ent_connect.jpg" width="425" height="235"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Es gibt 2 Möglichkeiten es zu
+tun:</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">1. Der einfache Weg: Markiere
+zuerst den &quot;</font><font face="Arial" size="2" color="#3366FF">ref_tag</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+und markiere dann das &quot;</font><font face="Arial" size="2" color="#008000">info_notnull</font><font face="Arial" size="2" color="#C0C0C0">&quot;.
+Klicke jetzt auf </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;STRG+K&gt;
+</b></font><font face="Arial" size="2" color="#C0C0C0">und die 2 Entities werden
+Verbunden. Man kann im Editor sogar eine </font><font face="Arial" size="2" color="#00FF00">Verbindungs-Linie</font><font face="Arial" size="2" color="#C0C0C0">
+mit einem Pfeil in Verbindungsrichtung sehen. Nachteil dieser schnellen Methode
+ist, dass die Namen für den &quot;</font><font face="Arial" size="2" color="#FFFFFF">target</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+(Ziel) vom Editor automatisch erstellt werden. Wenn man eine Cutscene in einer
+Test-Map erstellt und die Sachen später in die richtige Map kopiert, kann so passieren,
+dass einige &quot;</font><font face="Arial" size="2" color="#FFFFFF">targetnamen</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+mehrfach vorhanden sind. Das kann zu Problemen führen und die Ursache ist oft
+schwer zu finden. Deswegen empfehle ich Methode 2:</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">2. Der Profi-Weg: Um 2 Entities
+zu verbinden, benötigt man einerseits den Zielnamen (</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font><font face="Arial" size="2" color="#FFFFFF">targetname</font><font face="Arial" size="2" color="#C0C0C0">&quot;)
+und andererseits die Zielangabe (&quot;</font><font face="Arial" size="2" color="#FFFFFF">target</font><font face="Arial" size="2" color="#C0C0C0">&quot;).
+Wenn also </font><font face="Arial" size="2" color="#3366FF">Entity1</font><font face="Arial" size="2" color="#C0C0C0">
+auf </font><font face="Arial" size="2" color="#008000">Entity2</font><font face="Arial" size="2" color="#C0C0C0">
+zeigen soll, muss man bei </font><font face="Arial" size="2" color="#3366FF">Entity1</font><font face="Arial" size="2" color="#C0C0C0">
+den KEY (Schlüssel) &quot;</font><font face="Arial" size="2" color="#FFFFFF">target</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+und bei </font><font face="Arial" size="2" color="#008000">Entity2</font><font face="Arial" size="2" color="#C0C0C0">
+den KEY &quot;</font><font face="Arial" size="2" color="#FFFFFF">targetname</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+festlegen. Der Wert (VALUE) muss bei beiden identisch sein.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Für unsere Kamera definieren wir
+als Ziel z.B. &quot;</font><font face="Arial" size="2" color="#FFFFFF">cam1_r</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+(Kamera-1 Richtung). Um das zu tun, markiere den &quot;</font><font face="Arial" size="2" color="#3366FF">ref_tag</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+drücke die </font><font face="Arial" size="2" color="#FFFFFF"><b>&quot;N&quot;</b></font><font face="Arial" size="2" color="#C0C0C0">-Taste
+und trage dort ein:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">KEY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+target</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">VALUE&nbsp;&nbsp;&nbsp;&nbsp;
+cam1_r</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="key_target.jpg" width="374" height="297"></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">drücke
+dann </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;ENTER&gt;</b></font><font face="Arial" size="2" color="#C0C0C0">.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Jetzt
+muss man dem &quot;</font><font face="Arial" size="2" color="#008000">info_notnul</font><font face="Arial" size="2" color="#008000">l</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+seinen Zielnamen (&quot;</font><font face="Arial" size="2" color="#FFFFFF">targetname</font><font face="Arial" size="2" color="#C0C0C0">&quot;)
+geben. Markiere das &quot;</font><font face="Arial" size="2" color="#008000">info_notnul</font><font face="Arial" size="2" color="#008000">l</font><font face="Arial" size="2" color="#C0C0C0">&quot;,
+drücke </font><font face="Arial" size="2" color="#FFFFFF"><b>&quot;N&quot;</b></font><font face="Arial" size="2" color="#C0C0C0">
+und gebe ein:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">KEY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+targetname</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">VALUE&nbsp;&nbsp;&nbsp;&nbsp;
+cam1_r</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="key_targetname.jpg" width="352" height="225"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">drücke dann </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;ENTER&gt;</b></font><font face="Arial" size="2" color="#C0C0C0">.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Damit haben wir festgelegt, dass
+unser </font><font face="Arial" size="2" color="#008000">Info_notnull</font><font face="Arial" size="2" color="#C0C0C0">
+den Namen &quot;</font><font face="Arial" size="2" color="#FFFFFF">cam1_r</font><font face="Arial" size="2" color="#C0C0C0">&quot;
+trägt und unsere Kamera (</font><font face="Arial" size="2" color="#3366FF">ref_tag</font><font face="Arial" size="2" color="#C0C0C0">)
+in seine Richtung zeigt.&nbsp;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Um unsere Kamera im Script
+ansprechen können, benötigt diese auch einen Namen. Wir geben ihr den Namen
+&quot;</font><font face="Arial" size="2" color="#FFFFFF">cam1</font><font face="Arial" size="2" color="#C0C0C0">&quot;.
+Markiere unseren &quot;</font><font face="Arial" size="2" color="#3366FF">ref_tag</font><font face="Arial" size="2" color="#C0C0C0">&quot;,
+drücke </font><font face="Arial" size="2" color="#FFFFFF"><b>&quot;N&quot;</b></font><font face="Arial" size="2" color="#C0C0C0">
+und gebe ein:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">KEY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+targetname</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">VALUE&nbsp;&nbsp;&nbsp;&nbsp;
+cam1</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><img border="0" src="key_targetname2.jpg" width="374" height="295"></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Nach dem wir unsere Kamera und
+ihre Richtung festgelegt haben, können wir unsere Test-Map kompilieren. &quot;</font><font face="Arial" size="2" color="#FFFFFF">FastVis
+(nolight)</font><font face="Arial" size="2" color="#C0C0C0">&quot; ist für
+Testzwecke ausreichend und spart Zeit :D</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt schreiben wir ein einfaches
+Script um unsere Kamera zu Testen. Normalerweise, benutzt man für die
+Icarus-Scripte den &quot;</font><font face="Arial" size="2" color="#FFFFFF">BehavEd</font><font face="Arial" size="2" color="#C0C0C0">&quot;-Editor</font><font face="Arial" size="2" color="#C0C0C0">, nur werden leider gerade die
+Kamera-Befehle dort nicht richtig unterstützt :(</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Wir schreiben unser erstes
+Kamera Script deswegen mit dem &quot;NOTEPAD&quot; :D</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Öffne das Notepad und füge dort
+diesen Text ein:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0"><br>
+</font><font face="Arial" size="2" color="#00FF00">//Generated by BehavEd<br>
+ rem ( "mein erstes Kamera Script" );<br>
+camera ( /*@CAMERA_COMMANDS*/ ENABLE );<br>
+ camera ( /*@CAMERA_COMMANDS*/ MOVE, $tag( &quot;cam1&quot;, ORIGIN)$, 0 );<br>
+ camera ( /*@CAMERA_COMMANDS*/ PAN, $tag( &quot;cam1&quot;, ANGLES)$, &lt; 0.000 0.000 0.000 >, 0 );<br>
+ camera ( /*@CAMERA_COMMANDS*/ ZOOM, 80.000, 0 );<br>
+</font><font face="Arial" size="2" color="#00FF00"> wait ( 5000.000 );</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#00FF00">camera ( /*@CAMERA_COMMANDS*/ DISABLE );<br>
+</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Erklärung der Befehle:</font></p>
+<table border="1" width="100%">
+  <tr>
+    <td width="24%" style="background-color: #000000"><font face="Arial" size="2" color="#FFFFFF">Befehl</font></td>
+    <td width="76%" style="background-color: #000000"><font face="Arial" size="2" color="#FFFFFF">Erklärung</font></td>
+  </tr>
+  <tr>
+    <td width="24%"><font face="Arial" size="2" color="#C0C0C0">rem&nbsp;</font></td>
+    <td width="76%"><font face="Arial" size="2" color="#C0C0C0">Kommentar Zeile</font></td>
+  </tr>
+  <tr>
+    <td width="24%"><font face="Arial" size="2" color="#C0C0C0">camera ENABLE</font></td>
+    <td width="76%"><font face="Arial" size="2" color="#C0C0C0">schaltet den
+      Kamera-Modus ein</font></td>
+  </tr>
+  <tr>
+    <td width="24%"><font face="Arial" size="2" color="#C0C0C0">camera MOVE</font></td>
+    <td width="76%">
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">bewegt
+      die Camera an eine mit &quot;ref_tag&quot; festgelegte Position.&nbsp;</font></p>
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Der
+      erste Parameter ist die Position</font></p>
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">der
+      zweite: die Zeit, welche die Kamera braucht um ihre Position zu erreichen
+      (in Millisekunden, 1000= 1 Sekunde)</font></td>
+  </tr>
+  <tr>
+    <td width="24%"><font face="Arial" size="2" color="#C0C0C0">camera PAN</font></td>
+    <td width="76%">
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">setzt
+      den Kamera-Winkel in eine mit &quot;ref_tag&quot; und &quot;info_not_null&quot;
+      festgelegte Richtung.&nbsp;</font></p>
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Der
+      erste Parameter ist der Winkel</font></p>
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">der
+      zweite: </font><font face="Arial" size="2" color="#FF0000">?</font></p>
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">der
+      dritte: die Zeit, welche die Kamera braucht um ihren Winkel zu erreichen
+      (in Millisekunden, 1000 = 1 Sekunde)</font></td>
+  </tr>
+  <tr>
+    <td width="24%"><font face="Arial" size="2" color="#C0C0C0">camera ZOOM</font></td>
+    <td width="76%">
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Legt
+      den Zoom-Wert fest.&nbsp;</font></p>
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Der
+      erste Parameter ist der Focus. 80 = Standard, Min. = 10 (sehr nah am
+      Objekt), Max. = 120 (weit weg vom Objekt)</font></p>
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">der
+      zweite Parameter: die Zeit, welche die Kamera braucht um den ZOOM zu
+      erreichen (in Millisekunden 1000= 1 Sekunde)</font></td>
+  </tr>
+  <tr>
+    <td width="24%"><font face="Arial" size="2" color="#C0C0C0">WAIT</font></td>
+    <td width="76%">
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">das
+      Script wartet eine angegebene Anzahl von Millisekunden (1000 = 1 Sekunde)</font></td>
+  </tr>
+  <tr>
+    <td width="24%"><font face="Arial" size="2" color="#C0C0C0">camera DISABLE</font></td>
+    <td width="76%">
+      <p style="word-spacing: 0; line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">schaltet
+      den Kamera-Modus wieder aus</font></td>
+  </tr>
+</table>
+<p><font face="Arial" size="2" color="#C0C0C0">Speichere jetzt dieses Script in
+deinen </font><font face="Arial" size="2" color="#00FFFF">base/scripts </font><font face="Arial" size="2" color="#C0C0C0">Ordner
+unter dem Namen &quot;</font><font face="Arial" size="2" color="#00FFFF">camscript1</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">damit
+wir das Script ausprobieren können, muss es zuerst kompiliert werden.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Starte
+jetzt den Behaved-Editor, klicke auf </font><b><font face="Arial" size="2" color="#FFFFFF">&lt;OPEN&gt;</font></b>
+<font face="Arial" size="2" color="#C0C0C0">und lade unser Script &quot;</font><font face="Arial" size="2" color="#00FFFF">camscript.txt</font><font face="Arial" size="2" color="#C0C0C0">&quot;.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Klicke
+dann auf&nbsp; </font><font face="Arial" size="2" color="#FFFFFF"><b>&lt;Compile!&gt;</b></font><font face="Arial" size="2" color="#C0C0C0">.&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Wenn
+du beim Kompilieren eine Fehlermeldung bekommst oder die Kompilierung nicht
+funktioniert, ist dein Behaved-Editor
+wahrscheinlich noch nicht richtig eingerichtet. In diesem Fall schau hier:&nbsp;
+&gt;&gt; </font><a href="../../behaved/behaved.htm"><font face="Arial" size="2">BehavEd
+Konfiguration</font></a><font face="Arial" size="2" color="#C0C0C0"> &lt;&lt;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Wenn das Script richtig
+kompiliert wurde, hast du in deinem </font><font face="Arial" size="2" color="#00FFFF">base/scripts</font><font face="Arial" size="2" color="#C0C0C0">
+Ordner jetzt eine neue Datei mit dem Namen &quot;</font><font face="Arial" size="2" color="#00FFFF">camscript1.ibi</font><font face="Arial" size="2" color="#C0C0C0">&quot;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">Jetzt können wir unser erstes
+Kamera Script ausprobieren.</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">1. Starte Jedi Knight2 im
+Single-Player Modus</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">2. Öffne die Console und gebe
+ein &quot;map camscript1&quot;</font></p>
+<p><font face="Arial" size="2" color="#C0C0C0">3. Nach dem die Map geladen
+wurde, öffne die Console und tippe ein:</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF">HELPUSOBI
+1</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF">RUNSCRIPT
+camscript1</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Wenn
+alles richtig gemacht wurde, haben wir gerade 5 Sekunden im Kamera-Modus erlebt
+:D&nbsp;</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#C0C0C0">Jetzt
+sind wir&nbsp; für unsere &gt;&gt; </font><a href="../cam2/camera2.htm"><font face="Arial" size="2">erste
+Kamera-Fahrt</font></a><font face="Arial" size="2" color="#C0C0C0"> &lt;&lt; </font><font face="Arial" size="2" color="#C0C0C0"> bereit</font><font face="Arial" size="2" color="#C0C0C0">.</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><u><a href="../../downloads/camscript1.zip"><font face="Arial" size="2" color="#FFFF00">DOWNLOAD
+DER TUTORIAL MAP</font></a></u></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" color="#C0C0C0" size="1">(.map
+- Datei und Script-Source enthalten)</font></p>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr>
+<p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font face="Arial" size="2" color="#FFFFFF"><b>TIP:</b></font><font face="Arial" size="2" color="#C0C0C0">
+Wenn JK2 im Camera Modus läuft, funktioniert die &lt;ESC&gt;-Taste nicht. Falls
+dein Script aus irgendeinem Grund im Kamera-Modus hängen bleibt, kommst du
+somit nicht ins JK2-Menü. Um JK2 zu beenden , öffne die Console (das
+funktioniert komischerweise immer) und tippe ein &quot;</font><font face="Arial" size="2" color="#FFFFFF">QUIT</font><font face="Arial" size="2" color="#C0C0C0">&quot;.</font></p>
+
+<hr>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Alle
+  Bilder, Texte, Grafiken, wenn nicht anders gekennzeichnet: </font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">©
+  2000 - 2003 (Artur L.) <a href="http://www.darth-arth.net" target="_blank">www.darth-arth.net</a></font>
+</div>
+<div align="center">
+  <font class="box" face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#008080">Nur
+  zur privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.Net ist ausdrücklich
+  nicht für den Inhalt externer Seiten verantwortlich. Es gelten die
+  angegebenen Nutzungsbedingungen.</font>
+</div>
+
+</body>
+
+</html>

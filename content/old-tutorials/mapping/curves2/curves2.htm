@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049) -->
+<HTML><HEAD><TITLE>Der effiziente Umgang mit Curves und Patches</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="Microsoft FrontPage 4.0" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId></HEAD>
+<BODY bgColor=#333333>
+<P style="MARGIN-TOP: 0pt; MARGIN-BOTTOM: 0pt; WORD-SPACING: 0pt" 
+align=center><B><FONT face=Arial color=#008080 size=5>&gt;&gt; Mapping Academy - 
+Tutorials &lt;&lt;</FONT></B></P>
+<P style="MARGIN-TOP: 0pt; MARGIN-BOTTOM: 0pt; WORD-SPACING: 0pt" 
+align=left>&nbsp;</P>
+<P style="MARGIN-TOP: 0pt; MARGIN-BOTTOM: 0pt; WORD-SPACING: 0pt" 
+align=center><FONT face=Arial color=#808080 size=3>(c) 2004</FONT><FONT 
+face=Arial color=#c0c0c0 size=3>  <a href="http://www.darth-arth.de" target="_blank">http://www.darth-arth.de</a></FONT></P>
+<HR>
+
+<P><FONT face=Arial color=#ffffff size=4>Der effiziente Umgang mit Curves und 
+Patches</FONT></P>
+
+<P><font face="Arial" color="#ffffff" size="4">Autor: Chux ( Mike H.S.)</font></P>
+<P align=left><B><U><FONT face=Arial color=#ffff00 
+size=2>VORAUSSETZUNGEN</FONT></U>:</B></P>
+<P style="MARGIN-TOP: 0pt; MARGIN-BOTTOM: 0pt; WORD-SPACING: 0pt" 
+align=left><FONT face=Arial color=#ffffff size=2>&gt;&gt; Installation JK2 
+Editing Tools I ( <a href="../../radiant/jk2_etools1.htm">Tutorial</a> 
+)&lt;&lt;</FONT></P>
+<P style="MARGIN-TOP: 0pt; MARGIN-BOTTOM: 0pt; WORD-SPACING: 0pt" 
+align=left><FONT face=Arial color=#ffffff size=2>&gt;&gt; Installation JK2 
+Editing Tools 2 ( <a href="../../radiant/jk2_etools2.htm">Tutorial</a> 
+)&lt;&lt;</FONT></P>
+<P style="MARGIN-TOP: 0pt; MARGIN-BOTTOM: 0pt; WORD-SPACING: 0pt" 
+align=left><FONT face=Arial color=#ffffff size=2>&gt;&gt; Installation GTK - 
+Radiant ( <a href="../../gtk14/install/gtk14.html">Tutorial</a> 
+)&lt;&lt;</FONT></P>
+<P style="MARGIN-TOP: 0pt; MARGIN-BOTTOM: 0pt; WORD-SPACING: 0pt" 
+align=left><FONT face=Arial color=#ffffff size=2>&gt;&gt; Mein Erster Raum ( <a href="../firstroom/firstroom.htm">Tutorial</a> 
+)&lt;&lt;</FONT></P>
+<HR>
+
+<P><FONT face=Arial color=#c0c0c0 size=2>In dieser Lehreinheit (Tutorial) wird 
+der effiziente Umgang mit </FONT><FONT face=Arial color=#00ffff size=2>Curves 
+&amp; Patches</FONT><FONT face=Arial color=#c0c0c0 size=2> <FONT face=Arial 
+color=#c0c0c0 size=2>beschrieben.</FONT></FONT></P>
+<HR>
+<FONT color=#ffffff size=3><B>
+<P><A href="#about">Was sind 
+Curves und Patches</A></P>
+<P><A href="#menu">Erklärung 
+der einzelnen Untermenü-Punkte</A><BR>
+<p><A 
+href="#section_cylinder">Der 
+Bereich Cylinder</A><BR><A 
+href="#section_endcap_bevel">Der 
+Bereich End Cap &amp; Bevel</A><BR><A 
+href="#section_cone">Der 
+Bereich Cone</A><BR><A 
+href="#section_simple_patch">Der 
+Bereich Simple Patch</A><BR><A 
+href="#section_columns">Der 
+Bereich Columns</A><BR><A 
+href="#section_matrix">Der 
+Bereich Matrix</A><BR><A 
+href="#section_cap_selection">Der 
+Bereich Cap Selection</A><BR><A 
+href="#section_cycle_cap_texture">Der 
+Bereich Cycle Cap Texture</A><BR><A 
+href="#section_overlay">Der 
+Bereich Overlay</A><BR><A 
+href="#section_thicken">Der 
+Bereich Thicken</A><BR></p>
+<P></P>
+<P><A href="#textures">Die 
+Bearbeitung von Patch-Texturen</A></P>
+<P><A 
+href="#simple_patch_mesh">Ein 
+Simple Patch Mesh</A></P>
+<P><A href="#torbogen">Einen 
+Torbogen erstellen</A></P></B></FONT>
+<HR>
+<A name=about></A>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#ffffff 
+size=3><B>Was sind Curves und Patches</B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Curves sind im Grunde genommen das Selbe wie Patches, sodass ich hier für 
+beide Begriffe zusammen eine Erklärung schreiben werde:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Es handelt sich hierbei um <FONT face=Arial color=#00ffff 
+size=2>editierbare Flächen</FONT>, denen man durch Punktsysteme <FONT face=Arial 
+color=#00ffff size=2>beliebige Formen</FONT> zuweisen kann. Da Curves <FONT 
+face=Arial color=#00ffff size=2>keine Dichte</FONT> oder Dicke haben, muss man 
+aus mehreren Curves eine Simulation eines dreidimensionalen Objektes erstellen. 
+Das bedeutet, dass man z.B. für einen Würfel sechs Curves erstellen müsste, von 
+denen jedes eine Seite darstellen würde.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>In diesem Tutorial werde ich euch erklären, wie genau man effiezient mit 
+Curves arbeitet und selber eigene Formen erstellen kann.</FONT></FONT></P>
+<HR>
+<A name=menu></A><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial 
+color=#ffffff size=3><B>Erklärung der einzelnen 
+Untermenü-Punkte</B></FONT></FONT> <A name=section_cylinder></A>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#ffffff 
+size=2><B>Der Bereich Cylinder</B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Der Bereich <FONT face=Arial color=#00ffff size=2>Cylinder</FONT> im 
+Untermenü <FONT face=Arial color=#00ffff size=2>Curve</FONT> beinhaltet einen 
+Menüpunkt, nämlich <FONT face=Arial color=#00ffff size=2>Cylinder</FONT>, und 
+ein weiteres Untermenü, nämlich <FONT face=Arial color=#00ffff size=2>More 
+Cylinders</FONT>, welches wiederum drei weitere Menüpunkte enthält, nämlich 
+<FONT face=Arial color=#00ffff size=2>Dense Cylinder</FONT>, <FONT face=Arial 
+color=#00ffff size=2>Very Dense Cylinder</FONT> und <FONT face=Arial 
+color=#00ffff size=2>Square Cylinder</FONT>.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff 
+size=2>Cylinder</FONT> macht einen zuvor markierten Brush zu einem zylinderförmigen
+Patch mit drei vertikalen und drei horizontalen 
+Steuerungspunkten.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff size=2>Dense 
+Cylinder</FONT> macht einen zuvor markierten Brush zu einem zylinderförmigen Patch mit fünf vertikalen und drei horizontalen 
+Steuerungspunkten.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff size=2>Very Dense 
+Cylinder</FONT> macht einen zuvor markierten Brush zu einem zylinderförmigen Patch mit neun vertikalen und drei horizontalen 
+Steuerungspunkten.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff size=2>Square 
+Cylinder</FONT> macht einen zuvor markierten Brush zu einem quaderförmigen Patch 
+mit drei vertikalen und drei horizontalen Steuerungspunkten.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Hier noch mal in der Übersicht:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic8.gif"></FONT></P><A 
+name=section_endcap_bevel></A>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#ffffff 
+size=2><B>Der Bereich End Cap &amp; Bevel</B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Der Bereich <FONT face=Arial color=#00ffff size=2>End Cap &amp; 
+Bevel</FONT> im Untermenü <FONT face=Arial color=#00ffff size=2>Curve</FONT> 
+beinhaltet zwei Menüpunkte, nämlich <FONT face=Arial color=#00ffff size=2>End 
+Cap</FONT> und <FONT face=Arial color=#00ffff size=2>Bevel</FONT>, und ein 
+weiteres Untermenü, nämlich <FONT face=Arial color=#00ffff size=2>More End Caps, 
+Bevels</FONT>, welches wiederum zwei weitere Menüpunkte enthält, nämlich <FONT 
+face=Arial color=#00ffff size=2>Square End Cap</FONT> und <FONT face=Arial 
+color=#00ffff size=2>Square Bevel</FONT>.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff size=2>End 
+Cap</FONT> macht einen zuvor markierten Brush zu einem halbkreisförmigen Patch 
+mit drei vertikalen und drei horizontalen Steuerungspunkten - Ende 
+geöffnet.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff 
+size=2>Bevel</FONT> macht einen zuvor markierten Brush zu einem 
+viertelkreisförmigen Patch mit drei vertikalen und drei horizontalen 
+Steuerungspunkten - Ende geöffnet.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff size=2>Square End 
+Cap</FONT> macht einen zuvor markierten Brush zu einem halbkreisförmigen Patch 
+mit drei vertikalen und drei horizontalen Steuerungspunkten - Ende 
+geschlossen.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff size=2>Square 
+Bevel</FONT> macht einen zuvor markierten Brush zu einem viertelkreisförmigen 
+Patch mit drei vertikalen und drei horizontalen Steuerungspunkten - Ende 
+geschlossen.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Hier noch mal in der Übersicht:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic9.gif"></FONT></P><A 
+name=section_cone></A>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#ffffff 
+size=2><B>Der Bereich Cone</B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Der Bereich <FONT face=Arial color=#00ffff size=2>Cone</FONT> im 
+Untermenü <FONT face=Arial color=#00ffff size=2>Curve</FONT> beinhaltet lediglich
+einen Menüpunkt, nämlich <FONT face=Arial color=#00ffff 
+size=2>Cone</FONT>.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff size=2>Cone</FONT> 
+macht einen zuvor markierten Brush zu einem zylinderförmigen Patch mit drei 
+vertikalen und drei horizontalen Steuerungspunkten - nach oben spitz 
+zulaufend.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Hier ein kleines Bild:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic10.gif"></FONT></P><A 
+name=section_simple_patch></A>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#ffffff 
+size=2><B>Der Bereich Simple Patch</B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Der Bereich <FONT face=Arial color=#00ffff size=2>Simple Patch</FONT> im 
+Untermenü <FONT face=Arial color=#00ffff size=2>Curve</FONT> beinhaltet lediglich
+einen Menüpunkt, nämlich <FONT face=Arial color=#00ffff size=2>Simple 
+Patch Mesh...</FONT>.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Klick auf den Punkt <FONT face=Arial color=#00ffff size=2>Simple 
+Patch Mesh...</FONT> macht einen zuvor markierten Brush zu einem 2-dimensionalen 
+Simple Patch (standardmäßig mit drei vertikalen und drei horizontalen 
+Steuerungspunkten, Zeilen und Spalten allerdings 
+konfigurierbar).</FONT></FONT></P><A name=section_columns></A>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#ffffff 
+size=2><B>Der Bereich Columns</B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Der Bereich <FONT face=Arial color=#00ffff size=2>Columns</FONT> 
+beinhaltet zwei Untermenüs, nämlich <FONT face=Arial color=#00ffff 
+size=2>Insert</FONT> und <FONT face=Arial color=#00ffff size=2>Delete</FONT>. 
+Das Untermenü <FONT face=Arial color=#00ffff size=2>Insert</FONT> beinhaltet 
+vier Menüpunkte, nämlich <FONT face=Arial color=#00ffff size=2>Insert (2) 
+Columns</FONT>, <FONT face=Arial color=#00ffff size=2>Add (2) Columns</FONT>, 
+<FONT face=Arial color=#00ffff size=2>Insert (2) Rows</FONT> und <FONT 
+face=Arial color=#00ffff size=2>Add (2) Rows</FONT>. Das Untermenü <FONT 
+face=Arial color=#00ffff size=2>Delete</FONT> beinhaltet vier Menüpunkte, 
+nämlich <FONT face=Arial color=#00ffff size=2>Delete First (2) Columns</FONT>, 
+<FONT face=Arial color=#00ffff size=2>Delete Last (2) Columns</FONT>, <FONT 
+face=Arial color=#00ffff size=2>Delete First (2) Rows</FONT> und <FONT 
+face=Arial color=#00ffff size=2>Delete Last (2) Rows</FONT>.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><B>Insert</B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Insert (2) Columns</FONT> - Fügt 
+eine Spalte an den Anfang (links) des Simple Patches.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Add (2) Columns</FONT> - Fügt eine 
+Spalte ans Ende (rechts) des Simple Patches.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Insert (2) Rows</FONT> - Fügt eine 
+Zeile an den Anfang (oben) des Simple Patches.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Add (2) Rows</FONT> - Fügt eine 
+Zeile ans Ende (unten) des Simple Patches.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><B>Delete</B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Delete First (2) Columns</FONT> - 
+Löscht die Spalte am Anfang (links) des Simple Patches.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Delete Last (2) Columns</FONT> - 
+Löscht die Spalte am Ende (rechts) des Simple Patches.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Delete First (2) Rows</FONT> - 
+Löscht die Zeile am Anfang (oben) des Simple Patches.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Delete Last (2) Rows</FONT> - 
+Löscht die Zeile am Ende (unten) des Simple Patches.</FONT></FONT></P><A 
+name=section_matrix></A>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#ffffff 
+size=2><B>Der Bereich Matrix</B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Der Bereich <FONT face=Arial color=#00ffff size=2>Matrix</FONT> 
+beinhaltet ein Untermenü, nämlich <FONT face=Arial color=#00ffff 
+size=2>Matrix</FONT>. Das Untermenü <FONT face=Arial color=#00ffff 
+size=2>Matrix</FONT> beinhaltet drei Menüpunkte, nämlich <FONT face=Arial 
+color=#00ffff size=2>Invert</FONT>, <FONT face=Arial color=#00ffff 
+size=2>Re-Disperse</FONT> und <FONT face=Arial color=#00ffff 
+size=2>Transpose</FONT>.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Matrix</FONT> - Kehrt die 
+Texturfläche eines Simple Patches, sowie eines Komplex Patches auf die 
+gegenüberliegende Seite.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Der Rest ist erstmal nicht notwendig.<BR></FONT></FONT></P><A 
+name=section_cap_selection></A>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#ffffff 
+size=2><B>Der Bereich Cap Selection<BR></B></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Der Bereich <FONT face=Arial color=#00ffff size=2>Cap Selection</FONT> 
+beinhaltet lediglich einen Menüpunkt, nämlich <FONT face=Arial color=#00ffff 
+size=2>Cap Selection</FONT>.<BR></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#00ffff size=2>Cap Selection 
+</FONT></FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial 
+color=#c0c0c0 size=2>- Bei Cylinder- und Cone-Patches wird automatisch eine Art 
+Deckel oben und unten generiert. Bei Bevels und End Caps erscheint folgendes 
+Fenster:<BR></FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><IMG title="" style="WIDTH: 216px; HEIGHT: 169px" alt="" 
+src="pic11.gif"><BR></FONT></FONT></P>
+<H1><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2><SPAN style="FONT-WEIGHT: normal">Bei einem zuvor markierten <SPAN 
+style="COLOR: rgb(51,255,255)">Bevel</SPAN> wird hier nun entweder der Punkt 
+<SPAN style="COLOR: rgb(51,255,255)">Bevel</SPAN> oder der Punkt <SPAN 
+style="COLOR: rgb(51,255,255)">Inverted Bevel</SPAN> 
+ausgewählt.</SPAN></FONT></FONT></H1><FONT size=+0><FONT size=+0><FONT 
+face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 size=2><SPAN 
+style="FONT-WEIGHT: normal">Bei einem zuvor markierten <SPAN 
+style="COLOR: rgb(51,255,255)">End Cap</SPAN> wird hier nun entweder der Punkt 
+<SPAN style="COLOR: rgb(51,255,255)">End Cap</SPAN> oder der Punkt Inverted 
+<SPAN style="COLOR: rgb(51,255,255)">End Cap</SPAN> ausgewählt.<BR><BR>Wenn man 
+sich das Fenster oben genau ansieht, erkennt man neben den Auswahlpunkten 
+jeweils eine kleine Grafik. Diese zeigt mithilfe des blauen Bereiches, welcher 
+Form der zu generierende Deckel später haben wird. Aber soetwas musst du selber 
+ausprobieren, es lässt sich schwer mit Worten erklären.<BR><A 
+name=section_cycle_cap_texture></A></SPAN></FONT></FONT></FONT></FONT><FONT 
+face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#ffffff size=2><B><BR>Der 
+Bereich Cycle Cap Texture<BR></B></FONT></FONT><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#c0c0c0 size=2><BR>Der Bereich <FONT face=Arial 
+color=#00ffff size=2>Cycle Cap Texture</FONT> beinhaltet lediglich einen 
+Menüpunkt, nämlich <FONT face=Arial color=#00ffff size=2>Cycle Cap 
+Texture</FONT>.</FONT></FONT><BR><BR><FONT face=Arial color=#c0c0c0 size=2><FONT 
+face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#00ffff size=2>Cycle Cap 
+Texture </FONT></FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT 
+face=Arial color=#c0c0c0 size=2>-&nbsp; Verändert die Ausrichtung der Textur 
+eines Patches<BR><BR>Diesen Punkt wirst du wahrscheinlich nicht sehr oft 
+brauchen, daher erkläre ich ihn nicht näher.<BR><BR><A 
+name=section_overlay></A></FONT></FONT><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#ffffff size=2><B>Der Bereich 
+Overlay<BR></B></FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT 
+face=Arial color=#c0c0c0 size=2><BR>Der Bereich <FONT face=Arial color=#00ffff 
+size=2>Overlay</FONT> beinhaltet lediglich ein Untermenü, nämlich <FONT 
+face=Arial color=#00ffff size=2>Overlay</FONT>, mit zwei Untermenüpunkten, 
+nämlich </FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial 
+color=#c0c0c0 size=2><FONT face=Arial color=#00ffff 
+size=2>Set</FONT></FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT 
+face=Arial color=#c0c0c0 size=2> und </FONT></FONT><FONT face=Arial 
+color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial 
+color=#00ffff size=2>Clear</FONT></FONT></FONT><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#c0c0c0 size=2>.<BR><BR>Diese Menüpunkte wirst du 
+genauso kaum benötigen. Deshalb sind sie hier erst mal nicht weiter erklärt.<BR><A 
+name=section_thicken></A></FONT></FONT><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#ffffff size=2><B><BR>Der Bereich 
+Thicken<BR><BR></B></FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT 
+face=Arial color=#c0c0c0 size=2>Der Bereich <FONT face=Arial color=#00ffff 
+size=2>Thicken</FONT> beinhaltet lediglich einen Menüpunkt, nämlich <FONT 
+face=Arial color=#00ffff size=2>Thicken...</FONT>.<BR><BR></FONT></FONT><FONT 
+face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 size=2><FONT 
+face=Arial color=#00ffff size=2>Thicken... </FONT></FONT></FONT><FONT face=Arial 
+color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 size=2>- Ein Klick auf 
+diesen Punkt öffnet folgendes Fenster:<BR><BR><IMG title="" 
+style="WIDTH: 316px; HEIGHT: 140px" alt="" 
+src="pic6.gif"><BR><BR>In 
+dem Eingabefeld </FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT 
+face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#00ffff size=2>Amount 
+</FONT></FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial 
+color=#c0c0c0 size=2>wird ein Wert angegeben. Dieser steht für die Anzahl an 
+Units, die ein Simple Patch, sowie ein Complex Patch nach der Bestätigung 
+"vertieft" wird.<BR><BR>Mit "vertieft" meine ich die Tiefe im 3-dimensionalen 
+Raum.<BR><BR>
+<HR>
+<A name=textures></A></FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT 
+face=Arial color=#ffffff size=3><B>Die Bearbeitung von 
+Patch-Texturen<BR><BR></B></FONT></FONT><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#c0c0c0 size=2>Texturen auf Patches bearbeitet man 
+ähnlich, wie die Texturen auf simplen Brushes - Nur nicht mir dem <SPAN 
+style="COLOR: rgb(51,255,255)">Surface Inspector</SPAN>, sondern mit den <SPAN 
+style="COLOR: rgb(51,255,255)">Patch Properties</SPAN>. Folgendes Fenster wird 
+geöffnet, wenn du die Tastenkombination <SPAN 
+style="COLOR: rgb(51,255,255)">Shift + S</SPAN> drückst. Vorher allerdings 
+solltest du einen Patch markiert haben:<BR><BR><IMG title="" 
+style="WIDTH: 480px; HEIGHT: 287px" alt="" 
+src="pic12.gif"><BR><BR>Wie 
+du siehst, ähnelt dieses Fenster sehr dem Surface Inspector. Auch die Funktionen 
+der Auswahl- und Eingabefelder sind ähnlich:<BR><BR><SPAN 
+style="COLOR: rgb(51,255,255)">Horizontal Shift Step</SPAN> - Bestimmt die 
+horizontale Lage der Textur auf dem Patch.<BR><BR></FONT></FONT><FONT face=Arial 
+color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 size=2><SPAN 
+style="COLOR: rgb(51,255,255)">Vertical Shift Step</SPAN> - Bestimmt die 
+vertikale Lage der Textur auf dem Patch.<BR><BR><SPAN 
+style="COLOR: rgb(51,255,255)">Horizontal Stretch Step</SPAN> - Bestimmt den 
+Grad der horizontalen Verzerrung der Textur auf dem 
+Patch.<BR><BR></FONT></FONT><FONT face=Arial color=#c0c0c0 size=2><FONT 
+face=Arial color=#c0c0c0 size=2><SPAN style="COLOR: rgb(51,255,255)">Vertical 
+Stretch Step</SPAN> - Bestimmt den Grad der vertikalen Verzerrung der Textur auf 
+dem Patch.<BR><BR><SPAN style="COLOR: rgb(51,255,255)">Rotate Step</SPAN> - 
+Bestimmt den Winkel, um den die Textur auf dem Patch gedreht wird.<BR>
+<HR>
+<A name=simple_patch_mesh></A></FONT></FONT><FONT face=Arial color=#c0c0c0 
+size=2><FONT face=Arial color=#ffffff size=3><B><BR>Ein Simple Patch 
+Mesh</B></FONT></FONT> 
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Ein Simple Patch Mesh ist, wie im obigen Kapitel erklärt, eine <FONT 
+face=Arial color=#00ffff size=2>einzelne Patch-Fläche</FONT>, der eine beliebige 
+Form zugewiesen werden kann. Wie man ein Simple Patch Mesh erstellt und es dann 
+editiert, erkläre ich euch jetzt.</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Als erstes erstellt ihr einen einfachen Brush. Markiert den Brush und 
+klickt unter dem Menüpunkt <FONT face=Arial color=#00ffff size=2>Curve</FONT> 
+auf <FONT face=Arial color=#00ffff size=2>Simple Patch 
+Mesh...</FONT>:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic1.gif"></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Dann dürfte sich ein Fenster öffnen, das wie Folgendes 
+aussieht:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic2.gif"></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>In dem Fenster befinden sich zwei Eingabefelder: <FONT face=Arial 
+color=#00ffff size=2>Width</FONT> und <FONT face=Arial color=#00ffff 
+size=2>Height</FONT> - In diese Felder wird die Anzahl der vertikalen und 
+horizontalen Punkte auf dem späteren Curve eingegeben. Momentan befinden sich 
+die Werte <FONT face=Arial color=#00ffff size=2>3</FONT> und <FONT face=Arial 
+color=#00ffff size=2>3</FONT> in den Feldern. Für eine simple Form reichen neun 
+Punkte (3 mal 3) allemal aus. Klicke auf <FONT face=Arial color=#00ffff 
+size=2>Ok</FONT>. Aus deinem ehemaligen Brush sollte nun eine 2-dimensionale 
+Fläche geworden sein, wie das folgende Bild zeigt:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic3.gif"></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Während das Curve noch markiert ist, drücke die Taste <FONT face=Arial 
+color=#00ffff size=2>V</FONT>, um somit die einzelnen Punkte des Curves frei zu 
+legen und das Curve bearbeiten zu können. Das Ergebnis sollte dann so 
+aussehen:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic4.gif"></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Wie du siehst, befinden sich nun in der Vertikalen je drei Punkte, sowie 
+in der Horizontalen je drei Punkte, sodass die Form des Curves insgesamt von 
+neun Punkten gesteuert wird. Klicke nun einen der äußeren Punkte an und 
+verschiebe ihn noch weiter nach außen. Du wirst sehen, dass sich die Form des 
+Curves mit der Position des Punktes verändert. Verschiebe noch ein paar Punkte, 
+sodass irgendwann eine kurvige und egale Form entsteht:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic5.gif"></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Wie unschwer zu erkennen ist, ist das Curve nach wie vor nur 
+2-dimensional. Um das zu ändern, klicke bei markiertem Curve unter dem Menüpunkt 
+<FONT face=Arial color=#00ffff size=2>Curve</FONT> auf <FONT face=Arial 
+color=#00ffff size=2>Thicken</FONT> oder drücke einfach die Tastenkombination 
+<FONT face=Arial color=#00ffff size=2>STRG + T</FONT>. Es sollte sich nun ein 
+Fenster öffnen, das wie Folgendes aussieht:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic6.gif"></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>In dem Fenster befindet sich lediglich ein Eingabefeld. Dieses definiert,
+wie viele Units der simulierte Körper nach dem Klick auf <FONT face=Arial 
+color=#00ffff size=2>Ok</FONT> dick sein soll. Standard-Wert ist hier 8. Da 
+dieser Wert dir fürs Erste wahrscheinlich etwas dünn ist, gib einen beliebigen 
+höheren Wert an. Im Beispiel sind es 300 Units. Klicke nach der Eingabe auf 
+<FONT face=Arial color=#00ffff size=2>Ok</FONT>. Es sollte ungefähr Folgendes in 
+der 3D Anzeige zu sehen sein:</FONT></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><IMG 
+src="pic7.gif"></FONT></P>
+<P><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 
+size=2>Wenn das geklappt hat, ein herzlicher Glückwunsch von mir zu deinem 
+ersten selbst gebauten Curve-Gebilde! Es ist zwar noch sinnlos, aber nun kannst 
+du all deine Ideen und Vorstellungen darauf anwenden!</FONT></FONT></P>
+<HR>
+<A name=torbogen></A><FONT face=Arial color=#c0c0c0 size=2><FONT face=Arial 
+color=#ffffff size=3><B>Einen Torbogen erstellen<BR><BR></B></FONT></FONT><FONT 
+face=Arial color=#c0c0c0 size=2><FONT face=Arial color=#c0c0c0 size=2>In diesem 
+Abschnitt möchte ich erläutern, wie du schnell, einfach und effizient einen 
+Torbogen mit simplen Brushes und einigen Patches erstellen kannst.<BR>Anfänglich 
+benötigen wir ein Grundgerüst für den Torbogen. Es besteht aus drei einfachen 
+Brushes. Es sollte ungefähr wie folgt aussehen:<BR><BR><IMG title="" 
+style="WIDTH: 562px; HEIGHT: 410px" alt="" 
+src="pic13.gif"><BR><BR>Nun 
+erstellst du einen weiteren kleinen Brush, markierst ihn und machst ihn zu einem 
+Bevel, indem du auf <SPAN style="COLOR: rgb(51,255,255)">Curve &gt;&gt; 
+Bevel</SPAN> klickst. Drehe ihn dir zurecht und setze ihn so, dass das Ganze wie 
+folgt aussieht:<BR><BR><IMG title="" style="WIDTH: 557px; HEIGHT: 353px" alt="" 
+src="pic14.gif"><BR><BR>Nun 
+markierst du lediglich den Bevel-Patch und klickst auf <SPAN 
+style="COLOR: rgb(51,255,255)">Curve &gt;&gt; Cap Selection</SPAN>. Es sollte 
+sich nun ein Fenster öffnen, das wie Folgendes aussieht:<BR><BR><IMG title="" 
+style="WIDTH: 216px; HEIGHT: 169px" alt="" 
+src="pic11.gif"><BR><BR>Klicke 
+hier <SPAN style="COLOR: rgb(51,255,255)">Inverted Bevel</SPAN> an und bestätige 
+mit <SPAN style="COLOR: rgb(51,255,255)">Ok</SPAN>. Nun sollte die Lücke 
+zwischen Bevel und Brush-Gerüst-Ecke durch zwei Simple Patches ausgefüllt sein, 
+wie auf dem folgenden Bild zu sehen ist:<BR><BR><IMG title="" 
+style="WIDTH: 557px; HEIGHT: 353px" alt="" 
+src="pic15.gif"><BR><BR>Bearbeite 
+die Textur des Bevels so, dass sie sich mit dem Rest des Torbogens verbindet, 
+kopiere dann das Bevel mit seinen zwei Simple Patches und kopiere es mit der 
+<SPAN style="COLOR: rgb(51,255,255)">Leertaste</SPAN>. Spiegel es, indem du auf 
+folgendes Symbol klickst:<BR><BR><IMG title="" 
+style="WIDTH: 387px; HEIGHT: 204px" alt="" 
+src="pic17.gif"><BR><BR>Nun 
+setze es noch an die entgegengesetzte Stelle und dein Torbogen ist fertig. Das 
+Ergebnis sollte ungefähr so aussehen:<BR><BR><IMG title="" 
+style="WIDTH: 557px; HEIGHT: 353px" alt="" 
+src="pic16.gif"><BR><BR>Herzlichen 
+Glückwunsch zu deinem ersten richtigen Torbogen!</FONT></FONT>
+<p>&nbsp;</p>
+<HR>
+
+<DIV align=center><FONT class=box 
+face="Verdana, Arial, Helvetica, sans-serif" color=#008080 size=1>Alle Bilder, 
+Texte, Grafiken, wenn nicht anders gekennzeichnet: </FONT></DIV>
+<DIV align=center><font class="box" face="Verdana, Arial, Helvetica, sans-serif" color="#008080" size="1">© 2000 -
+  2004</font><FONT class=box 
+face="Verdana, Arial, Helvetica, sans-serif" color=#008080 size=1><FONT face=Arial size=2> 
+(Artur L.)</FONT> <a href="http://www.darth-arth.de">www.darth-arth.de</a></FONT></DIV>
+<DIV align=center><FONT class=box 
+face="Verdana, Arial, Helvetica, sans-serif" color=#008080 size=1><FONT face=Arial size=2>Nur zur 
+privaten Nutzung. Kopieren nicht gestattet. Darth-Arth.</FONT>de<FONT face=Arial size=2> ist ausdrücklich 
+nicht für den Inhalt externer Seiten verantwortlich. Es gelten die angegebenen 
+Nutzungsbedingungen. </FONT></FONT></DIV><FONT face=Arial color=#c0c0c0 
+size=2>&nbsp; </FONT></BODY></HTML>
