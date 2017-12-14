@@ -62,4 +62,4 @@ Next step: writing a Windows Phone client!
 
 ## Addendum:
 
-Remember to restart your taskd server when your certificate changes, or sync will fails once it expires!
+Remember to restart your taskd server when your certificate changes, or sync will fail once it expires!
