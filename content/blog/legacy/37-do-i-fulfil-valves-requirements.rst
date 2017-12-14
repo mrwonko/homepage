@@ -11,7 +11,7 @@ Do I fulfill Valve's requirements?
 Michael Abrash may not have done his post on the things Valve is looking
 for in potential employees yet, but another source came up: Valve's
 `Handbook for new
-employees <http://cdn.flamehaus.com/Valve_Handbook_LowRes.pdf>`__. As
+employees <https://www.unrankedsmurfs.com/images/upload/blog/2017/11/Valve_Handbook.pdf>`__. As
 the title suggests, it's supposed to help new employees understand how
 things work at Valve. That includes tips on how to approach hiring,
 because as always employees are free to do what they feel is best, which
