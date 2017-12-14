@@ -59,3 +59,7 @@ And that's all that's necessary to securely encrypt and authenticate communicati
 So in the end nothing really special was necessary, it was primarily a matter of understanding what exactly all the settings do and that most places that say "cert" or "ca" (singular) actually accept files containing lists/chains, which mostly involved diving through the taskd source code and the gnutls documentation.
 
 Next step: writing a Windows Phone client!
+
+## Addendum:
+
+Remember to restart your taskd server when your certificate changes, or sync will fails once it expires!
