@@ -12,23 +12,23 @@ Here are the notes that I base my [Scrambleshake](https://www.scrambleshake.com/
 * I'm Willi, former future game dev turned web dev
 * sustainable game dev, most important resource is you
 * sleep is foundation
-  * recharges energy, focus
-  * most people need 7-8h
-  * regular hours
-  * get up quickly
-  * it's worth the time
+    * recharges energy, focus
+    * most people need 7-8h
+    * regular hours
+    * get up quickly
+    * it's worth the time
 * diet
-  * drink plenty of water
-  * generally avoid sugary drinks and junk food
-  * consult Zack Arnold for details
+    * drink plenty of water
+    * generally avoid sugary drinks and junk food
+    * consult Zack Arnold for details
 * be active
-  * just walk
-  * option: bodyweight exercises
+    * just walk
+    * option: bodyweight exercises
 * getting there
-  * tiny habits, one step at a time
-  * sleep -> diet -> be active
-  * it takes 2 months to form a habit that sticks
-  * mentors are great
+    * tiny habits, one step at a time
+    * sleep -> diet -> be active
+    * it takes 2 months to form a habit that sticks
+    * mentors are great
 * check out mrwonko.de/scrambleshake for more (hey, you did!)
 
 ## Action Steps
