@@ -7,8 +7,8 @@ tab: home
 
 ```
 Willi Schinmeyer
-Danziger Straße 6
-25421 Pinneberg
+Försterweg 11a
+22525 Hamburg
 Germany
 willi ÄT schinmeyer DOT de
 ```
