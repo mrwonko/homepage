@@ -1,7 +1,7 @@
 Title: Projects plans
 author: mrwonko
 date: 2015-05-15
-tags: Modding, Programming, Spirits of the Sith, 3D-GET, Blender, 7DFPS, Computer Graphics, Jedi Academy: Renaissance, Perseus, Razer Hydra, Stille Tänzer, projects
+tags: Modding, Programming, Spirits of the Sith, 3D-GET, Blender, 7DFPS, Computer Graphics, Jedi Academy: Renaissance, Perseus, Razer Hydra, Stille Tänzer, projects, FlatOut 2
 category: Programming
 type: blog
 summary: I have a lot of projects I'd like to work on, but I can only work on so many at any time. But here's a list of all of them! 
