@@ -4,7 +4,7 @@ date: 2022-12-24 10:46
 tags: Modding, Programming, Blender, projects, FlatOut 2
 category: 
 type: blog
-summary: tbd
+summary: After a years long interlude, I've returned to reverse engineering the FlatOut 2 track format.
 
 It turns out that when you spend 40 hours a week building software for a living, you don't have much energy left to do more of it in your spare time. Figures...
 
