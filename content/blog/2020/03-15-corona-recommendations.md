@@ -1,7 +1,7 @@
 Title: Hello Covid world
 author: mrwonko
 date: 2020-03-15 22:22
-tags: taskwarrior, letsencrypt
+tags: covid
 category: Thoughts
 type: blog
 summary: Hello Corona
