@@ -42,17 +42,17 @@ def update_content( article, content, siteurl ):
         path = self.get_relative_source_path( os.path.join( self.relative_dir, path ) )
     
     # unescape spaces if necessary
-    if path not in self._context[ 'filenames' ]:
+    if path not in self._context[ 'static_content' ]:
         path = path.replace( '%20', ' ' )
 
-        if path not in self._context[ 'filenames' ]:
+        if path not in self._context[ 'static_content' ]:
             logger.warning(
-                "Unable to find `%s`, skipping url replacement.", url,
+                f"Unable to find `{url}`, skipping url replacement.",
                 extra = { 'limit_msg': ( "Other resources were not found and their urls not replaced" ) }
             )
             return content
     
-    linked_content = self._context[ 'filenames' ][ path ]
+    linked_content = self._context[ 'static_content' ][ path ]
     parts = list( parse_result )
     parts[ 2 ] = '/'.join( [ siteurl, linked_content.url ] )
     return urlunparse( parts )

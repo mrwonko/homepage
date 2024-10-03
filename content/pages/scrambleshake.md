@@ -4,6 +4,7 @@ save_as: scrambleshake/index.html
 parent_title: home
 parent_url: index.html
 tab: home
+page-order: 9000
 
 Here are the notes that I base my [Scrambleshake](https://www.scrambleshake.com/) talks on and links for further reading.
 

@@ -195,7 +195,8 @@ def write_articles_and_feeds( article_generator, writer ):
                 article = article,
                 category = article.category,
                 override_output = hasattr( article, 'override_save_as' ),
-                blog = True
+                blog = True,
+                template_name = 'article_template',
             )
         
         #   Article Index, Categories Index, Tags Index
@@ -203,13 +204,15 @@ def write_articles_and_feeds( article_generator, writer ):
             # logger.debug( "* generating {} {} page(s)".format( type, what ) )
             save_as = info.settings[ '{}_save_as'.format( what ) ]
             if save_as:
+                template_name = '{}_title'.format( what )
                 write_file(
                     save_as,
                     self.get_template( info.settings[ '{}_template'.format( what ) ] ),
                     context,
                     blog = True,
                     paginated = paginated if info.settings[ '{}_paginate'.format( what ) ] else {},
-                    page_name = info.settings[ '{}_title'.format( what ) ]
+                    page_name = info.settings[ template_name ],
+                    template_name = template_name,
                 )
         
         #   Categories, Tags
@@ -217,7 +220,8 @@ def write_articles_and_feeds( article_generator, writer ):
             ( "category", info.articles_by_category ),
             ( "tag", info.articles_by_tag )
         ]:
-            template = self.get_template( info.settings[ '{}_template'.format( name ) ] )
+            template_name = '{}_template'.format( name )
+            template = self.get_template( info.settings[ template_name ] )
             paginate = info.settings[ '{}_paginate'.format( name ) ]
             for item, articles in dict.items():
                 dates = [ article for article in info.dates if article in articles ]
@@ -231,6 +235,7 @@ def write_articles_and_feeds( article_generator, writer ):
                     blog = True,
                     page_name = item.page_name,
                     all_articles = info.articles,
+                    template_name = template_name,
                     **{ name : item }
                 )
         
@@ -270,7 +275,8 @@ def write_articles_and_feeds( article_generator, writer ):
             paginated = { 'articles': articles, 'dates': dates } if self.settings.get( 'PAGINATE_AUTHOR_PAGES', True ) else {},
             page_name = author.page_name,
             all_articles = self.mrw_all_articles,
-            articles_by_type = sorted( articles_by_type.items() )
+            articles_by_type = sorted( articles_by_type.items() ),
+            template_name = 'author',
         )
 
 # entry point: define signals to listen to

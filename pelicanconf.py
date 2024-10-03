@@ -28,10 +28,9 @@ STATIC_PATHS = ARTICLE_PATHS + [ "static" ]
 
 DIRECT_TEMPLATES = [
     "index",
-    "authors"
+    "authors",
 ]
-PAGINATED_DIRECT_TEMPLATES = [
-]
+PAGINATED_TEMPLATES = {k: None for k in {'index_title'}}
 
 #   Output Filenames
 
