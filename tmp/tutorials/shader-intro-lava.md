@@ -453,7 +453,7 @@ finden.
 
  
 
-![image]({filename}lava.jpg)
+![image]({static}lava.jpg)
 
  
 
@@ -475,7 +475,7 @@ deine Maps veröffentlichen möchtest !
 
 ----
 
-![image]({filename}lava_map.jpg)
+![image]({static}lava_map.jpg)
 
  
 

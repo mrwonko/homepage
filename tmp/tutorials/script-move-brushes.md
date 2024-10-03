@@ -31,7 +31,7 @@ Dieses Tutorial beschäftigt sich mit dem Bewegen von Brushes mithilfe von Scrip
 
 Damit wir einen Brush via Script bewegen können, müssen wir erstmal einen haben. Also erstellen wir einen kleinen Raum mit einem Lift, der nach oben und dann nach vorne fahren soll, sobald man einen Knopf drückt, und einem Info_player_start:
 
-![image]({filename}images/pic1.jpg)
+![image]({static}images/pic1.jpg)
 
 Damit wir diesen Brush vom Script aus bewegen können, müssen wir ihn in ein Entity tun. Es funktionieren die meisten `func_****`s, aber da wir im Moment keine besonderen Eigenschaften wie z.B. Zerstörbarkeit wollen, nehmen wir einen func_static, der eigentlich nichts tut.
 
@@ -41,7 +41,7 @@ Außerdem brauchen wir noch ref_tag's, das sind die Positionen zu denen der Lift
 
 Der erste kommt an die gleiche Position wie der Origin-Brush des Lifts, der zweite an die Stelle, wo der Lift abbiegen soll, und der dritte an die Endposition des Origin-Brushes:
 
-![image]({filename}images/pic2.jpg)
+![image]({static}images/pic2.jpg)
 
 Falls nötig, könnt ihr den Func_static kopieren, um zu sehen, wo ihr die ref_tags platzieren müsst.
 
@@ -51,7 +51,7 @@ Damit wir die ref_tag's und den func_static vom Script aus auch "ansprechen" kö
 
 Geben wir dem func_static den Namen "Lift" und den drei ref_tag's die Namen "tag_start", "tag_mitte" und "tag_ende":
 
-![image]({filename}images/pic3.jpg)
+![image]({static}images/pic3.jpg)
 
 Wir könnten dem Lift noch ein Soundset geben, z.B. soundset platform.
 
@@ -75,7 +75,7 @@ count - -1 (damit er unendlich (= -1) Mal benutzt werden kann)
 
 usescript - mein_move_script (Das ist das Script, das bei Benutzung ausgeführt wird (ausgehend von "JKA/GameData/Base/Scripts"))
 
-![image]({filename}images/pic4.jpg)
+![image]({static}images/pic4.jpg)
 
 So, jetzt können wir schon kompilieren. "Bsp -meta" reicht, wenn ihr Lichter eingebaut habt, könnt ihr noch "bsp -ligt -fast" dazu nehmen.
 
@@ -87,7 +87,7 @@ Zuerst starten wir BehavEd (habt ihr warscheinlich schon... Ich auch xD).
 
 Das Fenster müsstet ihr ja eigentlich schon aus dem BehavEd Einrichten Tutorial kennen. Hier noch ein kleiner Auffrischungskurs:
 
-![image]({filename}images/pic5.jpg)
+![image]({static}images/pic5.jpg)
 
 Also, dann zieht mal zuerst das Kommando "affect" ins Script. Damit sagen wir, dass das Script nicht auf den Scriptrunner, sondern ein angegebenes Entity ausgeführt wird. Welches, müssen wir jetzt eingeben: Bearbeitet das affect und ersetzt das "DEFAULT" durch ein "lift", da wir ja den Lift (wir erinnern uns: mit dem script_targetname "lift") bewegen wollen.
 
@@ -105,7 +105,7 @@ Den letzten wait können wir löschen, da danach nichts mehr passiert.
 
 Wir müssen aber aufpassen, das die Zeit insgesamt (in meinem Fall 4 + 8 + 4 + 4 = 20) die oben festgelegten 20 Sekunden wait des trigger_multiples nicht überschreitet, und  müssen zur Not die Map anpassen.
 
-![image]({filename}images/pic6.jpg)
+![image]({static}images/pic6.jpg)
 
 Achja: Das rem("comment"); ist ein Kommentar, da können wir z.B. reinschreiben was das Script tut.
 

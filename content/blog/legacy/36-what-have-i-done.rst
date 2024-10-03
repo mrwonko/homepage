@@ -48,7 +48,7 @@ time stamps on the source files are to be trusted. Still, I started
 coding and by February 2006 I had done some of NeHe's tutorials on
 OpenGL and coded my first game, Suckman. It was supposed to be like
 pacman, but I knew it'd suck, hence the name. I actually still have
-`binaries <{filename}Suckman.7z>`__. Hell, after some
+`binaries <{static}Suckman.7z>`__. Hell, after some
 more digging I found out I even still have the source code!
 
 |Screenshot of my first game "Suckman"|
@@ -132,9 +132,9 @@ honorable mention for best use of black and white so a lot of Valve
 employees have already seen one of my works, which is probably a good
 thing.
 
-.. |Screenshot of my first game "Suckman"| image:: {filename}suckman_shot-300x234.jpg
-   :target: {filename}suckman_shot.jpg
-.. |image1| image:: {filename}mrw_playermodel_lol1.jpg
-.. |image2| image:: {filename}mrw_playermodel_lol2.jpg
-.. |image3| image:: {filename}IMG_4045-300x225.jpg
-   :target: {filename}IMG_4045.jpg
+.. |Screenshot of my first game "Suckman"| image:: {static}suckman_shot-300x234.jpg
+   :target: {static}suckman_shot.jpg
+.. |image1| image:: {static}mrw_playermodel_lol1.jpg
+.. |image2| image:: {static}mrw_playermodel_lol2.jpg
+.. |image3| image:: {static}IMG_4045-300x225.jpg
+   :target: {static}IMG_4045.jpg

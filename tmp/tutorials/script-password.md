@@ -29,7 +29,7 @@ In dieser Lehreinheit (Tutorial) Lernen wir, eine Tür mit einem Passworteingabe
 
 Zuerst brauchen wir einen Raum mit einem Info_player_start und unseren Passwort-Knöpfen (Ich hab 1-3 genommen):
 
-![Bild1]({filename}images/pic1.jpg)
+![Bild1]({static}images/pic1.jpg)
 
 Die Knöpfe machen wir dann zu Knopf-Entities unserer Wahl, z.B. func_button's.
 
@@ -37,7 +37,7 @@ Außerdem bekommt jeder Knopf noch einen einen target_scriptrunner als target
 
 (Rechtsklick -> Target_ -> Target_Scriptrunner, dann erst func_button, dann target_scriptrunner anklicken und strg+k)
 
-![Bild2]({filename}images/pic2.jpg)
+![Bild2]({static}images/pic2.jpg)
 
 Nun gehen wir bei den Scriptrunnern in die Entity-Eigenschaften (N) und stellen ein:
 
@@ -77,7 +77,7 @@ Nun gehen wir bei den Scriptrunnern in die Entity-Eigenschaften (N) und stellen 
  </tr>
 </table>
 
-![Bild3]({filename}images/pic3.jpg)
+![Bild3]({static}images/pic3.jpg)
 
 Nun nehmen wir noch einen Brush, der nicht ans Void (das große Grau) grenzt, und machen ihn zu einem Func_Static.
 
@@ -112,7 +112,7 @@ In seinen Eigenschaften (N) stellen wir noch ein:
  </tr>
 </table>
 
-![Bild4]({filename}images/pic4.jpg)
+![Bild4]({static}images/pic4.jpg)
 
 Jetzt brauchen wir noch etwas, das passiert, wenn der Spieler alles richtig gemacht hat.
 
@@ -164,7 +164,7 @@ In das Kommentar am Anfang schreiben wir "Script für Knopf 1".
 
 Dann sprechen wir mit Affect unseren Speicher an:
 
-![Bild5]({filename}images/pic5.jpg)
+![Bild5]({static}images/pic5.jpg)
 
 Spätestens jetzt sollten wir uns eine Kombination ausdenken. Sagen wir mal 1 2 3 3 3, denn 1*2*3=3+3.
 
@@ -172,7 +172,7 @@ Wir benutzen jetzt den "Parm1" Wert unseres Speichers zum Speichern des Fortschr
 
 Wenn der Spieler Knopf 1 drückt, wird Parm1 also auf 1 gesetzt.
 
-![Bild6]({filename}images/pic6.jpg)
+![Bild6]({static}images/pic6.jpg)
 
 Dieses kurze Script speichern wir nun unter "JKA-Verzeichnis/GameData/Base/Scripts/examples/passwort_1" und drücken auf compile.
 
@@ -180,7 +180,7 @@ Bei der Gelegenheit können wir auch gleich unsere Map mit -meta kompilieren und
 
 Ändern wir jetzt unser Script, sodass es wie folgt aussieht:
 
-![Bild7]({filename}images/pic7.jpg)
+![Bild7]({static}images/pic7.jpg)
 
 Das If-Kommando testet, ob eine Bestimmung zutrifft.
 

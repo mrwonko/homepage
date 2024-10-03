@@ -53,7 +53,7 @@ man einen "ref_tag"
 (rechte Maustaste "ref"
 > "ref_tag"). 
 
-![image]({filename}ref_tag.jpg)
+![image]({static}ref_tag.jpg)
 
 Damit wird der Punkt gesetzt, an
 dem sich die Kamera befinden soll. Man muss natürlich mehrere Punkte setzen,
@@ -64,7 +64,7 @@ Die Richtung, in die eine Kamera schauen soll, wird mit "info_notnull"
 festlegt (rechte Maustaste "info"
 > "info_notnull"). 
 
-![image]({filename}info_notnull.jpg)
+![image]({static}info_notnull.jpg)
 
 "info_notnull"-Entity
 wird meistens nur für Ziel-, oder Positionsangaben benötigt.
@@ -72,7 +72,7 @@ wird meistens nur für Ziel-, oder Positionsangaben benötigt.
 Jetzt muss man die beiden
 Entities noch miteinander verbinden. 
 
-![image]({filename}ent_connect_2d.jpg)![image]({filename}ent_connect.jpg)
+![image]({static}ent_connect_2d.jpg)![image]({static}ent_connect.jpg)
 
 Es gibt 2 Möglichkeiten es zu
 tun:
@@ -116,7 +116,7 @@ cam1_r
 
  
 
-![image]({filename}key_target.jpg)
+![image]({static}key_target.jpg)
 
  
 
@@ -140,7 +140,7 @@ cam1_r
 
  
 
-![image]({filename}key_targetname.jpg)
+![image]({static}key_targetname.jpg)
 
 drücke dann **<ENTER>**. 
 
@@ -165,7 +165,7 @@ cam1
 
  
 
-![image]({filename}key_targetname2.jpg)
+![image]({static}key_targetname2.jpg)
 
 Nach dem wir unsere Kamera und
 ihre Richtung festgelegt haben, können wir unsere Test-Map kompilieren. "FastVis

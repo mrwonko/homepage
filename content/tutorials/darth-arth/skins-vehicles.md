@@ -21,7 +21,7 @@ Zuerst braucht ihr das entsprechende Model sowie die zugehörigen .npc und .veh 
 
 In dieser Datei befinden sich u.a. die Ordner `models` und `ext_data`. (Wenn ihr WinZip nutzt, müsst ihr glaube ich erst das Anzeigen von Unterordnern aktivieren - wo das geht, weiß ich allerdings nicht.)
 
-![image]({filename}skins-vehicle/_shot1_c9wf.jpg)
+![image]({static}skins-vehicle/_shot1_c9wf.jpg)
 
 
 
@@ -29,7 +29,7 @@ Nun entpackt ihr den Unterordner <code>models/players/<em>Name des Fahrzeugs</em
 
 Im Beispiel will ich das Swoop verändern:
 
-![image]({filename}skins-vehicle/_shot2_yiht.jpg)
+![image]({static}skins-vehicle/_shot2_yiht.jpg)
 
 (Außerdem entpacke ich noch `ext_data/vehicles/swoop.veh` und `models/players/swoop/`.)
 
@@ -60,7 +60,7 @@ Jetzt benennen wir die Dateien um, da wir ja einen neuen Skin machen wollen, bei
 
 Jetzt malen wir, z.B. mit Gimp, in den Bildern herum. Hier mein Kunstwerk (verkleinerte Version):
 
-![image]({filename}skins-vehicle/_shot3_j9i1.jpg)
+![image]({static}skins-vehicle/_shot3_j9i1.jpg)
 
 Als nächstes öffnen wir `ext_data/npcs/swoop_wonko.npc` (oder wie auch immer es bei euch heißt) mit einem Texteditor unserer Wahl. Die Datei ist möglicherweise schreibgeschützt, macht also vorher einen Rechtsklick auf sie, geht in die Eigenschaften und entfernt das Häkchen bei "schreibgeschützt".
 
@@ -180,14 +180,14 @@ Dann nehmen wir die beiden Ordner `models` und `ext_data` (die jetzt nur unsere 
 
 <div class="alert alert-warning">Im Dialogfeld müssen wir <strong>unbedingt ein Häkchen bei Zip setzen</strong>, denn Jedi Academy kann mit rar Archiven nichts anfangen, und ändern die Endung zu <code>.pk3</code>.</div>
 
-![image]({filename}skins-vehicle/_shot4_ceml.jpg)
+![image]({static}skins-vehicle/_shot4_ceml.jpg)
 
 Dadurch bekommt ihr eine PK3 Datei. Wenn ihr alles richtig gemacht habt, könnt ihr diese nun in <code><em>JKA-Verzeichnis</em>/GameData/Base</code> verschieben und das Fahrzeug im Spiel mit `/npc spawn vehicle swoop_wonko` reincheaten. (Dazu die Karte mit <code>devmap <em>mapname</em></code> starten, also z.B. `devmap mp/ffa1`, und im Einzelspielermodus auch ohne das `/` am Anfang.)
 
-![image]({filename}skins-vehicle/_shot5_mk9x.jpg)
+![image]({static}skins-vehicle/_shot5_mk9x.jpg)
 
 Der Glanz-Effekt des Swoops ist übrigens weg, denn das war ein Shader; Den müssten wir auch kopieren und anpassen, darauf will ich jetzt hier aber nicht weiter eingehen, das würde den Rahmen des Tutorials sprengen.
 
-[Download des Swoops]({filename}examples/swoop_wonko.pk3)
+[Download des Swoops]({static}examples/swoop_wonko.pk3)
 
 Euer Mr. Wonko

@@ -75,7 +75,7 @@ Diese Art von Tür wird über einen Schalter (func_button) geöffnet. Ingame mus
 Wenden wir uns dem eigentlichen Aufbau zu. Als erstes brauchen wir eine einfache Tür, wie sei bei Punkt 1 beschrieben wird. Dann benötigen wir den Schalter. Dazu erstellen wir einen Brush, belegen ihn mit einer Schaltertextur (z.B.
 cairn/door_display) und machen ihn per Entity-Menü (N) zu einem func_button.
 
-![image]({filename}doors/Image1.gif)
+![image]({static}doors/Image1.gif)
 
 Dort stellen wir auch ein, in welche Richtung sich der Button bewegen soll, wenn ein Spieler dagegen läuft. Mit den Angle-Buttons wird die Richtung festgelegt. (Die Richtung bezieht sich auf die 2D-Draufsicht). Dann noch den func_button mit der Tür verknüpfen (STRG + K) und fertig.
 
@@ -83,7 +83,7 @@ Dort stellen wir auch ein, in welche Richtung sich der Button bewegen soll, wenn
 
 TIPP:  Da es etwas seltsam aussieht, wenn sich der Schalter bewegt, kann man einen kleinen Trick anweden. Man erstellt einen normalen Brush, der die Schaltertextur besitzt, und darunter einen kleineren, flachen Brush, der dann die func_button-Funktion übernimmt. Diesen kleineren Brush belegt man dann mit einer unsichtbaren Textur (System/Caulk oder System/Nodraw).
 
-![image]({filename}doors/Image2.gif)
+![image]({static}doors/Image2.gif)
 
 Im Spiel läuft der Spieler dann gegen den unsichtbaren Brush. Dieser bewegt sich, aber weil der unsichtbar ist, sieht man das nicht und meint, man würde gegen den Brush mit der Schaltertextur laufen.
 
@@ -91,7 +91,7 @@ Im Spiel läuft der Spieler dann gegen den unsichtbaren Brush. Dieser bewegt sic
 
 Eine weitere Türart sind Türen, die sich öffnen, sobald man in einem bestimmten Bereich die Benutzen-Taste drückt. Um diese Art Tür zu erstellen benötigen wir eine func_door (wie in Kapitel 1 beschrieben), einen trigger_multiple, und einen Brush mit Schaltertextur(oder etwas ähnliches um den Bereich, in dem man die Benutzen-Taste drücken soll, kennzeichnet).
 
-![image]({filename}doors/Image3.gif)
+![image]({static}doors/Image3.gif)
 
 Als erstes konstruieren wir die func_door, und stellt Angle, Geschwindigkeit usw. ein. Danach sollte ein Blickfang, wie Schalter, Markierung oder ähnliches, erstellt werden, damit der Spieler später weiß, wo er die Benutzen-Taste drücken soll. In diesem Bereich erstellen wir nun einen Brush und geben ihm die triggertextur (system/trigger). Dann öffnen wir das Entity-Menü, und wählen aus der oberen Liste trigger_multiple aus. Im Menü aktivieren wir die Checkbox Use_Button, damit sich die Tür erst öffnet, wenn der Spieler sich im trigger_multiple befindet und die Benutzen-Taste drückt.
 
@@ -101,7 +101,7 @@ Eine Besonderheit sind Kraftfelder. Diese blau leuchtenden Barrieren werde dort 
 
 Als erstes benötigen wir einen geeigneten „Rahmen" für das Kraftfeld, um die Glaubwürdigkeit zu steigern.
 
-![image]({filename}doors/Image4.gif)
+![image]({static}doors/Image4.gif)
 
 Der in diesem Bild verwendete Rahmen besteht aus einfachen Brushes und vier "Endcaps", die innen mit einer Textur belegt sind, die die Kraftfeld-Projektoren darstellen soll.
 
@@ -109,7 +109,7 @@ Als nächstes benötigen wir das Kraftfeld selbst. Dazu erstellen wir einen Brus
 
 Im Menü kann man wählen, on das Kraftfeld beim Spielstart aktiviert ist und auf Knopfdruck ausgeschaltet wird, oder umgekehrt. (start_off).
 
-![image]({filename}doors/Image5.gif)
+![image]({static}doors/Image5.gif)
 
 Um das Kraftfeld realistischer zu gestalten, empfiehlt es sich, target_speaker mit Kraftfeld-Geräusch (zu finden in sound/movers/doors) einsetzt.
 

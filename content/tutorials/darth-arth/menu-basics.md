@@ -31,7 +31,7 @@ Anschließend öffnen wir die `main.menu` Datei mit einem Text-Editor wie Notepa
 
 Wenn ihr sie geöffnet habt, sollte das wie folgt aussehen:
 
-![Die Main.Menu Datei]({filename}menuimages/menu1.jpg)
+![Die Main.Menu Datei]({static}menuimages/menu1.jpg)
 
 Den Abschnitt, der im Bild gezeigt wird, sind die Allgemeinen Optionen des Menüs - die man in jeder anderen Menü Datei auch findet!
 
@@ -55,7 +55,7 @@ Nachfolgend zum "Header" folgt der mit `MENU BACKGROUND` kommentierter Bereich. 
 
 Hier wird schon mehr definiert und es kommen auch gleich ein paar neue Befehle vor. Also auf geht's:
 
-![Die Main.Menu Datei]({filename}menuimages/menu2.jpg)
+![Die Main.Menu Datei]({static}menuimages/menu2.jpg)
 
 Und nun erstmal wieder die Erklärung der (neuen) Befehle:
 
@@ -74,7 +74,7 @@ Mit Buttons kann man in JKA viel erreichen, man kann ein Neues Spiel starten, ma
 
 Hier ein Beispiel: 
 
-![Die Main.Menu Datei]({filename}menuimages/menu3.jpg)
+![Die Main.Menu Datei]({static}menuimages/menu3.jpg)
 
 Danken wir Raven, dass sie auch so schön jeden Block kommentiert haben ;)
 

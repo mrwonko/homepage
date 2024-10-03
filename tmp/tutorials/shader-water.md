@@ -889,7 +889,7 @@ betrifft:
 
  
 
-![image]({filename}water/wasser01.jpg)
+![image]({static}water/wasser01.jpg)
 
  
 
@@ -997,7 +997,7 @@ angepasst und die Unterwasser-Sichtweite geändert:
 
  
 
-![image]({filename}water/wasser02.jpg)
+![image]({static}water/wasser02.jpg)
 
  
 
@@ -1105,7 +1105,7 @@ und die Unterwasser-Sichtweite geändert:
 
  
 
-![image]({filename}water/wasser03.jpg)
+![image]({static}water/wasser03.jpg)
 
  
 
@@ -1210,7 +1210,7 @@ hier noch mal ein paar kleine Änderungen an der Farbe und der Sichtweite
 
  
 
-![image]({filename}water/wasser04.jpg)
+![image]({static}water/wasser04.jpg)
 
  
 
@@ -1367,7 +1367,7 @@ deine Maps veröffentlichen möchtest !
 
 ----
 
-![image]({filename}water/water_test.jpg)
+![image]({static}water/water_test.jpg)
 
  
 

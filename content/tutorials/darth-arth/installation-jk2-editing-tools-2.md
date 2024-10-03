@@ -16,7 +16,7 @@ slug: installation-jk2-editing-tools-2
 
 ## Schritt 1: Die Lizenzvereinbarung
 
-![image]({filename}installation-jk2-editing-tools-2/et2_step1.jpg)
+![image]({static}installation-jk2-editing-tools-2/et2_step1.jpg)
 
 Um die "_Editing Tools 2_" zu installieren, muss man die Lizenzvereinbarung akzeptieren. Um das zu tun, einfach auf `OK` klicken.
 
@@ -24,19 +24,19 @@ Wenn du mit der Lizenzvereinbarung nicht einverstanden bist, klicke auf `Abbrech
 
 ## Schritt 2: Installationspfad
 
-![image]({filename}installation-jk2-editing-tools-2/et2_step2.jpg)
+![image]({static}installation-jk2-editing-tools-2/et2_step2.jpg)
 
 Hier wird ein Standardordner vorgeschlagen. Es ist sehr wichtig, dass du diesen Pfad mit deinem richtigen `Jedi-Outcast/GameData` Installationspfad ersetzst.
 
 Klicke auf  `Browse...` und finde deinen Installationspfad.
 
-![image]({filename}installation-jk2-editing-tools-2/et2_step2.jpg)
+![image]({static}installation-jk2-editing-tools-2/et2_step2.jpg)
 
 <div class="alert alert-warning"><strong>Wichtig</strong>: wähle unbedingt den <code>GameData</code> Ordner!</div>
 
 ## Schritt 3: Die Installation
 
-![image]({filename}installation-jk2-editing-tools-2/et2_step3.jpg)
+![image]({static}installation-jk2-editing-tools-2/et2_step3.jpg)
 
 Nach dem du den richtigen Pfad für die Installation eingestellt hast klicke auf `Unzip` um die "_Editing Tools I_" zu installieren.
 
@@ -44,7 +44,7 @@ Nach dem du den richtigen Pfad für die Installation eingestellt hast klicke auf
 
 Nach dem alle Dateien installiert wurden, erscheint diese Dialogbox:
 
-![image]({filename}installation-jk2-editing-tools-2/et2_step5.jpg)
+![image]({static}installation-jk2-editing-tools-2/et2_step5.jpg)
 
 Klicke auf `OK`, um die Installation abzuschließen.
 

@@ -21,13 +21,13 @@ Man muss noch den speed anpassen, ich fand 50 für runter und 70 für hoch ganz 
 
 Dann werden die Trigger via <kbd>Strg</kbd> + <kbd>K</kbd> (siehe z.B. [Aufzug mit Schalter Tutorial]({filename}entity-lift.md)) mit den entsprechenden `target_push`s verbunden. Den Runter-Trigger kann man ein wenig kleiner machen, sodass er weiter über dem Boden beginnt, damit man am Ende nicht in den Boden gedrückt wird sondern unbeeinflusst steht.
 
-![image]({filename}entity-leitern-mal-anders-1.jpg)
+![image]({static}entity-leitern-mal-anders-1.jpg)
 
 Dann werden die beiden `trigger_multiple` vor die Leiter geschoben und fertig.
 
-![image]({filename}entity-leitern-mal-anders-2.jpg)
+![image]({static}entity-leitern-mal-anders-2.jpg)
 
-[Download der Beispiel Map]({filename}examples/mrw_ladder.zip)
+[Download der Beispiel Map]({static}examples/mrw_ladder.zip)
 
 _Anmerkung_: Die BSP Datei sowie verwendete Texturen in der Beispielmap stammen aus Jedi Academy. Ich weiß nicht, ob dieses Tutorial auf JK2 anwendbar ist, möglicherweise gibt es keinen `target_push`. Im Singleplayer muss man außerdem zuerst hüpfen, damit es aufwärts geht.
 

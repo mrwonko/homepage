@@ -118,13 +118,13 @@ Mit unserer Frage wenden wir uns an die [Suchfunktion](http://www.darth-arth.de/
 
 Es sollte so aussehen:
 
-![image]({filename}suche1.jpg)
+![image]({static}suche1.jpg)
 
 Nehmen wir an, unser Fehler ist "MAX_MAP_FOGS (30)".
 
 Jetzt geben wir ganz einfach in der Leiste "Nach Begriffen suchen" unser Problem ein:
 
-![image]({filename}suche2.jpg)
+![image]({static}suche2.jpg)
 
 Dann klicken auf auf "Suchen" oder drücken einfach "**ENTER**".
 
@@ -149,7 +149,7 @@ Der Name unserer dritten Methode ist:
 Hier benutzt man eigentlich dasselbe Verfahren, wie bei Methode 2 nur das wir
 kein einzelnes Forum, sondern das GANZE Internet durchsuchen.
 
-![image]({filename}suche3.jpg)
+![image]({static}suche3.jpg)
 
 Wir geben wieder unsere Fehlermeldung ein und schauen, was für Ergebnisse rauskommen.
 

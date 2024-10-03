@@ -29,5 +29,5 @@ So long,
 
 Willi
 
-.. |image0| image:: {filename}hd502ij-300x243.png
-   :target: {filename}hd502ij.png
+.. |image0| image:: {static}hd502ij-300x243.png
+   :target: {static}hd502ij.png

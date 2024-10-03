@@ -51,7 +51,7 @@ done with my other current projects, of which there are many.
 
 Willi
 
-.. |The venue where A MAZE took place| image:: {filename}DSC_0004_sm-300x168.jpg
-   :target: {filename}DSC_0004_sm.jpg
-.. |I did better than I do on my phone| image:: {filename}DSC_0037_sm-300x168.jpg
-   :target: {filename}DSC_0037_sm.jpg
+.. |The venue where A MAZE took place| image:: {static}DSC_0004_sm-300x168.jpg
+   :target: {static}DSC_0004_sm.jpg
+.. |I did better than I do on my phone| image:: {static}DSC_0037_sm-300x168.jpg
+   :target: {static}DSC_0037_sm.jpg

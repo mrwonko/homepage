@@ -67,5 +67,5 @@ Merry Christmas.
 
 Willi
 
-.. |image0| image:: {filename}xmas2010_01-300x161.jpg
-   :target: {filename}xmas2010_01.jpg
+.. |image0| image:: {static}xmas2010_01-300x161.jpg
+   :target: {static}xmas2010_01.jpg

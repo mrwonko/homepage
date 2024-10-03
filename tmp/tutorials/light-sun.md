@@ -66,7 +66,7 @@ Unter ambienten Licht versteht
   ihr alle Punktlichter oder sonstige Lichtquellen gelöscht habt. Drückt 
   dafür "L" im GTK, es erscheint folgendes Fenster
 
-![image]({filename}outdoor_light/screens/1.jpg)
+![image]({static}outdoor_light/screens/1.jpg)
 
 Wenn ihr den Eintrag "light" 
   seht, dann müsst ihr das Licht selektieren und anschließend löschen. 
@@ -83,7 +83,7 @@ normalen Brush und drücken die Taste
   "**N**", für das Entity-Fenster.
   
 
-![image]({filename}outdoor_light/screens/2.jpg)
+![image]({static}outdoor_light/screens/2.jpg)
 
 Achtet darauf, dass im oberen 
   Fenster "worldspawn" markiert ist. Jetzt tragt ihr bei
@@ -105,7 +105,7 @@ Der zweite wichtige Aspekt
   Um die Farbe des ambienten Lichtes einzustellen, schließt ihr das Entity-Fenster 
   und drückt danach "**K**".
 
-![image]({filename}outdoor_light/screens/3.jpg)
+![image]({static}outdoor_light/screens/3.jpg)
 
 Mit der Maus könnt 
   ihr nun direkt den kleinen Kreis bewegen um die gewünschte Lichtfarbe einzustellen. 
@@ -116,7 +116,7 @@ Mit der Maus könnt
   Ein Druck auf die "N"-Taste öffnet wieder das bekannte Entity-Fenster 
   und siehe da, der color-Wert hat sich automatisch eingetragen:
 
-![image]({filename}outdoor_light/screens/4.jpg)
+![image]({static}outdoor_light/screens/4.jpg)
 
 Das war schon alles zum
 Thema ambientes Licht.
@@ -260,7 +260,7 @@ Um die neue Shaderdatei
 ** Linke 
   Maustaste** im 3D-Fenster. 
 
-![image]({filename}outdoor_light/screens/5.jpg)
+![image]({static}outdoor_light/screens/5.jpg)
 
 Wenn ihr alle 4 Wände 
   und die Decke markiert habt, öffnet euren Texturen-Ordner und wählt 
@@ -268,7 +268,7 @@ Wenn ihr alle 4 Wände
 sonnenshader 
   verstecken.
 
-![image]({filename}outdoor_light/screens/6.jpg)
+![image]({static}outdoor_light/screens/6.jpg)
 
 Wählt diesen nun aus, 
   und eure Skybox ist nun mit unserem Sonnenshader belegt. 

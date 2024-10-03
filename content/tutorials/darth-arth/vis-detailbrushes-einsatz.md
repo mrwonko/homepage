@@ -28,11 +28,11 @@ Daher sagen wir dem Compiler, dass er bei der Berechnung bitte das Gitter ignori
 
 Hier nochmal ein Beispiel:
 
-![image]({filename}vis-detailbrushes-einsatz-1.jpg)
+![image]({static}vis-detailbrushes-einsatz-1.jpg)
 
 mit ausgeblendeten Details (<kbd>Strg</kbd> + <kbd>D</kbd>):
 
-![image]({filename}vis-detailbrushes-einsatz-2.jpg)
+![image]({static}vis-detailbrushes-einsatz-2.jpg)
 
 Wie man sieht habe ich alles, was nur Verzierung ist und nicht zur grundlegenden Struktur des Raumes gehört, zu Detailbrushes gemacht.
 

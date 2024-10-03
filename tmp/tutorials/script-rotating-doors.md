@@ -95,7 +95,7 @@ dass seine Mitte genau an der Stelle liegt, um die sich die Tür drehen soll (di
 
  
 
-![image]({filename}door1.jpg)
+![image]({static}door1.jpg)
 
  
 
@@ -113,7 +113,7 @@ müsste jetzt classname  func_static stehen. Außerdem sind die beiden brushes n
 
  
 
-![image]({filename}door2.jpg)
+![image]({static}door2.jpg)
 
 **
 
@@ -201,7 +201,7 @@ eingeben.
 
  
 
-![image]({filename}door3.jpg)
+![image]({static}door3.jpg)
 
 - Die Zeilen  task enthalten die Befehle, um die Tür in unserem Fall zu drehen (rotate):  gibt den Vektor, die 1000 die Zeit von 1000 Millisekunden an.     öffnet die Tür um 90° in die andere Richtung.
 
@@ -257,7 +257,7 @@ eigen/tuer_script (die Enter-Taste nicht vergessen!).
  Dann bei "key" count und bei
 "value" -1 eingeben.
 
-![image]({filename}door4.jpg)
+![image]({static}door4.jpg)
 
 Das war's: die map kompilieren und in der Konsole (Shift und 
 ^ gleichzeitig

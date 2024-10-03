@@ -34,7 +34,7 @@ musst mit dem Mauscursor über unter oder rechts oder links neben dem Brush
 seinen und die linke Maustaste gedrückt halten und in die jeweilige Richtung
 (schwarzer Pfeil) ziehen.
 
-![image]({filename}mapping/cylinder-Dateien/image002.jpg)
+![image]({static}mapping/cylinder-Dateien/image002.jpg)
 
  
 
@@ -44,12 +44,12 @@ Um eine Brush zu selektieren musst du die „Shift“ Taste (das
 ist die, die man auch zum großschreiben nimmt) und die linke Maustaste
 gleichzeitig drücken und mit dem Mauscursor auf dem Brush sein.
 
-![image]({filename}mapping/cylinder-Dateien/image004.jpg)Die
+![image]({static}mapping/cylinder-Dateien/image004.jpg)Die
 „Shift“ Taste (gelb markiert)
 
  
 
-**[u]![image]({filename}mapping/cylinder-Dateien/image006.jpg)[/u]**
+**[u]![image]({static}mapping/cylinder-Dateien/image006.jpg)[/u]**
 
  
 
@@ -59,14 +59,14 @@ gleichzeitig drücken und mit dem Mauscursor auf dem Brush sein.
 machst du einfach einen ganz normalen Brush (siehe oben) Dann müsste das so
 aussehen.
 
-![image]({filename}mapping/cylinder-Dateien/image008.jpg)
+![image]({static}mapping/cylinder-Dateien/image008.jpg)
 
  
 
 **2.** Als nächstes selektierst
 (siehe Selektieren) du den Brush und gehst du auf Curve > Cylinder
 
-![image]({filename}mapping/cylinder-Dateien/image010.jpg)
+![image]({static}mapping/cylinder-Dateien/image010.jpg)
 
  
 
@@ -80,7 +80,7 @@ damit den Texturenbrowser, in dem erscheinenden Fenster drückst du auf eine
 Textur und schließt das Fenster wieder, jetzt müsste dein auf deinem Cylinder
 die Textur drauf sein.
 
-![image]({filename}mapping/cylinder-Dateien/image012.jpg)
+![image]({static}mapping/cylinder-Dateien/image012.jpg)
 
 Sollte die Textur verzogen sein dann kannst du das im
 „Surface Inspector“ korrigieren, drücke dazu S und geh im folgendem Fenster auf
@@ -88,7 +88,7 @@ Natural.
 
  
 
-![image]({filename}mapping/cylinder-Dateien/image014.jpg) 
+![image]({static}mapping/cylinder-Dateien/image014.jpg) 
 
 Du kannst auch Fit oder eine der anderen Funktionen
 verwenden es kommt ganz darauf an wie du die Textur auf dem Cylinder haben
@@ -100,7 +100,7 @@ willst.
 Cylinder noch zu bearbeiten selektierst du ihn und drückst anschließend V,
 jetzt müsste das so wie auf dem Bild aussehen.
 
-![image]({filename}mapping/cylinder-Dateien/image016.jpg)
+![image]({static}mapping/cylinder-Dateien/image016.jpg)
 
   
 
@@ -111,14 +111,14 @@ verschiebe ihn/sie mit gedrückter Maustaste.
 
   
 
-![image]({filename}mapping/cylinder-Dateien/image018.jpg)
+![image]({static}mapping/cylinder-Dateien/image018.jpg)
 
 Wiederhole das bei den anderen bis das wie unten auf dem
 Bild gezeigt aussieht.
 
  
 
-![image]({filename}mapping/cylinder-Dateien/image020.jpg)
+![image]({static}mapping/cylinder-Dateien/image020.jpg)
 
 Jetzt fehlen nur noch die Punkte in der Mitte die du auch
 durch verschieben mit gedrückter linker Maustaste dem Cylinderbogen seine runde
@@ -126,7 +126,7 @@ Form geben.
 
  
 
-![image]({filename}mapping/cylinder-Dateien/image022.jpg)
+![image]({static}mapping/cylinder-Dateien/image022.jpg)
 
 Achte dabei darauf wenn du einen 90° knick machen willst das
 die gelben Linien in einem 90° Winkel stehen und gerade sind.

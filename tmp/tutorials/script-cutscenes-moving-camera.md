@@ -127,7 +127,7 @@ trägt und unsere Kamera (ref_tag
 mit dem Namen "cam2")
 in seine Richtung zeigt. 
 
-![image]({filename}2cams.jpg)
+![image]({static}2cams.jpg)
 
 Nach dem wir unsere zweite Kamera und
 ihre Richtung festgelegt haben, können wir unsere zweute Test-Map kompilieren. "FastVis

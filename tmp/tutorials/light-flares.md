@@ -54,7 +54,7 @@ Legen wir los:
   Zuerst brauchst du natürlich einen kleinen Raum. Ich habe einen Testraum 
   erstellt:
 
-![image]({filename}flares/1.jpg)
+![image]({static}flares/1.jpg)
 
 Um nun eine Kristall-Lampe wie in Rift Sanctuary zu bekommen musst du 2x Rechtklick 
   im 2D Fenster machen und folgendes wählen:
@@ -67,7 +67,7 @@ Dann kannst du das Model ausrichten mit "N" und den "key: angle;
 
   Ich habe die Lampe so platziert:
 
-![image]({filename}flares/2.jpg)
+![image]({static}flares/2.jpg)
 
 So, jetzt sollte man natürlich noch das Model mit einem Clip-Brush einpacken, 
   damit man im Spiel nicht hindruchsprigen kann. - Ich überspringe diesen 
@@ -108,12 +108,12 @@ N". Dann öffnet
  In unserem Falle liegt **"textures/flares/flare_crystal"** 
   nahe:
 
-![image]({filename}flares/3.jpg)
+![image]({static}flares/3.jpg)
 
 Jetzt nur noch ein** info_player_start** **einfügen** 
   und **kompilieren** und man erhält folgendes Ergebnis:
 
-![image]({filename}flares/4.jpg)
+![image]({static}flares/4.jpg)
 
 Ich hoffe, dass euch das Tutorial weiterhilft!
 

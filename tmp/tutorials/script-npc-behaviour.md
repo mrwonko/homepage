@@ -31,7 +31,7 @@ Dieses Tutorial beschäftigt sich mit NPC's und damit, wie man sie mit Hilfe von
 
 Zuerst brauchen wir einen Raum mit einem info_player_start einem NPC (Rechtsklick und im Menü auswählen). Ich nehme mal einen npc_stormtrooper.
 
-![image]({filename}images/pic1.jpg)
+![image]({static}images/pic1.jpg)
 
 Als nächstes müssen wir an den Punkten, zu denen der NPC laufen soll, Waypoint_navgoals platzieren. (Rechtsklick->Waypoint_->Waypoint_Navgoal).
 
@@ -39,7 +39,7 @@ Diese Wegpunkte kriegen jetzt noch Namen. Wir klicken sie einen nach dem anderen
 
 -targetname Punkt1 (bzw. Punkt2, Punkt3 usw.)
 
-![image]({filename}images/pic2.jpg)
+![image]({static}images/pic2.jpg)
 
 Zu guter Letzt klicken wir den NPC an, drücken N und geben ein:
 
@@ -51,7 +51,7 @@ Jetzt speichern wir die Map ab und kompilieren sie (bsp -meta).
 
 Nun fehlt nur noch das Script. Öffnen wir zuerst BehavEd. So sieht das aus:
 
-![image]({filename}images/pic3.jpg)
+![image]({static}images/pic3.jpg)
 
 Danach überlegen wir: Was soll der NPC tun?
 
@@ -75,7 +75,7 @@ Da er **immer** im Kreis laufen soll, machen wir anschließend eine Endlosschlei
 
 Das geht mit dem Loop Kommando. Also fügen wir das zu unserem Lift hinzu.
 
-![image]({filename}images/pic4.jpg)
+![image]({static}images/pic4.jpg)
 
 Für eine Endlosschleife müssen wir -1 beim loop eingeben, aber das ist schon standard also öffnen wir gleich den Loop mit Klick auf das +.
 
@@ -87,7 +87,7 @@ Ein Wait Kommando kommt als nächstes. Wir stellen es auf 3000 (Millisekunden = 
 
 Letztendlich kommen noch die restlichen DoWaits.
 
-![image]({filename}images/pic5.jpg)
+![image]({static}images/pic5.jpg)
 
 Jetzt nur noch speichern (unter base/scripts/mein_npc_script1) und kompilieren. Fertig! Wir können testen. Wir starten JKA und geben in die Konsole ein:
 

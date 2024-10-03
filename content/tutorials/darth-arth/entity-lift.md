@@ -13,7 +13,7 @@ Zuerst erstellt ihr einen Brush, der später der Aufzug sein wird.
 
 Ich habe mir das in diesem Beispiel so vorgestellt, das der Lift den Spieler auf eine Art Hochstand im Raum befördert.
 
- ![image]({filename}entity-lift/image001.png)
+ ![image]({static}entity-lift/image001.png)
 
  
 
@@ -21,7 +21,7 @@ Selektiert diesen Brush und macht ihn zu einem `func_door`.
 
 Drückt dazu die <kbd>rechte Maustaste</kbd> in der 2d-Ansicht und wählt `func > func_door`.
 
-![image]({filename}entity-lift/image003.png)
+![image]({static}entity-lift/image003.png)
 
 Nun geht ihr ins Entity-Menü (<kbd>E</kbd> drücken) und gebt den Brush folgende Werte 
 
@@ -47,7 +47,7 @@ Um die Werte abzulesen, drückt ihr die Taste <kbd>Q</kbd> und nun könnt ihr di
 
 In unserem Fall wären das hier 340 Einheiten. Nach dem ablesen löscht ihr den Brush einfach wieder.
 
-![image]({filename}entity-lift/image005.png)
+![image]({static}entity-lift/image005.png)
 
 <pre>Key:      wait
 Value:    4</pre>
@@ -61,7 +61,7 @@ Value:   large_platform</pre>
 
 So, jetzt hätten wir alle Werte für diesen Brush vergeben. Jetzt fehlet noch eine Art Aktivierungs-Schalter für den Lift. Dazu erstellt ihr einen Brush ein kleines bisschen über dem eigentlichen Aufzugsbrush, den wir zuvor erstellt haben. Der neue Brush sollte ungefähr die gleiche Länge und Breite haben wie der Aufzugsbrush . Diesem neuen Brush gebt ihr nun die Textur `system/trigger` und macht ihn zu einem `trigger_multiple` (in 2d-Ansicht <kbd>rechte Maustaste</kbd> > `trigger > trigger_multiple`).
 
-![image]({filename}entity-lift/image007.png)
+![image]({static}entity-lift/image007.png)
 
 Jetzt könnt ihr für den Aktivierungsbrush noch folgende Entity-Angaben verwenden.
 
@@ -78,7 +78,7 @@ Um den Lift, wenn ihr an der oberen Station steht und runter wollt, zu euch hoch
 
 Formt euch einen Brush zurecht, der dann euer Schalter wird, und gebt ihm irgendeine Textur.
 
-![image]({filename}entity-lift/image009.png)
+![image]({static}entity-lift/image009.png)
 
 Nun selektiert den Schalter und gebt ihm die Funktion `func_button` (in der 2d-Ansicht <kbd>rechte Maustaste</kbd> > `func > func_button`). 
 

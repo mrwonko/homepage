@@ -65,7 +65,7 @@ der dann automatisch unsere "Reborn-Schauspieler" erscheinen lässt.
 
  
 
-![image]({filename}npc/cutscenes/Image2.jpg)
+![image]({static}npc/cutscenes/Image2.jpg)
 
  
 
@@ -115,7 +115,7 @@ hergestellt ( info_player_start/target
 
  
 
-![image]({filename}npc/cutscenes/Image4.jpg)
+![image]({static}npc/cutscenes/Image4.jpg)
 
  
 
@@ -184,7 +184,7 @@ usw.).
 
  
 
-![image]({filename}npc/cutscenes/Image12.jpg)
+![image]({static}npc/cutscenes/Image12.jpg)
 
  
 
@@ -212,7 +212,7 @@ setzen.
 
  
 
-![image]({filename}npc/cutscenes/Image14.jpg)
+![image]({static}npc/cutscenes/Image14.jpg)
 
 ----
 
@@ -235,21 +235,21 @@ die jeweils folgende Eigenschaften besitzen:
 Kamera
 1:
 
-![image]({filename}npc/cutscenes/Image6.jpg)
+![image]({static}npc/cutscenes/Image6.jpg)
 
  
 
 Kamera
 2:
 
-![image]({filename}npc/cutscenes/Image8.jpg)
+![image]({static}npc/cutscenes/Image8.jpg)
 
  
 
 Kamera
 3:
 
-![image]({filename}npc/cutscenes/Image10.jpg)
+![image]({static}npc/cutscenes/Image10.jpg)
 
  
 
@@ -270,7 +270,7 @@ Entities, heißen dann jeweils "cam1point",
 
  
 
-![image]({filename}npc/cutscenes/Image18.jpg)
+![image]({static}npc/cutscenes/Image18.jpg)
 
  
 
@@ -296,7 +296,7 @@ Maustaste im 2D-Fenster > waypoint
 
  
 
-![image]({filename}npc/cutscenes/Image16.jpg)
+![image]({static}npc/cutscenes/Image16.jpg)
 
  
 
@@ -396,7 +396,7 @@ kompiliert werden.
 
  
 
-![image]({filename}npc/cutscenes/Image20.jpg)
+![image]({static}npc/cutscenes/Image20.jpg)
 
  
 

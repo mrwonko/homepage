@@ -18,7 +18,7 @@ Here's an explanation of the server settings:
 
 - `server.key`: private key used by server for authentication and encryption. I set this to my letsencrypt `privkey.pem`.
 - `server.cert`: *chain* of certificates used to validate server signature. This file can actually contain multiple certificates, the first one for the server itself, where each one verifies the one before it, all the way up to some root certificate trusted by the client. I set this to my letsencrypt `fullchain.pem`, which contains both my server's certificate and the Let's Encrypt X3 certificate signing it, which in turn is trusted by the DST Root CA the client should be trusting.  
-  ![screenshot of the certificate chain as displayed in my browser]({filename}07-23-certchain.png)
+  ![screenshot of the certificate chain as displayed in my browser]({static}07-23-certchain.png)
 - `server.crl`: Certificate Revocation List. This could presumably be used to reject compromised clients. I left it empty, as I don't currently need it.
 - `client.key` / `client.cert`: here's what the guide says about these:
 

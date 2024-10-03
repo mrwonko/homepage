@@ -58,7 +58,7 @@ Zuerst brauchen
   zuerst eine Außenwand um die spätere Höhe der abgerundeten Ecken 
   zu erhalten. Das erspart uns das Hochziehen auf die richtige Höhe ;)
 
-![image]({filename}rund1.jpg)
+![image]({static}rund1.jpg)
 
 ----
 
@@ -72,7 +72,7 @@ Klickt nun auf **Menu
  
   um aus dem vorhandenen Brush nun eine Rundung / ein  Bevel zu machen.
 
-![image]({filename}rund2.jpg)
+![image]({static}rund2.jpg)
 
 ----
 
@@ -94,7 +94,7 @@ Stellt das  Grid auf 1
   den Bevel nun an. Achtet dabei darauf, dass Ihr direkt an die gerade Wand 
   anschließt (oben und unten versteht sich).
 
-![image]({filename}rund3.jpg)   
+![image]({static}rund3.jpg)   
 
 Außerdem 
   werdet Ihr feststellen das Ihr von der Wölbung nicht viel sieht...
@@ -107,7 +107,7 @@ Klickt auf
   **Curve -> Matrix -> Invert** 
   um die Textur auf die andere Seite des Bevels zu bekommen.
 
-![image]({filename}rund4.jpg)
+![image]({static}rund4.jpg)
 
 Verfahrt 
   so nun mit jeder Ecke des Raumes und markiert anschließend jeden Bevel. 
@@ -119,14 +119,14 @@ Ecken anpassen ;)
  
   Das Ergebnis müsste dann so aussehen ( Habe mal die Decke versteckt ):
 
-![image]({filename}rund5.jpg) 
+![image]({static}rund5.jpg) 
 
 Jetzt wählt 
   noch die Wandtextur aus, die Ihr bereits an der geraden Wand verwendet habt 
   und passt diese noch mit "**shift + s**" 
   der "hinteren Textur" an!
 
-![image]({filename}rund6.jpg) 
+![image]({static}rund6.jpg) 
 
 Somit habt 
   Ihr schonmal **einen** halbwegs runden 
@@ -201,7 +201,7 @@ Ich wollte
 
 </div>
 
-![image]({filename}rund7.jpg)
+![image]({static}rund7.jpg)
 
 Das Einbauen von Fenstern geschieht 
   auch mittels **CSG-Substract**. Wichtig 
@@ -220,7 +220,7 @@ braucht Ihr natürlich keinen
 Auch hier müssen die Fenster 
   an den "geraden" Wänden liegen!
 
-  ![image]({filename}rund8.jpg)
+  ![image]({static}rund8.jpg)
 
 Somit seid Ihr eigentlich schon 
   fertig mit Euren ersten "runden" Räumen incl. Durchgang und Fenster!
@@ -228,11 +228,11 @@ Somit seid Ihr eigentlich schon
 Zur besseren Anschauung nun noch 
   eine Draufsicht:
 
-![image]({filename}rund9.jpg)
+![image]({static}rund9.jpg)
 
  und ein Bild aus dem Spiel:
 
-![image]({filename}ingame.jpg)
+![image]({static}ingame.jpg)
 
 Gruß Bastardo und viel Spaß 
   am Nachbauen!
