@@ -21,7 +21,7 @@ Als erstes rufen wir die `GtkRadiantSetup-1.4.0-raven.exe` (wenn nicht umbenannt
 
 Nach einer kleinen Wartezeit kommt dieser Bildschirm:
 
-![image]({filename}installation-1.4/step1.jpg)
+![image]({static}installation-1.4/step1.jpg)
 
 Wir klicken auf `Next` und stimmen, mit einem klick auf `Yes`, auch den Lizenzvereinbarungen zu.
 
@@ -35,7 +35,7 @@ Dies ist noch ziemlich egal, daher würde ich die Standart Einstellung nehmen. (
 
 <div class="alert alert-warning"><strong>ACHTUNG</strong>: <strong>Nicht</strong> in <code>/GameData</code> oder untergeordnete Ordner installieren!</div>
 
-![image]({filename}installation-1.4/step2.jpg)
+![image]({static}installation-1.4/step2.jpg)
 
 Jetzt wird abgefragt wo Jedi Knight 2 - Jedi Outcast installiert ist.
 
@@ -55,11 +55,11 @@ Danach kommt noch Soldiers of Fortune II - Double Helix, was hier auch ingoriert
 
 Und endlich wird nach *Jedi Knight - Jedi Academy* gefragt!
 
-![image]({filename}installation-1.4/step3.jpg)
+![image]({static}installation-1.4/step3.jpg)
 
 Hier klicken wir auf `Browser...`. Dann erscheint dieses Fenster:
 
-![image]({filename}installation-1.4/step4.jpg)
+![image]({static}installation-1.4/step4.jpg)
 
 Hier müssen wir jedoch etwas einstellen.
 
@@ -71,7 +71,7 @@ in diesem Feld muss man aber angeben, wo sich der richtige Ordner `/GameData` be
 
 <div class="alert alert-warning"><strong>ACHTUNG</strong>: es <em>muss</em> dein richtiger <code>.../GameData</code> Ordner angegeben werden!</div>
 
-![image]({filename}installation-1.4/step5.jpg)
+![image]({static}installation-1.4/step5.jpg)
 
 Jetzt wieder auf `Next` klicken.
 
@@ -102,17 +102,17 @@ Dazu rufen wir den GTK Radiant auf.
 
 In dem kleinen Dialog-Fenster, welches beim aufrufen erscheint, stellen wir folgendes ein:
 
-![image]({filename}installation-1.4/step6.jpg)
+![image]({static}installation-1.4/step6.jpg)
 
 Nach einem klick auf "OK" startet der GTK Radiant. Jetzt sieht das ganze so aus:
 
-![image]({filename}installation-1.4/step7.jpg)
+![image]({static}installation-1.4/step7.jpg)
 
 Um zu testen ob die Installation erfolgreich war klicken wir auf `Menu > Textures`
 
 Danach auf `Desert`
 
-![image]({filename}installation-1.4/step8.jpg)
+![image]({static}installation-1.4/step8.jpg)
 
 (Nicht wundern, wenn bei euch manche Menü-Punkte unter `Textures` nicht so sind wie bei mir. Das kommt durch Custom-Maps wo eigene Texturen dabei sind)
 
@@ -124,7 +124,7 @@ Unten in der Status-Leiste sollten wir das ablesen können:
 
 Wenn jetzt im Texturen-Fenster es so aussieht, dann sollte alles stimmen:
 
-![image]({filename}installation-1.4/step9.jpg)
+![image]({static}installation-1.4/step9.jpg)
 
 Wenn hier etwas nicht stimmt, solltest du noch mal das Tutorial durchgehen und überprüfen, ob du alles richtig gemacht hast.
 

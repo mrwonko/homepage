@@ -432,7 +432,7 @@ NPC_target
 VALUE:
 welle1count
 
- ![image]({filename}npc/waves/Image13.jpg)
+ ![image]({static}npc/waves/Image13.jpg)
 
 Erklärung:
 
@@ -492,7 +492,7 @@ welle0
 
  
 
-![image]({filename}npc/waves/Image14.jpg)
+![image]({static}npc/waves/Image14.jpg)
 
  
 
@@ -520,7 +520,7 @@ startwelle0
 
  
 
-![image]({filename}npc/waves/Image10.jpg)
+![image]({static}npc/waves/Image10.jpg)
 
  
 
@@ -533,7 +533,7 @@ wiederum aktiviert unsere erste Angriffswelle.
 
  
 
-![image]({filename}npc/waves/Image8.jpg)
+![image]({static}npc/waves/Image8.jpg)
 
  
 
@@ -572,7 +572,7 @@ VALUE:
 
  
 
-![image]({filename}npc/waves/Image12.jpg)
+![image]({static}npc/waves/Image12.jpg)
 
  
 
@@ -594,7 +594,7 @@ nächste Angriffs-Welle erscheint.
 
  
 
-![image]({filename}npc/waves/Image3.jpg)
+![image]({static}npc/waves/Image3.jpg)
 
  
 
@@ -675,7 +675,7 @@ VALUE:
 
  
 
-![image]({filename}npc/waves/Image5.jpg)
+![image]({static}npc/waves/Image5.jpg)
 
  
 
@@ -753,7 +753,7 @@ VALUE:
 
  
 
-![image]({filename}npc/waves/Image7.jpg)
+![image]({static}npc/waves/Image7.jpg)
 
  
 
@@ -798,7 +798,7 @@ nicht mehr benötigt, da keine weiteren Angriffswellen vorhanden >
 
  
 
-![image]({filename}npc/waves/Image9.jpg)
+![image]({static}npc/waves/Image9.jpg)
 
  
 

@@ -89,5 +89,5 @@ So long,
 
 Willi
 
-.. |image0| image:: {filename}Klassenfahrt_Amsterdam-027-300x224.jpg
-   :target: {filename}Klassenfahrt_Amsterdam-027.jpg
+.. |image0| image:: {static}Klassenfahrt_Amsterdam-027-300x224.jpg
+   :target: {static}Klassenfahrt_Amsterdam-027.jpg

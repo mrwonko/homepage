@@ -90,7 +90,7 @@ Das "info_player_start"
 sollte sich im ersten Raum befinden, und in den anderen Räumen solltest du
 mindestens 1 Gegner positionieren , wenn möglich in die Nähe einer Tür :D
 
-![image]({filename}Image51.jpg)
+![image]({static}Image51.jpg)
 
 Wenn du fertig bist, speichere
 die Map unter dem Namen: "rooms_noaportals"
@@ -114,7 +114,7 @@ cg_drawfps
 r_showtris
 1
 
-![image]({filename}Image52.jpg)
+![image]({static}Image52.jpg)
 
 Du siehst, die Q3-Engine
 berechnet auch die Räume hinter der geschlossen Tür und die FPS-Rate ist auch
@@ -126,7 +126,7 @@ Türen einzubauen und die Räume durch Area-Portale abzudichten, dann ist so
 eine Map meistens verloren, oder es muss viel Arbeit in den Umbau rein gesteckt
 werden. Hier ist eine große Frust vorprogrammiert.
 
-![image]({filename}Image54.jpg)
+![image]({static}Image54.jpg)
 
 Dann fangen wir doch mal an,
 unsere Räume mit Türen und Area-Portalen abzudichten. Area-Portale sind so was,
@@ -160,7 +160,7 @@ beiden Brushes müssen sich komplett überdecken![/u]
 Das heißt, die Tür und der Area-Portal Brush, sollen exakt die gleiche Größe
 und Position haben.
 
-![image]({filename}Image49.jpg)
+![image]({static}Image49.jpg)
 
 Wiederhole diese Tätigkeit für
 alle anderen Türen, aber nur ein mal pro Gang, denn du musst daran
@@ -170,7 +170,7 @@ man darf nur **max.
 16 Area-Portale** pro Map
 nutzen!
 
-![image]({filename}Image50.jpg)
+![image]({static}Image50.jpg)
 
 Wenn du fertig bist, speichere
 die Map unter einem neuen Namen: "rooms_aportals"
@@ -199,13 +199,13 @@ Area-Portale gut erkennen. Die Q3-Engine berechnet nur den Raum, in dem wir uns
 befinden, die Räume dahinter werden nicht mehr berechnet. Das wirkt sich
 natürlich auch sehr gut auf unsere FPS-Rate.
 
-![image]({filename}Image55.jpg)
+![image]({static}Image55.jpg)
 
 Wirkung des Area-Portals in der
 Tür, **Tür geschlossen: 52
 FPS**
 
-![image]({filename}Image56.jpg)
+![image]({static}Image56.jpg)
 
 Wirkung des Area-Portals in der
 Tür, **Tür offen: 14 FPS**
@@ -233,7 +233,7 @@ P.S. die komische
 Drahtmodel-Sicht kannst du mit "r_showtris
 0" wieder ausschalten.
 
-![image]({filename}Image57.jpg)
+![image]({static}Image57.jpg)
 
 ----
 

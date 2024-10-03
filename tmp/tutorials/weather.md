@@ -40,7 +40,7 @@ Klein)
 Also als erstes brauchen 
 wir einen einfachen Raum.
 
-![image]({filename}Big_Raum.jpg)
+![image]({static}Big_Raum.jpg)
 
  
 
@@ -49,7 +49,7 @@ vorm Regen genutzt
 
  
 
-![image]({filename}RegenSchutz.jpg)
+![image]({static}RegenSchutz.jpg)
 
  
 
@@ -66,7 +66,7 @@ Benutzt.
 
  
 
-![image]({filename}Voll.jpg)
+![image]({static}Voll.jpg)
 
  
 
@@ -96,7 +96,7 @@ da Regen/Schnee reinkommt.
 
  
 
-![image]({filename}Raum.jpg)
+![image]({static}Raum.jpg)
 
  
 
@@ -120,7 +120,7 @@ Ich nehme mals die fx_rain als Vorschau.
 
  
 
-![image]({filename}fx.jpg)
+![image]({static}fx.jpg)
 
  
 
@@ -160,7 +160,7 @@ Erst mal draußen im Regen:
 
  
 
-![image]({filename}shot0002.jpg)
+![image]({static}shot0002.jpg)
 
  
 
@@ -169,7 +169,7 @@ Erst mal draußen im Regen:
 
  
 
-![image]({filename}shot0003.jpg)
+![image]({static}shot0003.jpg)
 
  
 

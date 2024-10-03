@@ -20,7 +20,7 @@ installiert und gestartet habt (siehe [Tutorial: GTK Radiant – Installation]({
 könnt ihr nun in den `Preferences` (<kbd>P</kbd> drücken) den
 Radiant auf eure Wünsche zurechtschneiden.
 
-![image]({filename}radiant-preferences-hotkeys/image001.jpg)
+![image]({static}radiant-preferences-hotkeys/image001.jpg)
 
 -   Game settings: hier müsst ihr das Spiel wählen, für das ihr später mappen wollt.
 -   2D Display/Rendering: Grundeinstellungen so lassen
@@ -28,7 +28,7 @@ Radiant auf eure Wünsche zurechtschneiden.
 -   Texture Settings: Grundeinstellungen so lassen
 -   Layout: hier stellt man die Gliederung der einzelnen Fenster ein.
 
-    Ich persönlich bevorzuge das erste: ![image]({filename}radiant-preferences-hotkeys/image002.gif) mit ihm lässt es sich am besten mappen.
+    Ich persönlich bevorzuge das erste: ![image]({static}radiant-preferences-hotkeys/image002.gif) mit ihm lässt es sich am besten mappen.
     
 -   Mouse: hier darauf achten, dass `3 button` angeklickt ist; vorausgesetzt, man hat eine 3-Tastenmaus :)
 
@@ -46,7 +46,7 @@ Radiant auf eure Wünsche zurechtschneiden.
 
 # Editor
 
-![image]({filename}radiant-preferences-hotkeys/image004.jpg)
+![image]({static}radiant-preferences-hotkeys/image004.jpg)
 
 So sieht das dann aus. 
 
@@ -63,7 +63,7 @@ Noch schnell eine kurze Erläuterung der Oberfläche (siehe Bild):
             <li>von der Seite</li>
             <li>oder von Vorn</li>
         </ul>
-        Die Ansicht wechselt ihr über diesen Button in der Menüleiste: <img alt="image" src="{filename}radiant-preferences-hotkeys/image005.jpg"/>
+        Die Ansicht wechselt ihr über diesen Button in der Menüleiste: <img alt="image" src="{static}radiant-preferences-hotkeys/image005.jpg"/>
     </li>
     <li>Dieses Fenster zeigt die Höhe eurer Brushes; an ich weiß aber nicht was es noch kann, ist auch nicht so wichtig -> könnt ihr getrost ausblenden, um mehr Platz zu schaffen.</li>
     <li>Die Statusleiste zeigt an, was der Editor gerade macht, also welche Befehle er ausführt. (kann auch ausgeblendet werden)</li>
@@ -122,7 +122,7 @@ So jetzt alle, die mit dem Editor zu tun haben samt Erklärung
         <tr><td><kbd>H</kbd></td><td><strong>H</strong>ide-Funktion versteckt alle selektierten Brushes (<kbd>Shift</kbd> + <kbd>H</kbd>: Umkehrung)</td></tr>
         <tr><td><kbd>P</kbd></td><td>öffnet <strong>P</strong>references</td></tr>
         <tr><td><kbd>E</kbd></td><td>markiert alle <strong>E</strong>cken eines Brushes, die man dann individuell verziehen kann (Bauen von Schrägen)
-        <tr><td><kbd>V</kbd></td><td>(funktioniert bei Brushes wie „e“ aber) : bevorzugt bei curves eingesetzt; man erhält ein Gittermodel des selektierten curve (Zylinder, Patch etc.) die entstehenden Punkte lassen sich verziehen, sodass man den Zylinder z.B. in die gewünschte Form bringen kann. Die Buttons in der Menüleiste <img alt="image" src="{filename}radiant-preferences-hotkeys/image006.gif"/> helfen dabei, größere Haufen zu drehen</td></tr>
+        <tr><td><kbd>V</kbd></td><td>(funktioniert bei Brushes wie „e“ aber) : bevorzugt bei curves eingesetzt; man erhält ein Gittermodel des selektierten curve (Zylinder, Patch etc.) die entstehenden Punkte lassen sich verziehen, sodass man den Zylinder z.B. in die gewünschte Form bringen kann. Die Buttons in der Menüleiste <img alt="image" src="{static}radiant-preferences-hotkeys/image006.gif"/> helfen dabei, größere Haufen zu drehen</td></tr>
         <tr><td><kbd>R</kbd></td><td>aktiviert die Free<strong>R</strong>otation-Funktion; mit der kann man Brushes in jede Richtung drehen (nicht zu empfehlen, weil es dadurch zu Verzerrungen der Texturen kommt)</td></tr>
         <tr><td><kbd>J</kbd></td><td>schaltet zwischen 4 Varianten der  Brushmarkierung um:
             <ol>
@@ -170,7 +170,7 @@ es nicht übertreiben (32!), sondern dann lieber Zylinder nehmen!!!)</td></tr>
 
 Jo da haben wir’s – das 3D Fenster das GTK Radiant
 
-![image]({filename}radiant-preferences-hotkeys/image007.jpg)
+![image]({static}radiant-preferences-hotkeys/image007.jpg)
 
 Um sich im 3D Fenster frei
 bewegen zu können, klickt man mit der  RMT in das Fenster; es erscheint ein

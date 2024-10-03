@@ -34,7 +34,7 @@ DER TUTORIAL MAP](downloads/Force.zip)[/u]
 
  
 
-![image]({filename}mp/Forcetricks.jpg)
+![image]({static}mp/Forcetricks.jpg)
 
  
 

@@ -88,13 +88,13 @@ Veränderungen an dem Gelände vornehmen könnt.
 
  
 
-![image]({filename}mapping/gensurf/image001.jpg)
+![image]({static}mapping/gensurf/image001.jpg)
 
  
 
  
 
-![image]({filename}mapping/gensurf/image002.jpg)
+![image]({static}mapping/gensurf/image002.jpg)
 
  
 
@@ -112,7 +112,7 @@ nun auf und wählt eine Pinsel Größe aus (die schwarzen punkte) so nun klickt
 ihr mit einem Linksklick auf das kleine graue Viereck
 
            
-           ![image]({filename}mapping/gensurf/image003.jpg)
+           ![image]({static}mapping/gensurf/image003.jpg)
 
  
 
@@ -199,7 +199,7 @@ enter = Runter
 
  
 
-![image]({filename}mapping/gensurf/image004.jpg)            
+![image]({static}mapping/gensurf/image004.jpg)            
            
 
  
@@ -217,7 +217,7 @@ Ordner.
 
  
 
-![image]({filename}mapping/gensurf/image005.jpg)            
+![image]({static}mapping/gensurf/image005.jpg)            
            
 
  
@@ -260,12 +260,12 @@ verdeckt ist.
 
  
 
-![image]({filename}mapping/gensurf/image006.jpg)           
+![image]({static}mapping/gensurf/image006.jpg)           
 
  
            
 
-![image]({filename}mapping/gensurf/2a.jpg)
+![image]({static}mapping/gensurf/2a.jpg)
 
   
 
@@ -277,7 +277,7 @@ mit gedrückter Maustaste eine Bergkette (oder ähnliches)
 
   
 
-![image]({filename}mapping/gensurf/image007.jpg)            
+![image]({static}mapping/gensurf/image007.jpg)            
            
 
  
@@ -292,7 +292,7 @@ rechten Fenster erkennt man, wie sie sich erheben.
 
  
 
-![image]({filename}mapping/gensurf/image008.jpg)            
+![image]({static}mapping/gensurf/image008.jpg)            
            
 
  
@@ -307,7 +307,7 @@ Danach klicken wir auf
 
  
 
-![image]({filename}mapping/gensurf/image009.jpg)            
+![image]({static}mapping/gensurf/image009.jpg)            
            
 
  
@@ -339,7 +339,7 @@ ist, wie man es haben möchte.
 
                         
 
-![image]({filename}mapping/gensurf/image010.jpg)            
+![image]({static}mapping/gensurf/image010.jpg)            
            
 
  
@@ -349,7 +349,7 @@ Dazu klicken wir auf File / "save as" und speichern die Datei.
 
   
 
-![image]({filename}mapping/gensurf/image011.jpg)            
+![image]({static}mapping/gensurf/image011.jpg)            
            
 
  
@@ -374,7 +374,7 @@ Plugins > Gensurf > Ground Surface…
 
  
 
-![image]({filename}mapping/gensurf/image012.jpg)            
+![image]({static}mapping/gensurf/image012.jpg)            
            
 
  
@@ -387,7 +387,7 @@ benötigen. Wenn ihr das alles verändert habt, klicken wir auf "Extents"
 
  
 
-![image]({filename}mapping/gensurf/image013.jpg)            
+![image]({static}mapping/gensurf/image013.jpg)            
            
 
  
@@ -402,7 +402,7 @@ den Knopf draußen. Nun gehen wir ins Bitmap Menü.
 
  
 
-![image]({filename}mapping/gensurf/image014.jpg)            
+![image]({static}mapping/gensurf/image014.jpg)            
 
  
 
@@ -423,7 +423,7 @@ OK und seid fertig.
 
  
 
-![image]({filename}mapping/gensurf/image015.jpg)
+![image]({static}mapping/gensurf/image015.jpg)
 
  
 
@@ -437,7 +437,7 @@ Bruhes.
 
  
 
-![image]({filename}mapping/gensurf/image016.jpg)![image]({filename}mapping/gensurf/image017.jpg)
+![image]({static}mapping/gensurf/image016.jpg)![image]({static}mapping/gensurf/image017.jpg)
 
  
 
@@ -474,7 +474,7 @@ das Curve-Entity an dieser Stelle ist und löschen es.
 
  
 
-![image]({filename}mapping/gensurf/image018.jpg)
+![image]({static}mapping/gensurf/image018.jpg)
 
  
 
@@ -488,7 +488,7 @@ ohne weiteres als Hausfundament nutzen, Landeplattform usw...
 
  
 
-![image]({filename}mapping/gensurf/image019.jpg)
+![image]({static}mapping/gensurf/image019.jpg)
 
  
 

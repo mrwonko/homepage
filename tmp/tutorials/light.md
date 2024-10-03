@@ -56,14 +56,14 @@ im Editor auf.
 
 **Der sieht jetzt ungefähr so aus:**
 
-![image]({filename}firstroom1.jpg)
+![image]({static}firstroom1.jpg)
 
 Jetzt setzen wir erst einmal unser erstes Licht.
 
 Mit einem Rechtsklick auf das Raster bekommen wir das Entity-Menü und klicken
 "**Light**" an.
 
-![image]({filename}entlight.jpg)
+![image]({static}entlight.jpg)
 
 Auf der Map erscheint jetzt das Light-Entity und eine Box, wo die Stärke des Licht
 abgefragt wird.
@@ -73,7 +73,7 @@ hängt immer von dem Typ eurer Map an. Benutzt ihr sehr helle Texturen, so fäll
 
 Da wir eine große Fläche beleuchten wollen nehmen wir 4 Lichter, mit jeweils der Stärke 500.
 
-![image]({filename}light1.jpg)
+![image]({static}light1.jpg)
 
 Jetzt schieben wir noch die Light-Entities dort hin, wo wir die Quellen des Lichts haben wollen.
 
@@ -84,7 +84,7 @@ Jetzt setzen wir die Kenntnisse aus dem Tutorial "[Kompilieren mit Q3map2](../..
 
 Kompiliert mit genau den selben Einstellungen von Q3map2, wie in den Optionen, dann ergibt es ein für den Anfang gutes Licht.
 
-![image]({filename}ingame1.jpg)
+![image]({static}ingame1.jpg)
 
 Jetzt sehen wir unser erstes Licht im
 Spiel:)
@@ -97,7 +97,7 @@ Realistische Lichtquellen sind oft das Etwas, was eine gute Map ausmacht. Darum 
 
 Dazu löschen wir die Lichter die wir vorher gesetzt haben, und machen eine (simple) Konstruktion, die eine Lampe darstellen soll. Darunter habe ich ein Light-Entity gesetzt, mit der Stärke 300:
 
-![image]({filename}lampe1.jpg)
+![image]({static}lampe1.jpg)
 
 Nachdem wir kompiliert haben, fällt es schon auf:
 
@@ -108,7 +108,7 @@ Jetzt nutzen wir eine Einstellung im "Worldspawn" aus. Im Worldspawn werden Eins
 Um Einstellungen am "Worldspawn" zu machen, klicken wir einen einfachen Wand-,
 Decken- oder Boden-Brush und drücken die Taste "**N"**:
 
-![image]({filename}light4.jpg)
+![image]({static}light4.jpg)
 
 Und zwar tragen wir einen "ambient" - Wert ein. Wir geben folgendes ein:
 
@@ -116,7 +116,7 @@ Und zwar tragen wir einen "ambient" - Wert ein. Wir geben folgendes ein:
 
 **VALUE:** 40
 
-![image]({filename}light5.jpg)
+![image]({static}light5.jpg)
 
 **ACHTUNG:** Ein "ambient"-Wert sollte sehr klein bleiben! 40 ist schon ziemlich hoch. Für eine gut beleuchtete Map sollte ein "ambient"-Wert von 10 reichen, um die schwarzen Flächen, wo kein Licht hinkommt, ein wenig aufzuhellen.
 Es kommt immer auf die Atmosphere und die Art eurer Map an, für helle Outdoor (aussengelände)
@@ -124,7 +124,7 @@ Maps , kann man sehr hohe Ambient-Werte benutzen, wogegen für gut beleuchtete
 Indoor (Innenraum) Maps ein kleiner Wert ausreicht. Meistens heißt es einfach
 "ausprobieren" und den richtigen Wert selbst herausfinden.
 
-![image]({filename}ingame2.jpg)
+![image]({static}ingame2.jpg)
 
 Glückwunsch! Jetzt stehst du in deinem ersten Raum mit realistischer Lichtquelle. (Auf dem Screenshot sieht es etwas dunkel aus, aber im Spiel ist es in Ordnung)
 
@@ -134,7 +134,7 @@ Glückwunsch! Jetzt stehst du in deinem ersten Raum mit realistischer Lichtquell
 
 Jetzt wollen wir nachträglich von dem Light-Entity die Stärke ändern. Aber wir machen kein Neues und löschen das Alte, sondern wählen das Alte einfach an mit **SHIFT** + Anklicken und drücken daraufhin **>N. Das ruft das **Entity-Menü** auf. Das sollte so aussehen:
 
-![image]({filename}light2.jpg)
+![image]({static}light2.jpg)
 
 Nun klicken wir "light 300" an und ändern unten, in den Eingabefeldern folgendes:
 **
@@ -143,7 +143,7 @@ Key: light
 
 Value: 350
 
-![image]({filename}light3.jpg)
+![image]({static}light3.jpg)
 
 Und drücken **>ENTER
 
@@ -163,7 +163,7 @@ Jetzt erscheint ein Menü, in dem man die Farbe wählen kann.
 
 Jetzt stellen wir dort Rot ein.
 
-![image]({filename}light6.jpg)
+![image]({static}light6.jpg)
 
 Jetzt ist nach einem Klick auf "OK" euer Licht rot. Hier kann man natürlich auch alle möglichen Einstellungen vornehmen um Lichter farbig zu machen :)
 

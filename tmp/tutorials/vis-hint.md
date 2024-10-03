@@ -107,16 +107,16 @@ erstellt einen dünnen Brush (aber mindestens 8 Einheiten), der einen Raum
 Wände, Decke und Boden) mindestens mit 8 Einheiten in die anderen Brushes
 einschneiden, siehe Bild unten:
 
-![image]({filename}mapping/hinportals/Image8.jpg)
+![image]({static}mapping/hinportals/Image8.jpg)
 
 Dann belegt man den Brush mit der
-Textur "system/hint".![image]({filename}mapping/hinportals/hint.jpg)
+Textur "system/hint".![image]({static}mapping/hinportals/hint.jpg)
 
 Damit die Hint-Portale ihre
 Funktion erreichen, müssen mehre Hint-Brushe den Raum in viele Abschnitte
 Teilen. 
 
-![image]({filename}mapping/hinportals/Image1_a.jpg)
+![image]({static}mapping/hinportals/Image1_a.jpg)
 
 Die Sichtbarkeit der einzelnen
 Abschnitte entscheidet dann, ob die Hint-Portale funktionieren oder nicht.
@@ -125,7 +125,7 @@ Deswegen sind nur gut verwinkelte
 Bereiche einer Map für die Hint-Portale geeignet, z.B. Korridore, Räume mit
 vielen Winkeln, Cannyons in Außenmaps usw.
 
-![image]({filename}mapping/hinportals/Image1_b.jpg)
+![image]({static}mapping/hinportals/Image1_b.jpg)
 
 Um die richtige Anwendung der
 Hint-Portale zu zeigen, habe ich eine Beispiel-Map gebastelt. Ich habe ein
@@ -133,12 +133,12 @@ herkömmliches Raum-Prefab genommen und diesen 3 mal reingesetzt. Dann habe ich
 die 3 Räume mit 2 Korridoren verbunden, wobei jeder der Durchgänge 2 mal
 abgewinkelt wurde. Siehe auf dem Bild unten:
 
-![image]({filename}mapping/hinportals/Image4.jpg)
+![image]({static}mapping/hinportals/Image4.jpg)
 
 Hier noch mal, die Sicht auf die gesetzten
 Hint-Brushes, im 3D-Fenster:
 
-![image]({filename}mapping/hinportals/Image3.jpg)![image]({filename}mapping/hinportals/Image10.jpg)
+![image]({static}mapping/hinportals/Image3.jpg)![image]({static}mapping/hinportals/Image10.jpg)
 
 ----
 
@@ -152,7 +152,7 @@ kompilierte Map, ohne der gesetzten Hint-Portale.
 Man sieht deutlich, das die
 Engine die komplette Map berechnet.
 
-![image]({filename}mapping/hinportals/hint4.jpg)
+![image]({static}mapping/hinportals/hint4.jpg)
 
 Und so, sieht die Map-Version mit
 den gesetzten Hint-Portalen. 
@@ -161,7 +161,7 @@ Man kann gut erkennen, dass
 obwohl der Raum keine Tür besitzt, nur der Sichtbare Abschnitt der Map, von der
 Q3-Engine, berechnet wird.
 
-![image]({filename}mapping/hinportals/hint3.jpg)
+![image]({static}mapping/hinportals/hint3.jpg)
 
 ----
 
@@ -171,7 +171,7 @@ dargestellt, die Funktionalität der Hint-Portale.
 So sieht es aus, so lange wir um
 dei Ecke bleiben :
 
-![image]({filename}mapping/hinportals/hint1.jpg)
+![image]({static}mapping/hinportals/hint1.jpg)
 
 und so, wenn wir
 weitergehen. 
@@ -180,7 +180,7 @@ Man erkennt ganz gut, wie die
 Hint-Portale ihre Wirkung verlieren, sobald wir durch den unsichtbaren
 Hint-Brush durchgehen.
 
-![image]({filename}mapping/hinportals/hint2.jpg)
+![image]({static}mapping/hinportals/hint2.jpg)
 
 ----
 

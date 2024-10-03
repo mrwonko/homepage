@@ -16,7 +16,7 @@ slug: q3map2
 # Vorbereitung
 
 * Download Q3Map2 (aktuelle Version Teil des [GTK Radiant](http://icculus.org/gtkradiant/downloads.html), ältere Versionen auf der [Q3Map2 Website](http://q3map2.robotrenegade.com/))
-* Download [Q3Map2build]({filename}q3map2/q3map2build_win32.rar)
+* Download [Q3Map2build]({static}q3map2/q3map2build_win32.rar)
 
 Entpacke  Q3Map2build und die
 aktuelle Version von  Q3Map2 in einen Ordner deiner Wahl.
@@ -28,7 +28,7 @@ Starte dann Q3Map2build.
 Als nächstes müssen einige
 Einstellungen festgelegt werden.
 
-![image]({filename}q3map2/Image1.jpg)
+![image]({static}q3map2/Image1.jpg)
 
 Unter `Game executable location` muss der vollständiger Pfad zu der `jk2sp.exe` oder `jk2mp.exe` angegeben werden, ja nach dem, welche Art von Maps du erstellst. Diese Einstellung ist wichtig, falls du deine Map nach dem Kompilieren direkt ausprobieren möchtest.
 
@@ -53,7 +53,7 @@ werden.
 
 Dies ist vor allem bei Fehlersuche sehr wichtig!
 
-![image]({filename}q3map2/Image2.jpg)
+![image]({static}q3map2/Image2.jpg)
 
 Klicke auf `Logging Options`. 
 
@@ -83,7 +83,7 @@ auf `Custom`
 umstellen und überall das Häckchen bei `Pause`
 herausnehmen.
 
-![image]({filename}q3map2/Image3.jpg)
+![image]({static}q3map2/Image3.jpg)
 
 Bei den Einzelnen
 Kompilierschritten sollten die Einstellungen wie folgt aussehen:
@@ -91,19 +91,19 @@ Kompilierschritten sollten die Einstellungen wie folgt aussehen:
 Bei `BSP` bitte `-meta` und `-v`
 einstellen.
 
-![image]({filename}q3map2/Image4.jpg)
+![image]({static}q3map2/Image4.jpg)
 
 Bei `VIS` bitte `-fast`
 und `-v`
 einstellen.
 
-![image]({filename}q3map2/Image5.jpg)
+![image]({static}q3map2/Image5.jpg)
 
 Bei `LIGHT` bitte `-fast`
 und `-v`
 einstellen.
 
-![image]({filename}q3map2/Image6.jpg)
+![image]({static}q3map2/Image6.jpg)
 
 Diese
 Einstellungen entsprechen dem `FastVis
@@ -146,7 +146,7 @@ während des Kompilierens) auf `View`
 klicken und sich den aktuellen Stand der Log-Datei anzeigen lassen (wichtig bei
 Fehlersuche).
 
-![image]({filename}q3map2/Image7.jpg)
+![image]({static}q3map2/Image7.jpg)
 
 <div class="alert alert-warning"><b>Achtung:</b>
 

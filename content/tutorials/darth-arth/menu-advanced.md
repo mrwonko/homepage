@@ -23,7 +23,7 @@ Am Ende dieses Tutorials solltet ihr dann in der Lage sein, ohne Probleme euer e
 
 Die wohl am häufigsten genutzten fortgeschrittenen Befehle sind die on-Befehle. Damit löst man etwas aus, sobald etwas passiert, ähnlich wie bei if. Wer schon Erfahrung mit JavaScript hat, wird sich sicher nicht allzu fremd vorkommen:
 
-![die on-Befehle]({filename}menuimages/menuadvanced1.jpg)
+![die on-Befehle]({static}menuimages/menuadvanced1.jpg)
 
 Hier sieht man einmal alle on-Befehle aufgelistet... und nun die Erklärung.. (Ja ich weiß... aber es geht nicht ohne :P ):
 
@@ -37,7 +37,7 @@ Eigentlich sind die Befehle ja ganz logisch, man muss nur ein bisschen logisch d
 
 Nun zeige ich euch mal ein komplexeres Beispiel dieser on-Befehle:
 
-![die on-Befehle]({filename}menuimages/menuadvanced2.jpg)
+![die on-Befehle]({static}menuimages/menuadvanced2.jpg)
 
 Ich bin sicher, das ihr das meiste schon versteht ;) Jedoch sind wieder ein paar neue Befehle hinzugekommen:
 

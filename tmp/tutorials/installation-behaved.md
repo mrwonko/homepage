@@ -55,7 +55,7 @@ befindet sich in deinem GameData/Tools
 Wenn dein BehavEd nicht richtig
 konfiguriert ist, stehen in dem Status Fenster eine ganze menge Fehler:
 
-![image]({filename}behaved_errors.jpg)
+![image]({static}behaved_errors.jpg)
 
 Diese bedeuten, dass der Editor
 seine Game-Ressoucen nicht finden kann, weil die Pfade nicht richtig eingestellt
@@ -66,12 +66,12 @@ rechten Seite des Editor-Fensters auf "Prefs"
 in dem "Applikation"
 - Bereich:
 
-![image]({filename}behaved_prefs.jpg)
+![image]({static}behaved_prefs.jpg)
 
 Jetzt erscheint das
 Konfigurations-Fenster in dem alle relevanten Pfade angezeigt werden.
 
-![image]({filename}behaved_prefs2.jpg)
+![image]({static}behaved_prefs2.jpg)
 
 Wichtig sind folgende Pfade:
 
@@ -224,7 +224,7 @@ Nach dem du alle Pfade eingestellt hast, klicke auf **<OK>**.
 Wenn alle Angaben richtig
 sind, sollte dann im Status-Fenster folgendes erscheinen:
 
-![image]({filename}behaved_ready.jpg)
+![image]({static}behaved_ready.jpg)
 
 Die eine übrig gebliebene
 Fehlermeldung, kann ignoriert werden...

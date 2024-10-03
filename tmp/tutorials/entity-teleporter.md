@@ -37,7 +37,7 @@ erkläre ich euch, wie ihr einen Teleporter in eure Map setzt.
 Also als erstes brauchen 
 wir einen einfachen Raum.
 
-![image]({filename}Raum.jpg)
+![image]({static}Raum.jpg)
 
  
 
@@ -54,7 +54,7 @@ trigger_teleport". (Der Brush
 
  
 
-![image]({filename}Fenster.jpg)
+![image]({static}Fenster.jpg)
 
  
 
@@ -86,7 +86,7 @@ target_position
 
  
 
-![image]({filename}Fenster2.jpg)
+![image]({static}Fenster2.jpg)
 
  
 
@@ -119,7 +119,7 @@ danach müsstet ihr eine Verbindung zwischen dem Teleporter und dem Zielort sehe
 
  
 
-![image]({filename}verbindung.jpg)
+![image]({static}verbindung.jpg)
 
  
 
@@ -139,11 +139,11 @@ des Teleporters ab.
 
  
 
-![image]({filename}tele1.jpg)
+![image]({static}tele1.jpg)
 
  
 
-![image]({filename}tele2.jpg)
+![image]({static}tele2.jpg)
 
  
 

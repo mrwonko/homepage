@@ -141,7 +141,7 @@ mit drei vertikalen und drei horizontalen Steuerungspunkten.
 
 Hier noch mal in der Übersicht:
 
-![image]({filename}pic8.gif)
+![image]({static}pic8.gif)
 
 **Der Bereich End Cap & Bevel**
 
@@ -173,7 +173,7 @@ geschlossen.
 
 Hier noch mal in der Übersicht:
 
-![image]({filename}pic9.gif)
+![image]({static}pic9.gif)
 
 **Der Bereich Cone**
 
@@ -188,7 +188,7 @@ zulaufend.
 
 Hier ein kleines Bild:
 
-![image]({filename}pic10.gif)
+![image]({static}pic10.gif)
 
 **Der Bereich Simple Patch**
 
@@ -265,7 +265,7 @@ Cap Selection
 Deckel oben und unten generiert. Bei Bevels und End Caps erscheint folgendes 
 Fenster:
 
-![]({filename}pic11.gif)
+![]({static}pic11.gif)
 
 #Bei einem zuvor markierten [color=rgb(51,255,255)]Bevel[/color] wird hier nun entweder der Punkt 
 [color=rgb(51,255,255)]Bevel[/color] oder der Punkt [color=rgb(51,255,255)]Inverted Bevel[/color] 
@@ -318,7 +318,7 @@ Thicken
 Thicken... - Ein Klick auf 
 diesen Punkt öffnet folgendes Fenster:
 
-![]({filename}pic6.gif)
+![]({static}pic6.gif)
 
 In 
 dem Eingabefeld Amount 
@@ -339,7 +339,7 @@ Patch-Texturen
 geöffnet, wenn du die Tastenkombination [color=rgb(51,255,255)]Shift + S[/color] drückst. Vorher allerdings 
 solltest du einen Patch markiert haben:
 
-![]({filename}pic12.gif)
+![]({static}pic12.gif)
 
 Wie 
 du siehst, ähnelt dieses Fenster sehr dem Surface Inspector. Auch die Funktionen 
@@ -378,12 +378,12 @@ klickt unter dem Menüpunkt Curve
 auf Simple Patch 
 Mesh...:
 
-![image]({filename}pic1.gif)
+![image]({static}pic1.gif)
 
 Dann dürfte sich ein Fenster öffnen, das wie Folgendes 
 aussieht:
 
-![image]({filename}pic2.gif)
+![image]({static}pic2.gif)
 
 In dem Fenster befinden sich zwei Eingabefelder: Width und Height - In diese Felder wird die Anzahl der vertikalen und 
 horizontalen Punkte auf dem späteren Curve eingegeben. Momentan befinden sich 
@@ -391,13 +391,13 @@ die Werte 3 und 3 in den Feldern. Für eine simple Form reichen neun
 Punkte (3 mal 3) allemal aus. Klicke auf Ok. Aus deinem ehemaligen Brush sollte nun eine 2-dimensionale 
 Fläche geworden sein, wie das folgende Bild zeigt:
 
-![image]({filename}pic3.gif)
+![image]({static}pic3.gif)
 
 Während das Curve noch markiert ist, drücke die Taste V, um somit die einzelnen Punkte des Curves frei zu 
 legen und das Curve bearbeiten zu können. Das Ergebnis sollte dann so 
 aussehen:
 
-![image]({filename}pic4.gif)
+![image]({static}pic4.gif)
 
 Wie du siehst, befinden sich nun in der Vertikalen je drei Punkte, sowie 
 in der Horizontalen je drei Punkte, sodass die Form des Curves insgesamt von 
@@ -406,7 +406,7 @@ verschiebe ihn noch weiter nach außen. Du wirst sehen, dass sich die Form des
 Curves mit der Position des Punktes verändert. Verschiebe noch ein paar Punkte, 
 sodass irgendwann eine kurvige und egale Form entsteht:
 
-![image]({filename}pic5.gif)
+![image]({static}pic5.gif)
 
 Wie unschwer zu erkennen ist, ist das Curve nach wie vor nur 
 2-dimensional. Um das zu ändern, klicke bei markiertem Curve unter dem Menüpunkt 
@@ -414,7 +414,7 @@ Curve auf Thicken oder drücke einfach die Tastenkombination
 STRG + T. Es sollte sich nun ein 
 Fenster öffnen, das wie Folgendes aussieht:
 
-![image]({filename}pic6.gif)
+![image]({static}pic6.gif)
 
 In dem Fenster befindet sich lediglich ein Eingabefeld. Dieses definiert,
 wie viele Units der simulierte Körper nach dem Klick auf Ok dick sein soll. Standard-Wert ist hier 8. Da 
@@ -423,7 +423,7 @@ höheren Wert an. Im Beispiel sind es 300 Units. Klicke nach der Eingabe auf
 Ok. Es sollte ungefähr Folgendes in 
 der 3D Anzeige zu sehen sein:
 
-![image]({filename}pic7.gif)
+![image]({static}pic7.gif)
 
 Wenn das geklappt hat, ein herzlicher Glückwunsch von mir zu deinem 
 ersten selbst gebauten Curve-Gebilde! Es ist zwar noch sinnlos, aber nun kannst 
@@ -441,7 +441,7 @@ Anfänglich
 benötigen wir ein Grundgerüst für den Torbogen. Es besteht aus drei einfachen 
 Brushes. Es sollte ungefähr wie folgt aussehen:
 
-![]({filename}pic13.gif)
+![]({static}pic13.gif)
 
 Nun 
 erstellst du einen weiteren kleinen Brush, markierst ihn und machst ihn zu einem 
@@ -449,13 +449,13 @@ Bevel, indem du auf [color=rgb(51,255,255)]Curve >>
 Bevel[/color] klickst. Drehe ihn dir zurecht und setze ihn so, dass das Ganze wie 
 folgt aussieht:
 
-![]({filename}pic14.gif)
+![]({static}pic14.gif)
 
 Nun 
 markierst du lediglich den Bevel-Patch und klickst auf [color=rgb(51,255,255)]Curve >> Cap Selection[/color]. Es sollte 
 sich nun ein Fenster öffnen, das wie Folgendes aussieht:
 
-![]({filename}pic11.gif)
+![]({static}pic11.gif)
 
 Klicke 
 hier [color=rgb(51,255,255)]Inverted Bevel[/color] an und bestätige 
@@ -463,7 +463,7 @@ mit [color=rgb(51,255,255)]Ok[/color]. Nun sollte die Lücke
 zwischen Bevel und Brush-Gerüst-Ecke durch zwei Simple Patches ausgefüllt sein, 
 wie auf dem folgenden Bild zu sehen ist:
 
-![]({filename}pic15.gif)
+![]({static}pic15.gif)
 
 Bearbeite 
 die Textur des Bevels so, dass sie sich mit dem Rest des Torbogens verbindet, 
@@ -471,13 +471,13 @@ kopiere dann das Bevel mit seinen zwei Simple Patches und kopiere es mit der
 [color=rgb(51,255,255)]Leertaste[/color]. Spiegel es, indem du auf 
 folgendes Symbol klickst:
 
-![]({filename}pic17.gif)
+![]({static}pic17.gif)
 
 Nun 
 setze es noch an die entgegengesetzte Stelle und dein Torbogen ist fertig. Das 
 Ergebnis sollte ungefähr so aussehen:
 
-![]({filename}pic16.gif)
+![]({static}pic16.gif)
 
 Herzlichen 
 Glückwunsch zu deinem ersten richtigen Torbogen!

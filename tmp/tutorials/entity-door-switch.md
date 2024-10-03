@@ -25,7 +25,7 @@ mit Schalter by TheDark-Jedi (Johannes B.)
 
  
 
-![image]({filename}mapping/door/door_button.jpg)
+![image]({static}mapping/door/door_button.jpg)
 
  
 

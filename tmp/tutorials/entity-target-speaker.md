@@ -197,7 +197,7 @@ eine Ecke geht.
 Herzlichen
 Glückwunsch !!
 
-![image]({filename}shot0150.jpg)
+![image]({static}shot0150.jpg)
 
 Es gibt jedoch noch eine
 zweite Möglichkeit, den 
@@ -300,7 +300,7 @@ befolgt hast, wirst du einen Single Player Sound hören, wenn du
 vor dem Schalter den 
 [u]**'' Use-Button '' **[/u]drückst.  
 
-![image]({filename}shot0148.jpg)
+![image]({static}shot0148.jpg)
 
 Zum Spielen der Map, startet JK2-MP oder SP
 und öffnet die Console. Schreibt dort ''

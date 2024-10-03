@@ -65,14 +65,14 @@ Also, nachdem ihr den Radiant gestartet habt, geht's
 gedrückt und geht mit der Maus 
                   in eine Richtung; ein Brush wird gezogen. 
 
-![image]({filename}first_room_1.jpg) 
+![image]({static}first_room_1.jpg) 
 
 Nach 
                   diesem Muster fertigt ihr nun so viele Bruhes an, bis sie 
                   einen Raum ergeben, dass sollte dann ungefähr so aussehen: 
                   
 
-![image]({filename}first_room_2.jpg)
+![image]({static}first_room_2.jpg)
 
 Wichtig ist dabei, dass sich die Brushes nicht überschneiden, also 
                   sollten nur dort Brushes sein, wo der Spieler sie auch sieht 
@@ -86,7 +86,7 @@ einen solchen bekommt, drückt ihr
                   im 2D Fenster mit der rechten Maustaste, dann geht ihr auf
 "info", dort auf "info_player_start". 
 
-![image]({filename}first_room_3.jpg) 
+![image]({static}first_room_3.jpg) 
 
 Nun 
                   solltet ihr einen roten Klotz sehen, er ist so groß, wie der 
@@ -114,7 +114,7 @@ erscheint ein
 
 könnt ihr dem Brush die gewünschte Textur geben. Das ganze sollte nun etwa so aussehen: 
 
-![image]({filename}first_room_4.jpg) 
+![image]({static}first_room_4.jpg) 
 
 Dann 
                   speichert ihr die Map in deinem  Gamedata/Base
@@ -136,7 +136,7 @@ die Map, dass heisst,
 berechnet die Map ohne  Licht!, da es nur zum
 testen gedacht ist.) 
 
-![image]({filename}first_room_5.jpg)
+![image]({static}first_room_5.jpg)
 
 Sobald es fertig ist, findet ihr in eurem
  maps Ordner 
@@ -181,7 +181,7 @@ Zuerst macht ihr einen Brush/Raum und
                   belegt ihn mit der Caulk Texur, zu finden in ** system/caulk**. Das 
                   ganze sollte dann so aussehen: 
 
-![image]({filename}caulken1.jpg) 
+![image]({static}caulken1.jpg) 
 
 Danach 
                   drückt ihr "ESC" (Ihr deselektiert den Brush). Nun müsst ihr 
@@ -191,7 +191,7 @@ Danach
 den Brush mit "Shift + CTRL +linke Maustaste". Nun 
                   gebt ihr der Brushseite die gewünschte Textur. 
 
-![image]({filename}caulken2.jpg) 
+![image]({static}caulken2.jpg) 
 
 So, 
                   fertig. Vergesst nicht, dies bei jedem Brush eurer Map zu 
@@ -340,13 +340,13 @@ Brush verträgt, könnt ihr wie folgt einstellen: Brush
                   Das heisst, der Brush geht 
 
 kaputt, nachdem man ihm 50 
-                  Schadenspunkte zugefügt hat ![icon_wink.gif]({filename}icon_wink.gif) Man kann auch 
+                  Schadenspunkte zugefügt hat ![icon_wink.gif]({static}icon_wink.gif) Man kann auch 
                   das Material des zerstörbaren Brushes angeben, "KEY material" 
                   
 
 "VALUE: 1-9" (Die Bedeutungen stehen oberhalb des 
                   Kästchens, für weitere Bedetungen dieser console, schaut ihr 
-                  ins entprechende Tut ![icon_wink.gif]({filename}icon_wink.gif)). 
+                  ins entprechende Tut ![icon_wink.gif]({static}icon_wink.gif)). 
                   
 
 ----
@@ -369,7 +369,7 @@ K**". Das war's dann, jetzt
 
 sein. 
 
-![image]({filename}func_button1.jpg) 
+![image]({static}func_button1.jpg) 
 
 So, ihr könnt dem Schalter nun noch eine 
                   Richtung zuweisen, in die er aufgehen soll; "N" drücken, dann 
@@ -379,7 +379,7 @@ So, ihr könnt dem Schalter nun noch eine
                   das musst du einfach ausprobieren, um die richtige Richtung 
                   zu machen. 
 
-![image]({filename}console.jpg) 
+![image]({static}console.jpg) 
 
 ----
 
@@ -403,7 +403,7 @@ und "KEY: lip"
 
 könnt sie folgendermaßen herausfinden: 
 
-![image]({filename}func_door.jpg) 
+![image]({static}func_door.jpg) 
 
 "**Q**" 
                   drücken, dann stehen da Zahlen, welche die Werte der höhe, etc 
@@ -480,7 +480,7 @@ heißt, sobald der Spieler den Brush berührt, macht es ihm 10 Schadenspunkte. D
 dann stirbt der Spieler 
                   sofort.) 
 
-![image]({filename}trigger_hurt.jpg) 
+![image]({static}trigger_hurt.jpg) 
 
 ----
 
@@ -517,7 +517,7 @@ Danach
 
 etwa so aussehen: 
 
-![image]({filename}trigger_multible.jpg)
+![image]({static}trigger_multible.jpg)
 
 ----
 
@@ -558,7 +558,7 @@ gemacht!
                   dabei ist, dass die Linie niemals durch Wände oder 
                   sonstige Hindernisse, welche ihn aufhalten würde gehen darf!!![/u]
 
-![image]({filename}trigger_push.jpg)
+![image]({static}trigger_push.jpg)
 
 ----
 
@@ -579,7 +579,7 @@ weiter entfernt davon, einen "target/target_position",
                   markiert zuerst den trigger, dann den target, drückt "**CTRL +
 K**" und fertig. 
 
-![image]({filename}trigger_teleport.jpg)
+![image]({static}trigger_teleport.jpg)
 
 ----
 

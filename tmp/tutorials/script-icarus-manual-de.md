@@ -1053,7 +1053,7 @@ Winkel in eine Zeit in Millisekunden:[/color]
 
 [color=white]dreht den brush um 90° um die Z-Achse.[/color]
 
-![image]({filename}images/rotate_script_xyz.jpg)
+![image]({static}images/rotate_script_xyz.jpg)
 
 Quelle: www.map-review.com
 

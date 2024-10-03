@@ -50,7 +50,7 @@ Bild.
 
  
 
-![image]({filename}sebcrea-Dateien/bild1.jpg)
+![image]({static}sebcrea-Dateien/bild1.jpg)
 
  
 
@@ -60,7 +60,7 @@ wichtig um später einen überblick zu behalten.
 
  
 
-![image]({filename}sebcrea-Dateien/bild2.jpg)
+![image]({static}sebcrea-Dateien/bild2.jpg)
 
  
 
@@ -73,7 +73,7 @@ auf Joint in den Tools klicken und eine neuen setzen. Siehe Bild:
 
  
 
-![image]({filename}sebcrea-Dateien/bild3.jpg)
+![image]({static}sebcrea-Dateien/bild3.jpg)
 
  
 
@@ -83,7 +83,7 @@ so aussieht:
 
  
 
-![image]({filename}sebcrea-Dateien/bild4.jpg)
+![image]({static}sebcrea-Dateien/bild4.jpg)
 
  
 
@@ -100,7 +100,7 @@ geht in den Menüpunkt Groups und wählt dort den arm aus der dazu gehört.
 
  
 
-![image]({filename}sebcrea-Dateien/bild5.jpg) 
+![image]({static}sebcrea-Dateien/bild5.jpg) 
 
  
 
@@ -133,7 +133,7 @@ in der Frame leiste die 2 Frame an.
 
  
 
-![image]({filename}sebcrea-Dateien/bild6.jpg)
+![image]({static}sebcrea-Dateien/bild6.jpg)
 
  
 
@@ -143,7 +143,7 @@ ihr wählen Rotate, Move nehmt am besten Rotate für Gliedmaßen. Nun können si
 den arm über den dazu gehörigen Joint bewegen bestimmen sie nun die Anfangs 
 position des Armes. Wie im Bild:
 
-![image]({filename}sebcrea-Dateien/bild7.jpg)
+![image]({static}sebcrea-Dateien/bild7.jpg)
 
  
 
@@ -166,7 +166,7 @@ müsst ihr wie oben den Arm mit Rotate. Neu plazieren z.B. so
 
  
 
-![image]({filename}sebcrea-Dateien/bild8.jpg)
+![image]({static}sebcrea-Dateien/bild8.jpg)
 
  
 
@@ -187,7 +187,7 @@ erscheint dieses Fenster:
 
  
 
-![image]({filename}sebcrea-Dateien/bild9.jpg)
+![image]({static}sebcrea-Dateien/bild9.jpg)
 
  
 
