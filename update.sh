@@ -11,7 +11,7 @@ git merge master -m "merge changes"
 echo "pulled latest revision"
 
 # run pelican
-../bin/pelican 2>error.log && echo "ran pelican"
+../venv/bin/pelican 2>error.log && echo "ran pelican"
 
 # kill backend (will be restarted by systemd)
 if [ -e "backend/backend.pid" ]
