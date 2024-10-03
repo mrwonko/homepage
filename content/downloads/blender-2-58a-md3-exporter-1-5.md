@@ -5,7 +5,7 @@ date: 2011-11-26
 link: files/blender_io_mesh_md3_15.zip
 tags: Blender, MD3, exporter, cross-platform
 category: Software
-thumbnail: {filename}thumbs/md3export.jpg
+thumbnail: {static}thumbs/md3export.jpg
 
 Now part of the [Jedi Academy Suite]({filename}blendersuite.md)!
 
