@@ -18,7 +18,7 @@ import os
 
 logger = logging.getLogger( __name__ )
 
-PREFIX = "{filename}"
+PREFIX = "{static}"
 
 # memoization of results cuts down on calculations at the cost of saving previous metadata values
 @memoized
@@ -29,7 +29,7 @@ def update_content( article, content, siteurl ):
     if not stripped_content.startswith( PREFIX ):
         return content
     
-    # remove {filename}
+    # remove {static}
     url = stripped_content[ len( PREFIX ): ]
     
     parse_result = urlparse( url )
