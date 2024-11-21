@@ -51,7 +51,7 @@ angular.module( 'commentsApp', [ 'lodash', 'ngSanitize', 'templateGenerated' ] )
         })
         .error( function( data, status, headers, config ) {
             $scope.loading = false;
-            $scope.error = status == 0 ? 'Connection refused.' : 'Error ' + status + '.';
+            $scope.error = status == 0 ? 'Connection refused.' : 'Error ' + status + ': ' + data;
         } );
     };
     $scope.dismissError = function() {
