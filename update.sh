@@ -13,6 +13,8 @@ echo "pulled latest revision"
 # run pelican
 ../venv/bin/pelican 2>error.log && echo "ran pelican"
 
+cp -r ./output /var/www-homepage-output
+
 # kill backend (will be restarted by systemd)
 if [ -e "backend/backend.pid" ]
 then
