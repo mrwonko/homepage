@@ -20,6 +20,9 @@ func newRouter(handlers *httpHandlers) http.Handler {
 	mux.HandleFunc("POST /rest/blog/{year}/{article}/comments", handlers.blogComments)
 	mux.HandleFunc("OPTIONS /rest/downloads/{path...}", handlers.downloadCount)
 	mux.HandleFunc("GET /rest/downloads/{path...}", handlers.downloadCount)
+	mux.HandleFunc("GET /internal/onDownload", unimplemented)
+	mux.HandleFunc("GET /admin/rest/blog/comments/unapproved", unimplemented)
+	mux.HandleFunc("POST /admin/rest/blog/comments/{id}", unimplemented)
 	if logUnhandledRequests {
 		mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 			log.Printf("fallthrough: %s %s", r.Method, r.URL.String())
@@ -109,4 +112,9 @@ func (h *httpHandlers) downloadCount(rw http.ResponseWriter, req *http.Request) 
 	default:
 		rw.WriteHeader(http.StatusMethodNotAllowed)
 	}
+}
+
+func unimplemented(rw http.ResponseWriter, req *http.Request) {
+	log.Printf("unimplemented: %s %s", req.Method, req.URL)
+	rw.WriteHeader(http.StatusNotImplemented)
 }
