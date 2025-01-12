@@ -1,15 +1,23 @@
 package main
 
 import (
+	"log"
 	"net/http"
 	"strconv"
 )
 
 func newRouter(handlers *httpHandlers) http.Handler {
+	const logUnhandledRequests = false
 	mux := http.NewServeMux()
-	mux.HandleFunc("OPTIONS rest/blog/{year}/{article}/comments", handlers.blogComments)
-	mux.HandleFunc("GET rest/blog/{year}/{article}/comments", handlers.blogComments)
-	mux.HandleFunc("POST rest/blog/{year}/{article}/comments", handlers.blogComments)
+	mux.HandleFunc("OPTIONS /rest/blog/{year}/{article}/comments", handlers.blogComments)
+	mux.HandleFunc("GET /rest/blog/{year}/{article}/comments", handlers.blogComments)
+	mux.HandleFunc("POST /rest/blog/{year}/{article}/comments", handlers.blogComments)
+	if logUnhandledRequests {
+		mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+			log.Printf("fallthrough: %s %s", r.Method, r.URL.String())
+			w.WriteHeader(http.StatusNotFound)
+		})
+	}
 	return mux
 }
 

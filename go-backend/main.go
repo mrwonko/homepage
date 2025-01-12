@@ -43,6 +43,7 @@ func mainWithExitCode(ctx context.Context) int {
 
 	// start http server
 	ctx, initiateShutdown := context.WithCancel(ctx)
+	log.Printf("launching HTTP server")
 	go func() {
 		defer initiateShutdown() // end main on server error
 		err := srv.ListenAndServe()
