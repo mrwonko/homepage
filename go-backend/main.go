@@ -32,7 +32,8 @@ func mainWithExitCode(ctx context.Context) int {
 
 	// setup http server
 	handlers := &httpHandlers{
-		db: db,
+		db:                   db,
+		legacyDownloadCounts: cfg.LegacyDownloadCounts,
 	}
 	router := newRouter(handlers)
 	srv := &http.Server{
