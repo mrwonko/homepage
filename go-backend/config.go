@@ -46,6 +46,7 @@ type DBConfig struct {
 
 type MailConfig struct {
 	Server                 string
+	Port                   uint16
 	User                   Secret
 	Password               Secret
 	To                     string
@@ -86,6 +87,7 @@ func configFromEnv() (*Config, error) {
 		res.Mail = &MailConfig{}
 		errs = append(errs,
 			readEnvString("SMTP_SERVER", &res.Mail.Server),
+			readEnvUint16("SMTP_PORT", &res.Mail.Port),
 			readEnvSecret("SMTP_USER", &res.Mail.User),
 			readEnvSecret("SMTP_PASS", &res.Mail.Password),
 			readEnvString("MAIL_TO", &res.Mail.To),
