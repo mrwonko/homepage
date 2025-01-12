@@ -1,8 +1,10 @@
 package main
 
 import (
+	"context"
 	"database/sql"
 	"fmt"
+	"time"
 
 	_ "github.com/jackc/pgx/v5/stdlib"
 )
@@ -21,6 +23,32 @@ func newDatabase(cfg *DBConfig) (*database, error) {
 	return &database{
 		db: db,
 	}, nil
+}
+
+type BlogComment struct {
+	Time    time.Time `json:"time"`
+	Author  string    `json:"author"`
+	Content string    `json:"content"`
+	URL     string    `json:"url"`
+}
+
+func (db *database) GetBlogComments(ctx context.Context, year int, articleSlug string) ([]BlogComment, error) {
+	rows, err := db.db.QueryContext(ctx, "SELECT time, author, content, url FROM comments WHERE post = $1 AND approved = true ORDER BY time ASC", fmt.Sprintf("%d/%s", year, articleSlug))
+	if err != nil {
+		return nil, fmt.Errorf("query: %w", err)
+	}
+	var res []BlogComment
+	for rows.Next() {
+		var comment BlogComment
+		if err := rows.Scan(&comment.Time, &comment.Author, &comment.Content, &comment.URL); err != nil {
+			return nil, fmt.Errorf("scan %d: %w", len(res), err)
+		}
+		res = append(res, comment)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, fmt.Errorf("next: %w", err)
+	}
+	return res, nil
 }
 
 // TODO: use the new unsanitized_content column to store the original comment,

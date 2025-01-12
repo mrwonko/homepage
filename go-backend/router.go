@@ -1,10 +1,16 @@
 package main
 
 import (
+	"context"
+	"encoding/json"
+	"errors"
 	"log"
 	"net/http"
 	"strconv"
+	"time"
 )
+
+const requestTimeout = 5 * time.Second
 
 func newRouter(handlers *httpHandlers) http.Handler {
 	const logUnhandledRequests = false
@@ -26,6 +32,8 @@ type httpHandlers struct {
 }
 
 func (h *httpHandlers) blogComments(rw http.ResponseWriter, req *http.Request) {
+	ctx, cancel := context.WithTimeout(req.Context(), requestTimeout)
+	defer cancel()
 	year, err := strconv.Atoi(req.PathValue("year"))
 	if err != nil {
 		rw.WriteHeader(http.StatusNotFound)
@@ -40,13 +48,30 @@ func (h *httpHandlers) blogComments(rw http.ResponseWriter, req *http.Request) {
 		rw.Header().Add("Allow", "GET, POST, HEAD")
 		rw.WriteHeader(http.StatusOK)
 	case http.MethodGet, http.MethodHead:
-		// TODO
-		rw.WriteHeader(http.StatusNotImplemented)
-		_ = year
+		h.getBlogComments(ctx, rw, req, year, articleSlug)
 	case http.MethodPost:
 		// TODO
 		rw.WriteHeader(http.StatusNotImplemented)
 	default:
 		rw.WriteHeader(http.StatusMethodNotAllowed)
+	}
+}
+
+func (h *httpHandlers) getBlogComments(ctx context.Context, rw http.ResponseWriter, req *http.Request, year int, articleSlug string) {
+	type BlogComments struct {
+		Comments []BlogComment `json:"comments"`
+	}
+	comments, err := h.db.GetBlogComments(ctx, year, articleSlug)
+	if err != nil {
+		log.Printf("error getting blog comments for %d/%s: %s", year, articleSlug, err)
+		rw.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	res := BlogComments{
+		Comments: comments,
+	}
+	rw.Header().Set("Content-Type", "application/json")
+	if err := json.NewEncoder(rw).Encode(&res); err != nil && !errors.Is(err, req.Context().Err()) {
+		log.Printf("error encoding blog comments: %s", err)
 	}
 }
