@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -20,7 +21,7 @@ func newRouter(handlers *httpHandlers) http.Handler {
 	mux.HandleFunc("POST /rest/blog/{year}/{article}/comments", handlers.blogComments)
 	mux.HandleFunc("OPTIONS /rest/downloads/{path...}", handlers.downloadCount)
 	mux.HandleFunc("GET /rest/downloads/{path...}", handlers.downloadCount)
-	mux.HandleFunc("GET /internal/onDownload", unimplemented)
+	mux.HandleFunc("GET /internal/onDownload", handlers.onDownload)
 	mux.HandleFunc("GET /admin/rest/blog/comments/unapproved", unimplemented)
 	mux.HandleFunc("POST /admin/rest/blog/comments/{id}", unimplemented)
 	if logUnhandledRequests {
@@ -111,6 +112,35 @@ func (h *httpHandlers) downloadCount(rw http.ResponseWriter, req *http.Request) 
 		}
 	default:
 		rw.WriteHeader(http.StatusMethodNotAllowed)
+	}
+}
+
+func (h *httpHandlers) onDownload(rw http.ResponseWriter, req *http.Request) {
+	ctx, cancel := context.WithTimeout(req.Context(), requestTimeout)
+	defer cancel()
+	args := req.URL.Query()
+	file := strings.TrimPrefix(args.Get("file"), "/")
+	if file == "" {
+		log.Printf("error: onDownload called without file")
+		return
+	}
+	method := args.Get("method")
+	if method != "GET" {
+		log.Printf("error: onDownload %q called with unexpected method %s", file, method)
+	}
+	completion := args.Get("completion")
+	if completion != "OK" {
+		// no need to report incomplete downloads, probably
+		return
+	}
+	status := args.Get("status")
+	if status == "" || status[0] != '2' {
+		// this probably means someone got a file not found, which might be their error
+		log.Printf("onDownload %q got status %s", file, status)
+		return
+	}
+	if err := h.db.IncrementDownloadCount(ctx, file); err != nil {
+		log.Printf("error incrementing download count for %q: %s", file, err)
 	}
 }
 

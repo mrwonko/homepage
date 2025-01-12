@@ -3,9 +3,11 @@ package main
 import (
 	"context"
 	"database/sql"
+	"errors"
 	"fmt"
 	"time"
 
+	"github.com/jackc/pgx/v5/pgconn"
 	_ "github.com/jackc/pgx/v5/stdlib"
 )
 
@@ -55,10 +57,32 @@ func (db *database) GetBlogComments(ctx context.Context, year int, articleSlug s
 // for better spam detection and so I can fix sanitization errors manually, if need be.
 
 func (db *database) GetDownloadCount(ctx context.Context, path string) (int, error) {
-	// FIXME this is mad, just keep a counter, don't have one row per download
 	var res int
-	if err := db.db.QueryRowContext(ctx, `SELECT COUNT(*) FROM downloads JOIN download_names ON downloads.download = download_names.id WHERE download_names.name = $1`, path).Scan(&res); err != nil {
+	if err := db.db.QueryRowContext(ctx, `SELECT downloads FROM downloads_v2 WHERE filepath = $1`, path).Scan(&res); err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return 0, nil
+		}
 		return 0, err
 	}
 	return res, nil
+}
+
+func (db *database) IncrementDownloadCount(ctx context.Context, path string) error {
+	_, err := db.db.ExecContext(ctx, `INSERT INTO downloads_v2 (filepath, downloads) VALUES ($1, 1)`, path)
+	if err == nil {
+		return nil
+	}
+	if pgErr := new(pgconn.PgError); errors.As(err, &pgErr) && pgErr.Code == "23505" {
+		// unique violation -> already exists
+		// since we never delete, this should not have any race conditions even without a transaction
+		_, err = db.db.ExecContext(ctx, `UPDATE downloads_v2 SET downloads = downloads + 1 WHERE filepath = $1`, path)
+		if err == nil {
+			return nil
+		}
+		return fmt.Errorf("updating: %w", err)
+	}
+	return fmt.Errorf("inserting: %w", err)
+	// TODO use upsert instead:
+	// _, err := db.db.ExecContext(ctx, `INSERT INTO downloads_v2 (filepath, downloads) VALUES ($1, 1) ON CONFLICT (filepath) DO UPDATE SET downloads = downloads + 1`, path)
+	// return err
 }

@@ -20,6 +20,7 @@ type Config struct {
 
 	Mail *MailConfig
 
+	// TODO: include these in the DB instead
 	LegacyDownloadCounts map[string]int
 
 	CommentTagWhitelist       Set[string]
