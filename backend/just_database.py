@@ -103,44 +103,42 @@ def new_comment( post, data, spam = False ):
 def get_download_count( name ):
     connection = yield _get_connection()
     rows = yield connection.runQuery(
-        """SELECT COUNT( * )
-        FROM downloads JOIN download_names ON downloads.download = download_names.id
-        WHERE download_names.name = %s""",
+        """SELECT downloads
+        FROM downloads_v2
+        WHERE filepath = %s""",
         [ name ]
     )
-    defer.returnValue( rows[ 0 ][ 0 ] )
+    if len(rows) == 0:
+        defer.returnValue( 0 )
+    else:
+        defer.returnValue( rows[ 0 ][ 0 ] )
 
 @defer.inlineCallbacks
 def new_download( name ):
     @defer.inlineCallbacks
-    def get_or_create_name( cursor ):
+    def create_or_increment_downloads( cursor ):
         yield cursor.execute( 
-            """SELECT id
-            FROM download_names
-            WHERE name = %s""",
+            """SELECT downloads
+            FROM downloads_v2
+            WHERE filepath = %s""",
             [ name ]
         )
         if cursor.rowcount > 0:
-            row = yield cursor.fetchone()
-            defer.returnValue( row[ 0 ] )
-        else:
             yield cursor.execute(
-                """INSERT INTO download_names( name )
-                VALUES ( %s )
-                RETURNING id""",
+                """UPDATE downloads_v2
+                SET downloads = downloads + 1
+                WHERE filepath = %s""",
                 [ name ]
             )
-            row = yield cursor.fetchone()
-            download_id = row[ 0 ]
-            defer.returnValue( download_id )
+        else:
+            yield cursor.execute(
+                """INSERT INTO downloads_v2 (filepath, downloads)
+                VALUES (%s, 1)"""
+                [ name ]
+            )
     
     connection = yield _get_connection()
-    name_id = yield connection.runInteraction( get_or_create_name )
-    yield connection.runOperation( 
-        """INSERT INTO downloads( download )
-        VALUES ( %s )""",
-        [ name_id ]
-    )
+    yield connection.runInteraction( create_or_increment_downloads )
     defer.returnValue( None )
 
 #   Admin functions
