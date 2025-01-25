@@ -20,9 +20,6 @@ type Config struct {
 
 	Mail *MailConfig
 
-	// TODO: include these in the DB instead
-	LegacyDownloadCounts map[string]int
-
 	CommentTagWhitelist       Set[string]
 	CommentAttributeWhitelist map[string]Set[string]
 }
@@ -96,7 +93,6 @@ func configFromEnv() (*Config, error) {
 			readEnvTemplate("MAIL_BODY_NEW_COMMENT", &res.Mail.NewCommentBodyTemplate),
 		)
 	}
-	errs = append(errs, readEnvJson("LEGACY_DOWNLOADS", &res.LegacyDownloadCounts))
 	var rawCommentTagWhitelist []string
 	if err := readEnvStringList("COMMENT_TAG_WHITELIST", &rawCommentTagWhitelist); err != nil {
 		errs = append(errs, err)

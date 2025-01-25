@@ -37,7 +37,6 @@ func newRouter(handlers *httpHandlers) http.Handler {
 
 type httpHandlers struct {
 	db                        *database
-	legacyDownloadCounts      map[string]int
 	akismet                   *Akismet
 	mailer                    *Mailer
 	commentTagWhitelist       Set[string]
@@ -172,7 +171,7 @@ func (h *httpHandlers) downloadCount(rw http.ResponseWriter, req *http.Request) 
 		res := struct {
 			Downloads int `json:"downloads"`
 		}{
-			Downloads: dbCount + h.legacyDownloadCounts[path],
+			Downloads: dbCount,
 		}
 		rw.Header().Set("Content-Type", "application/json")
 		if err := json.NewEncoder(rw).Encode(&res); err != nil && !errors.Is(err, req.Context().Err()) {

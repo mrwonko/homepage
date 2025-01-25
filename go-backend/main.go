@@ -40,7 +40,6 @@ func mainWithExitCode(ctx context.Context) int {
 	// setup http server
 	handlers := &httpHandlers{
 		db:                        db,
-       legacyDownloadCounts:      cfg.LegacyDownloadCounts,
 		akismet:                   akismet,
 		mailer:                    mailer,
 		commentTagWhitelist:       cfg.CommentTagWhitelist,

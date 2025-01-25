@@ -25,7 +25,6 @@ func Test_configFromEnv(t *testing.T) {
 	t.Setenv("MAIL_TO", "receiver@example.com")
 	t.Setenv("MAIL_FROM", "sender@example.com")
 	t.Setenv("MAIL_BODY_NEW_COMMENT", "new comment: {{ .content }}")
-	t.Setenv("LEGACY_DOWNLOADS", `{"nice":69}`)
 	t.Setenv("COMMENT_TAG_WHITELIST", "b,i,a")
 	t.Setenv("COMMENT_ATTRIBUTE_WHITELIST", `{"a":["href"]}`)
 	want := Config{
@@ -46,9 +45,6 @@ func Test_configFromEnv(t *testing.T) {
 			To:                     "receiver@example.com",
 			From:                   "sender@example.com",
 			NewCommentBodyTemplate: nil, // ignored
-		},
-		LegacyDownloadCounts: map[string]int{
-			"nice": 69,
 		},
 		CommentTagWhitelist: Set[string]{
 			"b": struct{}{},
