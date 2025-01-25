@@ -30,10 +30,21 @@ func mainWithExitCode(ctx context.Context) int {
 		return 2
 	}
 
+	akismet := &Akismet{
+		APIKey: cfg.AkismetKey,
+	}
+	mailer := &Mailer{
+		config: cfg.Mail,
+	}
+
 	// setup http server
 	handlers := &httpHandlers{
-		db:                   db,
-		legacyDownloadCounts: cfg.LegacyDownloadCounts,
+		db:                        db,
+       legacyDownloadCounts:      cfg.LegacyDownloadCounts,
+		akismet:                   akismet,
+		mailer:                    mailer,
+		commentTagWhitelist:       cfg.CommentTagWhitelist,
+		commentAttributeWhitelist: cfg.CommentAttributeWhitelist,
 	}
 	router := newRouter(handlers)
 	srv := &http.Server{

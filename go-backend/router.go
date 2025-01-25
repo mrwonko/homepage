@@ -2,8 +2,10 @@ package main
 
 import (
 	"context"
+	"database/sql"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -34,8 +36,12 @@ func newRouter(handlers *httpHandlers) http.Handler {
 }
 
 type httpHandlers struct {
-	db                   *database
-	legacyDownloadCounts map[string]int
+	db                        *database
+	legacyDownloadCounts      map[string]int
+	akismet                   *Akismet
+	mailer                    *Mailer
+	commentTagWhitelist       Set[string]
+	commentAttributeWhitelist map[string]Set[string]
 }
 
 func (h *httpHandlers) blogComments(rw http.ResponseWriter, req *http.Request) {
@@ -57,8 +63,7 @@ func (h *httpHandlers) blogComments(rw http.ResponseWriter, req *http.Request) {
 	case http.MethodGet, http.MethodHead:
 		h.getBlogComments(ctx, rw, req, year, articleSlug)
 	case http.MethodPost:
-		// TODO
-		rw.WriteHeader(http.StatusNotImplemented)
+		h.postBlogComment(ctx, rw, req, year, articleSlug)
 	default:
 		rw.WriteHeader(http.StatusMethodNotAllowed)
 	}
@@ -80,6 +85,69 @@ func (h *httpHandlers) getBlogComments(ctx context.Context, rw http.ResponseWrit
 	rw.Header().Set("Content-Type", "application/json")
 	if err := json.NewEncoder(rw).Encode(&res); err != nil && !errors.Is(err, req.Context().Err()) {
 		log.Printf("error encoding blog comments: %s", err)
+	}
+}
+
+func (h *httpHandlers) postBlogComment(ctx context.Context, rw http.ResponseWriter, req *http.Request, year int, articleSlug string) {
+	type Comment struct {
+		Author  string `json:"author"`
+		Content string `json:"content"`
+		Email   string `json:"email"`
+		URL     string `json:"url"` // optional
+	}
+	var reqComment Comment
+	if err := json.NewDecoder(req.Body).Decode(&reqComment); err != nil {
+		rw.WriteHeader(http.StatusBadRequest)
+		fmt.Fprintf(rw, "error decoding request body json: %s", err)
+		return
+	}
+	var missing []string
+	for _, mandatoryField := range []struct {
+		field string
+		value string
+	}{
+		{field: "author", value: reqComment.Author},
+		{field: "content", value: reqComment.Content},
+		{field: "email", value: reqComment.Email},
+		// URL is optional
+	} {
+		if mandatoryField.value == "" {
+			missing = append(missing, mandatoryField.field)
+		}
+	}
+	if len(missing) > 0 {
+		rw.WriteHeader(http.StatusBadRequest)
+		fmt.Fprintf(rw, "%s must not be empty", strings.Join(missing, ", "))
+		return
+	}
+	spammy, err := h.akismet.Check(ctx)
+	if err != nil {
+		log.Printf("error performing akismet spam check: %s", err)
+		// this is non-fatal
+		spammy = false
+	}
+	content := sanitizeHTML(reqComment.Content, h.commentTagWhitelist, h.commentAttributeWhitelist)
+	content = strings.ReplaceAll(content, "\n", "<br/>\n")
+	comment := &dbComment{
+		Author:             reqComment.Author,
+		Email:              reqComment.Email,
+		URL:                sql.NullString{String: reqComment.URL, Valid: reqComment.URL != ""},
+		UnsanitizedContent: reqComment.Content,
+		Content:            content,
+		UserAgent:          req.UserAgent(),
+		Referrer:           req.Referer(),
+		IP:                 req.RemoteAddr,
+		Spam:               spammy,
+	}
+	err = h.db.InsertBlogComment(ctx, year, articleSlug, comment)
+	if err != nil {
+		log.Printf("error inserting comment %d/%s %v: %s", year, articleSlug, comment, err)
+		return
+	}
+	err = h.mailer.SendCommentNotification(ctx, year, articleSlug, comment)
+	if err != nil {
+		log.Printf("error sending comment notificaton email: %s", err)
+		return
 	}
 }
 

@@ -53,6 +53,34 @@ func (db *database) GetBlogComments(ctx context.Context, year int, articleSlug s
 	return res, nil
 }
 
+type dbComment struct {
+	Author             string
+	Email              string
+	URL                sql.NullString
+	UnsanitizedContent string
+	Content            string
+	UserAgent          string
+	Referrer           string
+	IP                 string
+	Spam               bool
+}
+
+func (db *database) InsertBlogComment(ctx context.Context, year int, articleSlug string, c *dbComment) error {
+	post := fmt.Sprintf("%d/%s", year, articleSlug)
+	_, err := db.db.ExecContext(
+		ctx,
+		`INSERT INTO comments
+		(post,  spam,  user_agent,   referrer,   author,   email,   url,  unsanitized_content,   content,   ip)
+		VALUES
+		(  $1,    $2,          $3,         $4,       $5,      $6,    $7,                   $8,        $9,  $10)`,
+		post, c.Spam, c.UserAgent, c.Referrer, c.Author, c.Email, c.URL, c.UnsanitizedContent, c.Content, c.IP,
+	)
+	if err != nil {
+		return fmt.Errorf("inserting into db: %w", err)
+	}
+	return nil
+}
+
 // TODO: use the new unsanitized_content column to store the original comment,
 // for better spam detection and so I can fix sanitization errors manually, if need be.
 
