@@ -10,7 +10,12 @@ func Test_sanitizeHTML(t *testing.T) {
 		attributeWhitelist map[string]Set[string]
 		want               string
 	}{
-		// TODO
+		{
+			name:  "empty whitelist",
+			input: "<i>illegal</i> <b>instructions</b>",
+			want:  "&lt;i&gt;illegal&lt;/i&gt; &lt;b&gt;instructions&lt;/b&gt;",
+		},
+		// TODO tests for non-empty whitelist, once implemented
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
