@@ -15,17 +15,6 @@ type Mailer struct {
 	config *MailConfig
 }
 
-/*
-
-de/blog/{{.post}}.html\">{{.post}}</a>, it's probably {{.spammy}}.</p>
-<p>
-    author: {{.author}}<br/>
-    email: {{.email}}<br/>
-    url: {{.url}}<br/>
-    Content:
-{{.content}}
-*/
-
 var mailContentReplacer = strings.NewReplacer("<", "&lt;", ">", "&gt;", "\n", "<br/>\r\n")
 
 func (m *Mailer) SendCommentNotification(ctx context.Context, year int, articleSlug string, comment *dbComment) error {
