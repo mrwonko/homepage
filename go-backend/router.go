@@ -119,12 +119,6 @@ func (h *httpHandlers) postBlogComment(ctx context.Context, rw http.ResponseWrit
 		fmt.Fprintf(rw, "%s must not be empty", strings.Join(missing, ", "))
 		return
 	}
-	spammy, err := h.akismet.Check(ctx)
-	if err != nil {
-		log.Printf("error performing akismet spam check: %s", err)
-		// this is non-fatal
-		spammy = false
-	}
 	content := sanitizeHTML(reqComment.Content, h.commentTagWhitelist, h.commentAttributeWhitelist)
 	content = strings.ReplaceAll(content, "\n", "<br/>\n")
 	comment := &dbComment{
@@ -136,7 +130,18 @@ func (h *httpHandlers) postBlogComment(ctx context.Context, rw http.ResponseWrit
 		UserAgent:          req.UserAgent(),
 		Referrer:           req.Referer(),
 		IP:                 req.RemoteAddr,
-		Spam:               spammy,
+	}
+	spammy, err := h.akismet.Check(ctx, comment)
+	if err != nil {
+		log.Printf("error performing akismet spam check: %s", err)
+		// this is non-fatal
+		spammy = Ham
+	}
+	comment.Spam = spammy == Spam
+	if spammy == Discard {
+		// definite spam doesn't even reach the DB
+		log.Printf("discarding spam: %#v", comment)
+		return
 	}
 	err = h.db.InsertBlogComment(ctx, year, articleSlug, comment)
 	if err != nil {
