@@ -39,6 +39,11 @@ func SetOf[Elem cmp.Ordered](elems iter.Seq[Elem]) Set[Elem] {
 	return res
 }
 
+func (s Set[Elem]) Contains(elem Elem) bool {
+	_, ok := s[elem]
+	return ok
+}
+
 func (s Set[Elem]) GoString() string {
 	if s == nil {
 		return "nil"
@@ -74,6 +79,7 @@ type DBConfig struct {
 type MailConfig struct {
 	Server                 string
 	Port                   uint16
+	CertHostname           string
 	User                   Secret
 	Password               Secret
 	To                     string
@@ -114,6 +120,7 @@ func configFromEnv() (*Config, error) {
 		res.Mail = &MailConfig{}
 		errs = append(errs,
 			readEnvString("SMTP_SERVER", &res.Mail.Server),
+			readEnvString("SMTP_CERT_HOSTNAME", &res.Mail.CertHostname),
 			readEnvUint16("SMTP_PORT", &res.Mail.Port),
 			readEnvSecret("SMTP_USER", &res.Mail.User),
 			readEnvSecret("SMTP_PASS", &res.Mail.Password),

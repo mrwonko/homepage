@@ -21,6 +21,7 @@ func Test_configFromEnv(t *testing.T) {
 	t.Setenv("MAIL_ENABLED", "TRUE")
 	t.Setenv("SMTP_SERVER", "localhost")
 	t.Setenv("SMTP_PORT", "25")
+	t.Setenv("SMTP_CERT_HOSTNAME", "example.com")
 	t.Setenv("SMTP_USER", "mailuser")
 	t.Setenv("SMTP_PASS", "mailpass")
 	t.Setenv("MAIL_TO", "receiver@example.com")
@@ -42,6 +43,7 @@ func Test_configFromEnv(t *testing.T) {
 		Mail: &MailConfig{
 			Server:                 "localhost",
 			Port:                   25,
+			CertHostname:           "example.com",
 			User:                   "mailuser",
 			Password:               "mailpass",
 			To:                     "receiver@example.com",
