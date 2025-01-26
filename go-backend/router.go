@@ -24,6 +24,7 @@ func newRouter(handlers *httpHandlers) http.Handler {
 	mux.HandleFunc("OPTIONS /rest/downloads/{path...}", handlers.downloadCount)
 	mux.HandleFunc("GET /rest/downloads/{path...}", handlers.downloadCount)
 	mux.HandleFunc("GET /internal/onDownload", handlers.onDownload)
+	// TODO:
 	mux.HandleFunc("GET /admin/rest/blog/comments/unapproved", unimplemented)
 	mux.HandleFunc("POST /admin/rest/blog/comments/{id}", unimplemented)
 	if logUnhandledRequests {
