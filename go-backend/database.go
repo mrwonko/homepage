@@ -81,9 +81,6 @@ func (db *database) InsertBlogComment(ctx context.Context, year int, articleSlug
 	return nil
 }
 
-// TODO: use the new unsanitized_content column to store the original comment,
-// for better spam detection and so I can fix sanitization errors manually, if need be.
-
 func (db *database) GetDownloadCount(ctx context.Context, path string) (int, error) {
 	var res int
 	if err := db.db.QueryRowContext(ctx, `SELECT downloads FROM downloads_v2 WHERE filepath = $1`, path).Scan(&res); err != nil {
