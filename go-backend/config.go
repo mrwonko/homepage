@@ -1,10 +1,15 @@
 package main
 
 import (
+	"bytes"
+	"cmp"
 	"encoding/json"
 	"errors"
 	"fmt"
+	"iter"
+	"maps"
 	"os"
+	"slices"
 	"strconv"
 	"strings"
 	"text/template"
@@ -24,7 +29,31 @@ type Config struct {
 	CommentAttributeWhitelist map[string]Set[string]
 }
 
-type Set[Elem comparable] map[Elem]struct{}
+type Set[Elem cmp.Ordered] map[Elem]struct{}
+
+func SetOf[Elem cmp.Ordered](elems iter.Seq[Elem]) Set[Elem] {
+	res := Set[Elem]{}
+	for elem := range elems {
+		res[elem] = struct{}{}
+	}
+	return res
+}
+
+func (s Set[Elem]) GoString() string {
+	if s == nil {
+		return "nil"
+	}
+	var res bytes.Buffer
+	_, _ = res.WriteRune('{')
+	for i, elem := range slices.Sorted(maps.Keys(s)) {
+		if i > 0 {
+			_, _ = res.WriteString(", ")
+		}
+		fmt.Fprintf(&res, "%#v", elem)
+	}
+	_, _ = res.WriteRune('}')
+	return res.String()
+}
 
 func (cfg *Config) AkismetEnabled() bool {
 	return cfg.AkismetKey != ""
@@ -97,7 +126,7 @@ func configFromEnv() (*Config, error) {
 	if err := readEnvStringList("COMMENT_TAG_WHITELIST", &rawCommentTagWhitelist); err != nil {
 		errs = append(errs, err)
 	} else {
-		res.CommentTagWhitelist = listToSet(rawCommentTagWhitelist)
+		res.CommentTagWhitelist = SetOf(slices.Values(rawCommentTagWhitelist))
 	}
 	var rawCommentAttributeWhitelist map[string][]string
 	if err := readEnvJson("COMMENT_ATTRIBUTE_WHITELIST", &rawCommentAttributeWhitelist); err != nil {
@@ -105,7 +134,7 @@ func configFromEnv() (*Config, error) {
 	} else {
 		res.CommentAttributeWhitelist = map[string]Set[string]{}
 		for tag, attributes := range rawCommentAttributeWhitelist {
-			res.CommentAttributeWhitelist[tag] = listToSet(attributes)
+			res.CommentAttributeWhitelist[tag] = SetOf(slices.Values(attributes))
 		}
 	}
 
@@ -189,15 +218,4 @@ func readEnvJson(key string, dest any) error {
 		return fmt.Errorf("parsing %s JSON: %w", key, err)
 	}
 	return nil
-}
-
-func listToSet[Elem comparable](list []Elem) Set[Elem] {
-	if len(list) == 0 {
-		return nil
-	}
-	res := make(Set[Elem], len(list))
-	for _, elem := range list {
-		res[elem] = struct{}{}
-	}
-	return res
 }
