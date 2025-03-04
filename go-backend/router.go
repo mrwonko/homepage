@@ -24,9 +24,8 @@ func newRouter(handlers *httpHandlers) http.Handler {
 	mux.HandleFunc("OPTIONS /rest/downloads/{path...}", handlers.downloadCount)
 	mux.HandleFunc("GET /rest/downloads/{path...}", handlers.downloadCount)
 	mux.HandleFunc("GET /internal/onDownload", handlers.onDownload)
-	// TODO:
-	mux.HandleFunc("GET /admin/rest/blog/comments/unapproved", unimplemented)
-	mux.HandleFunc("POST /admin/rest/blog/comments/{id}", unimplemented)
+	mux.HandleFunc("GET /admin/rest/blog/comments/unapproved", handlers.adminUnapprovedComments)
+	mux.HandleFunc("POST /admin/rest/blog/comments/{id}", handlers.adminModerateComment)
 	if logUnhandledRequests {
 		mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 			log.Printf("fallthrough: %s %s", r.Method, r.URL.String())
@@ -126,10 +125,10 @@ func (h *httpHandlers) postBlogComment(ctx context.Context, rw http.ResponseWrit
 		Author:             reqComment.Author,
 		Email:              reqComment.Email,
 		URL:                sql.NullString{String: reqComment.URL, Valid: reqComment.URL != ""},
-		UnsanitizedContent: reqComment.Content,
+		UnsanitizedContent: sql.NullString{String: reqComment.Content, Valid: true},
 		Content:            content,
 		UserAgent:          req.UserAgent(),
-		Referrer:           req.Referer(),
+		Referrer:           sql.NullString{String: req.Referer(), Valid: req.Referer() != ""},
 		IP:                 req.RemoteAddr,
 	}
 	spammy, err := h.akismet.Check(ctx, comment)
@@ -217,7 +216,124 @@ func (h *httpHandlers) onDownload(rw http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func unimplemented(rw http.ResponseWriter, req *http.Request) {
-	log.Printf("unimplemented: %s %s", req.Method, req.URL)
-	rw.WriteHeader(http.StatusNotImplemented)
+func (h *httpHandlers) adminUnapprovedComments(rw http.ResponseWriter, req *http.Request) {
+	// auth is handled by the reverse proxy, so we assume proper authentication here
+	ctx, cancel := context.WithTimeout(req.Context(), requestTimeout)
+	defer cancel()
+	switch req.Method {
+	case http.MethodOptions:
+		rw.Header().Add("Allow", "GET, HEAD")
+		rw.WriteHeader(http.StatusOK)
+	case http.MethodGet, http.MethodHead:
+		comments, err := h.db.GetUnapprovedComments(ctx)
+		if err != nil {
+			log.Printf("error getting unapproved comments: %s", err)
+			rw.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		res := struct {
+			Comments []AdminBlogComment `json:"comments"`
+		}{
+			Comments: comments,
+		}
+		rw.Header().Set("Content-Type", "application/json")
+		if err := json.NewEncoder(rw).Encode(&res); err != nil && !errors.Is(err, req.Context().Err()) {
+			log.Printf("error encoding blog comments: %s", err)
+		}
+	default:
+		rw.WriteHeader(http.StatusMethodNotAllowed)
+	}
+}
+
+func (h *httpHandlers) adminModerateComment(rw http.ResponseWriter, req *http.Request) {
+	// auth is handled by the reverse proxy, so we assume proper authentication here
+	ctx, cancel := context.WithTimeout(req.Context(), requestTimeout)
+	defer cancel()
+	id, err := strconv.Atoi(req.PathValue("id"))
+	if err != nil {
+		rw.WriteHeader(http.StatusNotFound)
+		return
+	}
+	type RespBody map[string]any
+	respond := func(body RespBody) {
+		rw.Header().Set("Content-Type", "application/json")
+		if err := json.NewEncoder(rw).Encode(&body); err != nil && !errors.Is(err, req.Context().Err()) {
+			log.Printf("error encoding response: %s", err)
+		}
+	}
+	switch req.Method {
+	case http.MethodOptions:
+		rw.Header().Add("Allow", "POST")
+		rw.WriteHeader(http.StatusOK)
+	case http.MethodPost:
+		type ReqBody struct {
+			Action string `json:"action"`
+		}
+		var reqBody ReqBody
+		if err := json.NewDecoder(req.Body).Decode(&reqBody); err != nil {
+			rw.WriteHeader(http.StatusBadRequest)
+			fmt.Fprintf(rw, "error decoding request body json: %s", err)
+			return
+		}
+		switch reqBody.Action {
+		case "delete":
+			comment, err := h.db.DeleteComment(ctx, id)
+			if err != nil {
+				log.Printf("error deleting comment %d: %s", id, err)
+				respond(RespBody{"success": false, "error": err.Error()})
+				return
+			}
+			resp := RespBody{"success": comment != nil}
+			if comment == nil {
+				resp["error"] = "not found"
+			}
+			respond(resp)
+			return
+		case "approve":
+			comment, err := h.db.ApproveComment(ctx, id)
+			if err != nil {
+				log.Printf("error approving comment %d: %s", id, err)
+				rw.WriteHeader(http.StatusInternalServerError)
+				return
+			}
+			if comment == nil {
+				respond(RespBody{
+					"success": false,
+					"error":   "not found",
+				})
+				return
+			}
+			if comment.Spam {
+				// report false positive to akismet
+				err := h.akismet.SubmitHam(ctx, comment)
+				if err != nil {
+					log.Printf("error reporting false positive to akismet: %s", err)
+				}
+			}
+			respond(RespBody{"success": true})
+			return
+		case "spam":
+			comment, err := h.db.DeleteComment(ctx, id)
+			if err != nil {
+				log.Printf("error deleting spam comment %d: %s", id, err)
+				respond(RespBody{"success": false, "error": err.Error()})
+				return
+			}
+			if comment == nil {
+				respond(RespBody{"success": false, "error": "not found"})
+				return
+			}
+			if !comment.Spam {
+				// report false negative to akismet
+				err = h.akismet.SubmitSpam(ctx, comment)
+				if err != nil {
+					log.Printf("error reporting false negative to akismet: %s", err)
+				}
+			}
+			respond(RespBody{"success": true})
+			return
+		}
+	default:
+		rw.WriteHeader(http.StatusMethodNotAllowed)
+	}
 }

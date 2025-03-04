@@ -34,7 +34,7 @@ func (m *Mailer) SendCommentNotification(ctx context.Context, year int, articleS
 		"author":  comment.Author,
 		"email":   comment.Email,
 		"url":     comment.URL.String,
-		"content": mailContentReplacer.Replace(comment.UnsanitizedContent),
+		"content": mailContentReplacer.Replace(comment.UnsanitizedContent.String),
 	})
 	if err != nil {
 		return fmt.Errorf("executing mail body template: %w", err)
