@@ -149,9 +149,9 @@ func (db *database) ApproveComment(ctx context.Context, id int) (*dbComment, err
 		UPDATE comments
 		SET approved = true
 		WHERE id = $1
-		RETURNING spam, author, email, url, unsanitized_content, user_agent, referrer, ip
+		RETURNING spam, author, email, url, unsanitized_content, content, user_agent, referrer, ip
 		`, id).
-		Scan(&res.Spam, &res.Author, &res.Email, &res.URL, &res.UnsanitizedContent, &res.UserAgent, &res.Referrer, &res.IP)
+		Scan(&res.Spam, &res.Author, &res.Email, &res.URL, &res.UnsanitizedContent, &res.Content, &res.UserAgent, &res.Referrer, &res.IP)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, nil
@@ -166,9 +166,9 @@ func (db *database) DeleteComment(ctx context.Context, id int) (*dbComment, erro
 	err := db.db.QueryRowContext(ctx, `
 		DELETE FROM comments
 		WHERE id = $1
-		RETURNING spam, author, email, url, unsanitized_content, user_agent, referrer, ip
+		RETURNING spam, author, email, url, unsanitized_content, content, user_agent, referrer, ip
 		`, id).
-		Scan(&res.Spam, &res.Author, &res.Email, &res.URL, &res.UnsanitizedContent, &res.UserAgent, &res.Referrer, &res.IP)
+		Scan(&res.Spam, &res.Author, &res.Email, &res.URL, &res.UnsanitizedContent, &res.Content, &res.UserAgent, &res.Referrer, &res.IP)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, nil
